@@ -79,140 +79,152 @@ def render():
         key="real_review_section",
         on_change="rerun",
     )
-    with coverage:
-        st.subheader("Collected sessions by season")
-        ui.table(coverage_summary(sessions))
-        st.caption(
-            "Collected / past scheduled sessions. Future and Sprint sessions are excluded from "
-            "these denominators. A past schedule is not evidence of actual completion."
-        )
-        year = ui.selection().season or 2026
-        st.subheader(f"{year} event coverage")
-        frame = event_coverage(exp, year)
-        missing_only = st.checkbox("Show events with missing results only", key="real_missing_only")
-        if missing_only:
-            frame = frame.loc[
-                frame["Qualifying results"].ne("Collected") | frame["Race results"].ne("Collected")
-            ]
-        ui.table(
-            frame[
-                [
-                    "Round",
-                    "Grand Prix",
-                    "Qualifying results",
-                    "Race results",
-                    "qualifying_drivers",
-                    "race_drivers",
-                    "Model eligibility",
-                ]
-            ],
-            {"qualifying_drivers": "Q drivers", "race_drivers": "Race drivers"},
-        )
-        st.caption(
-            "Use the sidebar season to inspect another year. Fields are preserved separately."
-        )
-        with st.expander("Session detail for the selected Grand Prix"):
-            if ui.selection().event_id:
-                ui.table(
-                    exp.sessions(ui.selection().event_id)[
-                        [
-                            "kind",
-                            "scheduled_start",
-                            "completion_state",
-                            "results_rows",
-                            "laps_rows",
-                            "weather_rows",
-                            "results_availability",
-                            "laps_availability",
-                        ]
-                    ]
-                )
-    with blockers:
-        st.subheader("Required before a core model can train")
-        for title, text in (
-            (
-                "Verified availability",
-                "There are no verified absolute completion timestamps. "
-                "Scheduled end times and retrieval times cannot stand in for completion.",
-            ),
-            (
-                "Independent entrant and cutoff reviews",
-                "Driver and team rosters must have evidence "
-                "that they were known at each prediction cutoff. "
-                "Eventual results cannot supply them.",
-            ),
-            (
-                "Enough reviewed 2026 history",
-                "The protocol requires four final-test events and "
-                "five earlier development events. Zero events currently pass the dataset review.",
-            ),
-        ):
-            st.markdown(f"**{title}**")
-            st.write(text)
-        st.info(
-            "Practice, qualifying-lap and weather inputs remain unavailable. A reviewed core "
-            "experiment can proceed without them once the required evidence exists."
-        )
-        with st.expander("Saved acquisition and exclusion details"):
-            for line in status["blockers"]:
-                st.markdown(f"- {line}")
-            ui.table(exp.exclusions[["event_id", "year", "reasons"]])
-    with evaluation:
-        left, right = st.columns(2)
-        left.metric("Development events scored", status["development_evaluated_events"])
-        right.metric("Final-test events scored", status["final_evaluated_events"])
-        st.markdown(
-            "**No final-test manifest or model lock has been created.** "
-            "The real evaluation ledger is unclaimed."
-        )
-        st.caption("Planned comparisons below have not run. Blank metric values are not zero loss.")
-        task = st.selectbox(
-            "Prediction task",
-            ["qualifying", "race", "podium"],
-            format_func={
-                "qualifying": "Qualifying order",
-                "race": "Race order",
-                "podium": "Podium probabilities",
-            }.get,
-            key="real_evaluation_task",
-        )
-        records = exp.evaluation_records.loc[exp.evaluation_records.task.eq(task)].copy()
-        records["status"] = "Not run"
-        ui.table(records)
-        st.info(status["prior_consultation"])
-        with st.expander("Predeclared evaluation plan"):
-            st.json(status["protocol"])
-    with provenance:
-        st.markdown("**Historical reconstruction from real source observations.**")
-        st.write("Training cutoffs: none; no real model has been fitted.")
-        st.caption("Synthetic demo models and their sealed evaluation remain separate.")
-        with st.expander("Snapshot identity and integrity"):
-            st.code(status["source_snapshot_id"], language=None)
-            st.caption(f"Experiment receipt: {exp.experiment_receipt['id']}")
-            st.caption("Saved receipts were verified before display. The source snapshot is fixed.")
-        ui.table(exp.group_coverage)
-        downloads = (
-            ("Review report", exp.report.encode(), "review.md", "text/markdown"),
-            (
-                "Season coverage",
-                exp.coverage["seasons"].to_csv(index=False).encode(),
-                "coverage.csv",
-                "text/csv",
-            ),
-            (
-                "Event exclusions",
-                exp.exclusions.to_csv(index=False).encode(),
-                "exclusions.csv",
-                "text/csv",
-            ),
-            (
-                "Evaluation records",
-                exp.evaluation_records.to_csv(index=False).encode(),
-                "evaluation.csv",
-                "text/csv",
-            ),
-        )
-        for label, data, suffix, mime in downloads:
-            st.download_button(
-                label, data, file_name=f"{status['experiment_id']}-{suffix}", mime=mime
+    if coverage.open:
+        with coverage:
+            st.subheader("Collected sessions by season")
+            ui.table(coverage_summary(sessions))
+            st.caption(
+                "Collected / past scheduled sessions. Future and Sprint sessions are excluded from "
+                "these denominators. A past schedule is not evidence of actual completion."
             )
+            year = ui.selection().season or 2026
+            st.subheader(f"{year} event coverage")
+            frame = event_coverage(exp, year)
+            missing_only = st.checkbox(
+                "Show events with missing results only", key="real_missing_only"
+            )
+            if missing_only:
+                frame = frame.loc[
+                    frame["Qualifying results"].ne("Collected")
+                    | frame["Race results"].ne("Collected")
+                ]
+            ui.table(
+                frame[
+                    [
+                        "Round",
+                        "Grand Prix",
+                        "Qualifying results",
+                        "Race results",
+                        "qualifying_drivers",
+                        "race_drivers",
+                        "Model eligibility",
+                    ]
+                ],
+                {"qualifying_drivers": "Q drivers", "race_drivers": "Race drivers"},
+            )
+            st.caption(
+                "Use the sidebar season to inspect another year. Fields are preserved separately."
+            )
+            with st.expander("Session detail for the selected Grand Prix"):
+                if ui.selection().event_id:
+                    ui.table(
+                        exp.sessions(ui.selection().event_id)[
+                            [
+                                "kind",
+                                "scheduled_start",
+                                "completion_state",
+                                "results_rows",
+                                "laps_rows",
+                                "weather_rows",
+                                "results_availability",
+                                "laps_availability",
+                            ]
+                        ]
+                    )
+    if blockers.open:
+        with blockers:
+            st.subheader("Required before a core model can train")
+            for title, text in (
+                (
+                    "Verified availability",
+                    "There are no verified absolute completion timestamps. "
+                    "Scheduled end times and retrieval times cannot stand in for completion.",
+                ),
+                (
+                    "Independent entrant and cutoff reviews",
+                    "Driver and team rosters must have evidence "
+                    "that they were known at each prediction cutoff. "
+                    "Eventual results cannot supply them.",
+                ),
+                (
+                    "Enough reviewed 2026 history",
+                    "The protocol requires four final-test events and "
+                    "five earlier development events. "
+                    "Zero events currently pass the dataset review.",
+                ),
+            ):
+                st.markdown(f"**{title}**")
+                st.write(text)
+            st.info(
+                "Practice, qualifying-lap and weather inputs remain unavailable. A reviewed core "
+                "experiment can proceed without them once the required evidence exists."
+            )
+            with st.expander("Saved acquisition and exclusion details"):
+                for line in status["blockers"]:
+                    st.markdown(f"- {line}")
+                ui.table(exp.exclusions[["event_id", "year", "reasons"]])
+    if evaluation.open:
+        with evaluation:
+            left, right = st.columns(2)
+            left.metric("Development events scored", status["development_evaluated_events"])
+            right.metric("Final-test events scored", status["final_evaluated_events"])
+            st.markdown(
+                "**No final-test manifest or model lock has been created.** "
+                "The real evaluation ledger is unclaimed."
+            )
+            st.caption(
+                "Planned comparisons below have not run. Blank metric values are not zero loss."
+            )
+            task = st.selectbox(
+                "Prediction task",
+                ["qualifying", "race", "podium"],
+                format_func={
+                    "qualifying": "Qualifying order",
+                    "race": "Race order",
+                    "podium": "Podium probabilities",
+                }.get,
+                key="real_evaluation_task",
+            )
+            records = exp.evaluation_records.loc[exp.evaluation_records.task.eq(task)].copy()
+            records["status"] = "Not run"
+            ui.table(records)
+            st.info(status["prior_consultation"])
+            with st.expander("Predeclared evaluation plan"):
+                st.json(status["protocol"])
+    if provenance.open:
+        with provenance:
+            st.markdown("**Historical reconstruction from real source observations.**")
+            st.write("Training cutoffs: none; no real model has been fitted.")
+            st.caption("Synthetic demo models and their sealed evaluation remain separate.")
+            with st.expander("Snapshot identity and integrity"):
+                st.code(status["source_snapshot_id"], language=None)
+                st.caption(f"Experiment receipt: {exp.experiment_receipt['id']}")
+                st.caption(
+                    "Saved receipts were verified before display. The source snapshot is fixed."
+                )
+            ui.table(exp.group_coverage)
+            downloads = (
+                ("Review report", exp.report.encode(), "review.md", "text/markdown"),
+                (
+                    "Season coverage",
+                    exp.coverage["seasons"].to_csv(index=False).encode(),
+                    "coverage.csv",
+                    "text/csv",
+                ),
+                (
+                    "Event exclusions",
+                    exp.exclusions.to_csv(index=False).encode(),
+                    "exclusions.csv",
+                    "text/csv",
+                ),
+                (
+                    "Evaluation records",
+                    exp.evaluation_records.to_csv(index=False).encode(),
+                    "evaluation.csv",
+                    "text/csv",
+                ),
+            )
+            for label, data, suffix, mime in downloads:
+                st.download_button(
+                    label, data, file_name=f"{status['experiment_id']}-{suffix}", mime=mime
+                )

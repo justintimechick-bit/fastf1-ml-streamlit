@@ -71,9 +71,17 @@ def test_cloud_home_and_filters_never_call_demo_models_or_training(monkeypatch):
     metrics = {m.label: m.value for m in at.metric}
     assert metrics["Result sessions collected"] == "112"
     assert metrics["Real models trained"] == "0"
-    assert len(at.download_button) == 4
+    assert len(at.download_button) == 0  # hidden tables/downloads are not mounted
     at.checkbox(key="real_missing_only").check().run()
     at.segmented_control(key="season_real").set_value(2025).run()
-    at.selectbox(key="real_evaluation_task").set_value("podium").run()
     assert not at.exception and not at.error
     assert at.dataframe[1].value["Grand Prix"].empty  # all 2025 Q/R results were collected
+    at.session_state["real_review_section"] = "Evaluation"
+    at.run()
+    at.selectbox(key="real_evaluation_task").set_value("podium").run()
+    assert not at.exception and not at.error
+    assert set(at.dataframe[0].value.task) == {"podium"}
+    at.session_state["real_review_section"] = "Provenance & downloads"
+    at.run()
+    assert not at.exception and not at.error
+    assert len(at.download_button) == 4
