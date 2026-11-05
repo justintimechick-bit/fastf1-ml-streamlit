@@ -75,7 +75,9 @@ def render():
     )
 
     coverage, blockers, evaluation, provenance = st.tabs(
-        ["Data coverage", "What blocks training", "Evaluation", "Provenance & downloads"]
+        ["Data coverage", "What blocks training", "Evaluation", "Provenance & downloads"],
+        key="real_review_section",
+        on_change="rerun",
     )
     with coverage:
         st.subheader("Collected sessions by season")

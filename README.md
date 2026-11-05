@@ -301,6 +301,10 @@ walkthrough](docs/interface.md).
 
 ## Streamlit Community Cloud
 
+Hosted app: [Pit Wall F1 dashboard](https://fastf1-ml-pit-wall.streamlit.app/).
+Deployment source: [fastf1-ml-streamlit](https://github.com/justintimechick-bit/fastf1-ml-streamlit).
+Only the prepared deployment repository was made public, with the user's approval.
+
 The root entrypoint opens the dedicated **Real-data experiment** dashboard:
 
 ```sh

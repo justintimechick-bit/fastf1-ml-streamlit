@@ -1,5 +1,9 @@
 # Streamlit Community Cloud deployment
 
+Hosted URL: <https://fastf1-ml-pit-wall.streamlit.app/>.
+Source: <https://github.com/justintimechick-bit/fastf1-ml-streamlit> (`main`).
+Deployed through Safari on November 5, 2026 using Python **3.13.18**.
+
 The root `streamlit_app.py` opens **Real-data experiment** by default. The existing
 `src/f1ml_app/streamlit_app.py` remains the classroom entrypoint with its original
 synthetic-demo home page. Both offer the same navigation and dedicated real-data
@@ -45,9 +49,10 @@ the local package so saved-model library versions remain pinned.
    are required to display the prepared artifacts.
 6. Deploy and inspect the build logs, then open the assigned `*.streamlit.app` URL.
 
-Use the repository's existing visibility. The deployment source is private by
-default; visitor access is configured separately in Streamlit. No public site is
-claimed until its deployed URL has loaded successfully.
+The user explicitly approved making only this prepared deployment repository
+public. Streamlit's existing public-repository connection is used; its proposed
+private-repository OAuth access was not granted. Other repositories' visibility
+and permissions were not changed. Visitor access is configured separately in Streamlit.
 
 These fields and Python-version selection follow Streamlit's
 [deployment documentation](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
@@ -70,5 +75,8 @@ LOKY_MAX_CPU_COUNT=4 .venv/bin/pytest -q tests/test_cloud_ui.py tests/test_app.p
 .venv/bin/ruff format --check src tests streamlit_app.py
 ```
 
-The hosted Linux runtime must still be verified from Community Cloud build logs;
-the existing environment and software-test evidence are macOS/Python 3.13.
+The hosted build installed the pinned dependencies and started successfully under
+Linux/Python 3.13.18. Safari loaded the real-data dashboard with 112 result sessions,
+2,263 official result rows and zero trained real models. The app remains a source
+review plus a separately labeled synthetic demo; deployment does not finish the
+blocked real-data training experiment.
