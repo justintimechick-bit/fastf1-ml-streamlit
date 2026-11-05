@@ -1,0 +1,488 @@
+[
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 3.0,
+    "podium_family": "baseline_qualifying",
+    "race_family": "baseline_qualifying",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "fixed_rule"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": true,
+    "event_id": "2026-01",
+    "independent_probability_sum": 3.0,
+    "podium_family": "baseline_recent",
+    "race_family": "baseline_recent",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "fixed_rule"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 3.0155333761641563,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 3.0166074991597,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 2.9255379689754686,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 2.8448958333333345,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 3.1515656233870946,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-01",
+    "independent_probability_sum": 3.164591360031049,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 3.0,
+    "podium_family": "baseline_qualifying",
+    "race_family": "baseline_qualifying",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "fixed_rule"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 3.0,
+    "podium_family": "baseline_recent",
+    "race_family": "baseline_recent",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "fixed_rule"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 2.9838565842936093,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 2.980739082805738,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 2.9739041514041515,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 3.0720661976911976,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 2.9202026659695823,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-02",
+    "independent_probability_sum": 2.883105133881168,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "disagree": false,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.0,
+    "podium_family": "baseline_qualifying",
+    "race_family": "baseline_qualifying",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "fixed_rule"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.0,
+    "podium_family": "baseline_recent",
+    "race_family": "baseline_recent",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "fixed_rule"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "disagree": false,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.024211093102332,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "2026_only"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "disagree": false,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.0101788011832404,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "disagree": false,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.0116786007520004,
+    "podium_family": "gradient_boosting",
+    "race_family": "gradient_boosting",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": false,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.0174801587301587,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "strategy": "2026_only"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": true,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.0691221783635836,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": true,
+    "event_id": "2026-03",
+    "independent_probability_sum": 2.8926415016585985,
+    "podium_family": "random_forest",
+    "race_family": "random_forest",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "weighted"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": true,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.220994053999546,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_1",
+      "synthetic_driver_2",
+      "synthetic_driver_3"
+    ],
+    "strategy": "2026_only"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": true,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.5528208187021546,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "equal"
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_2",
+      "synthetic_driver_3",
+      "synthetic_driver_4"
+    ],
+    "disagree": true,
+    "event_id": "2026-03",
+    "independent_probability_sum": 3.720665434556005,
+    "podium_family": "logistic",
+    "race_family": "ridge",
+    "race_order_top_three": [
+      "synthetic_driver_3",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "strategy": "weighted"
+  }
+]

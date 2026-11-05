@@ -1,0 +1,31 @@
+{
+  "attempt_failures": [
+    {
+      "attempt": 1,
+      "message": "Invalid request to Ergast (https://api.jolpi.ca/ergast/f1/2026/17/results.json)\nServer response: 'Too Many Requests'",
+      "retrieved_at": "2026-11-04T23:12:51.602354+00:00",
+      "retryable": false,
+      "type": "ErgastInvalidRequestError"
+    }
+  ],
+  "attempts": 0,
+  "cache_generation": 0,
+  "completion_state": "unknown",
+  "component": "results",
+  "errors": [],
+  "event_id": "2026-17",
+  "fastf1_version": "3.8.1",
+  "kind": "Race",
+  "normalization_errors": [],
+  "normalized_at": "2026-11-04T23:21:17.645901+00:00",
+  "normalized_tables": [],
+  "reparsed_from": "records/2026-17/R/results/b0f9268fe56f4eaab02573c32fc8523a",
+  "retrieved_at": "2026-11-04T23:12:51.602677+00:00",
+  "session_id": "2026-17/R",
+  "source": "fastf1_public_interface",
+  "source_columns": {},
+  "source_missing_counts": {},
+  "status": "failed",
+  "team_mapping_id": "a0511febf3d684c544a004a7accde81efbf61f387255b30596e98b6286369cfa",
+  "transform_version": "2.1.0"
+}

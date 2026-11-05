@@ -1,0 +1,11 @@
+{
+  "files": {
+    "model.joblib": "34436cb5c1dd856841eca866b10652f83adb59b708fdc7042f59aefc228d1629",
+    "model.json": "a04c573d77496fd01ed3abce98905cc1c037b493a20a8ffba53961492e3f2744",
+    "postprocess_training.parquet": "2548cb1d71d337537ca1b71e53f2bdd5ae9a1e2cefadb2832f3b45bfe8f6ae3e"
+  },
+  "id": "78397825ee9dbae861f62418361df48d31953a82809160eb96ad370e66bd3a83",
+  "kind": "race_podium_model",
+  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd",
+  "task": "podium"
+}

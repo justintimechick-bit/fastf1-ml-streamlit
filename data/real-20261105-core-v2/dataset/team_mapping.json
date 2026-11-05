@@ -1,0 +1,155 @@
+{
+  "policy": "Aliases establish identity only. Different history_id values explicitly separate renamed or new team eras; no model history pooling is implied.",
+  "rules": [
+    {
+      "first_year": 2024,
+      "history_id": "red_bull",
+      "last_year": 2026,
+      "source_id": "red_bull",
+      "source_names": [
+        "Red Bull",
+        "Red Bull Racing"
+      ],
+      "team_id": "red_bull"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "ferrari",
+      "last_year": 2026,
+      "source_id": "ferrari",
+      "source_names": [
+        "Ferrari"
+      ],
+      "team_id": "ferrari"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "mclaren",
+      "last_year": 2026,
+      "source_id": "mclaren",
+      "source_names": [
+        "McLaren"
+      ],
+      "team_id": "mclaren"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "mercedes",
+      "last_year": 2026,
+      "source_id": "mercedes",
+      "source_names": [
+        "Mercedes"
+      ],
+      "team_id": "mercedes"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "aston_martin",
+      "last_year": 2026,
+      "source_id": "aston_martin",
+      "source_names": [
+        "Aston Martin"
+      ],
+      "team_id": "aston_martin"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "alpine",
+      "last_year": 2026,
+      "source_id": "alpine",
+      "source_names": [
+        "Alpine F1 Team",
+        "Alpine"
+      ],
+      "team_id": "alpine"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "williams",
+      "last_year": 2026,
+      "source_id": "williams",
+      "source_names": [
+        "Williams"
+      ],
+      "team_id": "williams"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "haas",
+      "last_year": 2026,
+      "source_id": "haas",
+      "source_names": [
+        "Haas F1 Team",
+        "Haas"
+      ],
+      "team_id": "haas"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "rb_2024",
+      "last_year": 2024,
+      "source_id": "rb",
+      "source_names": [
+        "RB F1 Team",
+        "RB"
+      ],
+      "team_id": "racing_bulls"
+    },
+    {
+      "first_year": 2025,
+      "history_id": "racing_bulls_2025_onward",
+      "last_year": 2026,
+      "source_id": "rb",
+      "source_names": [
+        "RB F1 Team",
+        "Racing Bulls"
+      ],
+      "team_id": "racing_bulls"
+    },
+    {
+      "first_year": 2025,
+      "history_id": "racing_bulls_2025_onward",
+      "last_year": 2026,
+      "source_id": "racing_bulls",
+      "source_names": [
+        "Racing Bulls"
+      ],
+      "team_id": "racing_bulls"
+    },
+    {
+      "first_year": 2024,
+      "history_id": "kick_sauber_2024_2025",
+      "last_year": 2025,
+      "source_id": "sauber",
+      "source_names": [
+        "Sauber",
+        "Kick Sauber",
+        "Stake F1 Team Kick Sauber"
+      ],
+      "team_id": "sauber"
+    },
+    {
+      "first_year": 2026,
+      "history_id": "audi_2026",
+      "last_year": 2026,
+      "source_id": "audi",
+      "source_names": [
+        "Audi"
+      ],
+      "team_id": "audi"
+    },
+    {
+      "first_year": 2026,
+      "history_id": "cadillac_2026",
+      "last_year": 2026,
+      "source_id": "cadillac",
+      "source_names": [
+        "Cadillac",
+        "Cadillac F1 Team"
+      ],
+      "team_id": "cadillac"
+    }
+  ],
+  "source": "Reviewed Jolpica constructor IDs/names; update explicitly when coverage reports an unmapped alias.",
+  "version": "2"
+}

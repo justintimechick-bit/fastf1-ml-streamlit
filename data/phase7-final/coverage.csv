@@ -1,0 +1,13 @@
+task,event_id,expected_entrants,source_rows,field_mismatches,missing_positions,missing_podium_targets,outcomes,condition
+qualifying,2026-04,6,6,0,0,6,{'ordered': 6},unknown
+qualifying,2026-05,7,7,0,0,7,{'ordered': 7},unknown
+qualifying,2026-06,6,6,0,0,6,{'ordered': 6},unknown
+qualifying,2026-07,7,7,0,0,7,{'ordered': 7},unknown
+race,2026-04,6,6,0,0,0,{'ordered': 6},unknown
+race,2026-05,7,7,0,0,0,{'ordered': 7},unknown
+race,2026-06,6,6,0,0,0,{'ordered': 6},unknown
+race,2026-07,7,7,0,0,0,{'ordered': 7},unknown
+podium,2026-04,6,6,0,0,0,{'ordered': 6},unknown
+podium,2026-05,7,7,0,0,0,{'ordered': 7},unknown
+podium,2026-06,6,6,0,0,0,{'ordered': 6},unknown
+podium,2026-07,7,7,0,0,0,{'ordered': 7},unknown

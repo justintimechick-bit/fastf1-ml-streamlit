@@ -1,0 +1,61 @@
+year,event_id,role,kind,completed,official_results,lap_table_available,weather_table_available
+2024,2024-01,development,Practice 1,True,False,False,False
+2024,2024-01,development,Practice 2,True,False,False,False
+2024,2024-01,development,Practice 3,True,False,False,False
+2024,2024-01,development,Qualifying,True,True,False,False
+2024,2024-01,development,Race,True,True,False,False
+2024,2024-02,development,Practice 1,True,False,False,False
+2024,2024-02,development,Sprint Qualifying,False,False,False,False
+2024,2024-02,development,Sprint,False,False,False,False
+2024,2024-02,development,Qualifying,True,True,False,False
+2024,2024-02,development,Race,True,True,False,False
+2025,2025-01,development,Practice 1,True,False,False,False
+2025,2025-01,development,Practice 2,True,False,False,False
+2025,2025-01,development,Practice 3,True,False,False,False
+2025,2025-01,development,Qualifying,True,True,False,False
+2025,2025-01,development,Race,True,True,False,False
+2025,2025-02,development,Practice 1,True,False,False,False
+2025,2025-02,development,Sprint Qualifying,False,False,False,False
+2025,2025-02,development,Sprint,False,False,False,False
+2025,2025-02,development,Qualifying,True,True,False,False
+2025,2025-02,development,Race,True,True,False,False
+2026,2026-01,development,Practice 1,True,False,False,False
+2026,2026-01,development,Practice 2,True,False,False,False
+2026,2026-01,development,Practice 3,True,False,False,False
+2026,2026-01,development,Qualifying,True,True,False,False
+2026,2026-01,development,Race,True,True,False,False
+2026,2026-02,development,Practice 1,True,False,False,False
+2026,2026-02,development,Sprint Qualifying,False,False,False,False
+2026,2026-02,development,Sprint,False,False,False,False
+2026,2026-02,development,Qualifying,True,True,False,False
+2026,2026-02,development,Race,True,True,False,False
+2026,2026-03,development,Practice 1,True,False,False,False
+2026,2026-03,development,Practice 2,True,False,False,False
+2026,2026-03,development,Practice 3,True,False,False,False
+2026,2026-03,development,Qualifying,True,True,False,False
+2026,2026-03,development,Race,True,True,False,False
+2026,2026-04,test,Practice 1,True,False,False,False
+2026,2026-04,test,Practice 2,True,False,False,False
+2026,2026-04,test,Practice 3,True,False,False,False
+2026,2026-04,test,Qualifying,True,True,False,False
+2026,2026-04,test,Race,True,True,False,False
+2026,2026-05,test,Practice 1,True,False,False,False
+2026,2026-05,test,Practice 2,True,False,False,False
+2026,2026-05,test,Practice 3,True,False,False,False
+2026,2026-05,test,Qualifying,True,True,False,False
+2026,2026-05,test,Race,True,True,False,False
+2026,2026-06,test,Practice 1,True,False,False,False
+2026,2026-06,test,Practice 2,True,False,False,False
+2026,2026-06,test,Practice 3,True,False,False,False
+2026,2026-06,test,Qualifying,True,True,False,False
+2026,2026-06,test,Race,True,True,False,False
+2026,2026-07,test,Practice 1,True,False,False,False
+2026,2026-07,test,Practice 2,True,False,False,False
+2026,2026-07,test,Practice 3,True,False,False,False
+2026,2026-07,test,Qualifying,True,True,False,False
+2026,2026-07,test,Race,True,True,False,False
+2026,2026-08,excluded,Practice 1,False,False,False,False
+2026,2026-08,excluded,Practice 2,False,False,False,False
+2026,2026-08,excluded,Practice 3,False,False,False,False
+2026,2026-08,excluded,Qualifying,False,False,False,False
+2026,2026-08,excluded,Race,False,False,False,False

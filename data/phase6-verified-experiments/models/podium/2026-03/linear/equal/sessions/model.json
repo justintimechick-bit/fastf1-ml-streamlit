@@ -1,0 +1,270 @@
+{
+  "artifact_version": "race-podium-1",
+  "calibration": {
+    "coefficient": [
+      [
+        1.1661880622176668
+      ]
+    ],
+    "events": [
+      "2026-01",
+      "2026-02"
+    ],
+    "intercept": [
+      -0.10694752368681683
+    ],
+    "method": "sigmoid_of_raw_logit",
+    "parameters": {
+      "C": 1.0,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 1000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "status": "fitted_earlier_oof"
+  },
+  "dependency_events": [
+    "2024-01",
+    "2024-02",
+    "2025-01",
+    "2025-02",
+    "2026-01",
+    "2026-02"
+  ],
+  "estimator_parameters": {
+    "C": 1.0,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 2000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 42,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "experiment": {
+    "group": "sessions",
+    "implementation_id": "590bd1d598e38d521f321b24e5e3ed2ffb7e8ab74a0d9db853c7e4bc8652421c",
+    "version": "experiments-1"
+  },
+  "family": "logistic",
+  "feature_code_id": "bf5e59ce8e1a9ee32a44cc558aa072d1ec26e54a73c14a1645a6ea0cf812dcd0",
+  "feature_snapshot_id": "ccc37825281ab0102fb44f15dc516e04211ad3896fec45bfbf78b71699c3a64d",
+  "feature_version": "3.0.0",
+  "grid_policy": "only Phase 3 externally evidenced known_grid_*; never Race.results grid",
+  "joblib": "1.6.0",
+  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd",
+  "max_feature_cutoff": "2026-03-16T16:00:00+00:00",
+  "max_label_end": "2026-03-17T16:00:00+00:00",
+  "max_label_retrieved_at": "2026-07-01T00:00:00+00:00",
+  "max_weekend_end": "2026-03-17T16:00:00+00:00",
+  "missing_targets": 0,
+  "model_feature_columns": [
+    "season",
+    "round",
+    "regulation_2026",
+    "field_size",
+    "circuit_identity_verified",
+    "previous_qualifying_rank",
+    "previous_qualifying_rank_missing",
+    "qualifying_rank_mean_3",
+    "qualifying_rank_mean_3_missing",
+    "qualifying_rank_count_3",
+    "teammate_qualifying_delta_mean_3",
+    "teammate_qualifying_delta_mean_3_missing",
+    "teammate_qualifying_delta_count_3",
+    "team_qualifying_strength_mean_3",
+    "team_qualifying_strength_mean_3_missing",
+    "team_qualifying_strength_count_3",
+    "qualifying_rank_mean_5",
+    "qualifying_rank_mean_5_missing",
+    "qualifying_rank_count_5",
+    "teammate_qualifying_delta_mean_5",
+    "teammate_qualifying_delta_mean_5_missing",
+    "teammate_qualifying_delta_count_5",
+    "team_qualifying_strength_mean_5",
+    "team_qualifying_strength_mean_5_missing",
+    "team_qualifying_strength_count_5",
+    "team_prior_qualifying_strength",
+    "team_prior_qualifying_strength_missing",
+    "team_prior_qualifying_count",
+    "circuit_prior_qualifying_rank",
+    "circuit_prior_qualifying_rank_missing",
+    "circuit_prior_qualifying_count",
+    "previous_race_rank",
+    "previous_race_rank_missing",
+    "race_rank_mean_3",
+    "race_rank_mean_3_missing",
+    "race_rank_count_3",
+    "teammate_race_delta_mean_3",
+    "teammate_race_delta_mean_3_missing",
+    "teammate_race_delta_count_3",
+    "team_race_strength_mean_3",
+    "team_race_strength_mean_3_missing",
+    "team_race_strength_count_3",
+    "race_rank_mean_5",
+    "race_rank_mean_5_missing",
+    "race_rank_count_5",
+    "teammate_race_delta_mean_5",
+    "teammate_race_delta_mean_5_missing",
+    "teammate_race_delta_count_5",
+    "team_race_strength_mean_5",
+    "team_race_strength_mean_5_missing",
+    "team_race_strength_count_5",
+    "team_prior_race_strength",
+    "team_prior_race_strength_missing",
+    "team_prior_race_count",
+    "circuit_prior_race_rank",
+    "circuit_prior_race_rank_missing",
+    "circuit_prior_race_count",
+    "podium_rate_3",
+    "podium_rate_3_missing",
+    "podium_count_3",
+    "podium_rate_5",
+    "podium_rate_5_missing",
+    "podium_count_5",
+    "retirement_rate_3",
+    "retirement_rate_3_missing",
+    "retirement_count_3",
+    "retirement_rate_5",
+    "retirement_rate_5_missing",
+    "retirement_count_5",
+    "history_count",
+    "history_quali_mean",
+    "history_race_mean",
+    "history_podium_rate",
+    "practice_sessions",
+    "practice_result_rank_norm",
+    "practice_result_cells",
+    "qualifying_rank_norm",
+    "qualifying_rank_norm_missing",
+    "qualifying_classification_count",
+    "known_grid_rank_norm",
+    "known_grid_rank_norm_missing",
+    "known_pit_lane_start",
+    "driver_id",
+    "team_history_id",
+    "circuit_id"
+  ],
+  "modes": [
+    "historical_reconstruction"
+  ],
+  "numpy": "2.3.5",
+  "optional_snapshot_id": "1b3d5565b0094572e44779ee6135c68312f95bdf9917810389a41e217f52401d",
+  "output_meaning": "independent marginal podium probabilities; no sum constraint",
+  "pandas": "2.3.3",
+  "parameters": {
+    "C": 1.0
+  },
+  "parameters_policy": "fixed matched settings; no group-specific tuning",
+  "postprocess_folds": [
+    {
+      "train": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02"
+      ],
+      "validate": "2026-01"
+    },
+    {
+      "train": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02",
+        "2026-01"
+      ],
+      "validate": "2026-02"
+    }
+  ],
+  "python": "3.13.13",
+  "role": "experimental_development_fold",
+  "seed": 42,
+  "single_class_fallback": false,
+  "sklearn": "1.9.1",
+  "strategy": "equal",
+  "target": "official race podium",
+  "task": "podium",
+  "threshold": {
+    "candidates": [
+      {
+        "mean_event_f1": 0.8571428571428571,
+        "threshold": 0.1
+      },
+      {
+        "mean_event_f1": 0.9285714285714286,
+        "threshold": 0.2
+      },
+      {
+        "mean_event_f1": 1.0,
+        "threshold": 0.3
+      },
+      {
+        "mean_event_f1": 1.0,
+        "threshold": 0.4
+      },
+      {
+        "mean_event_f1": 1.0,
+        "threshold": 0.5
+      },
+      {
+        "mean_event_f1": 1.0,
+        "threshold": 0.6
+      },
+      {
+        "mean_event_f1": 1.0,
+        "threshold": 0.7
+      },
+      {
+        "mean_event_f1": 1.0,
+        "threshold": 0.8
+      },
+      {
+        "mean_event_f1": 0.8,
+        "threshold": 0.9
+      }
+    ],
+    "events": [
+      "2026-01",
+      "2026-02"
+    ],
+    "objective": "maximum equal-event F1; closest to 0.5, then higher threshold",
+    "status": "selected_earlier_oof",
+    "value": 0.5
+  },
+  "tie_rule": "ascending raw_score, then ascending stable driver_id (exact scores, no rounding)",
+  "train_events": [
+    "2024-01",
+    "2024-02",
+    "2025-01",
+    "2025-02",
+    "2026-01",
+    "2026-02"
+  ],
+  "train_rows": 39,
+  "training_event_weights": {
+    "2024-01": 1.0,
+    "2024-02": 1.0,
+    "2025-01": 1.0,
+    "2025-02": 1.0,
+    "2026-01": 1.0,
+    "2026-02": 1.0
+  },
+  "weight_formula": "event_weight / labeled_driver_count, normalized to mean row weight 1; weighted event_weight = season_weight * 2**(-age_in_earlier_eligible_events / half_life); season_weight: 2024=0.5, 2025=1, 2026=tuned; equal/2026_only event_weight=1",
+  "weight_profile": {}
+}

@@ -1,0 +1,115 @@
+[
+  {
+    "eligible": false,
+    "event_id": "2026-01",
+    "reason": "needs_2_usable_training_events",
+    "strategy": "2026_only",
+    "training_event_count": 0,
+    "training_events": []
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-01",
+    "reason": null,
+    "strategy": "equal",
+    "training_event_count": 4,
+    "training_events": [
+      "2024-01",
+      "2024-02",
+      "2025-01",
+      "2025-02"
+    ]
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-01",
+    "reason": null,
+    "strategy": "weighted",
+    "training_event_count": 4,
+    "training_events": [
+      "2024-01",
+      "2024-02",
+      "2025-01",
+      "2025-02"
+    ]
+  },
+  {
+    "eligible": false,
+    "event_id": "2026-02",
+    "reason": "needs_2_usable_training_events",
+    "strategy": "2026_only",
+    "training_event_count": 1,
+    "training_events": [
+      "2026-01"
+    ]
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-02",
+    "reason": null,
+    "strategy": "equal",
+    "training_event_count": 5,
+    "training_events": [
+      "2024-01",
+      "2024-02",
+      "2025-01",
+      "2025-02",
+      "2026-01"
+    ]
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-02",
+    "reason": null,
+    "strategy": "weighted",
+    "training_event_count": 5,
+    "training_events": [
+      "2024-01",
+      "2024-02",
+      "2025-01",
+      "2025-02",
+      "2026-01"
+    ]
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-03",
+    "reason": null,
+    "strategy": "2026_only",
+    "training_event_count": 2,
+    "training_events": [
+      "2026-01",
+      "2026-02"
+    ]
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-03",
+    "reason": null,
+    "strategy": "equal",
+    "training_event_count": 6,
+    "training_events": [
+      "2024-01",
+      "2024-02",
+      "2025-01",
+      "2025-02",
+      "2026-01",
+      "2026-02"
+    ]
+  },
+  {
+    "eligible": true,
+    "event_id": "2026-03",
+    "reason": null,
+    "strategy": "weighted",
+    "training_event_count": 6,
+    "training_events": [
+      "2024-01",
+      "2024-02",
+      "2025-01",
+      "2025-02",
+      "2026-01",
+      "2026-02"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+year,feature_group,sessions,observed_sessions,observed_rows,cutoff_verified_sessions
+2024,comparable_pace,84,0,0,0
+2024,official_results,48,48,958,0
+2024,practice_laps,60,0,0,0
+2024,qualifying_laps,24,0,0,0
+2024,weather_observations,108,0,0,0
+2025,comparable_pace,84,0,0,0
+2025,official_results,48,48,958,0
+2025,practice_laps,60,0,0,0
+2025,qualifying_laps,24,0,0,0
+2025,weather_observations,108,0,0,0
+2026,comparable_pace,80,0,0,0
+2026,official_results,46,16,347,0
+2026,practice_laps,57,0,0,0
+2026,qualifying_laps,23,0,0,0
+2026,weather_observations,103,0,0,0

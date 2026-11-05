@@ -1,0 +1,17 @@
+{
+  "feature_policy": "core; optional groups not promoted under development evidence gates",
+  "first_test_weekend": "2026-03-29T10:00:00+00:00",
+  "limits": [
+    "Integrity/lineage audit cannot prove absence of unlogged human access.",
+    "Manifest eligibility inspected outcome availability before freezing, not model quality.",
+    "Synthetic fixtures share a generator; they do not establish real-world independence."
+  ],
+  "models_checked": 228,
+  "receipts": {
+    "core": "ccc37825281ab0102fb44f15dc516e04211ad3896fec45bfbf78b71699c3a64d",
+    "experiments": "b3e8dd73098168f72a98adb3ede011cd0e1ccea1584b1cd2db25fa10bdfa88ae",
+    "qualifying": "911ef333cd8d600a851515974d9717a63813aaf980b5870c944c98e2a8bc8839",
+    "race": "891b065891bb56ae9dc6b116ac4089a5d50f999ab38c6c5d9928bd9dc6d6093a"
+  },
+  "status": "no_recorded_test_outcome_dependencies"
+}

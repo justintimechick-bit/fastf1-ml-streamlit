@@ -1,0 +1,9 @@
+{
+  "files": {
+    "model.joblib": "39b7f9d83ee19247b08d5696a58604e4857cc2b12dc32a88a6b60b51e34056f2",
+    "model.json": "7ee61cec54d04e571dc826754331c44e4c98680c4c3b2b885171678578127d9f"
+  },
+  "id": "f7a73a5614d6323b6c2a9ab8d7c5f1c40b16f4cf857fddd0aa2313b944973535",
+  "kind": "qualifying_model",
+  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd"
+}

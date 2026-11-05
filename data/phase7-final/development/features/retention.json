@@ -1,0 +1,751 @@
+[
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "history",
+    "mean_improvement_vs_core": -0.5709673412920475,
+    "mean_improvement_vs_previous": -0.5709673412920475,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.3094270044109557,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.5709673412920475,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 0.896124490807521,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.2321007114959992,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.898053497615962,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.8107428645449438,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "history",
+    "mean_improvement_vs_core": -0.480318682627728,
+    "mean_improvement_vs_previous": -0.480318682627728,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.0040214782156176,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "sessions",
+    "mean_improvement_vs_core": -7.216449660063518e-15,
+    "mean_improvement_vs_previous": 0.48031868262772076,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.4972092878206749,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "practice",
+    "mean_improvement_vs_core": 1.3988810110276972e-14,
+    "mean_improvement_vs_previous": 2.120525977034049e-14,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.059275478374549,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 3.9968028886505635e-15,
+    "mean_improvement_vs_previous": -9.992007221626409e-15,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.0166404895345473,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "weather",
+    "mean_improvement_vs_core": 2.55351295663786e-15,
+    "mean_improvement_vs_previous": -1.4432899320127035e-15,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9976420285860302,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "history",
+    "mean_improvement_vs_core": -0.17764659714176317,
+    "mean_improvement_vs_previous": -0.17764659714176317,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.0121091516517646,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.025645375339642007,
+    "mean_improvement_vs_previous": 0.20329197248140518,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence"
+    ],
+    "runtime_ratio_vs_core": 1.0048568384994765,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "practice",
+    "mean_improvement_vs_core": -0.01772837179477893,
+    "mean_improvement_vs_previous": -0.04337374713442094,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.0228866650474844,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "telemetry",
+    "mean_improvement_vs_core": -0.050822256505902164,
+    "mean_improvement_vs_previous": -0.033093884711123234,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.0414203255438383,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "weather",
+    "mean_improvement_vs_core": -0.021674091979130727,
+    "mean_improvement_vs_previous": 0.029148164526771436,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.3113415672361046,
+    "strategy": "equal",
+    "task": "podium"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "history",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 0.9604700925632231,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9112823614302961,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9637065682406512,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.8673215497733071,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9391562691351046,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "history",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 0.8494885894475702,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.1654802026614162,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.0078949597615325,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.2912379807744023,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.8906344626285954,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "history",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 0.9932427993261848,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9651381532945683,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9525230921770884,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9389436425285199,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.945247168309233,
+    "strategy": "equal",
+    "task": "qualifying"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "history",
+    "mean_improvement_vs_core": -1.142857142857143,
+    "mean_improvement_vs_previous": -1.142857142857143,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.0857736014566983,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 1.142857142857143,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.0087242723889185,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9871477903352393,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.1159395205150267,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "gradient_boosting",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.0514646172908393,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "history",
+    "mean_improvement_vs_core": -0.4761904761904763,
+    "mean_improvement_vs_previous": -0.4761904761904763,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 0.7771694121637639,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.4761904761904763,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 0.8037591222467267,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.7467898443988733,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.7394677956986134,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "linear",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.7184438174671439,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "history",
+    "mean_improvement_vs_core": -1.1587301587301588,
+    "mean_improvement_vs_previous": -1.1587301587301588,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.0172367602430878,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "sessions",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 1.1587301587301588,
+    "observed_fraction": 1.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement"
+    ],
+    "runtime_ratio_vs_core": 1.0214683254095938,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "practice",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9995214622918707,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "telemetry",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 1.0018003694764868,
+    "strategy": "equal",
+    "task": "race"
+  },
+  {
+    "decision": "do_not_promote",
+    "family": "random_forest",
+    "group": "weather",
+    "mean_improvement_vs_core": 0.0,
+    "mean_improvement_vs_previous": 0.0,
+    "observed_fraction": 0.0,
+    "paired_events": 3,
+    "reasons": [
+      "not_verified_live_evidence",
+      "insufficient_loss_improvement",
+      "insufficient_optional_observations"
+    ],
+    "runtime_ratio_vs_core": 0.9828884800724188,
+    "strategy": "equal",
+    "task": "race"
+  }
+]

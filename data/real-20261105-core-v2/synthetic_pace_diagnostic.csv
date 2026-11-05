@@ -1,0 +1,6 @@
+data_kind,task,feature,observed_rows,total_rows
+synthetic_validation,qualifying,practice_gap_pct,0,46
+synthetic_validation,race,practice_gap_pct,0,46
+synthetic_validation,race,qualifying_q1_gap_pct,0,46
+synthetic_validation,race,qualifying_q2_gap_pct,0,46
+synthetic_validation,race,qualifying_q3_gap_pct,0,46

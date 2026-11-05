@@ -1,0 +1,62 @@
+[
+  {
+    "classifier_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ],
+    "disagree": false,
+    "event_id": "2026-04",
+    "independent_probability_sum": 2.995045256816445,
+    "race_order_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_4",
+      "synthetic_driver_5"
+    ]
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_5",
+      "synthetic_driver_6"
+    ],
+    "disagree": false,
+    "event_id": "2026-05",
+    "independent_probability_sum": 3.006481730772233,
+    "race_order_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_5",
+      "synthetic_driver_6"
+    ]
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_1",
+      "synthetic_driver_2"
+    ],
+    "disagree": false,
+    "event_id": "2026-06",
+    "independent_probability_sum": 2.995045256816445,
+    "race_order_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_1",
+      "synthetic_driver_2"
+    ]
+  },
+  {
+    "classifier_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_1",
+      "synthetic_driver_2"
+    ],
+    "disagree": false,
+    "event_id": "2026-07",
+    "independent_probability_sum": 3.006481730772233,
+    "race_order_top_three": [
+      "synthetic_driver_0",
+      "synthetic_driver_1",
+      "synthetic_driver_2"
+    ]
+  }
+]

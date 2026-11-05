@@ -1,0 +1,20 @@
+# Phase 8 interface additions, verified on macOS ARM / CPython 3.13 on top of
+# requirements.lock.txt (no changes to any pin there). No wheel hashes.
+# Install after the core lock:  python -m pip install -r requirements-app.lock.txt
+altair==6.3.0
+anyio==4.16.0
+click==8.5.0
+h11==0.16.0
+itsdangerous==2.2.0
+Jinja2==3.1.6
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+MarkupSafe==3.0.4
+protobuf==7.36.2
+pydeck==0.9.3
+python-multipart==0.0.33
+referencing==0.37.0
+rpds-py==2026.9.1
+starlette==1.10.0
+streamlit==1.66.1
+uvicorn==0.54.0

@@ -1,0 +1,12 @@
+{
+  "files": {
+    "features.csv": "14b06ee0dd44c63ee15fcf2ffbb3b66fa16ed2bfa7be4057afb665f90ef463e1",
+    "features.parquet": "82e8dbe1d96703d4a6a7b6ff3a9cffefd8b527dc086215ebcbc3c14fc48c98eb",
+    "predictions.csv": "758ec815e8b40ec4a9a72a0f3830c81127f73a4f55d10c15954d603b0408fb06",
+    "predictions.parquet": "dc5d5e637fdf8c0359a65a77791cd0f86fd420ba058b7f066f0aff4bd3fac7c8"
+  },
+  "id": "48afd7f6c915d9c15cb042c1abfeeb9aba6109b5524ab433e85a714fd56d40cc",
+  "kind": "forecasts_before_scoring",
+  "lock_id": "0f22d28a3240d522ad0906f01d3e95e8c34f14e6fc6094e7048f35f627db6ec8",
+  "sealed_at": "2026-11-05T13:03:16.042747+00:00"
+}

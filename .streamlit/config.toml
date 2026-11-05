@@ -1,0 +1,37 @@
+# Streamlit settings for the Phase 8 interface. Read from the project root.
+
+[server]
+headless = true
+runOnSave = false
+# Never rerun because a source file changed during a demo.
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+font = "sans-serif"
+baseRadius = "0.55rem"
+buttonRadius = "0.5rem"
+showSidebarBorder = true
+
+[theme.light]
+primaryColor = "#d7263d"
+backgroundColor = "#fbfbfa"
+secondaryBackgroundColor = "#f1f0ec"
+textColor = "#141413"
+borderColor = "#e1e0d9"
+linkColor = "#1c5cab"
+chartCategoricalColors = ["#2a78d6", "#eb6834", "#1baf7a"]
+
+[theme.dark]
+primaryColor = "#e2475a"
+backgroundColor = "#141416"
+secondaryBackgroundColor = "#1f1f23"
+textColor = "#f0efec"
+borderColor = "#2c2c2a"
+linkColor = "#6da7ec"
+chartCategoricalColors = ["#3987e5", "#d95926", "#199e70"]

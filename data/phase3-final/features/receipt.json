@@ -1,0 +1,1205 @@
+{
+  "audit": [
+    {
+      "cutoff": "2024-03-09T13:59:59+00:00",
+      "event_id": "2024-01",
+      "feature_version": "3.0.0",
+      "history_weekends": [],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-08T11:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-08T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T11:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Practice_3.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2024-03-16T13:59:59+00:00",
+      "event_id": "2024-02",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-15T11:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Practice_1.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2025-03-09T13:59:59+00:00",
+      "event_id": "2025-01",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-08T11:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-08T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T11:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Practice_3.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2025-03-16T13:59:59+00:00",
+      "event_id": "2025-02",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-15T11:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Practice_1.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2026-03-09T13:59:59+00:00",
+      "event_id": "2026-01",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-17T16:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-08T11:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-08T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T11:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Practice_3.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2026-03-16T13:59:59+00:00",
+      "event_id": "2026-02",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02",
+        "2026-01"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-17T16:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-10T16:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-15T11:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Practice_1.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2026-03-23T13:59:59+00:00",
+      "event_id": "2026-03",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02",
+        "2026-01",
+        "2026-02"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-17T16:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-10T16:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-16T15:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-17T16:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-22T11:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-22T15:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-23T11:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Practice_3.parquet"
+        }
+      ],
+      "task": "qualifying"
+    },
+    {
+      "cutoff": "2024-03-09T16:00:00+00:00",
+      "event_id": "2024-01",
+      "feature_version": "3.0.0",
+      "history_weekends": [],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-08T11:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-08T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T11:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Practice_3.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    },
+    {
+      "cutoff": "2024-03-16T16:00:00+00:00",
+      "event_id": "2024-02",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-15T11:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    },
+    {
+      "cutoff": "2025-03-09T16:00:00+00:00",
+      "event_id": "2025-01",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-08T11:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-08T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T11:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Practice_3.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    },
+    {
+      "cutoff": "2025-03-16T16:00:00+00:00",
+      "event_id": "2025-02",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-15T11:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    },
+    {
+      "cutoff": "2026-03-09T16:00:00+00:00",
+      "event_id": "2026-01",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-17T16:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-08T11:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-08T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T11:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Practice_3.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    },
+    {
+      "cutoff": "2026-03-16T16:00:00+00:00",
+      "event_id": "2026-02",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02",
+        "2026-01"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-17T16:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-10T16:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-15T11:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-16T15:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    },
+    {
+      "cutoff": "2026-03-23T16:00:00+00:00",
+      "event_id": "2026-03",
+      "feature_version": "3.0.0",
+      "history_weekends": [
+        "2024-01",
+        "2024-02",
+        "2025-01",
+        "2025-02",
+        "2026-01",
+        "2026-02"
+      ],
+      "mode": "historical_reconstruction",
+      "skipped_optional": [],
+      "sources": [
+        {
+          "available_at": null,
+          "ended_at": "2024-03-09T15:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-10T16:00:00+00:00",
+          "event_id": "2024-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-16T15:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2024-03-17T16:00:00+00:00",
+          "event_id": "2024-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2024-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-09T15:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-10T16:00:00+00:00",
+          "event_id": "2025-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-16T15:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2025-03-17T16:00:00+00:00",
+          "event_id": "2025-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2025-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-09T15:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-10T16:00:00+00:00",
+          "event_id": "2026-01",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-01/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-16T15:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Qualifying.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-17T16:00:00+00:00",
+          "event_id": "2026-02",
+          "kind": "Race",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-02/Race.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-22T11:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Practice 1",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Practice_1.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-22T15:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Practice 2",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Practice_2.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-23T11:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Practice 3",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Practice_3.parquet"
+        },
+        {
+          "available_at": null,
+          "ended_at": "2026-03-23T15:00:00+00:00",
+          "event_id": "2026-03",
+          "kind": "Qualifying",
+          "retrieved_at": "2026-07-01T00:00:00+00:00",
+          "table": "2026-03/Qualifying.parquet"
+        }
+      ],
+      "task": "race"
+    }
+  ],
+  "dependency_versions": {
+    "fastf1": "3.8.1",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "pyarrow": "23.0.1",
+    "python": "3.13.13"
+  },
+  "dictionary_id": "4fe2154d9c170a21cf1f93d9148474ce982588ecd8bea18a77b5da74b20c59f4",
+  "feature_version": "3.0.0",
+  "files": {
+    "coverage.parquet": "c46d9dc7a5ea68dcb7ff54565530cc963c8d987e635826f6b56a6dc1d88e068f",
+    "cutoffs.parquet": "fee9d2d342c7cc2e755f32216e0a41e3f702a7389de66f8797ae6279bfee4d17",
+    "entrants.parquet": "44f5bd91142196029eb158ca27e7b592004d20bb7d14a405f2dfc013f4ae194e",
+    "feature_dictionary.json": "f71b25dada7e4dedfd746feaf87372e43080a7834a30aad8f74189a205eb2e2a",
+    "feature_dictionary.md": "bdb539dad8dd963444ed55dd305ef09ad48b5e8dd036d498589ffbafa0bc5c08",
+    "qualifying_features.parquet": "055cb3c82cedc0d234c31bc3454ce2f0a10a6a0109488a47685e1cc2f54abca7",
+    "qualifying_labels.parquet": "acd3b2e574fec7c2bf41a141ecdfabf604d6e38e4983b161fbc2fe0da3052893",
+    "race_features.parquet": "89a23e28e98ac3bc36dd97d917a2dee4594ffe560bfe6c925eb3bf441c5cdd6f",
+    "race_labels.parquet": "67bbb78384344c75522f779af91991e1084f78ab4849277cfea4e6c15a3653e0",
+    "source_binding.json": "da64fd6d3e127c1b60b3e55a2a18774e3a4e74d315c6991be7343129126bbd63"
+  },
+  "id": "ccc37825281ab0102fb44f15dc516e04211ad3896fec45bfbf78b71699c3a64d",
+  "implementation_id": "bf5e59ce8e1a9ee32a44cc558aa072d1ec26e54a73c14a1645a6ea0cf812dcd0",
+  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd",
+  "source_id": "4baf3651105bed3dc1013ca437157192b3913f9f1c15053570bf5a26d422299b"
+}

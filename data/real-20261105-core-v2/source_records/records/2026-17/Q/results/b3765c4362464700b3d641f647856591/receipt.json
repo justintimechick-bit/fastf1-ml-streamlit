@@ -1,0 +1,12 @@
+{
+  "files": {
+    "metadata.json": "f5440b4ecde28eaffa39d4a2dc2d245ce5478a8fc954e0fcc9bb516b8a146a54",
+    "normalized/driver_entries.parquet": "33e0c61af8a13e5eea50e6e32cb18eb7ad0c42af9d3b5a8b873a48504590d83b",
+    "normalized/results.parquet": "908b704a3080ecf401db853d4febbbd88b8596afd3340e1a9448f232e3817465",
+    "source/results.parquet": "e053fd3aed5bf8bd5b4a42ced1541d30900995e727ffedf4d03d51d189027f5f"
+  },
+  "id": "337185bdcde68cb1aafc262078422c829495cb8d87eb9df6ca44b26d8918c1dd",
+  "revision": "b3765c4362464700b3d641f647856591",
+  "schema_version": 2,
+  "transform_version": "2.1.0"
+}

@@ -1,0 +1,4 @@
+year,schedule_available,events,driver_count,result_field_min,result_field_max,result_sessions,practice_expected,practice_with_laps,qualifying_with_laps,sessions_with_weather,sessions_missing_targets,unusual_classifications,failures,blocked_sessions,future_sessions
+2024,True,24,24,19,20,48,60,0,0,0,0,62,13,103,0
+2025,True,24,21,19,20,48,60,0,0,0,0,62,7,105,0
+2026,True,23,24,19,22,16,57,0,0,0,22,40,25,82,20

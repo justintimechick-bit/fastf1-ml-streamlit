@@ -1,0 +1,77 @@
+{
+  "podium": {
+    "metrics": {
+      "brier": {
+        "mean": 0.08266868471134879,
+        "weekends": 3
+      },
+      "label_coverage": {
+        "mean": 1.0,
+        "weekends": 3
+      },
+      "log_loss": {
+        "mean": 0.24391142689867792,
+        "weekends": 3
+      }
+    },
+    "validation_weekends": 3
+  },
+  "qualifying": {
+    "metrics": {
+      "exact_order": {
+        "mean": 0.6666666666666666,
+        "weekends": 3
+      },
+      "label_coverage": {
+        "mean": 1.0,
+        "weekends": 3
+      },
+      "pairwise_accuracy": {
+        "mean": 0.8412698412698413,
+        "weekends": 3
+      },
+      "position_mae": {
+        "mean": 0.8571428571428572,
+        "weekends": 3
+      },
+      "spearman": {
+        "mean": 0.6309523809523809,
+        "weekends": 3
+      },
+      "top3_recall": {
+        "mean": 0.7777777777777778,
+        "weekends": 3
+      }
+    },
+    "validation_weekends": 3
+  },
+  "race": {
+    "metrics": {
+      "exact_order": {
+        "mean": 0.6666666666666666,
+        "weekends": 3
+      },
+      "label_coverage": {
+        "mean": 1.0,
+        "weekends": 3
+      },
+      "pairwise_accuracy": {
+        "mean": 0.9206349206349206,
+        "weekends": 3
+      },
+      "position_mae": {
+        "mean": 0.38095238095238093,
+        "weekends": 3
+      },
+      "spearman": {
+        "mean": 0.8928571428571429,
+        "weekends": 3
+      },
+      "top3_recall": {
+        "mean": 1.0,
+        "weekends": 3
+      }
+    },
+    "validation_weekends": 3
+  }
+}

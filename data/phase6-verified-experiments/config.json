@@ -1,0 +1,130 @@
+{
+  "cache_dir": "data/cache/fastf1",
+  "evaluation_year": 2026,
+  "experiments": {
+    "failure_cooldown_hours": 24.0,
+    "families": [
+      "linear",
+      "random_forest",
+      "gradient_boosting"
+    ],
+    "full_throttle_percent": 99.0,
+    "max_attempts": 2,
+    "max_laps_per_driver": 3,
+    "max_runtime_ratio": 3.0,
+    "max_sample_gap_seconds": 1.0,
+    "max_sessions": 4,
+    "min_channel_coverage": 0.8,
+    "min_log_loss_improvement": 0.005,
+    "min_observed_fraction": 0.25,
+    "min_paired_events": 3,
+    "min_position_improvement": 0.05,
+    "strategies": [
+      "equal"
+    ]
+  },
+  "features": {
+    "min_comparable_drivers": 2,
+    "pace_time_bin_seconds": 300,
+    "track_temperature_bin_c": 5.0,
+    "weather_max_age_seconds": 120
+  },
+  "final_test_weekends": 4,
+  "history_window": 5,
+  "ingestion": {
+    "max_api_pages": 20,
+    "max_attempts": 3,
+    "rate_limit_cooldown_hours": 1.0,
+    "retry_base_seconds": 1.0,
+    "retry_cooldown_hours": 24.0,
+    "retry_max_seconds": 8.0,
+    "team_mapping_path": "configs/team_mapping.json",
+    "timing_circuit_cooldown_hours": 24.0,
+    "timing_circuit_event_threshold": 3
+  },
+  "log_level": "INFO",
+  "min_training_weekends": 3,
+  "min_validation_weekends": 1,
+  "qualifying": {
+    "boosting_iterations": 100,
+    "boosting_rates": [
+      0.05,
+      0.1
+    ],
+    "forest_depths": [
+      4,
+      8
+    ],
+    "forest_trees": 80,
+    "max_inner_folds": 3,
+    "min_2026_training_events": 2,
+    "min_training_events": 2,
+    "recency_half_lives": [
+      6.0,
+      12.0
+    ],
+    "ridge_alphas": [
+      1.0,
+      10.0,
+      100.0
+    ],
+    "season_2026_weights": [
+      2.0,
+      4.0
+    ]
+  },
+  "race": {
+    "boosting_iterations": 100,
+    "boosting_rates": [
+      0.05,
+      0.1
+    ],
+    "calibration_bins": 5,
+    "forest_depths": [
+      4,
+      8
+    ],
+    "forest_trees": 80,
+    "logistic_cs": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "max_inner_folds": 3,
+    "min_2026_training_events": 2,
+    "min_calibration_events": 2,
+    "min_threshold_events": 2,
+    "min_training_events": 2,
+    "postprocess_folds": 2,
+    "recency_half_lives": [
+      6.0,
+      12.0
+    ],
+    "ridge_alphas": [
+      1.0,
+      10.0,
+      100.0
+    ],
+    "season_2026_weights": [
+      2.0,
+      4.0
+    ],
+    "thresholds": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "random_seed": 42,
+  "years": [
+    2024,
+    2025,
+    2026
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "absolute_time_available": false,
+  "attempt_failures": [],
+  "attempts": 0,
+  "cache_generation": 0,
+  "completed_at": null,
+  "completion_evidence": "official_results_endpoint",
+  "completion_state": "results_available",
+  "component": "results",
+  "errors": [],
+  "event_id": "2024-09",
+  "fastf1_version": "3.8.1",
+  "kind": "Qualifying",
+  "normalization_errors": [],
+  "normalized_at": "2026-11-04T23:21:15.619934+00:00",
+  "normalized_tables": [
+    "driver_entries",
+    "results"
+  ],
+  "page_count": 1,
+  "reparsed_from": "records/2024-09/Q/results/2bf37e3279c24685b9dc2ad199f8d3fa",
+  "response_complete": true,
+  "retrieved_at": "2026-11-04T23:11:55.216886+00:00",
+  "session_id": "2024-09/Q",
+  "source": "jolpica_via_fastf1_ergast",
+  "source_columns": {
+    "results": [
+      "number",
+      "position",
+      "Q1",
+      "Q2",
+      "Q3",
+      "driverId",
+      "driverNumber",
+      "driverCode",
+      "driverUrl",
+      "givenName",
+      "familyName",
+      "dateOfBirth",
+      "driverNationality",
+      "constructorId",
+      "constructorUrl",
+      "constructorName",
+      "constructorNationality"
+    ]
+  },
+  "source_missing_counts": {
+    "results": {
+      "Q1": 0,
+      "Q2": 5,
+      "Q3": 10,
+      "constructorId": 0,
+      "constructorName": 0,
+      "constructorNationality": 0,
+      "constructorUrl": 0,
+      "dateOfBirth": 0,
+      "driverCode": 0,
+      "driverId": 0,
+      "driverNationality": 0,
+      "driverNumber": 0,
+      "driverUrl": 0,
+      "familyName": 0,
+      "givenName": 0,
+      "number": 0,
+      "position": 0
+    }
+  },
+  "source_version": "ergast-compatible-v1",
+  "status": "complete",
+  "team_mapping_id": "a0511febf3d684c544a004a7accde81efbf61f387255b30596e98b6286369cfa",
+  "transform_version": "2.1.0",
+  "warnings": []
+}

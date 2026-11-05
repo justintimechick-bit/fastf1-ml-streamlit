@@ -1,0 +1,31 @@
+{
+  "attempt_failures": [
+    {
+      "attempt": 1,
+      "message": "Invalid request to Ergast (https://api.jolpi.ca/ergast/f1/2026/2/qualifying.json)\nServer response: 'Too Many Requests'",
+      "retrieved_at": "2026-11-04T23:12:39.913355+00:00",
+      "retryable": false,
+      "type": "ErgastInvalidRequestError"
+    }
+  ],
+  "attempts": 0,
+  "cache_generation": 0,
+  "completion_state": "unknown",
+  "component": "results",
+  "errors": [],
+  "event_id": "2026-02",
+  "fastf1_version": "3.8.1",
+  "kind": "Qualifying",
+  "normalization_errors": [],
+  "normalized_at": "2026-11-04T23:16:24.984969+00:00",
+  "normalized_tables": [],
+  "reparsed_from": "records/2026-02/Q/results/3a879c4de2f3455486cb686a48fcc0ca",
+  "retrieved_at": "2026-11-04T23:12:39.914527+00:00",
+  "session_id": "2026-02/Q",
+  "source": "fastf1_public_interface",
+  "source_columns": {},
+  "source_missing_counts": {},
+  "status": "failed",
+  "team_mapping_id": "a0511febf3d684c544a004a7accde81efbf61f387255b30596e98b6286369cfa",
+  "transform_version": "2.1.0"
+}

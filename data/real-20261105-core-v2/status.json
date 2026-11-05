@@ -1,0 +1,185 @@
+{
+  "as_of": "2026-11-05T14:00:00Z",
+  "blockers": [
+    "Need 9 eligible 2026 events (including 4 final and 5 development); found 0. No automatic block shrinking.",
+    "No independently evidenced completion/availability review exists.",
+    "No independently sourced cutoff entrants and explicit task cutoffs exist."
+  ],
+  "created_at": "2026-11-05T14:24:27.395812+00:00",
+  "data_kind": "real",
+  "development_evaluated_events": 0,
+  "eligible_2026_events": 0,
+  "eligible_events": 0,
+  "evaluation_ledger_claimed": false,
+  "experiment_id": "real-20261105-core-v2",
+  "final_evaluated_events": 0,
+  "final_lock_created": false,
+  "final_manifest_frozen": false,
+  "limitations": [
+    "Optional pace unavailable; core history/classification remains planned."
+  ],
+  "models_trained": 0,
+  "normalization_error_records": 4,
+  "preserved_files_verified": 1037,
+  "prior_consultation": "Existing synthetic models are not real-data evidence. Real outcomes were accessible during ingestion/source QA, including this audit. Unlogged previous consultation cannot be ruled out. Any retrospective block must disclose this exposure; fresh prospective events are required for an untouched confirmation claim.",
+  "protocol": {
+    "calibration": "later chronological development OOF only; identity/0.5 threshold when insufficient events",
+    "eligibility": "complete official Q/R orders and podium, resolved identities/teams, reviewed cutoff rosters and completion/availability evidence",
+    "exposure": "all existing real outcomes have been accessible for source QA; independence from prior unlogged consultation cannot be established; do not call them untouched",
+    "final_evaluation": "lock model/configuration and seal Q, then race/podium forecasts, before scoring once under a distinct persistent manifest ledger",
+    "final_selection": "latest four eligible completed 2026 events; no automatic shrinking",
+    "final_test_weekends": 4,
+    "history": "strictly earlier completed development weekends; fixed pre-block history in final test",
+    "min_2026_training_events": 2,
+    "min_common_development_events": 3,
+    "min_development_events": 5,
+    "mode": "historical_reconstruction",
+    "optional_features": "not required for core eligibility; require observed comparable session data and development-only retention review",
+    "preprocessing": "fit within each training fold; exclude numeric features entirely missing in that fold, including associated missing flags/counts for unobserved groups",
+    "primary_order_metric": "position_mae",
+    "primary_podium_metric": "log_loss",
+    "selection": "equal-event loss on identical eligible development events for all three strategies; fixed family/strategy tie order"
+  },
+  "result_sessions_by_season": {
+    "2024": 48,
+    "2025": 48,
+    "2026": 16
+  },
+  "schema_version": 1,
+  "search_configuration": {
+    "cache_dir": "data/cache/fastf1",
+    "evaluation_year": 2026,
+    "experiments": {
+      "failure_cooldown_hours": 24.0,
+      "families": [
+        "linear",
+        "random_forest",
+        "gradient_boosting"
+      ],
+      "full_throttle_percent": 99.0,
+      "max_attempts": 2,
+      "max_laps_per_driver": 3,
+      "max_runtime_ratio": 3.0,
+      "max_sample_gap_seconds": 1.0,
+      "max_sessions": 4,
+      "min_channel_coverage": 0.8,
+      "min_log_loss_improvement": 0.005,
+      "min_observed_fraction": 0.25,
+      "min_paired_events": 3,
+      "min_position_improvement": 0.05,
+      "strategies": [
+        "equal"
+      ]
+    },
+    "features": {
+      "min_comparable_drivers": 2,
+      "pace_time_bin_seconds": 300,
+      "track_temperature_bin_c": 5.0,
+      "weather_max_age_seconds": 120
+    },
+    "final_test_weekends": 4,
+    "history_window": 5,
+    "ingestion": {
+      "max_api_pages": 20,
+      "max_attempts": 3,
+      "rate_limit_cooldown_hours": 1.0,
+      "retry_base_seconds": 1.0,
+      "retry_cooldown_hours": 24.0,
+      "retry_max_seconds": 8.0,
+      "team_mapping_path": "configs/team_mapping.json",
+      "timing_circuit_cooldown_hours": 24.0,
+      "timing_circuit_event_threshold": 3
+    },
+    "log_level": "INFO",
+    "min_training_weekends": 3,
+    "min_validation_weekends": 1,
+    "qualifying": {
+      "boosting_iterations": 100,
+      "boosting_rates": [
+        0.05,
+        0.1
+      ],
+      "forest_depths": [
+        4,
+        8
+      ],
+      "forest_trees": 80,
+      "max_inner_folds": 3,
+      "min_2026_training_events": 2,
+      "min_training_events": 2,
+      "recency_half_lives": [
+        6.0,
+        12.0
+      ],
+      "ridge_alphas": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "season_2026_weights": [
+        2.0,
+        4.0
+      ]
+    },
+    "race": {
+      "boosting_iterations": 100,
+      "boosting_rates": [
+        0.05,
+        0.1
+      ],
+      "calibration_bins": 5,
+      "forest_depths": [
+        4,
+        8
+      ],
+      "forest_trees": 80,
+      "logistic_cs": [
+        0.1,
+        1.0,
+        10.0
+      ],
+      "max_inner_folds": 3,
+      "min_2026_training_events": 2,
+      "min_calibration_events": 2,
+      "min_threshold_events": 2,
+      "min_training_events": 2,
+      "postprocess_folds": 2,
+      "recency_half_lives": [
+        6.0,
+        12.0
+      ],
+      "ridge_alphas": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "season_2026_weights": [
+        2.0,
+        4.0
+      ],
+      "thresholds": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ]
+    },
+    "random_seed": 42,
+    "years": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "source_catalog": "data/real-20261105-catalog",
+  "source_code_id": "3dacc77e40fc73192127b0ad3b0416eb04e92306d8d773d165545acdff67901f",
+  "source_snapshot_id": "cfa596bf8ed4dcd35d670f78215567a1949acda2583d809fe7812b9ed9a6b57a",
+  "state": "blocked_before_training",
+  "training_cutoffs": [],
+  "untouched_holdout_claim": false
+}

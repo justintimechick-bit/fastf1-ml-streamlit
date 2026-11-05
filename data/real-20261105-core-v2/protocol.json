@@ -1,0 +1,19 @@
+{
+  "calibration": "later chronological development OOF only; identity/0.5 threshold when insufficient events",
+  "eligibility": "complete official Q/R orders and podium, resolved identities/teams, reviewed cutoff rosters and completion/availability evidence",
+  "exposure": "all existing real outcomes have been accessible for source QA; independence from prior unlogged consultation cannot be established; do not call them untouched",
+  "final_evaluation": "lock model/configuration and seal Q, then race/podium forecasts, before scoring once under a distinct persistent manifest ledger",
+  "final_selection": "latest four eligible completed 2026 events; no automatic shrinking",
+  "final_test_weekends": 4,
+  "history": "strictly earlier completed development weekends; fixed pre-block history in final test",
+  "min_2026_training_events": 2,
+  "min_common_development_events": 3,
+  "min_development_events": 5,
+  "mode": "historical_reconstruction",
+  "optional_features": "not required for core eligibility; require observed comparable session data and development-only retention review",
+  "preprocessing": "fit within each training fold; exclude numeric features entirely missing in that fold, including associated missing flags/counts for unobserved groups",
+  "primary_order_metric": "position_mae",
+  "primary_podium_metric": "log_loss",
+  "selection": "equal-event loss on identical eligible development events for all three strategies; fixed family/strategy tie order",
+  "status": "planned_not_final_manifest"
+}

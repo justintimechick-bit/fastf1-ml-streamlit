@@ -1,0 +1,10 @@
+{
+  "files": {
+    "model.joblib": "88baec055157dbc25ac08462e7123b93e39f2cc44e6c47fee2564a762f979a4c",
+    "model.json": "36ad00c519e7d17dd28f29540e288ddd9c9cf08b32d05baf721ed289f8c0ee6c"
+  },
+  "id": "806f8ccd05edc290bd806ff30e2c9a7e3582ad0c2f46da69801c0164a331dd78",
+  "kind": "race_podium_model",
+  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd",
+  "task": "podium"
+}

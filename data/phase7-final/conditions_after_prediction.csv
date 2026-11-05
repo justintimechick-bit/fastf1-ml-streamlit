@@ -1,0 +1,9 @@
+event_id,task,condition,weather_rows,known_rain_rows,interpretation
+2026-04,qualifying,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-05,qualifying,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-06,qualifying,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-07,qualifying,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-04,race,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-05,race,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-06,race,unknown,0,0,observed session samples only; not complete weather reconstruction
+2026-07,race,unknown,0,0,observed session samples only; not complete weather reconstruction

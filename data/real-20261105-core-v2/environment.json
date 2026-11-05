@@ -1,0 +1,12 @@
+{
+  "packages": {
+    "fastf1": "3.8.1",
+    "joblib": "1.6.0",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "pyarrow": "23.0.1",
+    "scikit-learn": "1.9.1",
+    "streamlit": "1.66.1"
+  },
+  "python": "3.13.13 (main, Apr  7 2026, 18:19:01) [Clang 21.0.0 (clang-2100.0.123.102)]"
+}

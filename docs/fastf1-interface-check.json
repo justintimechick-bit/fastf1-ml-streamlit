@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-04",
+  "fastf1_version": "3.8.1",
+  "documentation_basis": "Official public docstrings shipped in the installed FastF1 wheel; public docs website returned 403 in this environment.",
+  "interfaces": [
+    {
+      "name": "get_event_schedule",
+      "signature": "(year: int, *, include_testing: bool = True, backend: Optional[Literal['fastf1', 'f1timing', 'ergast']] = None, force_ergast: bool = False) -> 'EventSchedule'",
+      "docstring_sha256": "1d4cc36f0b2a337ccb4d8b812b083a639db312990f6c809976010fbc5d3fd6af"
+    },
+    {
+      "name": "get_session",
+      "signature": "(year: int, gp: str | int, identifier: int | str | None = None, *, backend: Optional[Literal['fastf1', 'f1timing', 'ergast']] = None, force_ergast: bool = False) -> fastf1.core.Session",
+      "docstring_sha256": "44fd00ceab20ac254e4cd0d2b15c3b5580589ec4057df0b6113dfa9283b0433d"
+    },
+    {
+      "name": "Session.load",
+      "signature": "(self, *, laps: bool = True, telemetry: bool = True, weather: bool = True, messages: bool = True, livedata: fastf1.livetiming.data.LiveTimingData = None)",
+      "docstring_sha256": "731ff6866ac0e9e64d1d104195f79b525b6f32cd96e03e8a0f0752147f19b070"
+    },
+    {
+      "name": "Cache.enable_cache",
+      "signature": "(cache_dir: str, ignore_version: bool = False, force_renew: bool = False, use_requests_cache: bool = True)",
+      "docstring_sha256": "2257154c5c4e40632ff719cac4da47a7363c77664a874a195a161d0c45b23cb3"
+    },
+    {
+      "name": "Cache.disabled",
+      "signature": "()",
+      "docstring_sha256": "653ca53d0eab2b28fdce701aa81d36d6f96316c5cb26d44de460214ebe83580b"
+    },
+    {
+      "name": "Ergast.get_qualifying_results",
+      "signature": "(self, season: Union[Literal['current'], int, NoneType] = None, round: Union[Literal['last'], int, NoneType] = None, circuit: str | None = None, constructor: str | None = None, driver: str | None = None, grid_position: int | None = None, results_position: int | None = None, fastest_rank: int | None = None, status: str | None = None, result_type: Optional[Literal['pandas', 'raw']] = None, auto_cast: bool | None = None, limit: int | None = None, offset: int | None = None) -> fastf1.ergast.interface.ErgastMultiResponse | fastf1.ergast.interface.ErgastRawResponse",
+      "docstring_sha256": "0454b7ae9fd91f33035c021680ddf953782325bfdd1b297d382203d035188f2d"
+    },
+    {
+      "name": "Ergast.get_race_results",
+      "signature": "(self, season: Union[Literal['current'], int, NoneType] = None, round: Union[Literal['last'], int, NoneType] = None, circuit: str | None = None, constructor: str | None = None, driver: str | None = None, grid_position: int | None = None, results_position: int | None = None, fastest_rank: int | None = None, status: str | None = None, result_type: Optional[Literal['pandas', 'raw']] = None, auto_cast: bool | None = None, limit: int | None = None, offset: int | None = None) -> fastf1.ergast.interface.ErgastMultiResponse | fastf1.ergast.interface.ErgastRawResponse",
+      "docstring_sha256": "853316bdfc1b7e57418abf2bacf6b3a733c0189f4b47c32a2a541816ea5eebb9"
+    }
+  ]
+}

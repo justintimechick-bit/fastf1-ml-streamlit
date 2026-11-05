@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "bytes": 0,
+      "content_type": null,
+      "retrieved_at": "2026-11-05T14:14:00.152652+00:00",
+      "status_code": 401,
+      "url": "https://livetiming.formula1.com/static/2024/2024-03-02_Bahrain_Grand_Prix/2024-02-29_Practice_1/SessionInfo.json"
+    },
+    {
+      "bytes": 27150,
+      "content_type": "text/html",
+      "retrieved_at": "2026-11-05T14:14:00.188105+00:00",
+      "status_code": 404,
+      "url": "https://livetiming-mirror.fastf1.dev/static/2024/2024-03-02_Bahrain_Grand_Prix/2024-02-29_Practice_1/SessionInfo.json"
+    }
+  ],
+  "scope": "unauthenticated diagnostic only; no model data"
+}

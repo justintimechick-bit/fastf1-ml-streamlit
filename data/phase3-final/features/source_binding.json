@@ -1,0 +1,425 @@
+{
+  "as_of": "2026-07-01T00:00:00+00:00",
+  "failures": [],
+  "files": {
+    "2024-01/Practice_1.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2024-01/Practice_2.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2024-01/Practice_3.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2024-01/Qualifying.parquet": "1e0f16b69b55c8b8cb5b3681c551b91c5456cfcb8fee2d90fb915ac45b8a69fa",
+    "2024-01/Race.parquet": "7c1b93be08d9de0f50a3883dcb242c703c0cfac91a58c9fce8abc48464c1bf7e",
+    "2024-02/Practice_1.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2024-02/Qualifying.parquet": "29d3668e138deb5acc258850b6c79b93f9e735da8a326ec5dbf5f9213dd552a1",
+    "2024-02/Race.parquet": "3961c992a1fd3dde0811718609e7c6d7760454808b88c176c6bd9538e720b2b1",
+    "2025-01/Practice_1.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2025-01/Practice_2.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2025-01/Practice_3.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2025-01/Qualifying.parquet": "1e0f16b69b55c8b8cb5b3681c551b91c5456cfcb8fee2d90fb915ac45b8a69fa",
+    "2025-01/Race.parquet": "7c1b93be08d9de0f50a3883dcb242c703c0cfac91a58c9fce8abc48464c1bf7e",
+    "2025-02/Practice_1.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2025-02/Qualifying.parquet": "29d3668e138deb5acc258850b6c79b93f9e735da8a326ec5dbf5f9213dd552a1",
+    "2025-02/Race.parquet": "3961c992a1fd3dde0811718609e7c6d7760454808b88c176c6bd9538e720b2b1",
+    "2026-01/Practice_1.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-01/Practice_2.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-01/Practice_3.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-01/Qualifying.parquet": "1e0f16b69b55c8b8cb5b3681c551b91c5456cfcb8fee2d90fb915ac45b8a69fa",
+    "2026-01/Race.parquet": "7c1b93be08d9de0f50a3883dcb242c703c0cfac91a58c9fce8abc48464c1bf7e",
+    "2026-02/Practice_1.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-02/Qualifying.parquet": "29d3668e138deb5acc258850b6c79b93f9e735da8a326ec5dbf5f9213dd552a1",
+    "2026-02/Race.parquet": "3961c992a1fd3dde0811718609e7c6d7760454808b88c176c6bd9538e720b2b1",
+    "2026-03/Practice_1.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-03/Practice_2.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-03/Practice_3.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-03/Qualifying.parquet": "51df41f65decb3d81990a29d2c4a54bff9de0f923cb32ed711d3337432f8700f",
+    "2026-03/Race.parquet": "8e988c33cf3757c15678b16226a842a345d085d43b58976552dd28adc06a8a3f",
+    "2026-04/Practice_1.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-04/Practice_2.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-04/Practice_3.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-04/Qualifying.parquet": "eec0ced9b3e179ed99373d005b6b74aae1badcbebba80faa711902e15fb5026d",
+    "2026-04/Race.parquet": "8bf3b95529dd11040cc119d020b2c9d0913a9574051f5996f1255ec3fb9f3cca",
+    "2026-05/Practice_1.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-05/Practice_2.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-05/Practice_3.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-05/Qualifying.parquet": "ef2d32c9ea61950bb8dfc3e9088c9b237ff983fce770218b7b1b7c0b0cd14918",
+    "2026-05/Race.parquet": "5339eab519f42538a889c16516663f1f6f54e7f5c8ccd403e1156e5d1edad16c",
+    "2026-06/Practice_1.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-06/Practice_2.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-06/Practice_3.parquet": "73138b2abb71bbb2bac68575c207b8fd08e6290d6a3e0afebf3a505114939a9d",
+    "2026-06/Qualifying.parquet": "827029705e7b2c3bad32f13214db96777bffbbc5cd90d747f4164ac455f303cd",
+    "2026-06/Race.parquet": "8b603ad0eea9eaff14e4a8872aa2b07509594b71f2349046ff49c658f9af23f2",
+    "2026-07/Practice_1.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-07/Practice_2.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-07/Practice_3.parquet": "43b6ccbe5bbac857463c8f02cb48abdd48338bb4c62b319e30422c7a71ced954",
+    "2026-07/Qualifying.parquet": "c3d7e3f9ec65daa2e7cffc47cfa770df4376d9b39444d9c600afc268ceeeaf0e",
+    "2026-07/Race.parquet": "e6636395b4ad2cc51a7476bbc80b85a064e942222550d42faf8de1a1223f0357",
+    "events.json": "75ef37063e57df911642cc6e2c83d8ead3e1105a7d7475f6f8c640823d362121"
+  },
+  "id": "4baf3651105bed3dc1013ca437157192b3913f9f1c15053570bf5a26d422299b",
+  "schedule": {
+    "discovered_at": "2026-11-05T00:17:30.339448+00:00",
+    "events": [
+      {
+        "circuit_id": "synthetic_circuit_1",
+        "event_id": "2024-01",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2024/1",
+        "round": 1,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2024-03-08T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2024-03-08T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2024-03-09T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2024-03-09T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2024-03-10T14:00:00+00:00"
+          }
+        ],
+        "year": 2024
+      },
+      {
+        "circuit_id": "synthetic_circuit_0",
+        "event_id": "2024-02",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2024/2",
+        "round": 2,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2024-03-15T10:00:00+00:00"
+          },
+          {
+            "kind": "Sprint Qualifying",
+            "scheduled_start": "2024-03-15T14:00:00+00:00"
+          },
+          {
+            "kind": "Sprint",
+            "scheduled_start": "2024-03-16T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2024-03-16T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2024-03-17T14:00:00+00:00"
+          }
+        ],
+        "year": 2024
+      },
+      {
+        "circuit_id": "synthetic_circuit_1",
+        "event_id": "2025-01",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2025/1",
+        "round": 1,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2025-03-08T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2025-03-08T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2025-03-09T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2025-03-09T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2025-03-10T14:00:00+00:00"
+          }
+        ],
+        "year": 2025
+      },
+      {
+        "circuit_id": "synthetic_circuit_0",
+        "event_id": "2025-02",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2025/2",
+        "round": 2,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2025-03-15T10:00:00+00:00"
+          },
+          {
+            "kind": "Sprint Qualifying",
+            "scheduled_start": "2025-03-15T14:00:00+00:00"
+          },
+          {
+            "kind": "Sprint",
+            "scheduled_start": "2025-03-16T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2025-03-16T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2025-03-17T14:00:00+00:00"
+          }
+        ],
+        "year": 2025
+      },
+      {
+        "circuit_id": "synthetic_circuit_1",
+        "event_id": "2026-01",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/1",
+        "round": 1,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-03-08T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-03-08T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-03-09T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-03-09T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-03-10T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_0",
+        "event_id": "2026-02",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/2",
+        "round": 2,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-03-15T10:00:00+00:00"
+          },
+          {
+            "kind": "Sprint Qualifying",
+            "scheduled_start": "2026-03-15T14:00:00+00:00"
+          },
+          {
+            "kind": "Sprint",
+            "scheduled_start": "2026-03-16T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-03-16T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-03-17T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_1",
+        "event_id": "2026-03",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/3",
+        "round": 3,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-03-22T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-03-22T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-03-23T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-03-23T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-03-24T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_0",
+        "event_id": "2026-04",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/4",
+        "round": 4,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-03-29T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-03-29T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-03-30T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-03-30T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-03-31T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_1",
+        "event_id": "2026-05",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/5",
+        "round": 5,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-04-05T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-04-05T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-04-06T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-04-06T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-04-07T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_0",
+        "event_id": "2026-06",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/6",
+        "round": 6,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-04-12T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-04-12T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-04-13T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-04-13T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-04-14T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_1",
+        "event_id": "2026-07",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/7",
+        "round": 7,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-04-19T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-04-19T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-04-20T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-04-20T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-04-21T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      },
+      {
+        "circuit_id": "synthetic_circuit_0",
+        "event_id": "2026-08",
+        "location": "synthetic",
+        "name": "SYNTHETIC GP 2026/8",
+        "round": 8,
+        "sessions": [
+          {
+            "kind": "Practice 1",
+            "scheduled_start": "2026-12-01T10:00:00+00:00"
+          },
+          {
+            "kind": "Practice 2",
+            "scheduled_start": "2026-12-01T14:00:00+00:00"
+          },
+          {
+            "kind": "Practice 3",
+            "scheduled_start": "2026-12-02T10:00:00+00:00"
+          },
+          {
+            "kind": "Qualifying",
+            "scheduled_start": "2026-12-02T14:00:00+00:00"
+          },
+          {
+            "kind": "Race",
+            "scheduled_start": "2026-12-03T14:00:00+00:00"
+          }
+        ],
+        "year": 2026
+      }
+    ],
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "source": "FastF1"
+}

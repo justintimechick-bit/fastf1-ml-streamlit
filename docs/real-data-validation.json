@@ -1,0 +1,29 @@
+{
+  "build": "wheel and sdist passed",
+  "date": "2026-11-05",
+  "development_evaluated_events": 0,
+  "experiment_id": "real-20261105-core-v2",
+  "experiment_receipt": "7a80e53e48247527c965a9220df278f7342cc91813982e1d3c8c8b2608ed0c9d",
+  "final_evaluated_events": 0,
+  "format": "passed",
+  "interface_downloads_and_fit_forbidden": true,
+  "interface_real_artifact_views": [
+    "overview",
+    "qualifying",
+    "race",
+    "comparison",
+    "methodology"
+  ],
+  "legacy_code_id": "3dacc77e40fc73192127b0ad3b0416eb04e92306d8d773d165545acdff67901f",
+  "lint": "passed",
+  "preserved_files_verified": 1037,
+  "real_final_manifest_frozen": false,
+  "real_ledger_claimed": false,
+  "real_models_trained": 0,
+  "source_mismatches": 0,
+  "source_replay_receipt": "25a6e926431d6ce5c5066f48351c8e9eefdc6563103d42ce8f7ea85970f17473",
+  "source_rows_validated": 2263,
+  "source_sessions_validated": 112,
+  "status": "blocked_before_training",
+  "tests_passed": 191
+}

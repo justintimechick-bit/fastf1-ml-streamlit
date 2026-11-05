@@ -1,0 +1,5 @@
+# Streamlit Community Cloud discovers this file automatically.
+# Keep model deserialization on the same package versions as the saved artifacts.
+-r requirements.lock.txt
+-r requirements-app.lock.txt
+.

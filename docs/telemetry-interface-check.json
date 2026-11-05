@@ -1,0 +1,29 @@
+{
+  "drs_parser_audit": "Installed parser uses Channels.get(45, 0) and documents absence of DRS in 2026; a default zero is not an observation.",
+  "excluded": [
+    "DRS",
+    "energy",
+    "battery",
+    "fuel load",
+    "active aero"
+  ],
+  "fastf1_version": "3.8.1",
+  "feature_channels": {
+    "Brake": "boolean; not brake pressure",
+    "Speed": "km/h",
+    "Throttle": "0-100 percent; 104 is an invalid sentinel"
+  },
+  "installed_parser_sha256": "ca5d35d2884702ec2d16645bc2ef207457b8ad4f5643e47631e73364900748d4",
+  "interpolation": "No merged telemetry or edge samples; get_car_data(interpolate_edges=False).",
+  "observed_live_schemas": "No valid live samples were returned for the pilot; no schema is claimed observed.",
+  "official_docs_access": "HTTP 403 in browser tool; official repository and installed documentation inspected instead",
+  "official_docs_url": "https://docs.fastf1.dev/core.html",
+  "official_parser": "https://github.com/theOehrly/Fast-F1/blob/main/fastf1/_api.py",
+  "official_repository": "https://github.com/theOehrly/Fast-F1/blob/main/fastf1/core.py",
+  "public_interfaces_only_for_downloads": true,
+  "signatures": {
+    "Lap.get_car_data": "(self, **kwargs) -> fastf1.core.Telemetry",
+    "Session.load": "(self, *, laps: bool = True, telemetry: bool = True, weather: bool = True, messages: bool = True, livedata: fastf1.livetiming.data.LiveTimingData = None)",
+    "Telemetry.slice_by_lap": "(self, ref_laps: Union[ForwardRef('Lap'), ForwardRef('Laps')], pad: int = 0, pad_side: str = 'both', interpolate_edges: bool = False) -> 'Telemetry'"
+  }
+}

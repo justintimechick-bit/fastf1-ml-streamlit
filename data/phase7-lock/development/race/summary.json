@@ -1,0 +1,301 @@
+{
+  "aggregation": "equal-event averages on each task's all-strategy common cohort",
+  "common_evaluation_events": {
+    "podium": [
+      "2026-03"
+    ],
+    "race": [
+      "2026-03"
+    ]
+  },
+  "data_note": "Source lineage is in receipts; synthetic metrics establish no real accuracy.",
+  "event_averages": {
+    "podium": [
+      {
+        "average_precision": 0.7555555555555555,
+        "brier": 0.2383227881707414,
+        "ece": 0.23529816649556212,
+        "events": 1,
+        "f1": 0.6666666666666666,
+        "family": "logistic",
+        "log_loss": 0.6762474791965813,
+        "precision": 0.6666666666666666,
+        "raw_brier": 0.2383227881707414,
+        "raw_ece": 0.23529816649556212,
+        "raw_log_loss": 0.6762474791965813,
+        "recall": 0.6666666666666666,
+        "strategy": "2026_only"
+      },
+      {
+        "average_precision": 0.7555555555555555,
+        "brier": 0.2418251140470291,
+        "ece": 0.34207536077549666,
+        "events": 1,
+        "f1": 0.6666666666666666,
+        "family": "logistic",
+        "log_loss": 0.7331389821611827,
+        "precision": 0.6666666666666666,
+        "raw_brier": 0.22073365233081535,
+        "raw_ece": 0.34244417568245306,
+        "raw_log_loss": 0.6275146998219239,
+        "recall": 0.6666666666666666,
+        "strategy": "equal"
+      },
+      {
+        "average_precision": 0.7555555555555555,
+        "brier": 0.30068876404705597,
+        "ece": 0.3253012260670562,
+        "events": 1,
+        "f1": 0.5714285714285715,
+        "family": "logistic",
+        "log_loss": 0.9519878998720225,
+        "precision": 0.5,
+        "raw_brier": 0.27136604560959154,
+        "raw_ece": 0.29692643590078294,
+        "raw_log_loss": 0.7843530466480912,
+        "recall": 0.6666666666666666,
+        "strategy": "weighted"
+      },
+      {
+        "average_precision": 0.7555555555555555,
+        "brier": 0.2229947339158051,
+        "ece": 0.2686309523809524,
+        "events": 1,
+        "f1": 0.6666666666666666,
+        "family": "random_forest",
+        "log_loss": 0.6152023872995525,
+        "precision": 0.6666666666666666,
+        "raw_brier": 0.2229947339158051,
+        "raw_ece": 0.2686309523809524,
+        "raw_log_loss": 0.6152023872995525,
+        "recall": 0.6666666666666666,
+        "strategy": "2026_only"
+      },
+      {
+        "average_precision": 0.7555555555555555,
+        "brier": 0.283926574103201,
+        "ece": 0.2459091519299469,
+        "events": 1,
+        "f1": 0.6666666666666666,
+        "family": "random_forest",
+        "log_loss": 0.8020640202880573,
+        "precision": 0.6666666666666666,
+        "raw_brier": 0.2535903933768486,
+        "raw_ece": 0.21272166573505857,
+        "raw_log_loss": 0.6841637783089605,
+        "recall": 0.6666666666666666,
+        "strategy": "equal"
+      },
+      {
+        "average_precision": 0.7555555555555555,
+        "brier": 0.3142642165816357,
+        "ece": 0.2841808017179419,
+        "events": 1,
+        "f1": 0.4,
+        "family": "random_forest",
+        "log_loss": 0.9541754530379303,
+        "precision": 0.5,
+        "raw_brier": 0.28663982802791793,
+        "raw_ece": 0.25770716619981326,
+        "raw_log_loss": 0.7941502952346051,
+        "recall": 0.3333333333333333,
+        "strategy": "weighted"
+      },
+      {
+        "average_precision": 0.39682539682539686,
+        "brier": 0.5098529109711717,
+        "ece": 0.5154515126326968,
+        "events": 1,
+        "f1": 0.3333333333333333,
+        "family": "gradient_boosting",
+        "log_loss": 1.666815529144421,
+        "precision": 0.3333333333333333,
+        "raw_brier": 0.5098529109711717,
+        "raw_ece": 0.5154515126326968,
+        "raw_log_loss": 1.666815529144421,
+        "recall": 0.3333333333333333,
+        "strategy": "2026_only"
+      },
+      {
+        "average_precision": 1.0,
+        "brier": 0.0003766843595053611,
+        "ece": 0.019363033473123632,
+        "events": 1,
+        "f1": 1.0,
+        "family": "gradient_boosting",
+        "log_loss": 0.019553866536781723,
+        "precision": 1.0,
+        "raw_brier": 0.0006582587001082022,
+        "raw_ece": 0.025581695663153672,
+        "raw_log_loss": 0.025916617540777842,
+        "recall": 1.0,
+        "strategy": "equal"
+      },
+      {
+        "average_precision": 1.0,
+        "brier": 0.00037606089640399075,
+        "ece": 0.019360564760382067,
+        "events": 1,
+        "f1": 1.0,
+        "family": "gradient_boosting",
+        "log_loss": 0.019551074520661457,
+        "precision": 1.0,
+        "raw_brier": 0.0006580748450619055,
+        "raw_ece": 0.02558656162447138,
+        "raw_log_loss": 0.025921383219138897,
+        "recall": 1.0,
+        "strategy": "weighted"
+      },
+      {
+        "average_precision": 1.0,
+        "brier": 0.0,
+        "ece": 0.0,
+        "events": 1,
+        "f1": 1.0,
+        "family": "baseline_qualifying",
+        "log_loss": 9.999778782803785e-13,
+        "precision": 1.0,
+        "raw_brier": 0.0,
+        "raw_ece": 0.0,
+        "raw_log_loss": 9.999778782803785e-13,
+        "recall": 1.0,
+        "strategy": "fixed_rule"
+      },
+      {
+        "average_precision": 0.5317460317460317,
+        "brier": 0.33142857142857146,
+        "ece": 0.39999999999999997,
+        "events": 1,
+        "f1": 0.6666666666666666,
+        "family": "baseline_recent",
+        "log_loss": 8.04053080019384,
+        "precision": 0.6666666666666666,
+        "raw_brier": 0.33142857142857146,
+        "raw_ece": 0.39999999999999997,
+        "raw_log_loss": 8.04053080019384,
+        "recall": 0.6666666666666666,
+        "strategy": "fixed_rule"
+      }
+    ],
+    "race": [
+      {
+        "events": 1,
+        "family": "ridge",
+        "position_mae": 2.2857142857142856,
+        "spearman": 0.14285714285714288,
+        "strategy": "2026_only",
+        "top3_overlap": 0.3333333333333333,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "ridge",
+        "position_mae": 0.0,
+        "spearman": 1.0,
+        "strategy": "equal",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "ridge",
+        "position_mae": 0.5714285714285714,
+        "spearman": 0.8928571428571429,
+        "strategy": "weighted",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "random_forest",
+        "position_mae": 2.0,
+        "spearman": 0.25,
+        "strategy": "2026_only",
+        "top3_overlap": 0.6666666666666666,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "random_forest",
+        "position_mae": 0.0,
+        "spearman": 1.0,
+        "strategy": "equal",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "random_forest",
+        "position_mae": 0.0,
+        "spearman": 1.0,
+        "strategy": "weighted",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "gradient_boosting",
+        "position_mae": 2.857142857142857,
+        "spearman": -0.3571428571428572,
+        "strategy": "2026_only",
+        "top3_overlap": 0.3333333333333333,
+        "winner_accuracy": 0.0
+      },
+      {
+        "events": 1,
+        "family": "gradient_boosting",
+        "position_mae": 0.0,
+        "spearman": 1.0,
+        "strategy": "equal",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "gradient_boosting",
+        "position_mae": 0.0,
+        "spearman": 1.0,
+        "strategy": "weighted",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "baseline_qualifying",
+        "position_mae": 0.0,
+        "spearman": 1.0,
+        "strategy": "fixed_rule",
+        "top3_overlap": 1.0,
+        "winner_accuracy": 1.0
+      },
+      {
+        "events": 1,
+        "family": "baseline_recent",
+        "position_mae": 2.0,
+        "spearman": 0.14285714285714288,
+        "strategy": "fixed_rule",
+        "top3_overlap": 0.6666666666666666,
+        "winner_accuracy": 0.0
+      }
+    ]
+  },
+  "feature_snapshot_id": "ccc37825281ab0102fb44f15dc516e04211ad3896fec45bfbf78b71699c3a64d",
+  "final_test_accessed": false,
+  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd",
+  "probability_policy": "independent marginal probabilities, no sum-to-three normalization",
+  "selected_models": {
+    "podium": {
+      "bundle": "selected_models/podium",
+      "family": "gradient_boosting",
+      "id": "758f453896b50ca6b970806949bd80ca6057ed18d666986f539594dfabb51144",
+      "strategy": "weighted"
+    },
+    "race": {
+      "bundle": "selected_models/race",
+      "family": "ridge",
+      "id": "d829a95e738b88652c3f93fed86c17733480e92bc3075bee2d9715716c0a2f9a",
+      "strategy": "equal"
+    }
+  },
+  "status": "development_only_final_test_sealed"
+}
