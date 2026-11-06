@@ -124,6 +124,8 @@ PDF cache. See the [coverage and exclusion report](docs/real-coverage-20261105.m
 [project rubric alignment](docs/project-rubric-alignment.md), and the executed
 [Mexico notebook](notebooks/real-mexico-2026.ipynb). The notebook contains actual
 saved-result outputs; no report or class submission has been made.
+The [validation record](docs/real-lab-validation.md) records the real tests,
+archive integrity and hosted Safari smoke check.
 
 ## Deployment and preserved archive
 
