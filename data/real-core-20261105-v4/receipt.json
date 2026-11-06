@@ -1,0 +1,32 @@
+{
+  "as_of": "2026-11-05T16:00:00Z",
+  "availability_semantics": "Official document publication is a conservative availability/completion upper bound, not an observed session-end timestamp",
+  "data_kind": "real",
+  "eligible_events": 19,
+  "excluded_events": 4,
+  "exposure": "Historical outcomes were previously accessible and consulted; no untouched holdout claim",
+  "files": {
+    "documents.csv": "dffc6852c11edbf1ba9545a9c5bb9e86f6a07defd235d78675c192271ae8cc48",
+    "documents.parquet": "ef9ffea3a62a902b7d0cee9ae14f1ba35b931a0a089232cf71a04f9e5bc1c98c",
+    "events.csv": "a5723216d93624eb4a651bc8b88773ae19f464736df946a2d9a86d97bf347a3b",
+    "events.parquet": "81a4e0d60ce12cedb0f67eab41f811461304bf7191afa3d5892645bde1339933",
+    "exclusions.csv": "ffbeec7879e19123c15d8bcf55aea78647fca4500098be476a3bf7b349aa92c7",
+    "exclusions.parquet": "7d8f1aad6320fcaaf16f133429db8bcf82f07efb0588ad81250f7c8f64eb17fd",
+    "identity_mapping.json": "b7295bcc09b3935b4c11dad516688f6cc6858c3d1850adcb24e31dfd78b5a69f",
+    "labels.csv": "9725bb27ded65dc65becd118e99aaf1886b4f7860fda31058a311820cd96fe25",
+    "labels.parquet": "2dde7a0c772644ec76a7be5ebb716b7f6bcf3c578eea52da9dab341fb39ee45b",
+    "rosters.csv": "cce730dc7ab87f98772bc1ba678ea235b640e494a29e0ccd99949065565557d2",
+    "rosters.parquet": "012752a768c9e28a475dffedb002e8f5a5467c3c5a3e3fc85461d631d8abcda7"
+  },
+  "id": "08bd7449688fda332cab42379d89cdeb295c3b200c45d2d9119e3aefc6befb2a",
+  "implementation_id": "2042fab79ccb9653f24f4666afc8be1ce90fa5eb3015aabc121d084fafb1ffac",
+  "missing_groups": [
+    "practice_laps",
+    "qualifying_laps",
+    "weather"
+  ],
+  "mode": "historical_reconstruction_exploratory",
+  "source": "FIA final classifications and independent entry lists",
+  "source_catalog_id": "90b38b17647bd0fe459242f2f85ba1eed5de53d440fa94f9f13fc415808a90f6",
+  "year": 2026
+}

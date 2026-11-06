@@ -1,8 +1,12 @@
-"""Streamlit Community Cloud entrypoint; the real-data review is the landing page."""
+"""Streamlit Community Cloud entrypoint for the real-observation model lab."""
 
-import os
-import runpy
+import sys
 from pathlib import Path
 
-os.environ.setdefault("F1ML_APP_HOME", "real-experiment")
-runpy.run_path(str(Path(__file__).parent / "src/f1ml_app/streamlit_app.py"), run_name="__main__")
+source = Path(__file__).resolve().parent / "src"
+if str(source) not in sys.path:
+    sys.path.insert(0, str(source))
+
+from f1ml_app.lab_app import main  # noqa: E402
+
+main()

@@ -1,4 +1,4 @@
-"""Run with ``python -m f1ml_real audit --config ... --output ...``."""
+"""Acquire reviewed real facts or explicitly run a historical model replay."""
 
 import argparse
 import shutil
@@ -27,8 +27,23 @@ def fork_catalog(source, output):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Real-data experiment inventory and readiness")
+    parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    capture = commands.add_parser(
+        "prepare-real", help="Cache FIA evidence and seal a real snapshot"
+    )
+    capture.add_argument("--catalog", type=Path, required=True)
+    capture.add_argument("--cache", type=Path, required=True)
+    capture.add_argument("--output", type=Path, required=True)
+    capture.add_argument("--as-of", required=True, help="UTC acquisition horizon")
+    capture.add_argument("--offline", action="store_true", help="Require verified cached evidence")
+    replay = commands.add_parser("backtest", help="Explicitly fit or reuse a sealed real replay")
+    replay.add_argument("--dataset", type=Path, default=Path("data/real-core-20261105-v4"))
+    replay.add_argument("--event", required=True, help="Reviewed event ID, e.g. 2026-19")
+    replay.add_argument("--runs", type=Path, default=Path("artifacts/real-lab"))
+    replay.add_argument(
+        "--last-n", type=int, help="Limit fitted events; default all eligible history"
+    )
     run = commands.add_parser("audit", help="Save an immutable source audit; never fit or score")
     run.add_argument("--config", type=Path, required=True)
     run.add_argument("--output", type=Path, required=True)
@@ -43,6 +58,23 @@ def main(argv=None):
     validate.add_argument("--experiment", type=Path, required=True)
     validate.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
+    if args.command == "prepare-real":
+        from f1ml_real.fia import prepare_dataset
+
+        receipt = prepare_dataset(
+            args.catalog, args.cache, args.output, as_of=args.as_of, offline=args.offline
+        )
+        print(f"Sealed {receipt['eligible_events']} real 2026 events: {receipt['id']}")
+        return 0
+    if args.command == "backtest":
+        from f1ml_real.lab import cached_run, load_run
+
+        path = cached_run(args.dataset, args.event, args.runs, last_n=args.last_n)
+        run = load_run(path)
+        print(f"Verified real historical replay: {path}")
+        print(run["summary"]["evaluation_status"])
+        print(run["metrics"].to_string(index=False))
+        return 0
     if args.command == "fork-catalog":
         fork_catalog(args.source, args.output)
         return 0

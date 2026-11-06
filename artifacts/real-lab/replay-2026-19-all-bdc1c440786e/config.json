@@ -1,0 +1,361 @@
+{
+  "calibration": {
+    "podium/gradient_boosting": {
+      "coefficient": 1.3823111020485244,
+      "event_ids": [
+        "2026-17",
+        "2026-18"
+      ],
+      "intercept": 0.9997286213352395,
+      "method": "sigmoid"
+    },
+    "podium/linear": {
+      "coefficient": 3.0328723995294564,
+      "event_ids": [
+        "2026-17",
+        "2026-18"
+      ],
+      "intercept": 1.2882113662687342,
+      "method": "sigmoid"
+    },
+    "podium/random_forest": {
+      "coefficient": 2.3267450157563743,
+      "event_ids": [
+        "2026-17",
+        "2026-18"
+      ],
+      "intercept": 0.6728467244328677,
+      "method": "sigmoid"
+    }
+  },
+  "calibration_event_ids": [
+    "2026-17",
+    "2026-18"
+  ],
+  "development_event_ids": [
+    "2026-14",
+    "2026-15",
+    "2026-16"
+  ],
+  "excluded_features": {
+    "podium/gradient_boosting": {
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "podium/linear": {
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "podium/random_forest": {
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "qualifying/gradient_boosting": {
+      "current_qualifying_nonclassified": "entirely_missing_in_training",
+      "current_qualifying_rank": "entirely_missing_in_training",
+      "current_qualifying_rank_known": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "qualifying/linear": {
+      "current_qualifying_nonclassified": "entirely_missing_in_training",
+      "current_qualifying_rank": "entirely_missing_in_training",
+      "current_qualifying_rank_known": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "qualifying/random_forest": {
+      "current_qualifying_nonclassified": "entirely_missing_in_training",
+      "current_qualifying_rank": "entirely_missing_in_training",
+      "current_qualifying_rank_known": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "race/gradient_boosting": {
+      "current_qualifying_nonclassified": "constant_observed_training_values",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "race/linear": {
+      "current_qualifying_nonclassified": "constant_observed_training_values",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "race/random_forest": {
+      "current_qualifying_nonclassified": "constant_observed_training_values",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    }
+  },
+  "feature_history_scope": "all earlier calendar windows with component availability masking; last_n restricts fitted events only",
+  "fold_training_event_ids": {
+    "2026-14": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12",
+      "2026-13"
+    ],
+    "2026-15": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12",
+      "2026-13",
+      "2026-14"
+    ],
+    "2026-16": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12",
+      "2026-13",
+      "2026-14",
+      "2026-15"
+    ],
+    "2026-17": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12",
+      "2026-13",
+      "2026-14",
+      "2026-15",
+      "2026-16"
+    ],
+    "2026-18": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10",
+      "2026-11",
+      "2026-12",
+      "2026-13",
+      "2026-14",
+      "2026-15",
+      "2026-16",
+      "2026-17"
+    ]
+  },
+  "frozen_at": "2026-11-06T03:07:55.145596+00:00",
+  "implementation_id": "91f0c43f59007dc42b9b69dc88e0bb5a89c0b8d43d262a503d2d4569980d8acc",
+  "insufficient_development_history": false,
+  "last_n": null,
+  "protocol": {
+    "baseline_podium": "0.65 for race-baseline top three; 1.05/(field_size-3) otherwise, fixed before evaluation",
+    "baseline_qualifying": "last-three-event driver qualifying form, then team form, then neutral; deterministic driver-id tie break",
+    "baseline_race": "published target qualifying rank, then prior driver race form, then team form, then neutral",
+    "calibration": "last two earlier events reserved for out-of-fold sigmoid calibration and threshold when at least eight earlier events; otherwise identity and 0.5",
+    "eligibility": "independent cutoff-valid entry lists and reviewed final labels; unknown labels masked",
+    "evaluation": "rank metrics use only explicitly numbered targets; all field drivers predicted; unknown podium labels masked; metrics macro-average events",
+    "exposure": "Historical outcomes have been consulted; no untouched holdout claim",
+    "features": [
+      "driver_id",
+      "team_id",
+      "field_size",
+      "season_round",
+      "history_event_count",
+      "driver_qualifying_rank_mean_3",
+      "driver_qualifying_rank_mean_5",
+      "driver_qualifying_rank_count_3",
+      "driver_qualifying_rank_count_5",
+      "driver_qualifying_podium_rate_3",
+      "driver_qualifying_podium_rate_5",
+      "driver_qualifying_nonclassification_rate_3",
+      "driver_qualifying_nonclassification_rate_5",
+      "driver_race_rank_mean_3",
+      "driver_race_rank_mean_5",
+      "driver_race_rank_count_3",
+      "driver_race_rank_count_5",
+      "driver_race_podium_rate_3",
+      "driver_race_podium_rate_5",
+      "driver_race_nonclassification_rate_3",
+      "driver_race_nonclassification_rate_5",
+      "team_qualifying_rank_mean_3",
+      "team_qualifying_rank_mean_5",
+      "team_qualifying_rank_count_3",
+      "team_qualifying_rank_count_5",
+      "team_qualifying_podium_rate_3",
+      "team_qualifying_podium_rate_5",
+      "team_qualifying_nonclassification_rate_3",
+      "team_qualifying_nonclassification_rate_5",
+      "team_race_rank_mean_3",
+      "team_race_rank_mean_5",
+      "team_race_rank_count_3",
+      "team_race_rank_count_5",
+      "team_race_podium_rate_3",
+      "team_race_podium_rate_5",
+      "team_race_nonclassification_rate_3",
+      "team_race_nonclassification_rate_5",
+      "driver_qualifying_previous_rank",
+      "driver_race_previous_rank",
+      "current_qualifying_rank",
+      "current_qualifying_rank_known",
+      "current_qualifying_nonclassified"
+    ],
+    "history": "strict earlier available calendar-event windows, not last driver appearances",
+    "missing_groups_excluded": [
+      "practice_laps",
+      "qualifying_laps",
+      "weather",
+      "pace"
+    ],
+    "mode": "historical_reconstruction_exploratory",
+    "prediction_seal": "config and forecast hashes frozen before target labels are joined or scored",
+    "preprocessing": "observed/nonconstant feature selection, median imputation, scale, one-hot fitted on training only",
+    "search": {
+      "gradient_boosting_max_leaf_nodes": [
+        7,
+        15
+      ],
+      "linear_podium_C": [
+        0.1,
+        1.0
+      ],
+      "linear_rank_alpha": [
+        1.0,
+        10.0
+      ],
+      "random_forest_max_depth": [
+        4,
+        null
+      ]
+    },
+    "selection": "at most last three pre-calibration development events, expanding chronological training; minimum three earlier training events",
+    "selection_metric": "event-mean rank MAE for ranks; event-mean Brier for podium",
+    "target": "explicit official numeric rank normalized by independent field size; unknown/NC/DSQ ranks excluded",
+    "threshold": "calibration-OOF F1 on 0.10..0.90 by 0.05; ties nearest 0.5",
+    "training_scope": "2026-only, earlier FIA evidence available before target weekend",
+    "training_weight": "each event has equal total sample weight within each task",
+    "version": "real-historical-lab-v1"
+  },
+  "run_id": "bdc1c440786e293a566519eec9db32ded4511a109c6fcba21e7fe38837ddfda7",
+  "runtime": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "python": "3.13.13",
+    "sklearn": "1.9.1"
+  },
+  "seed": 42,
+  "selected_parameters": {
+    "podium/gradient_boosting": {
+      "max_leaf_nodes": 7
+    },
+    "podium/linear": {
+      "C": 0.1
+    },
+    "podium/random_forest": {
+      "max_depth": 4
+    },
+    "qualifying/gradient_boosting": {
+      "max_leaf_nodes": 7
+    },
+    "qualifying/linear": {
+      "alpha": 10.0
+    },
+    "qualifying/random_forest": {
+      "max_depth": 4
+    },
+    "race/gradient_boosting": {
+      "max_leaf_nodes": 7
+    },
+    "race/linear": {
+      "alpha": 10.0
+    },
+    "race/random_forest": {
+      "max_depth": 4
+    }
+  },
+  "source_snapshot_id": "08bd7449688fda332cab42379d89cdeb295c3b200c45d2d9119e3aefc6befb2a",
+  "target_event_id": "2026-19",
+  "thresholds": {
+    "podium/gradient_boosting": 0.7000000000000002,
+    "podium/linear": 0.3500000000000001,
+    "podium/random_forest": 0.30000000000000004
+  },
+  "training_event_ids": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10",
+    "2026-11",
+    "2026-12",
+    "2026-13",
+    "2026-14",
+    "2026-15",
+    "2026-16",
+    "2026-17",
+    "2026-18"
+  ]
+}

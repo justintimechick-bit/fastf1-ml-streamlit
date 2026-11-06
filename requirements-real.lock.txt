@@ -1,0 +1,5 @@
+# Public FIA evidence/PDF review dependencies; core estimator versions remain unchanged.
+pypdf==6.21.4
+pdfplumber==0.11.10
+pdfminer.six==20260107
+pypdfium2==5.14.0

@@ -1,0 +1,39 @@
+event_id,task,rostered_drivers,numeric_ranks,observed_labels,observed_podium_labels,name,year
+2026-01,qualifying,22,19,19,0,Australian Grand Prix,2026
+2026-01,race,22,16,22,22,Australian Grand Prix,2026
+2026-02,qualifying,22,22,22,0,Chinese Grand Prix,2026
+2026-02,race,22,15,22,22,Chinese Grand Prix,2026
+2026-03,qualifying,22,22,22,0,Japanese Grand Prix,2026
+2026-03,race,22,20,22,22,Japanese Grand Prix,2026
+2026-04,qualifying,22,21,22,0,Miami Grand Prix,2026
+2026-04,race,22,18,22,22,Miami Grand Prix,2026
+2026-05,qualifying,22,22,22,0,Canadian Grand Prix,2026
+2026-05,race,22,16,22,22,Canadian Grand Prix,2026
+2026-06,qualifying,22,22,22,0,Monaco Grand Prix,2026
+2026-06,race,22,16,22,22,Monaco Grand Prix,2026
+2026-07,qualifying,22,22,22,0,Barcelona Grand Prix,2026
+2026-07,race,22,17,22,22,Barcelona Grand Prix,2026
+2026-08,qualifying,22,22,22,0,Austrian Grand Prix,2026
+2026-08,race,22,18,22,22,Austrian Grand Prix,2026
+2026-09,qualifying,22,22,22,0,British Grand Prix,2026
+2026-09,race,22,20,22,22,British Grand Prix,2026
+2026-10,qualifying,22,22,22,0,Belgian Grand Prix,2026
+2026-10,race,22,19,22,22,Belgian Grand Prix,2026
+2026-11,qualifying,22,22,22,0,Hungarian Grand Prix,2026
+2026-11,race,22,19,22,22,Hungarian Grand Prix,2026
+2026-12,qualifying,22,22,22,0,Dutch Grand Prix,2026
+2026-12,race,22,17,22,22,Dutch Grand Prix,2026
+2026-13,qualifying,22,22,22,0,Italian Grand Prix,2026
+2026-13,race,22,19,22,22,Italian Grand Prix,2026
+2026-14,qualifying,22,20,20,0,Spanish Grand Prix,2026
+2026-14,race,22,18,22,22,Spanish Grand Prix,2026
+2026-15,qualifying,22,22,22,0,Azerbaijan Grand Prix,2026
+2026-15,race,22,16,22,22,Azerbaijan Grand Prix,2026
+2026-16,qualifying,22,22,22,0,Bahrain Grand Prix,2026
+2026-16,race,22,20,22,22,Bahrain Grand Prix,2026
+2026-17,qualifying,22,21,22,0,Singapore Grand Prix,2026
+2026-17,race,22,19,22,22,Singapore Grand Prix,2026
+2026-18,qualifying,22,22,22,0,United States Grand Prix,2026
+2026-18,race,22,19,22,22,United States Grand Prix,2026
+2026-19,qualifying,22,21,22,0,Mexico City Grand Prix,2026
+2026-19,race,22,17,22,22,Mexico City Grand Prix,2026

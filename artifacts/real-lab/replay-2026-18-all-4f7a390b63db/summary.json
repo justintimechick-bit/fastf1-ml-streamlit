@@ -1,0 +1,135 @@
+{
+  "calibration_diagnostics": "calibration-fit diagnostics are not independent validation findings",
+  "calibration_event_ids": [
+    "2026-16",
+    "2026-17"
+  ],
+  "data_kind": "real",
+  "development_event_ids": [
+    "2026-13",
+    "2026-14",
+    "2026-15"
+  ],
+  "evaluation_status": "exploratory historical target; not an untouched final test",
+  "excluded_features": {
+    "podium/gradient_boosting": {
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "podium/linear": {
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "podium/random_forest": {
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "qualifying/gradient_boosting": {
+      "current_qualifying_nonclassified": "entirely_missing_in_training",
+      "current_qualifying_rank": "entirely_missing_in_training",
+      "current_qualifying_rank_known": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "qualifying/linear": {
+      "current_qualifying_nonclassified": "entirely_missing_in_training",
+      "current_qualifying_rank": "entirely_missing_in_training",
+      "current_qualifying_rank_known": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "qualifying/random_forest": {
+      "current_qualifying_nonclassified": "entirely_missing_in_training",
+      "current_qualifying_rank": "entirely_missing_in_training",
+      "current_qualifying_rank_known": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "race/gradient_boosting": {
+      "current_qualifying_nonclassified": "constant_observed_training_values",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "race/linear": {
+      "current_qualifying_nonclassified": "constant_observed_training_values",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    },
+    "race/random_forest": {
+      "current_qualifying_nonclassified": "constant_observed_training_values",
+      "driver_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "driver_qualifying_podium_rate_5": "entirely_missing_in_training",
+      "field_size": "constant_observed_training_values",
+      "team_qualifying_podium_rate_3": "entirely_missing_in_training",
+      "team_qualifying_podium_rate_5": "entirely_missing_in_training"
+    }
+  },
+  "last_n": null,
+  "missing_feature_groups": [
+    "practice_laps",
+    "qualifying_laps",
+    "weather",
+    "pace"
+  ],
+  "mode": "historical_reconstruction_exploratory",
+  "model_count": 9,
+  "not_comparable": "2026-only replay does not establish pooled/weighted 2024-2025 superiority; those source/session groups remain unavailable",
+  "qualifying_cutoff": "2026-10-24T20:59:59+00:00",
+  "race_cutoff": "2026-10-25T01:21:00+00:00",
+  "rank_evaluation": "printed numeric positions only; partial field where NC/DSQ/unknown has no rank",
+  "run_id": "4f7a390b63db2d28ed79d9e9d889ebaf76210af680e2e46328ec1fb40b6b5ab6",
+  "source": "FIA final classifications and independent entry lists",
+  "source_catalog_id": "90b38b17647bd0fe459242f2f85ba1eed5de53d440fa94f9f13fc415808a90f6",
+  "source_snapshot_id": "08bd7449688fda332cab42379d89cdeb295c3b200c45d2d9119e3aefc6befb2a",
+  "target_event_count": 1,
+  "target_event_id": "2026-18",
+  "target_event_name": "United States Grand Prix",
+  "training_event_count": 17,
+  "training_event_ids": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10",
+    "2026-11",
+    "2026-12",
+    "2026-13",
+    "2026-14",
+    "2026-15",
+    "2026-16",
+    "2026-17"
+  ],
+  "training_first_event_id": "2026-01",
+  "training_history": "2026-only",
+  "training_last_available_at": "2026-10-11T16:50:00+00:00",
+  "training_last_event_id": "2026-17"
+}

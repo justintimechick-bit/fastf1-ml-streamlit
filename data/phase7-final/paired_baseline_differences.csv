@@ -1,7 +1,0 @@
-task,baseline,metric,meaning,events,mean,event_sd,minimum,maximum,loo_mean_min,loo_mean_max,ci_low,ci_high,interval_status
-podium,baseline_qualifying,log_loss,positive means model has lower loss,4,-0.012278698518584513,6.89556229744631e-05,-0.012338415839814182,-0.012218981197354848,-0.012298604292327736,-0.01225879274484129,,,insufficient_events_for_confidence_interval
-podium,baseline_recent,log_loss,positive means model has lower loss,4,10.045963764859557,1.7895335805481258,8.207914293115879,12.493363540267188,9.23016383972368,10.658646922107451,,,insufficient_events_for_confidence_interval
-qualifying,baseline_practice,position_mae,positive means model has lower loss,4,-0.08333333333333326,0.16666666666666652,-0.33333333333333304,0.0,-0.11111111111111101,0.0,,,insufficient_events_for_confidence_interval
-qualifying,baseline_recent,position_mae,positive means model has lower loss,4,-0.08333333333333326,0.16666666666666652,-0.33333333333333304,0.0,-0.11111111111111101,0.0,,,insufficient_events_for_confidence_interval
-race,baseline_qualifying,position_mae,positive means model has lower loss,4,0.0,0.0,0.0,0.0,0.0,0.0,,,insufficient_events_for_confidence_interval
-race,baseline_recent,position_mae,positive means model has lower loss,4,2.75,0.47360408723287895,2.3333333333333335,3.4285714285714284,2.5238095238095237,2.888888888888889,,,insufficient_events_for_confidence_interval

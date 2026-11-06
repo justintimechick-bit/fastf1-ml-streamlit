@@ -1,9 +1,0 @@
-{
-  "files": {
-    "model.joblib": "fb3fdf80b51f0455daaea7acc68f57b28e2e13ac544e9ac381f539aeb71fe564",
-    "model.json": "12749d48f06c915acf3044ef0e3f56d04e1a1b6b488a44991798d6f6eea23e80"
-  },
-  "id": "824544fc779fe2c7da1fbf18b45ad79bad9ec9d6a716c5abd457c87702f8942f",
-  "kind": "qualifying_model",
-  "manifest_id": "3cc7b3bf005e808e360595275f3e24c35bbd8a26c962bafdef8e6ee766f968dd"
-}

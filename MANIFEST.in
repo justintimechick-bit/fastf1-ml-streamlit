@@ -7,4 +7,5 @@ recursive-include src/f1ml_app/views *.py
 recursive-include src/f1ml_app/assets *.svg
 include requirements-app.lock.txt
 include requirements.txt streamlit_app.py
+include requirements-real.lock.txt
 include .streamlit/config.toml

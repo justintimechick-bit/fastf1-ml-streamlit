@@ -1,41 +1,29 @@
-"""Prepare an isolated GitHub deployment copy, including only required saved artifacts.
-
-No downloads, fitting, source changes, ledger claims or evaluation occur here.
-The original experiment folders are copied byte-for-byte and verified before use.
-"""
+"""Package the real-only Streamlit lab; never acquire data or fit models."""
 
 import argparse
 import shutil
 from pathlib import Path
 
-from f1ml.finalization.locking import code_id
-from f1ml.ingestion.catalog import current_snapshot
-from f1ml.storage import digest, file_digest, read_json, verify_directory, write_json
-from f1ml_app.settings import load_paths
+from f1ml.storage import digest, file_digest, verify_directory, write_json
+from f1ml_real.lab import load_run
+
+DATASET = Path("data/real-core-20261105-v4")
+RUNS = Path("artifacts/real-lab")
 
 
 def prepare(output: Path, root: Path):
-    root = root.resolve()
-    output = output.resolve()
-    paths = load_paths(root=root)
-    if (root / "configs/app.toml").exists():
-        raise ValueError("Cloud packaging currently requires the reviewed default artifact paths")
-    # Fail before creating a partial release if any required artifact is missing or altered.
-    for path in (
-        paths.dataset,
-        paths.features,
-        paths.qualifying,
-        paths.race,
-        paths.experiments,
-        paths.lock,
-        paths.final,
-        paths.real_experiment,
-    ):
-        verify_directory(path)
-    locked = read_json(paths.lock / "protocol.json")
-    if code_id() != locked["code_id"]:
-        raise ValueError("Synthetic source fingerprint differs from its preserved lock")
-    snapshot, pointer_receipt = current_snapshot(paths.catalog)
+    root, output = root.resolve(), output.resolve()
+    receipt = verify_directory(root / DATASET)
+    if receipt.get("data_kind") != "real":
+        raise ValueError("Only reviewed real data may enter this release")
+    runs = []
+    for path in sorted((root / RUNS).glob("*/receipt.json")):
+        run = load_run(path.parent)
+        if run["summary"]["source_snapshot_id"] != receipt["id"]:
+            continue
+        runs.append(path.parent)
+    if not runs:
+        raise ValueError("Prepare a sealed real model replay before publishing")
     output.mkdir(parents=True, exist_ok=False)
 
     def copy(path):
@@ -54,51 +42,25 @@ def prepare(output: Path, root: Path):
         "src/f1ml_real",
         "configs",
         "docs",
-        "tests",
-        ".streamlit",
+        "tests/real",
+        "tools/export_real_notebook.py",
+        "notebooks/real-mexico-2026.ipynb",
+        ".streamlit/config.toml",
         "README.md",
         "pyproject.toml",
         "MANIFEST.in",
-        "examples",
         "streamlit_app.py",
         "requirements.txt",
         "requirements.lock.txt",
         "requirements-app.lock.txt",
+        "requirements-real.lock.txt",
     ):
-        path = root / name
-        if name == ".streamlit":
-            # Do not copy a secrets.toml or local credentials into a deployment repository.
-            copy(path / "config.toml")
-        else:
-            copy(path)
-    for name in (
-        "phase3-final",
-        "phase4-final",
-        "phase5-final",
-        "phase6-verified-experiments",
-        "phase7-inputs",
-        "phase7-lock",
-        "phase7-final",
-        "final-evaluation-ledger",
-        "real-20261105-core-v2",
-        "phase9-preservation.json",
-    ):
-        copy(root / "data" / name)
-    copy(paths.catalog / "CURRENT.json")
-    copy(snapshot)
-    if read_json(output / "data/ingestion-v2/CURRENT.json")["id"] != pointer_receipt["id"]:
-        raise ValueError("Copied catalog changed during packaging")
-    for path in (
-        paths.dataset,
-        paths.features,
-        paths.qualifying,
-        paths.race,
-        paths.experiments,
-        paths.lock,
-        paths.final,
-        paths.real_experiment,
-    ):
+        copy(root / name)
+    copy(root / DATASET)
+    for path in runs:
+        copy(path)
         verify_directory(output / path.relative_to(root))
+    verify_directory(output / DATASET)
     (output / ".gitignore").write_text(
         ".venv/\n__pycache__/\n*.py[cod]\n.pytest_cache/\n.ruff_cache/\n"
         ".streamlit/secrets.toml\n.env\n.DS_Store\nbuild/\ndist/\n*.egg-info/\n"
@@ -107,14 +69,16 @@ def prepare(output: Path, root: Path):
         str(p.relative_to(output)): file_digest(p) for p in sorted(output.rglob("*")) if p.is_file()
     }
     metadata = {
-        "kind": "streamlit_community_cloud_release",
+        "kind": "streamlit_community_cloud_real_lab",
         "entrypoint": "streamlit_app.py",
         "python": "3.13",
-        "experiment_id": read_json(paths.real_experiment / "status.json")["experiment_id"],
-        "real_experiment_receipt_id": verify_directory(paths.real_experiment)["id"],
-        "synthetic_lock_code_id": locked["code_id"],
+        "data_kind": "real",
+        "dataset": str(DATASET),
+        "source_snapshot_id": receipt["id"],
+        "saved_runs": [str(path.relative_to(root)) for path in runs],
         "files": files,
-        "runtime": "read-only saved artifacts; no training, downloads or scoring",
+        "runtime": "Read saved facts/results on rerun; fit only after explicit Run historical test",
+        "excluded": ["synthetic datasets/models/ledgers", "raw PDFs", "caches", "secrets"],
     }
     metadata["id"] = digest(metadata)
     write_json(output / "DEPLOYMENT.json", metadata)

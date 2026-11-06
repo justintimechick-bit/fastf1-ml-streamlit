@@ -21,10 +21,12 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1,<2"]
 app = ["streamlit>=1.50,<2"]
+real = ["pypdf>=6,<7", "pdfplumber>=0.11.10,<0.12"]
 
 [project.scripts]
 f1ml = "f1ml.cli:main"
 f1ml-app = "f1ml_app.launch:main"
+f1ml-real = "f1ml_real.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -33,8 +35,8 @@ where = ["src"]
 f1ml_app = ["views/*.py", "assets/*.svg"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-ra"
+testpaths = ["tests/real"]
+addopts = "-ra --confcutdir=tests/real"
 
 [tool.ruff]
 line-length = 100

@@ -2,4 +2,5 @@
 # Keep model deserialization on the same package versions as the saved artifacts.
 -r requirements.lock.txt
 -r requirements-app.lock.txt
+-r requirements-real.lock.txt
 .
