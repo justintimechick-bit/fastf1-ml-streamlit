@@ -145,8 +145,8 @@ class RealDataset:
         if self.labels.duplicated(["event_id", "task", "driver_id"]).any():
             raise ValueError("Repeated target identity")
         if (
-            pd.to_datetime(self.rosters.known_at, utc=True)
-            > pd.to_datetime(self.rosters.cutoff, utc=True)
+            pd.to_datetime(self.rosters.known_at, utc=True, format="ISO8601")
+            > pd.to_datetime(self.rosters.cutoff, utc=True, format="ISO8601")
         ).any():
             raise ValueError("An independent roster was published after its cutoff")
         known = self.labels.official_position.dropna()
@@ -715,9 +715,17 @@ def run_backtest(
         return _run_backtest(Path(dataset_root), event_id, Path(output), last_n=last_n, seed=seed)
 
 
-def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
+def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=None):
     dataset = RealDataset(dataset_root)
     event = dataset.event(event_id)
+    tasks = tuple(live_tasks) if live_tasks is not None else TASKS
+    if live_tasks is not None:
+        from f1ml_real.refresh import forecast_tasks
+
+        if not tasks or not set(tasks).issubset(forecast_tasks(dataset, event_id)):
+            raise ValueError("Forecast inputs are unavailable or the target session has started")
+    elif pd.isna(event.race_available_at) or pd.isna(event.qualifying_available_at):
+        raise ValueError("Historical tests require completed qualifying and race classifications")
     if last_n is not None and (isinstance(last_n, bool) or last_n < 1):
         raise ValueError("last_n must be a positive number of earlier eligible events")
     training = dataset.history_events(event_id)
@@ -727,12 +735,14 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
     if not ids:
         raise ValueError("No earlier published real events are available for training")
     base_config = _configuration(dataset, event_id, last_n, seed)
+    if live_tasks is not None:
+        base_config = {**base_config, "mode": "live_forecast", "forecast_tasks": list(tasks)}
     run_id = digest(base_config)
     new_directory(output)
     write_json(output / "protocol.json", {**base_config, "id": run_id})
     save_table(output / "training_events.parquet", training)
     matrices, target_frames, audits = {}, {}, {}
-    for task in TASKS:
+    for task in tasks:
         parts = []
         for eid in ids:
             frame, audit = dataset.feature_frame(eid, task)
@@ -750,7 +760,7 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
     selection, models, calibration, thresholds = {}, {}, {}, {}
     development_predictions, calibration_predictions, search_results = [], [], []
     exclusions = {}
-    for task in TASKS:
+    for task in tasks:
         matrix = matrices[task]
         for family in FAMILIES:
             candidates = []
@@ -833,7 +843,7 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
             models[key] = model
             exclusions[key] = model.named_steps["preprocess"].excluded_features_
     # Baseline development predictions use the same event membership as model selection.
-    for task in TASKS:
+    for task in tasks:
         for dev_id in development_ids:
             frame = matrices[task].loc[matrices[task].event_id.eq(dev_id)]
             development_predictions.append(_attach_actuals(dataset, _baseline(frame, task)))
@@ -897,7 +907,7 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
             )
     # No target labels are joined before this whole-field forecast is frozen.
     forecasts = []
-    for task in TASKS:
+    for task in tasks:
         frame = target_frames[task]
         expected = set(frame.driver_id)
         for family in FAMILIES:
@@ -912,6 +922,10 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
             forecasts.append(forecast)
         forecasts.append(_baseline(frame, task))
     forecasts = pd.concat(forecasts, ignore_index=True)
+    if live_tasks is not None:
+        # A long fit must not be published as a pre-session prediction after the start.
+        if not set(tasks).issubset(forecast_tasks(dataset, event_id)):
+            raise ValueError("Target session started during training; forecast was not sealed")
     save_table(output / "forecasts.parquet", forecasts)
     write_json(
         output / "prediction_lock.json",
@@ -923,12 +937,18 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
             "sealed_at": pd.Timestamp.now(tz="UTC").isoformat(),
             "sealed_before_target_scoring": True,
             "field_source": "independent FIA pre-cutoff entry lists",
-            "evaluation_status": "exploratory historical replay; outcomes previously consulted",
+            "evaluation_status": "unscored live forecast"
+            if live_tasks is not None
+            else "exploratory historical replay; outcomes previously consulted",
         },
     )
     # Target-label access/scoring boundary. A complete field remains in every task.
-    predictions = _attach_actuals(dataset, forecasts)
-    metrics = _metric_rows(predictions, "historical_target")
+    predictions = (
+        forecasts.copy() if live_tasks is not None else _attach_actuals(dataset, forecasts)
+    )
+    metrics = (
+        pd.DataFrame() if live_tasks is not None else _metric_rows(predictions, "historical_target")
+    )
     save_table(output / "predictions.parquet", predictions)
     save_table(output / "metrics.parquet", metrics)
     summary = {
@@ -945,8 +965,10 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
         "development_event_ids": development_ids,
         "calibration_event_ids": calibration_ids,
         "data_kind": "real",
-        "mode": PROTOCOL["mode"],
-        "evaluation_status": "exploratory historical target; not an untouched final test",
+        "mode": "live_forecast" if live_tasks is not None else PROTOCOL["mode"],
+        "evaluation_status": "unscored live forecast"
+        if live_tasks is not None
+        else "exploratory historical target; not an untouched final test",
         "source": dataset.receipt.get("source"),
         "source_snapshot_id": dataset.receipt["id"],
         "source_catalog_id": dataset.receipt.get("source_catalog_id"),
@@ -972,8 +994,8 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed):
         output,
         {
             "data_kind": "real",
-            "kind": "historical_backtest",
-            "mode": PROTOCOL["mode"],
+            "kind": "live_forecast" if live_tasks is not None else "historical_backtest",
+            "mode": summary["mode"],
             "run_id": run_id,
             "source_snapshot_id": dataset.receipt["id"],
             "target_event_id": event_id,
@@ -996,6 +1018,33 @@ def cached_run(dataset_root: Path, event_id: str, output_root: Path, *, last_n: 
         load_run(path)
     else:
         run_backtest(Path(dataset_root), event_id, path, last_n=last_n)
+    return path
+
+
+def cached_forecast(dataset_root, event_id, output_root, *, last_n=None):
+    """Explicitly fit unstarted tasks, with no target-label join or target scoring."""
+    from f1ml_real.refresh import forecast_tasks
+
+    dataset = RealDataset(dataset_root)
+    tasks = forecast_tasks(dataset, event_id)
+    if not tasks:
+        raise ValueError("Refresh data first; no unstarted target has the required inputs")
+    config = {
+        **_configuration(dataset, event_id, last_n, 42),
+        "mode": "live_forecast",
+        "forecast_tasks": list(tasks),
+    }
+    run_id = digest(config)
+    path = Path(output_root) / f"forecast-{event_id}-{run_id[:12]}"
+    if path.exists():
+        run = load_run(path)
+        if run["receipt"].get("run_id") != run_id:
+            raise ValueError("Saved forecast configuration differs")
+    else:
+        with threadpool_limits(limits=1):
+            _run_backtest(
+                Path(dataset_root), event_id, path, last_n=last_n, seed=42, live_tasks=tasks
+            )
     return path
 
 

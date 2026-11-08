@@ -1,0 +1,14 @@
+{
+  "absolute_time_available": false,
+  "completed_at": null,
+  "completion_evidence": "official_results_endpoint",
+  "completion_state": "results_available",
+  "errors": [],
+  "fastf1_version": "3.8.1",
+  "page_count": 1,
+  "response_complete": true,
+  "retrieved_at": "2026-11-08T14:43:57.321125+00:00",
+  "source": "jolpica_via_fastf1_ergast",
+  "source_version": "ergast-compatible-v1",
+  "warnings": []
+}

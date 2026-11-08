@@ -27,15 +27,44 @@ Use Python 3.13 for the pinned environment and saved models:
 python3.13 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+#if dependencies are installed, this boots the app
 python -m streamlit run streamlit_app.py
 ```
 
 The **Historical test** page defaults to Mexico 2026. Choose an event and all prior
 eligible history, or the last 6/12 eligible events, then press **Run historical
 test**. Existing verified runs are reused. Fitting occurs only on that explicit
-action, never during ordinary interface reruns. Downloads are CLI-only. The
+action, never during ordinary interface reruns. The
 **Three models** page explains each family; **Data & methodology** shows coverage,
 provenance, cutoffs and exclusions. No synthetic forecasts appear in this app.
+
+Open **Refresh & predict** and press **Refresh FastF1 data** to load new weekends,
+including Brazil (São Paulo, `2026-20`). Select the event and press **Run forecast**.
+Before qualifying, qualifying order is available when its entry list is published.
+After final qualifying is published, race order and podium probabilities become
+available until the scheduled race start. Completed new weekends can be tested
+historically on the same page. Ordinary page reruns never download or train.
+
+The refresh bypasses FastF1's cached calendar/results and reads current FIA indexes.
+FastF1 supplies schedule/results captures; independent FIA entry lists and final
+classification PDFs preserve the model lab's roster and numeric-rank checks.
+Each refresh creates a verified snapshot under `data/live`, preserving the original
+Mexico dataset and runs. Source failures are shown in the event's refresh details;
+a failed refresh keeps the previous snapshot available. Live forecasts are saved
+without target labels or target scores. Practice pace and weather remain excluded.
+
+The same actions are available from the CLI:
+
+```sh
+python -m f1ml_real refresh
+python -m f1ml_real forecast --event 2026-20
+# Optional: --last-n 6 or --last-n 12
+```
+
+`F1ML_LIVE_DATA` sets the app's refresh storage directory (default `data/live`);
+use CLI `--state` for the same override. The active season comes from the base
+dataset, currently 2026. A new season needs a reviewed base dataset. On Streamlit
+Cloud, runtime refreshes and new forecasts are temporary across restarts.
 
 Reproduce or verify the saved Mexico experiment:
 

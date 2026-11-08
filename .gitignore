@@ -9,3 +9,7 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+
+# Local refresh snapshots, source caches and generated live forecasts
+data/live/
+artifacts/real-lab/forecast-*/
