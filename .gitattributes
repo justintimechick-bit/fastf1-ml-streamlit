@@ -1,0 +1,2 @@
+# Preserve whitespace in byte-for-byte source captures used by regression tests.
+tests/real/fixtures/brazil-refresh/*.html -whitespace

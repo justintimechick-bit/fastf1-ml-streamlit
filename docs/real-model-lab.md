@@ -36,6 +36,37 @@ a download or fit. Missing real forecasts are shown as missing. The application
 never fills them with a demo forecast. Source acquisition stays outside ordinary
 Streamlit reruns.
 
+### Refresh and predict a new weekend
+
+On **Refresh & predict**, **Refresh FastF1 data** explicitly downloads the current
+season calendar and started Q/R result endpoints, together with FIA entry lists
+and final classification evidence. Each acquisition bypasses stale FastF1 caches
+and uses fresh FIA indexes. The original reviewed dataset stays fixed; a verified
+revision is activated atomically under `data/live`. A failed acquisition leaves
+the previous revision available, with event-level source problems shown in the UI.
+
+**Run forecast** fits only unstarted tasks whose required inputs are present.
+Qualifying needs an independent entry list. Race and podium need an independent
+race field and final qualifying published before their forecast cutoff. Live
+cutoffs use the acquisition horizon; new completed-event reconstructions retain
+the historical cutoffs described below. Current-season earlier published events
+supply training, development selection and calibration. The target's labels are
+never joined or scored for a live forecast. Training checks the session clock
+again before sealing; if the target starts during fitting, it does not seal a
+live forecast. Saved forecasts remain viewable after the target starts.
+
+```sh
+python -m f1ml_real refresh
+python -m f1ml_real forecast --event 2026-20
+```
+
+Both commands accept `--dataset` and `--state`; forecast also accepts `--runs` and
+`--last-n`. `F1ML_LIVE_DATA` configures the app's state directory. The active year
+comes from the reviewed base dataset. Unknown entrants require a matching name
+and car number in FastF1's captured results before their new identity is accepted;
+a new driver without that evidence remains unavailable. Raw API captures and
+publication/source hashes are retained independently of saved model runs.
+
 ## Source data and availability
 
 The original FastF1/Jolpica catalog and the new FIA modeling snapshot have

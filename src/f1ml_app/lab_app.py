@@ -503,6 +503,110 @@ def historical_test():
     _run_details(run, dataset)
 
 
+def live_data_path() -> Path:
+    path = Path(os.environ.get("F1ML_LIVE_DATA", "data/live"))
+    return path if path.is_absolute() else project_root() / path
+
+
+def live_forecast():
+    from f1ml_real.lab import RealDataset, cached_forecast, cached_run
+    from f1ml_real.refresh import current_dataset, forecast_tasks, refresh
+
+    _title("Refresh & predict", "Load the latest weekend and predict sessions before they start.")
+    base, runs = paths()
+    state = live_data_path()
+    st.caption(
+        "Refresh downloads the current FastF1 calendar and results, plus FIA entry lists and "
+        "final classifications. Training starts only when you press Run forecast."
+    )
+    if st.button("Refresh FastF1 data", type="primary", key="lab_refresh"):
+        try:
+            with st.spinner("Loading the latest event data…"):
+                refresh(base, state)
+            st.success("New data snapshot saved. Select an event below.")
+        except Exception as exc:
+            st.error(f"Refresh failed; the previous snapshot is still available: {exc}")
+    try:
+        path = current_dataset(base, state)
+        dataset = _dataset(str(path), (path / "receipt.json").stat().st_mtime_ns)
+    except (ValueError, OSError, KeyError) as exc:
+        st.error(f"The refreshed dataset could not be verified: {exc}")
+        return
+    if path == base:
+        st.info("Press Refresh FastF1 data to discover the latest race weekends.")
+        return
+    st.caption(f"Last refreshed: {_cutoff(dataset.receipt.get('as_of'))}")
+    original = RealDataset(base)
+    events = dataset.events.loc[~dataset.events.event_id.isin(original.events.event_id)]
+    ids = events.event_id.tolist()
+    if not ids:
+        st.info("The calendar has no additional events yet.")
+        return
+    if st.session_state.get("lab_live_event") not in ids:
+        st.session_state["lab_live_event"] = next(
+            (eid for eid in ids if forecast_tasks(dataset, eid)), ids[0]
+        )
+    target = st.selectbox(
+        "Event", ids, key="lab_live_event", format_func=lambda eid: _event_label(events, eid)
+    )
+    event = dataset.event(target)
+    tasks = forecast_tasks(dataset, target)
+    completed = pd.notna(event.race_available_at) and pd.notna(event.qualifying_available_at)
+    if tasks:
+        st.info("Ready to predict: " + ", ".join(TASKS[task] for task in tasks) + ".")
+    elif completed:
+        st.info("This weekend is complete. You can run a historical test using its new data.")
+    else:
+        st.info(
+            "No forecast is ready. A session must still be in the future, with a published "
+            "entry list. Race and podium forecasts also need final qualifying results."
+        )
+    with st.expander("Schedule and refresh details"):
+        st.write(f"Qualifying: {_cutoff(event.get('qualifying_start'))}")
+        st.write(f"Race: {_cutoff(event.get('race_start'))}")
+        import json
+
+        for status in json.loads((path / "refresh_status.json").read_text()):
+            if status["event_id"] == target:
+                for issue in status["issues"]:
+                    st.warning(issue)
+        st.caption(f"Verified snapshot: {dataset.receipt['id']}")
+    window = st.selectbox("Training history", list(WINDOWS), key="lab_live_window")
+    action = "Run historical test" if completed else "Run forecast"
+    if st.button(action, key="lab_live_run", disabled=not tasks and not completed):
+        try:
+            with st.spinner("Training on earlier events and saving predictions…"):
+                runner = cached_run if completed else cached_forecast
+                result = runner(path, target, runs, last_n=WINDOWS[window])
+            st.session_state["lab_live_run_path"] = str(result)
+        except (ValueError, OSError, KeyError, RuntimeError) as exc:
+            st.error(f"The prediction could not run: {exc}")
+    active = st.session_state.get("lab_live_run_path")
+    run = _read_saved(active) if active else None
+    if run is None or run["summary"]["target_event_id"] != target:
+        run = _default_saved(target, dataset.receipt["id"])
+    if run is None or run["summary"]["target_event_id"] != target:
+        return
+    st.subheader("Saved predictions")
+    st.caption(
+        f"{run['summary']['training_event_count']} earlier training events · "
+        f"{run['summary']['evaluation_status']}"
+    )
+    if run["summary"]["source_snapshot_id"] != dataset.receipt["id"]:
+        st.caption("These saved predictions use an earlier refresh snapshot.")
+    family = st.selectbox(
+        "Prediction model", list(FAMILIES), format_func=FAMILIES.get, key="lab_live_family"
+    )
+    predictions = _frame(run, "predictions")
+    for task in ("qualifying", "race"):
+        if task in set(predictions.task):
+            st.markdown(f"**{TASKS[task]}**")
+            if run["summary"]["mode"] == "live_forecast":
+                _prediction_table(predictions, task, family)
+            else:
+                _task_results(run, task, family)
+
+
 def _model_strip():
     for col, family in zip(st.columns(3), MODEL_COPY, strict=True):
         with col:
@@ -711,6 +815,12 @@ def main():
                 icon=":material/flag:",
                 default=True,
                 url_path="historical-test",
+            ),
+            st.Page(
+                live_forecast,
+                title="Refresh & predict",
+                icon=":material/sync:",
+                url_path="live",
             ),
             st.Page(
                 three_models,

@@ -44,6 +44,15 @@ def main(argv=None):
     replay.add_argument(
         "--last-n", type=int, help="Limit fitted events; default all eligible history"
     )
+    refresh = commands.add_parser("refresh", help="Refresh FastF1 and FIA weekend observations")
+    refresh.add_argument("--dataset", type=Path, default=Path("data/real-core-20261105-v4"))
+    refresh.add_argument("--state", type=Path, default=Path("data/live"))
+    forecast = commands.add_parser("forecast", help="Fit an unscored forecast before session start")
+    forecast.add_argument("--dataset", type=Path, default=Path("data/real-core-20261105-v4"))
+    forecast.add_argument("--state", type=Path, default=Path("data/live"))
+    forecast.add_argument("--event", required=True)
+    forecast.add_argument("--runs", type=Path, default=Path("artifacts/real-lab"))
+    forecast.add_argument("--last-n", type=int)
     run = commands.add_parser("audit", help="Save an immutable source audit; never fit or score")
     run.add_argument("--config", type=Path, required=True)
     run.add_argument("--output", type=Path, required=True)
@@ -58,6 +67,22 @@ def main(argv=None):
     validate.add_argument("--experiment", type=Path, required=True)
     validate.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
+    if args.command == "refresh":
+        from f1ml_real.refresh import refresh
+
+        path = refresh(args.dataset, args.state)
+        print(f"Refreshed dataset: {path}")
+        print((path / "refresh_status.json").read_text())
+        return 0
+    if args.command == "forecast":
+        from f1ml_real.lab import cached_forecast, load_run
+        from f1ml_real.refresh import current_dataset
+
+        dataset = current_dataset(args.dataset, args.state)
+        path = cached_forecast(dataset, args.event, args.runs, last_n=args.last_n)
+        print(f"Saved unscored forecast: {path}")
+        print(load_run(path)["forecasts"].to_string(index=False))
+        return 0
     if args.command == "prepare-real":
         from f1ml_real.fia import prepare_dataset
 

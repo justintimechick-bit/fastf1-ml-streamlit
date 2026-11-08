@@ -1,0 +1,30 @@
+{
+  "https://www.fia.com/documents/championships/110/2026": {
+    "fixture": "index.html",
+    "retrieved_at": "2026-11-08T14:43:57.238050+00:00",
+    "sha256": "36c5e8355490ed3fb52221e6ab5e7885ea9fe35e5ed1d25ad64b8acd5637b1dc",
+    "status_code": 200,
+    "url": "https://www.fia.com/documents/championships/110/2026"
+  },
+  "https://www.fia.com/documents/championships/110/2026/event/S%C3%A3o%20Paulo%20Grand%20Prix": {
+    "fixture": "event.html",
+    "retrieved_at": "2026-11-08T14:43:58.134088+00:00",
+    "sha256": "085524ba3b4611753be73c67492ab193d942de3f467d3a2627e0a7f397395b9e",
+    "status_code": 200,
+    "url": "https://www.fia.com/documents/championships/110/2026/event/S%C3%A3o%20Paulo%20Grand%20Prix"
+  },
+  "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_entry_list.pdf": {
+    "fixture": "roster.txt",
+    "retrieved_at": "2026-11-08T14:43:59.511653+00:00",
+    "sha256": "91a050ca99e48279c451abc067bd1c681d2a5a0f142e20586206bf091cdeea29",
+    "status_code": 200,
+    "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_entry_list.pdf"
+  },
+  "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_final_qualifying_classification.pdf": {
+    "fixture": "qualifying.txt",
+    "retrieved_at": "2026-11-08T14:44:00.495527+00:00",
+    "sha256": "bcee017315239a87fc53b369f44289ab16380465ce4999047d64b5c45d9cdd41",
+    "status_code": 200,
+    "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_final_qualifying_classification.pdf"
+  }
+}
