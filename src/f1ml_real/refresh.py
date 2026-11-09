@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import re
+import shutil
 import threading
 from pathlib import Path
 from urllib.parse import urljoin
@@ -298,6 +299,13 @@ def _refresh(base, state):
     write_json(output / "identity_mapping.json", identities)
     write_json(output / "schedule.json", schedule)
     write_json(output / "refresh_status.json", statuses)
+    # Archived seasons can contain labeled API reconstructions. Preserve both
+    # their evidence files and their limitations in each refreshed revision.
+    for relative in original.receipt["files"]:
+        if relative == "fallbacks.parquet" or relative.startswith("api_captures/"):
+            destination = output / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(original.root / relative, destination)
     receipt = seal_directory(
         output,
         {
@@ -306,8 +314,15 @@ def _refresh(base, state):
             "year": year,
             "base_snapshot_id": original.receipt["id"],
             "source": (
-                "FastF1 calendar/results and FIA final classifications/independent entry lists"
+                original.receipt["source"]
+                if original.receipt.get("api_fallback_events")
+                else "FastF1 calendar/results and FIA final classifications/independent entry lists"
             ),
+            **{
+                key: original.receipt[key]
+                for key in ("api_fallback_events", "fallback_semantics", "availability_semantics")
+                if key in original.receipt
+            },
             "as_of": _now().isoformat(),
             "missing_groups": ["practice_laps", "qualifying_laps", "weather"],
         },

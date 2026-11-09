@@ -1,0 +1,961 @@
+driver_id,official_position,outcome,podium,printed_driver,label_observed,event_id,task,available_at,source,evidence_mode
+hulkenberg,17.0,ordered,,Nico HULKENBERG Kick Sauber F1 Team 1:16.579 9 16:18:48,True,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+lawson,18.0,ordered,,Liam LAWSON Oracle Red Bull Racing 1:17.094 7 16:04:21,True,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+ocon,19.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:17.147 9 16:09:56,True,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+bearman,,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team DNS 1,True,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+albon,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+alonso,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+doohan,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+gasly,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+norris,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+piastri,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+russell,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+sainz,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+stroll,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,,unknown,,,False,2025-01,qualifying,2025-03-15T09:06:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_qualifying_classification.pdf,
+norris,1.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 57 1:42:06.304 176.786 1:22.167 43 25,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+max_verstappen,2.0,ordered,1.0,Max VERSTAPPEN Oracle Red Bull Racing 57 1:42:07.199 0.895 0.895 176.760 1:23.081 43 18,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+russell,3.0,ordered,1.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 57 1:42:14.785 8.481 7.586 176.541 1:25.065 43 15,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+antonelli,4.0,ordered,0.0,Andrea Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 57 1:42:16.439 10.135 1.654 176.494 1:24.901 43 12,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+albon,5.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 57 1:42:19.077 12.773 2.638 176.418 1:24.597 43 10,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+stroll,6.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 57 1:42:23.717 17.413 4.640 176.285 1:25.538 43 8,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+hulkenberg,7.0,ordered,0.0,Nico HULKENBERG Kick Sauber F1 Team 57 1:42:24.727 18.423 1.010 176.256 1:25.243 43 6,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+leclerc,8.0,ordered,0.0,Charles LECLERC Scuderia Ferrari HP 57 1:42:26.130 19.826 1.403 176.215 1:25.271 43 4,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+piastri,9.0,ordered,0.0,Oscar PIASTRI McLaren Formula 1 Team 57 1:42:26.752 20.448 0.622 176.198 1:23.242 43 2,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+hamilton,10.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 57 1:42:28.777 22.473 2.025 176.140 1:24.218 43 1,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+gasly,11.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 57 1:42:32.806 26.502 4.029 176.024 1:25.020 43,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+tsunoda,12.0,ordered,0.0,Yuki TSUNODA Visa Cash App Racing Bulls F1 Team 57 1:42:36.188 29.884 3.382 175.927 1:24.194 43,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+ocon,13.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 57 1:42:39.465 33.161 3.277 175.834 1:26.764 42,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+bearman,14.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 57 1:42:46.655 40.351 7.190 175.629 1:27.603 42,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+lawson,,non_classified,0.0,Liam LAWSON Oracle Red Bull Racing 46 1:22:10.450 DNF 177.273 1:22.970 43,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+bortoleto,,non_classified,0.0,Gabriel BORTOLETO Kick Sauber F1 Team 45 1:20:55.632 DNF 176.091 1:24.192 43,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+alonso,,non_classified,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 32 55:44.463 DNF 181.800 1:28.819 32,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+sainz,,non_classified,0.0,Carlos SAINZ Atlassian Williams Racing 0 DNF,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+doohan,,non_classified,0.0,Jack DOOHAN BWT Alpine F1 Team 0 DNF,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+hadjar,,non_classified,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 0 DNF,True,2025-01,race,2025-03-16T09:07:00+00:00,https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_final_race_classification.pdf,
+piastri,1.0,ordered,,Oscar Piastri,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+norris,3.0,ordered,,Lando Norris,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+leclerc,6.0,ordered,,Charles Leclerc,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+hamilton,5.0,ordered,,Lewis Hamilton,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+max_verstappen,4.0,ordered,,Max Verstappen,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+lawson,20.0,ordered,,Liam Lawson,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+russell,2.0,ordered,,George Russell,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+antonelli,8.0,ordered,,Andrea Kimi Antonelli,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+stroll,14.0,ordered,,Lance Stroll,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+alonso,13.0,ordered,,Fernando Alonso,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+gasly,16.0,ordered,,Pierre Gasly,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+doohan,18.0,ordered,,Jack Doohan,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+ocon,11.0,ordered,,Esteban Ocon,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+bearman,17.0,ordered,,Oliver Bearman,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+hadjar,7.0,ordered,,Isack Hadjar,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+tsunoda,9.0,ordered,,Yuki Tsunoda,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+albon,10.0,ordered,,Alexander Albon,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+sainz,15.0,ordered,,Carlos Sainz,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+hulkenberg,12.0,ordered,,Nico Hülkenberg,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+bortoleto,19.0,ordered,,Gabriel Bortoleto,True,2025-02,qualifying,2025-03-22T11:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/qualifying/,api_fallback
+piastri,1.0,ordered,1.0,Oscar Piastri,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+norris,2.0,ordered,1.0,Lando Norris,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+leclerc,,dsq,,Charles Leclerc,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+hamilton,,dsq,,Lewis Hamilton,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+max_verstappen,4.0,ordered,0.0,Max Verstappen,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+lawson,12.0,ordered,0.0,Liam Lawson,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+russell,3.0,ordered,1.0,George Russell,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+antonelli,6.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+stroll,9.0,ordered,0.0,Lance Stroll,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+alonso,,retired_non_classified,,Fernando Alonso,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+gasly,,dsq,,Pierre Gasly,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+doohan,13.0,ordered,0.0,Jack Doohan,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+ocon,5.0,ordered,0.0,Esteban Ocon,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+bearman,8.0,ordered,0.0,Oliver Bearman,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+hadjar,11.0,ordered,0.0,Isack Hadjar,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+tsunoda,16.0,ordered,0.0,Yuki Tsunoda,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+albon,7.0,ordered,0.0,Alexander Albon,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+sainz,10.0,ordered,0.0,Carlos Sainz,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+hulkenberg,15.0,ordered,0.0,Nico Hülkenberg,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+bortoleto,14.0,ordered,0.0,Gabriel Bortoleto,True,2025-02,race,2025-03-23T12:26:00+00:00,https://api.jolpi.ca/ergast/f1/2025/2/results/,api_fallback
+max_verstappen,1.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:27.943 6 15:16:51 1:27.502 5 15:28:27 1:26.983 6 16:08:31,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+norris,2.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:27.845 6 15:10:13 1:27.146 3 15:29:24 1:26.995 6 16:07:47,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+piastri,3.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:27.687 6 15:17:00 1:27.507 6 15:46:57 1:27.027 6 16:08:44,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,4.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:27.920 6 15:10:30 1:27.555 9 15:48:26 1:27.299 6 16:00:45,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+russell,5.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:27.843 6 15:17:26 1:27.400 5 15:30:30 1:27.318 6 15:59:32,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,6.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:27.968 6 15:17:19 1:27.639 6 15:45:19 1:27.555 6 16:07:21,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,7.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:28.278 6 15:18:17 1:27.775 6 15:45:42 1:27.569 6 16:07:37,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,8.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:27.942 9 15:17:13 1:27.610 8 15:42:13 1:27.610 6 16:07:57,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+albon,9.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:28.218 6 15:14:22 1:27.783 8 15:30:58 1:27.615 6 16:08:05,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+bearman,10.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:28.228 9 15:19:01 1:27.711 6 15:46:16 1:27.867 6 16:07:14,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+gasly,11.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:28.186 6 15:17:59 1:27.822 6 15:46:27,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+sainz,12.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:28.209 9 15:17:50 1:27.836 6 15:47:05,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+alonso,13.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:28.337 6 15:17:43 1:27.897 6 15:46:11,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+lawson,14.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:28.554 6 15:18:56 1:27.906 6 15:45:50,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,15.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:27.967 6 15:17:07 1:28.000 6 15:45:26,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,16.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:28.570 9 15:18:37,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,17.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:28.622 9 15:18:48,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+ocon,18.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:28.696 9 15:18:25,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+doohan,19.0,ordered,,Jack DOOHAN BWT Alpine F1 Team 1:28.877 9 15:10:08,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+stroll,20.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:29.271 5 15:06:59,True,2025-03,qualifying,2025-04-05T10:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,1.0,ordered,1.0,Max VERSTAPPEN Oracle Red Bull Racing 53 1:22:06.983 224.659 1:31.041 52 25,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+norris,2.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 53 1:22:08.406 1.423 1.423 224.595 1:31.116 51 18,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+piastri,3.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 53 1:22:09.112 2.129 0.706 224.562 1:31.039 53 15,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+leclerc,4.0,ordered,0.0,Charles LECLERC Scuderia Ferrari HP 53 1:22:23.080 16.097 13.968 223.928 1:31.469 47 12,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+russell,5.0,ordered,0.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 53 1:22:24.345 17.362 1.265 223.871 1:31.357 51 10,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+antonelli,6.0,ordered,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 53 1:22:25.654 18.671 1.309 223.811 1:30.965 50 8,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+hamilton,7.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 53 1:22:36.165 29.182 10.511 223.337 1:31.406 51 6,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+hadjar,8.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 53 1:22:44.117 37.134 7.952 222.979 1:31.317 52 4,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+albon,9.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 53 1:22:47.350 40.367 3.233 222.834 1:31.125 52 2,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+bearman,10.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 53 1:23:01.512 54.529 14.162 222.200 1:32.006 49 1,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+alonso,11.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 53 1:23:04.316 57.333 2.804 222.075 1:31.770 51,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+tsunoda,12.0,ordered,0.0,Yuki TSUNODA Oracle Red Bull Racing 53 1:23:05.384 58.401 1.068 222.028 1:31.871 51,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+gasly,13.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 53 1:23:09.105 62.122 3.721 221.862 1:31.820 52,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+sainz,14.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 53 1:23:21.112 74.129 12.007 221.329 1:31.106 36,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+doohan,15.0,ordered,0.0,Jack DOOHAN BWT Alpine F1 Team 53 1:23:28.297 81.314 7.185 221.012 1:32.685 47,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+hulkenberg,16.0,ordered,0.0,Nico HULKENBERG Stake F1 Team Kick Sauber 53 1:23:28.940 81.957 0.643 220.984 1:32.572 31,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+lawson,17.0,ordered,0.0,Liam LAWSON Visa Cash App Racing Bulls F1 Team 53 1:23:29.717 82.734 0.777 220.949 1:32.043 39,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+ocon,18.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 53 1:23:30.421 83.438 0.704 220.918 1:31.967 48,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+bortoleto,19.0,ordered,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 53 1:23:30.880 83.897 0.459 220.898 1:32.034 45,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+stroll,20.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 52 1:22:19.912 1 LAP 1 LAP 219.840 1:32.052 52,True,2025-03,race,2025-04-06T10:15:00+00:00,https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_final_race_classification.pdf,
+piastri,1.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:31.392 5 19:09:08 1:30.454 4 19:41:50 1:29.841 6 20:10:06,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+russell,2.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:31.494 6 19:19:02 1:30.664 8 19:46:38 1:30.009 6 20:09:10,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,3.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:31.454 3 19:08:51 1:30.724 7 19:48:49 1:30.175 6 20:09:25,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,4.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:31.415 6 19:16:36 1:30.716 8 19:46:26 1:30.213 6 20:08:59,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+gasly,5.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:31.462 6 19:17:35 1:30.643 7 19:47:27 1:30.216 6 20:09:35,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+norris,6.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:31.107 5 19:09:19 1:30.560 7 19:41:34 1:30.267 6 20:10:12,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,7.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:31.303 5 19:18:43 1:31.019 6 19:47:39 1:30.423 6 20:09:51,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+sainz,8.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:31.591 6 19:17:20 1:30.844 7 19:48:10 1:30.680 6 20:10:21,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,9.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:31.219 6 19:18:15 1:31.009 6 19:47:01 1:30.772 6 20:09:17,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,10.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:31.751 6 19:18:56 1:31.228 5 19:46:52 1:31.303 6 20:08:41,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+doohan,11.0,ordered,,Jack DOOHAN BWT Alpine F1 Team 1:31.414 6 19:17:46 1:31.245 7 19:48:35,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,12.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:31.591 6 19:17:10 1:31.271 6 19:47:13,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+alonso,13.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:31.634 9 19:19:13 1:31.886 6 19:47:59,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+ocon,14.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:31.594 6 19:19:17 DNF 2,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+albon,15.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:32.040 6 19:19:09,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,16.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:32.067 9 19:11:18 8,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+lawson,17.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:32.165 6 19:18:00,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,18.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:32.186 6 19:16:54,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+stroll,19.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:32.283 9 19:17:03,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+bearman,20.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:32.373 6 19:16:44,True,2025-04,qualifying,2025-04-12T20:55:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_qualifying_classification.pdf,
+piastri,1.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 57 1:35:39.435 193.339 1:35.140 36 25,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+russell,2.0,ordered,1.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 57 1:35:54.934 15.499 15.499 192.818 1:35.518 36 18,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+norris,3.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 57 1:35:55.708 16.273 0.774 192.792 1:35.728 38 15,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+leclerc,4.0,ordered,0.0,Charles LECLERC Scuderia Ferrari HP 57 1:35:59.114 19.679 3.406 192.678 1:36.132 36 12,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+hamilton,5.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 57 1:36:07.428 27.993 8.314 192.400 1:36.235 37 10,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+max_verstappen,6.0,ordered,0.0,Max VERSTAPPEN Oracle Red Bull Racing 57 1:36:13.830 34.395 6.402 192.187 1:36.167 29 8,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+gasly,7.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 57 1:36:15.437 36.002 1.607 192.133 1:36.531 39 6,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+ocon,8.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 57 1:36:23.679 44.244 8.242 191.860 1:37.098 30 4,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+tsunoda,9.0,ordered,0.0,Yuki TSUNODA Oracle Red Bull Racing 57 1:36:24.496 45.061 0.817 191.832 1:37.225 45 2,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+bearman,10.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 57 1:36:27.029 47.594 2.533 191.748 1:37.303 40 1,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+antonelli,11.0,ordered,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 57 1:36:27.451 48.016 0.422 191.734 1:36.690 29,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+albon,12.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 57 1:36:28.274 48.839 0.823 191.707 1:37.141 47,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+hadjar,13.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 57 1:36:35.749 56.314 7.475 191.460 1:36.952 30,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+doohan,14.0,ordered,0.0,Jack DOOHAN * BWT Alpine F1 Team 57 1:36:37.241 57.806 1.492 191.411 1:36.682 31,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+alonso,15.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 57 1:36:39.775 60.340 2.534 191.327 1:37.906 38,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+lawson,16.0,ordered,0.0,Liam LAWSON * Visa Cash App Racing Bulls F1 Team 57 1:36:43.870 64.435 4.095 191.192 1:37.380 44,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+stroll,17.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 57 1:36:44.924 65.489 1.054 191.157 1:38.064 38,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+bortoleto,18.0,ordered,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 57 1:36:46.307 66.872 1.383 191.112 1:38.006 38,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+sainz,,non_classified,0.0,Carlos SAINZ Atlassian Williams Racing 45 1:17:36.543 DNF 188.091 1:36.954 16,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+hulkenberg,,non_classified,0.0,Nico HULKENBERG * Stake F1 Team Kick Sauber DQ,True,2025-04,race,2025-04-13T20:26:00+00:00,https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_final_race_classification.pdf,
+max_verstappen,1.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:27.778 6 20:17:04 1:27.529 6 20:30:33 1:27.294 7 21:09:58,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+piastri,2.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:27.901 6 20:16:03 1:27.545 6 20:39:02 1:27.304 6 21:09:24,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+russell,3.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:28.282 5 20:07:45 1:27.599 6 20:38:45 1:27.407 5 21:08:13,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,4.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:28.552 8 20:05:15 1:27.866 6 20:39:58 1:27.670 5 21:08:56,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,5.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:28.128 6 20:16:30 1:27.798 6 20:38:51 1:27.866 5 21:08:19,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+sainz,6.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:28.354 9 20:17:14 1:28.024 6 20:39:10 1:28.164 8 21:10:15,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,7.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:28.372 9 20:18:47 1:28.102 6 20:40:05 1:28.201 5 21:09:05,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,8.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:28.226 6 20:17:45 1:27.990 6 20:40:39 1:28.204 4 21:08:29,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+gasly,9.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:28.421 9 20:17:53 1:28.025 6 20:40:14 1:28.367 7 21:09:11,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+norris,10.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:27.805 6 20:10:36 1:27.481 3 20:31:25 DNF 2,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+albon,11.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:28.279 8 20:14:09 1:28.109 6 20:35:44,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+lawson,12.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:28.561 6 20:17:23 1:28.191 5 20:39:47,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+alonso,13.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:28.548 8 20:10:18 1:28.303 6 20:40:31,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,14.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:28.571 6 20:16:54 1:28.418 6 20:39:38,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+bearman,15.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:28.536 9 20:17:57 1:28.648 6 20:29:23,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+stroll,16.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:28.645 9 20:10:32,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+doohan,17.0,ordered,,Jack DOOHAN BWT Alpine F1 Team 1:28.739 9 20:16:41,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,18.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:28.782 8 20:10:26,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+ocon,19.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:29.092 9 20:17:35,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,20.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:29.462 8 20:04:00,True,2025-05,qualifying,2025-04-19T21:35:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_qualifying_classification.pdf,
+piastri,1.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 50 1:21:06.758 228.164 1:32.228 50 25,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+max_verstappen,2.0,ordered,1.0,Max VERSTAPPEN Oracle Red Bull Racing 50 1:21:09.601 2.843 2.843 228.031 1:32.280 49 18,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+leclerc,3.0,ordered,1.0,Charles LECLERC Scuderia Ferrari HP 50 1:21:14.862 8.104 5.261 227.784 1:32.192 49 15,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+norris,4.0,ordered,0.0,Lando NORRIS McLaren Formula 1 Team 50 1:21:15.954 9.196 1.092 227.733 1:31.778 41 12,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+russell,5.0,ordered,0.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 50 1:21:33.994 27.236 18.040 226.894 1:32.893 32 10,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+antonelli,6.0,ordered,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 50 1:21:41.446 34.688 7.452 226.549 1:32.396 50 8,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+hamilton,7.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 50 1:21:45.831 39.073 4.385 226.346 1:32.600 43 6,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+sainz,8.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 50 1:22:11.388 64.630 25.557 225.173 1:32.466 50 4,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+albon,9.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 50 1:22:13.273 66.515 1.885 225.087 1:33.477 47 2,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+hadjar,10.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 50 1:22:13.849 67.091 0.576 225.061 1:33.257 39 1,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+alonso,11.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 50 1:22:22.675 75.917 8.826 224.659 1:33.009 49,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+lawson,12.0,ordered,0.0,Liam LAWSON * Visa Cash App Racing Bulls F1 Team 50 1:22:25.209 78.451 2.534 224.544 1:32.998 43,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+bearman,13.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 50 1:22:25.952 79.194 0.743 224.510 1:33.238 50,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+ocon,14.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 50 1:22:46.481 99.723 20.529 223.582 1:34.309 47,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+hulkenberg,15.0,ordered,0.0,Nico HULKENBERG Stake F1 Team Kick Sauber 49 1:21:11.367 1 LAP 1 LAP 223.385 1:33.446 39,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+stroll,16.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 49 1:21:12.285 1 LAP 0.918 223.343 1:32.745 44,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+doohan,17.0,ordered,0.0,Jack DOOHAN BWT Alpine F1 Team 49 1:21:26.022 1 LAP 13.737 222.715 1:33.150 48,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+bortoleto,18.0,ordered,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 49 1:21:26.064 1 LAP 0.042 222.713 1:34.447 39,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+tsunoda,,non_classified,0.0,Yuki TSUNODA Oracle Red Bull Racing 1 2:45.662 DNF 128.734,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+gasly,,non_classified,0.0,Pierre GASLY BWT Alpine F1 Team 0 DNF,True,2025-05,race,2025-04-20T21:47:00+00:00,https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_final_race_classification.pdf,
+max_verstappen,1.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:26.870 6 16:27:34 1:26.643 6 16:43:14 1:26.204 6 17:14:35,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+norris,2.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:26.955 9 16:33:40 1:26.499 6 16:45:09 1:26.269 6 17:15:09,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,3.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:27.077 8 16:25:29 1:26.606 6 16:45:31 1:26.271 6 17:15:47,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+piastri,4.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:27.006 7 16:27:45 1:26.269 3 16:45:00 1:26.375 6 17:15:20,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+russell,5.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:27.014 8 16:31:37 1:26.575 6 16:54:45 1:26.385 6 17:15:58,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+sainz,6.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:27.098 8 16:25:09 1:26.847 6 16:54:34 1:26.569 6 17:15:30,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+albon,7.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:27.042 9 16:33:13 1:26.855 5 16:44:43 1:26.682 6 17:15:39,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,8.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:27.417 9 16:32:12 1:26.948 6 16:43:39 1:26.754 5 17:14:48,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+ocon,9.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:27.450 9 16:33:52 1:26.967 6 16:53:24 1:26.824 6 17:14:43,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,10.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:27.298 9 16:34:13 1:26.959 6 16:53:16 1:26.943 6 17:14:23,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,11.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:27.301 8 16:32:37 1:26.987 5 16:53:46,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,12.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:27.279 9 16:34:07 1:27.006 6 16:44:08,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,13.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:27.343 9 16:33:32 1:27.151 6 16:43:53,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+doohan,14.0,ordered,,Jack DOOHAN BWT Alpine F1 Team 1:27.422 9 16:33:21 1:27.186 6 16:54:56,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+lawson,15.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:27.444 8 16:25:43 1:27.363 6 16:55:07,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,16.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:27.473 9 16:25:52,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+alonso,17.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:27.604 9 16:33:03,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+gasly,18.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:27.710 9 16:32:20,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+stroll,19.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:27.830 9 16:32:48,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+bearman,20.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:27.999 9 16:31:50,True,2025-06,qualifying,2025-05-04T01:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_qualifying_classification.pdf,
+piastri,1.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 57 1:28:51.587 208.188 1:29.822 35 25,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+norris,2.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 57 1:28:56.217 4.630 4.630 208.007 1:29.746 36 18,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+russell,3.0,ordered,1.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 57 1:29:29.231 37.644 33.014 206.728 1:30.318 31 15,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+max_verstappen,4.0,ordered,0.0,Max VERSTAPPEN Oracle Red Bull Racing 57 1:29:31.543 39.956 2.312 206.639 1:30.466 41 12,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+albon,5.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 57 1:29:39.654 48.067 8.111 206.328 1:30.482 55 10,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+antonelli,6.0,ordered,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 57 1:29:47.089 55.502 7.435 206.043 1:30.795 27 8,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+leclerc,7.0,ordered,0.0,Charles LECLERC Scuderia Ferrari HP 57 1:29:48.623 57.036 1.534 205.984 1:30.461 35 6,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+hamilton,8.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 57 1:29:51.773 60.186 3.150 205.864 1:30.562 35 4,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+sainz,9.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 57 1:29:52.164 60.577 0.391 205.849 1:30.703 35 2,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+tsunoda,10.0,ordered,0.0,Yuki TSUNODA * Oracle Red Bull Racing 57 1:30:06.021 74.434 13.857 205.321 1:30.964 55 1,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+hadjar,11.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 57 1:30:06.189 74.602 0.168 205.315 1:30.971 51,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+ocon,12.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 57 1:30:13.593 82.006 7.404 205.034 1:31.122 30,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+gasly,13.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 57 1:30:22.032 90.445 8.439 204.715 1:31.159 35,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+hulkenberg,14.0,ordered,0.0,Nico HULKENBERG Stake F1 Team Kick Sauber 56 1:28:52.742 1 LAP 1 LAP 204.489 1:31.015 43,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+alonso,15.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 56 1:29:12.566 1 LAP 19.824 203.732 1:31.287 38,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+stroll,16.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 56 1:29:16.749 1 LAP 4.183 203.573 1:31.769 50,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+lawson,,non_classified,0.0,Liam LAWSON Visa Cash App Racing Bulls F1 Team 36 59:06.511 DNF 197.610 1:31.770 30,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+bortoleto,,non_classified,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 30 49:03.459 DNF 198.381 1:32.328 21,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+bearman,,non_classified,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 27 43:10.773 DNF 202.826 1:32.680 24,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+doohan,,non_classified,0.0,Jack DOOHAN BWT Alpine F1 Team 0 DNF,True,2025-06,race,2025-05-05T02:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_final_race_classification.pdf,
+piastri,1.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:15.500 6 16:26:26 1:15.214 6 17:14:00 1:14.670 6 17:32:45,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,2.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:15.175 5 16:25:39 1:15.394 6 17:12:42 1:14.704 6 17:33:50,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+russell,3.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:15.852 5 16:25:33 1:15.334 6 17:12:32 1:14.807 6 17:34:13,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+norris,4.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:15.894 7 16:31:12 1:15.261 6 17:02:57 1:14.962 6 17:25:03,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+alonso,5.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:15.695 7 16:25:06 1:15.442 6 17:13:49 1:15.431 6 17:33:57,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+sainz,6.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:15.987 9 16:24:16 1:15.198 6 17:12:54 1:15.432 6 17:34:06,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+albon,7.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:16.123 8 16:23:54 1:15.521 6 17:13:05 1:15.473 6 17:33:09,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+stroll,8.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:15.817 9 16:32:16 1:15.497 6 17:13:41 1:15.581 6 17:32:57,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,9.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:16.253 6 16:23:39 1:15.510 6 17:11:48 1:15.746 5 17:24:57,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+gasly,10.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:15.937 5 16:24:48 1:15.505 6 17:13:28 1:15.787 6 17:34:02,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,11.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:16.108 8 16:25:51 1:15.604 6 17:01:55,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,12.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:16.163 8 16:26:02 1:15.765 6 17:02:03,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,13.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:15.943 7 16:25:17 1:15.772 6 17:12:02,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,14.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:16.340 9 16:31:19 1:16.260 6 17:11:38,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+colapinto,15.0,ordered,,Franco COLAPINTO BWT Alpine F1 Team 1:16.256 5 16:22:59,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+lawson,16.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:16.379 6 16:23:27,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,17.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:16.518 9 16:23:07,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+ocon,18.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:16.613 9 16:32:02,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+bearman,19.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:16.918 8 16:03:11,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,,ordered,,Yuki TSUNODA Oracle Red Bull Racing DNF 2,True,2025-07,qualifying,2025-05-17T19:00:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,1.0,ordered,1.0,Max VERSTAPPEN Oracle Red Bull Racing 63 1:31:33.199 202.538 1:17.988 58 25,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+norris,2.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 63 1:31:39.308 6.109 6.109 202.313 1:18.311 63 18,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+piastri,3.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 63 1:31:46.155 12.956 6.847 202.061 1:18.894 56 15,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+hamilton,4.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 63 1:31:47.555 14.356 1.400 202.010 1:18.265 61 12,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+albon,5.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 63 1:31:51.144 17.945 3.589 201.878 1:18.289 63 10,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+leclerc,6.0,ordered,0.0,Charles LECLERC Scuderia Ferrari HP 63 1:31:53.973 20.774 2.829 201.775 1:19.048 56 8,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+russell,7.0,ordered,0.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 63 1:31:55.233 22.034 1.260 201.729 1:19.733 55 6,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+sainz,8.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 63 1:31:56.097 22.898 0.864 201.697 1:19.836 58 4,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+hadjar,9.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 63 1:31:56.785 23.586 0.688 201.672 1:19.473 60 2,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+tsunoda,10.0,ordered,0.0,Yuki TSUNODA Oracle Red Bull Racing 63 1:31:59.645 26.446 2.860 201.567 1:20.039 60 1,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+alonso,11.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 63 1:32:00.449 27.250 0.804 201.538 1:19.894 61,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+hulkenberg,12.0,ordered,0.0,Nico HULKENBERG Stake F1 Team Kick Sauber 63 1:32:03.495 30.296 3.046 201.427 1:20.401 62,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+gasly,13.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 63 1:32:04.623 31.424 1.128 201.386 1:20.398 58,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+lawson,14.0,ordered,0.0,Liam LAWSON Visa Cash App Racing Bulls F1 Team 63 1:32:05.710 32.511 1.087 201.346 1:20.473 60,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+stroll,15.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 63 1:32:06.192 32.993 0.482 201.329 1:20.501 58,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+colapinto,16.0,ordered,0.0,Franco COLAPINTO BWT Alpine F1 Team 63 1:32:06.610 33.411 0.418 201.313 1:20.345 57,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+bearman,17.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 63 1:32:07.007 33.808 0.397 201.299 1:19.521 52,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+bortoleto,18.0,ordered,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 63 1:32:11.771 38.572 4.764 201.126 1:20.630 57,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+antonelli,,non_classified,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 44 1:01:29.744 DNF 210.531 1:20.620 33,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+ocon,,non_classified,0.0,Esteban OCON MoneyGram Haas F1 Team 27 37:42.335 DNF 210.568 1:21.413 3,True,2025-07,race,2025-05-18T18:25:00+00:00,https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_final_race_classification.pdf,
+norris,1.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:11.285 11 16:18:26 1:10.570 8 16:49:14 1:09.954 8 17:15:06,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,2.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:11.229 12 16:14:38 1:10.581 9 16:47:21 1:10.063 6 17:14:36,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+piastri,3.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:11.308 10 16:17:19 1:10.858 11 16:55:01 1:10.129 8 17:14:57,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,4.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:11.575 12 16:18:05 1:10.883 10 16:47:32 1:10.382 6 17:14:23,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,5.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:11.431 9 16:18:00 1:10.875 6 16:52:07 1:10.669 6 17:07:55,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,6.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:11.811 12 16:18:42 1:11.040 9 16:54:10 1:10.923 6 17:14:16,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+alonso,7.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:11.674 12 16:18:22 1:11.182 10 16:51:51 1:10.924 8 17:15:15,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+ocon,8.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:11.839 13 16:14:25 1:11.262 11 16:53:56 1:10.942 8 17:14:41,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+lawson,9.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:11.818 11 16:18:17 1:11.250 9 16:54:03 1:11.129 6 17:14:06,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+albon,10.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:11.629 13 16:15:53 1:10.732 12 16:54:15 1:11.213 9 17:08:59,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+sainz,11.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:11.707 13 16:16:16 1:11.362 12 16:48:18,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,12.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:11.800 11 16:18:32 1:11.415 9 16:49:53,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,13.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:11.871 13 16:18:11 1:11.596 10 16:53:23,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+russell,14.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:11.507 11 16:18:48 DNF 2,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,15.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:11.880 11 16:14:11,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,16.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:11.902 13 16:18:35,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+bearman,17.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:11.979 13 16:17:41,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+gasly,18.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:11.994 11 16:17:48,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+stroll,19.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:12.563 11 16:10:40,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+colapinto,20.0,ordered,,Franco COLAPINTO BWT Alpine F1 Team 1:12.597 12 16:17:55,True,2025-08,qualifying,2025-05-24T18:50:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_qualifying_classification.pdf,
+norris,1.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 78 1:40:33.843 155.295 1:13.221 78 25,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+leclerc,2.0,ordered,1.0,Charles LECLERC Scuderia Ferrari HP 78 1:40:36.974 3.131 3.131 155.215 1:14.055 36 18,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+piastri,3.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 78 1:40:37.501 3.658 0.527 155.201 1:13.745 60 15,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+max_verstappen,4.0,ordered,0.0,Max VERSTAPPEN Oracle Red Bull Racing 78 1:40:54.415 20.572 16.914 154.767 1:14.230 45 12,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+hamilton,5.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 78 1:41:25.230 51.387 30.815 153.984 1:14.090 73 10,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+hadjar,6.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 77 1:41:38.925 1 LAP 1 LAP 151.668 1:15.981 16 8,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+ocon,7.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 77 1:41:39.872 1 LAP 0.947 151.645 1:15.157 34 6,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+lawson,8.0,ordered,0.0,Liam LAWSON Visa Cash App Racing Bulls F1 Team 77 1:41:40.589 1 LAP 0.717 151.627 1:15.321 54 4,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+albon,9.0,ordered,0.0,Alexander ALBON Atlassian Williams Racing 76 1:40:45.712 2 LAPS 1 LAP 151.016 1:14.597 74 2,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+sainz,10.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 76 1:40:49.075 2 LAPS 3.363 150.932 1:13.988 68 1,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+russell,11.0,ordered,0.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 76 1:41:07.687 2 LAPS 18.612 150.469 1:13.405 74,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+bearman,12.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 76 1:41:28.536 2 LAPS 20.849 149.954 1:14.855 6,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+colapinto,13.0,ordered,0.0,Franco COLAPINTO BWT Alpine F1 Team 76 1:41:30.957 2 LAPS 2.421 149.894 1:15.298 30,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+bortoleto,14.0,ordered,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 76 1:41:42.267 2 LAPS 11.310 149.617 1:14.884 37,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+stroll,15.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 76 1:41:44.238 2 LAPS 1.971 149.568 1:14.877 67,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+hulkenberg,16.0,ordered,0.0,Nico HULKENBERG Stake F1 Team Kick Sauber 76 1:41:45.387 2 LAPS 1.149 149.540 1:15.223 47,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+tsunoda,17.0,ordered,0.0,Yuki TSUNODA Oracle Red Bull Racing 76 1:41:45.692 2 LAPS 0.305 149.533 1:14.913 75,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+antonelli,18.0,ordered,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 75 1:40:42.252 3 LAPS 1 LAP 149.114 1:13.518 74,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+alonso,,non_classified,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 36 48:27.102 DNF 148.765 1:15.593 15,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+gasly,,non_classified,0.0,Pierre GASLY BWT Alpine F1 Team 7 10:57.609 DNF 127.875 1:18.054 6,True,2025-08,race,2025-05-25T18:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_final_race_classification.pdf,
+piastri,1.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:12.551 5 16:09:22 1:11.998 3 16:32:14 1:11.546 6 17:00:08,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+norris,2.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:12.799 6 16:08:35 1:12.056 3 16:31:21 1:11.755 6 16:59:56,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,3.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:12.798 3 16:11:03 1:12.358 3 16:30:14 1:11.848 6 17:00:44,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+russell,4.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:12.806 3 16:08:51 1:12.407 3 16:32:34 1:11.848 6 17:00:56,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,5.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:13.058 6 16:17:51 1:12.447 3 16:32:05 1:12.045 6 17:00:36,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,6.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:12.815 6 16:16:46 1:12.585 6 16:39:14 1:12.111 6 17:00:16,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,7.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:13.014 4 16:10:11 1:12.495 5 16:31:54 1:12.131 3 16:53:40,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+gasly,8.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:13.081 6 16:17:10 1:12.611 6 16:30:57 1:12.199 6 16:59:43,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,9.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:13.139 6 16:16:54 1:12.461 6 16:40:03 1:12.252 3 16:59:23,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+alonso,10.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:13.102 5 16:09:49 1:12.523 6 16:31:39 1:12.284 3 16:56:07,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+albon,11.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:13.044 8 16:09:32 1:12.641 6 16:39:36,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,12.0,ordered,,Gabriel BORTOLETO Kick Sauber F1 Team 1:13.045 6 16:16:24 1:12.756 6 16:39:44,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+lawson,13.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:13.039 6 16:18:00 1:12.763 6 16:40:18,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+stroll,14.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:13.038 9 16:19:01 1:13.058 6 16:39:01,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+bearman,15.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:13.074 9 16:18:38 1:13.315 6 16:40:50,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,16.0,ordered,,Nico HULKENBERG Kick Sauber F1 Team 1:13.190 6 16:16:14,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+ocon,17.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:13.201 9 16:18:26,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+sainz,18.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:13.203 6 16:17:33,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+colapinto,19.0,ordered,,Franco COLAPINTO BWT Alpine F1 Team 1:13.334 7 16:10:22,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,20.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:13.385 6 16:18:57,True,2025-09,qualifying,2025-05-31T18:36:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_qualifying_classification.pdf,
+piastri,1.0,ordered,1.0,Oscar PIASTRI McLaren Formula 1 Team 66 1:32:57.375 198.310 1:15.743 61 25,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+norris,2.0,ordered,1.0,Lando NORRIS McLaren Formula 1 Team 66 1:32:59.846 2.471 2.471 198.222 1:16.187 61 18,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+leclerc,3.0,ordered,1.0,Charles LECLERC Scuderia Ferrari HP 66 1:33:07.830 10.455 7.984 197.939 1:17.259 62 15,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+russell,4.0,ordered,0.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 66 1:33:08.734 11.359 0.904 197.907 1:17.244 62 12,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+hulkenberg,5.0,ordered,0.0,Nico HULKENBERG Kick Sauber F1 Team 66 1:33:11.023 13.648 2.289 197.825 1:17.575 63 10,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+hamilton,6.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 66 1:33:12.883 15.508 1.860 197.760 1:17.706 62 8,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+hadjar,7.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 66 1:33:13.397 16.022 0.514 197.742 1:17.770 63 6,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+gasly,8.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 66 1:33:15.257 17.882 1.860 197.676 1:17.896 63 4,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+alonso,9.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 66 1:33:18.939 21.564 3.682 197.546 1:18.128 66 2,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+max_verstappen,10.0,ordered,0.0,Max VERSTAPPEN * Oracle Red Bull Racing 66 1:33:19.201 21.826 0.262 197.537 1:17.019 62 1,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+lawson,11.0,ordered,0.0,Liam LAWSON Visa Cash App Racing Bulls F1 Team 66 1:33:22.907 25.532 3.706 197.406 1:19.424 62,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+bortoleto,12.0,ordered,0.0,Gabriel BORTOLETO Kick Sauber F1 Team 66 1:33:23.371 25.996 0.464 197.390 1:18.297 51,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+tsunoda,13.0,ordered,0.0,Yuki TSUNODA Oracle Red Bull Racing 66 1:33:26.197 28.822 2.826 197.290 1:17.998 46,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+sainz,14.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 66 1:33:26.684 29.309 0.487 197.273 1:19.317 65,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+colapinto,15.0,ordered,0.0,Franco COLAPINTO BWT Alpine F1 Team 66 1:33:28.756 31.381 2.072 197.200 1:18.353 41,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+ocon,16.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 66 1:33:29.572 32.197 0.816 197.171 1:18.624 46,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+bearman,17.0,ordered,0.0,Oliver BEARMAN * MoneyGram Haas F1 Team 66 1:33:34.440 37.065 4.868 197.000 1:18.907 63,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+antonelli,,non_classified,0.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 53 1:12:29.932 DNF 204.164 1:18.255 52,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+albon,,non_classified,0.0,Alexander ALBON Atlassian Williams Racing 27 38:23.148 DNF 196.342 1:20.508 9,True,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+stroll,,unknown,,,False,2025-09,race,2025-06-01T18:21:00+00:00,https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_final_race_classification.pdf,
+russell,1.0,ordered,,George RUSSELL Mercedes-AMG PETRONAS F1 Team 1:12.075 9 16:24:46 1:11.570 6 16:46:55 1:10.899 6 17:07:57,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+max_verstappen,2.0,ordered,,Max VERSTAPPEN Oracle Red Bull Racing 1:12.054 6 16:26:19 1:11.638 8 16:35:36 1:11.059 6 17:07:49,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+piastri,3.0,ordered,,Oscar PIASTRI McLaren Formula 1 Team 1:11.939 9 16:22:42 1:11.715 6 16:35:58 1:11.120 8 17:07:30,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+antonelli,4.0,ordered,,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 1:12.279 9 16:24:55 1:11.974 6 16:47:26 1:11.391 6 17:08:06,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+hamilton,5.0,ordered,,Lewis HAMILTON Scuderia Ferrari HP 1:11.952 11 16:23:07 1:11.885 8 16:41:22 1:11.526 8 17:05:37,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+alonso,6.0,ordered,,Fernando ALONSO Aston Martin Aramco F1 Team 1:12.073 11 16:23:25 1:11.805 8 16:48:16 1:11.586 8 17:05:27,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+norris,7.0,ordered,,Lando NORRIS McLaren Formula 1 Team 1:11.826 8 16:22:50 1:11.599 6 16:47:34 1:11.625 8 17:01:45,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+leclerc,8.0,ordered,,Charles LECLERC Scuderia Ferrari HP 1:12.038 12 16:26:00 1:11.626 8 16:42:57 1:11.682 7 17:01:32,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+hadjar,9.0,ordered,,Isack HADJAR Visa Cash App Racing Bulls F1 Team 1:12.211 9 16:24:33 1:12.003 6 16:48:09 1:11.867 6 17:08:33,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+albon,10.0,ordered,,Alexander ALBON Atlassian Williams Racing 1:12.090 12 16:25:41 1:11.892 10 16:47:49 1:11.907 8 17:08:22,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+tsunoda,11.0,ordered,,Yuki TSUNODA Oracle Red Bull Racing 1:12.334 9 16:24:40 1:12.102 6 16:47:14,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+colapinto,12.0,ordered,,Franco COLAPINTO BWT Alpine F1 Team 1:12.234 11 16:23:36 1:12.142 9 16:45:24,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+hulkenberg,13.0,ordered,,Nico HULKENBERG Stake F1 Team Kick Sauber 1:12.323 10 16:25:22 1:12.183 8 16:48:29,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+bearman,14.0,ordered,,Oliver BEARMAN MoneyGram Haas F1 Team 1:12.306 13 16:25:15 1:12.340 6 16:36:25,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+ocon,15.0,ordered,,Esteban OCON MoneyGram Haas F1 Team 1:12.378 13 16:25:28 1:12.634 8 16:48:04,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+bortoleto,16.0,ordered,,Gabriel BORTOLETO Stake F1 Team Kick Sauber 1:12.385 11 16:25:54,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+sainz,17.0,ordered,,Carlos SAINZ Atlassian Williams Racing 1:12.398 13 16:25:50,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+stroll,18.0,ordered,,Lance STROLL Aston Martin Aramco F1 Team 1:12.517 12 16:07:02,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+lawson,19.0,ordered,,Liam LAWSON Visa Cash App Racing Bulls F1 Team 1:12.525 10 16:25:11,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+gasly,20.0,ordered,,Pierre GASLY BWT Alpine F1 Team 1:12.667 12 16:23:15,True,2025-10,qualifying,2025-06-15T00:31:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_qualifying_classification.pdf,
+russell,1.0,ordered,1.0,George RUSSELL Mercedes-AMG PETRONAS F1 Team 70 1:31:52.688 199.353 1:14.119 63 25,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+max_verstappen,2.0,ordered,1.0,Max VERSTAPPEN Oracle Red Bull Racing 70 1:31:52.916 0.228 0.228 199.344 1:14.287 62 18,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+antonelli,3.0,ordered,1.0,Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 70 1:31:53.702 1.014 0.786 199.316 1:14.455 60 15,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+piastri,4.0,ordered,0.0,Oscar PIASTRI McLaren Formula 1 Team 70 1:31:54.797 2.109 1.095 199.276 1:14.255 64 12,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+leclerc,5.0,ordered,0.0,Charles LECLERC Scuderia Ferrari HP 70 1:31:56.130 3.442 1.333 199.228 1:14.261 57 10,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+hamilton,6.0,ordered,0.0,Lewis HAMILTON Scuderia Ferrari HP 70 1:32:03.401 10.713 7.271 198.966 1:14.805 64 8,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+alonso,7.0,ordered,0.0,Fernando ALONSO Aston Martin Aramco F1 Team 70 1:32:03.660 10.972 0.259 198.957 1:15.024 58 6,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+hulkenberg,8.0,ordered,0.0,Nico HULKENBERG Stake F1 Team Kick Sauber 70 1:32:08.052 15.364 4.392 198.799 1:15.372 65 4,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+ocon,9.0,ordered,0.0,Esteban OCON MoneyGram Haas F1 Team 69 1:31:54.161 1 LAP 1 LAP 196.452 1:14.593 61 2,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+sainz,10.0,ordered,0.0,Carlos SAINZ Atlassian Williams Racing 69 1:31:54.574 1 LAP 0.413 196.438 1:14.389 59 1,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+bearman,11.0,ordered,0.0,Oliver BEARMAN MoneyGram Haas F1 Team 69 1:31:56.405 1 LAP 1.831 196.372 1:15.397 62,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+tsunoda,12.0,ordered,0.0,Yuki TSUNODA Oracle Red Bull Racing 69 1:31:58.144 1 LAP 1.739 196.311 1:15.358 59,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+colapinto,13.0,ordered,0.0,Franco COLAPINTO BWT Alpine F1 Team 69 1:31:59.706 1 LAP 1.562 196.255 1:16.076 53,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+bortoleto,14.0,ordered,0.0,Gabriel BORTOLETO Stake F1 Team Kick Sauber 69 1:32:00.567 1 LAP 0.861 196.224 1:15.414 56,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+gasly,15.0,ordered,0.0,Pierre GASLY BWT Alpine F1 Team 69 1:32:00.638 1 LAP 0.071 196.222 1:14.993 63,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+hadjar,16.0,ordered,0.0,Isack HADJAR Visa Cash App Racing Bulls F1 Team 69 1:32:01.425 1 LAP 0.787 196.194 1:16.292 51,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+stroll,17.0,ordered,0.0,Lance STROLL Aston Martin Aramco F1 Team 69 1:32:01.751 1 LAP 0.326 196.182 1:14.902 57,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+norris,18.0,ordered,0.0,Lando NORRIS * McLaren Formula 1 Team 66 1:24:02.470 DNF 205.489 1:14.229 65,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+lawson,,non_classified,0.0,Liam LAWSON Visa Cash App Racing Bulls F1 Team 53 1:09:16.272 DNF 200.198 1:16.320 52,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+albon,,non_classified,0.0,Alexander ALBON Atlassian Williams Racing 46 1:00:03.080 DNF 200.434 1:16.197 31,True,2025-10,race,2025-06-16T02:10:00+00:00,https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_final_race_classification.pdf,
+piastri,3.0,ordered,,Oscar Piastri,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+norris,1.0,ordered,,Lando Norris,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+leclerc,2.0,ordered,,Charles Leclerc,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+hamilton,4.0,ordered,,Lewis Hamilton,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+max_verstappen,7.0,ordered,,Max Verstappen,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+tsunoda,18.0,ordered,,Yuki Tsunoda,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+russell,5.0,ordered,,George Russell,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+antonelli,9.0,ordered,,Andrea Kimi Antonelli,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+stroll,16.0,ordered,,Lance Stroll,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+alonso,11.0,ordered,,Fernando Alonso,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+gasly,10.0,ordered,,Pierre Gasly,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+colapinto,14.0,ordered,,Franco Colapinto,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+ocon,17.0,ordered,,Esteban Ocon,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+bearman,15.0,ordered,,Oliver Bearman,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+hadjar,13.0,ordered,,Isack Hadjar,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+lawson,6.0,ordered,,Liam Lawson,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+albon,12.0,ordered,,Alexander Albon,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+sainz,19.0,ordered,,Carlos Sainz,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+hulkenberg,20.0,ordered,,Nico Hülkenberg,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+bortoleto,8.0,ordered,,Gabriel Bortoleto,True,2025-11,qualifying,2025-06-28T19:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/qualifying/,api_fallback
+piastri,2.0,ordered,1.0,Oscar Piastri,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+norris,1.0,ordered,1.0,Lando Norris,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+leclerc,3.0,ordered,1.0,Charles Leclerc,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+hamilton,4.0,ordered,0.0,Lewis Hamilton,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+max_verstappen,,retired_non_classified,,Max Verstappen,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+tsunoda,16.0,ordered,0.0,Yuki Tsunoda,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+russell,5.0,ordered,0.0,George Russell,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+antonelli,,retired_non_classified,,Andrea Kimi Antonelli,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+stroll,14.0,ordered,0.0,Lance Stroll,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+alonso,7.0,ordered,0.0,Fernando Alonso,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+gasly,13.0,ordered,0.0,Pierre Gasly,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+colapinto,15.0,ordered,0.0,Franco Colapinto,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+ocon,10.0,ordered,0.0,Esteban Ocon,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+bearman,11.0,ordered,0.0,Oliver Bearman,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+hadjar,12.0,ordered,0.0,Isack Hadjar,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+lawson,6.0,ordered,0.0,Liam Lawson,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+albon,,retired_non_classified,,Alexander Albon,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+sainz,,dns,,Carlos Sainz,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+hulkenberg,9.0,ordered,0.0,Nico Hülkenberg,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+bortoleto,8.0,ordered,0.0,Gabriel Bortoleto,True,2025-11,race,2025-06-29T18:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/11/results/,api_fallback
+piastri,2.0,ordered,,Oscar Piastri,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+norris,3.0,ordered,,Lando Norris,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+leclerc,6.0,ordered,,Charles Leclerc,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+hamilton,5.0,ordered,,Lewis Hamilton,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+max_verstappen,1.0,ordered,,Max Verstappen,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+tsunoda,12.0,ordered,,Yuki Tsunoda,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+antonelli,7.0,ordered,,Andrea Kimi Antonelli,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+stroll,18.0,ordered,,Lance Stroll,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+alonso,9.0,ordered,,Fernando Alonso,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+gasly,10.0,ordered,,Pierre Gasly,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+colapinto,20.0,ordered,,Franco Colapinto,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+ocon,15.0,ordered,,Esteban Ocon,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+bearman,8.0,ordered,,Oliver Bearman,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+hadjar,13.0,ordered,,Isack Hadjar,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+lawson,16.0,ordered,,Liam Lawson,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+albon,14.0,ordered,,Alexander Albon,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+sainz,11.0,ordered,,Carlos Sainz,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+hulkenberg,19.0,ordered,,Nico Hülkenberg,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+bortoleto,17.0,ordered,,Gabriel Bortoleto,True,2025-12,qualifying,2025-07-05T18:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/qualifying/,api_fallback
+piastri,2.0,ordered,1.0,Oscar Piastri,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+norris,1.0,ordered,1.0,Lando Norris,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+leclerc,14.0,ordered,0.0,Charles Leclerc,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+hamilton,4.0,ordered,0.0,Lewis Hamilton,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+max_verstappen,5.0,ordered,0.0,Max Verstappen,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+tsunoda,15.0,ordered,0.0,Yuki Tsunoda,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+russell,10.0,ordered,0.0,George Russell,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+antonelli,,retired_non_classified,,Andrea Kimi Antonelli,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+stroll,7.0,ordered,0.0,Lance Stroll,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+alonso,9.0,ordered,0.0,Fernando Alonso,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+gasly,6.0,ordered,0.0,Pierre Gasly,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+colapinto,,dns,,Franco Colapinto,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+ocon,13.0,ordered,0.0,Esteban Ocon,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+bearman,11.0,ordered,0.0,Oliver Bearman,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+hadjar,,retired_non_classified,,Isack Hadjar,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+lawson,,retired_non_classified,,Liam Lawson,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+albon,8.0,ordered,0.0,Alexander Albon,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+sainz,12.0,ordered,0.0,Carlos Sainz,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+hulkenberg,3.0,ordered,1.0,Nico Hülkenberg,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+bortoleto,,retired_non_classified,,Gabriel Bortoleto,True,2025-12,race,2025-07-06T19:46:00+00:00,https://api.jolpi.ca/ergast/f1/2025/12/results/,api_fallback
+piastri,2.0,ordered,,Oscar Piastri,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+norris,1.0,ordered,,Lando Norris,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+leclerc,3.0,ordered,,Charles Leclerc,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+hamilton,16.0,ordered,,Lewis Hamilton,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+max_verstappen,4.0,ordered,,Max Verstappen,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+tsunoda,7.0,ordered,,Yuki Tsunoda,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+russell,6.0,ordered,,George Russell,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+antonelli,18.0,ordered,,Andrea Kimi Antonelli,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+stroll,20.0,ordered,,Lance Stroll,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+alonso,19.0,ordered,,Fernando Alonso,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+gasly,13.0,ordered,,Pierre Gasly,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+colapinto,17.0,ordered,,Franco Colapinto,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+ocon,11.0,ordered,,Esteban Ocon,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+bearman,12.0,ordered,,Oliver Bearman,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+hadjar,8.0,ordered,,Isack Hadjar,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+lawson,9.0,ordered,,Liam Lawson,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+albon,5.0,ordered,,Alexander Albon,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+sainz,15.0,ordered,,Carlos Sainz,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+hulkenberg,14.0,ordered,,Nico Hülkenberg,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+bortoleto,10.0,ordered,,Gabriel Bortoleto,True,2025-13,qualifying,2025-07-26T18:37:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/qualifying/,api_fallback
+piastri,1.0,ordered,1.0,Oscar Piastri,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+norris,2.0,ordered,1.0,Lando Norris,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+leclerc,3.0,ordered,1.0,Charles Leclerc,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+hamilton,7.0,ordered,0.0,Lewis Hamilton,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+max_verstappen,4.0,ordered,0.0,Max Verstappen,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+tsunoda,13.0,ordered,0.0,Yuki Tsunoda,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+russell,5.0,ordered,0.0,George Russell,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+antonelli,16.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+stroll,14.0,ordered,0.0,Lance Stroll,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+alonso,17.0,ordered,0.0,Fernando Alonso,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+gasly,10.0,ordered,0.0,Pierre Gasly,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+colapinto,19.0,ordered,0.0,Franco Colapinto,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+ocon,15.0,ordered,0.0,Esteban Ocon,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+bearman,11.0,ordered,0.0,Oliver Bearman,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+hadjar,20.0,ordered,0.0,Isack Hadjar,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+lawson,8.0,ordered,0.0,Liam Lawson,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+albon,6.0,ordered,0.0,Alexander Albon,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+sainz,18.0,ordered,0.0,Carlos Sainz,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+hulkenberg,12.0,ordered,0.0,Nico Hülkenberg,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+bortoleto,9.0,ordered,0.0,Gabriel Bortoleto,True,2025-13,race,2025-07-27T19:19:00+00:00,https://api.jolpi.ca/ergast/f1/2025/13/results/,api_fallback
+piastri,2.0,ordered,,Oscar Piastri,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+norris,3.0,ordered,,Lando Norris,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+leclerc,1.0,ordered,,Charles Leclerc,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+hamilton,12.0,ordered,,Lewis Hamilton,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+max_verstappen,8.0,ordered,,Max Verstappen,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+tsunoda,16.0,ordered,,Yuki Tsunoda,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+antonelli,15.0,ordered,,Andrea Kimi Antonelli,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+stroll,6.0,ordered,,Lance Stroll,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+alonso,5.0,ordered,,Fernando Alonso,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+gasly,17.0,ordered,,Pierre Gasly,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+colapinto,14.0,ordered,,Franco Colapinto,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+ocon,18.0,ordered,,Esteban Ocon,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+bearman,11.0,ordered,,Oliver Bearman,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+hadjar,10.0,ordered,,Isack Hadjar,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+lawson,9.0,ordered,,Liam Lawson,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+albon,20.0,ordered,,Alexander Albon,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+sainz,13.0,ordered,,Carlos Sainz,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+hulkenberg,19.0,ordered,,Nico Hülkenberg,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+bortoleto,7.0,ordered,,Gabriel Bortoleto,True,2025-14,qualifying,2025-08-02T18:15:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/qualifying/,api_fallback
+piastri,2.0,ordered,1.0,Oscar Piastri,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+norris,1.0,ordered,1.0,Lando Norris,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+leclerc,4.0,ordered,0.0,Charles Leclerc,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+hamilton,12.0,ordered,0.0,Lewis Hamilton,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+max_verstappen,9.0,ordered,0.0,Max Verstappen,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+tsunoda,17.0,ordered,0.0,Yuki Tsunoda,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+russell,3.0,ordered,1.0,George Russell,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+antonelli,10.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+stroll,7.0,ordered,0.0,Lance Stroll,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+alonso,5.0,ordered,0.0,Fernando Alonso,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+gasly,19.0,ordered,0.0,Pierre Gasly,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+colapinto,18.0,ordered,0.0,Franco Colapinto,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+ocon,16.0,ordered,0.0,Esteban Ocon,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+bearman,,retired_non_classified,,Oliver Bearman,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+hadjar,11.0,ordered,0.0,Isack Hadjar,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+lawson,8.0,ordered,0.0,Liam Lawson,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+albon,15.0,ordered,0.0,Alexander Albon,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+sainz,14.0,ordered,0.0,Carlos Sainz,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+hulkenberg,13.0,ordered,0.0,Nico Hülkenberg,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+bortoleto,6.0,ordered,0.0,Gabriel Bortoleto,True,2025-14,race,2025-08-03T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/14/results/,api_fallback
+piastri,1.0,ordered,,Oscar Piastri,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+norris,2.0,ordered,,Lando Norris,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+leclerc,6.0,ordered,,Charles Leclerc,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+hamilton,7.0,ordered,,Lewis Hamilton,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+max_verstappen,3.0,ordered,,Max Verstappen,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+tsunoda,12.0,ordered,,Yuki Tsunoda,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+russell,5.0,ordered,,George Russell,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+antonelli,11.0,ordered,,Andrea Kimi Antonelli,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+stroll,20.0,ordered,,Lance Stroll,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+alonso,10.0,ordered,,Fernando Alonso,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+gasly,14.0,ordered,,Pierre Gasly,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+colapinto,16.0,ordered,,Franco Colapinto,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+ocon,18.0,ordered,,Esteban Ocon,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+bearman,19.0,ordered,,Oliver Bearman,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+hadjar,4.0,ordered,,Isack Hadjar,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+lawson,8.0,ordered,,Liam Lawson,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+albon,15.0,ordered,,Alexander Albon,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+sainz,9.0,ordered,,Carlos Sainz,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+hulkenberg,17.0,ordered,,Nico Hülkenberg,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+bortoleto,13.0,ordered,,Gabriel Bortoleto,True,2025-15,qualifying,2025-08-30T18:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/qualifying/,api_fallback
+piastri,1.0,ordered,1.0,Oscar Piastri,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+norris,,retired_classified,,Lando Norris,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+leclerc,,retired_non_classified,,Charles Leclerc,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+hamilton,,retired_non_classified,,Lewis Hamilton,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+max_verstappen,2.0,ordered,1.0,Max Verstappen,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+tsunoda,9.0,ordered,0.0,Yuki Tsunoda,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+russell,4.0,ordered,0.0,George Russell,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+antonelli,16.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+stroll,7.0,ordered,0.0,Lance Stroll,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+alonso,8.0,ordered,0.0,Fernando Alonso,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+gasly,17.0,ordered,0.0,Pierre Gasly,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+colapinto,11.0,ordered,0.0,Franco Colapinto,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+ocon,10.0,ordered,0.0,Esteban Ocon,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+bearman,6.0,ordered,0.0,Oliver Bearman,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+hadjar,3.0,ordered,1.0,Isack Hadjar,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+lawson,12.0,ordered,0.0,Liam Lawson,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+albon,5.0,ordered,0.0,Alexander Albon,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+sainz,13.0,ordered,0.0,Carlos Sainz,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+hulkenberg,14.0,ordered,0.0,Nico Hülkenberg,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+bortoleto,15.0,ordered,0.0,Gabriel Bortoleto,True,2025-15,race,2025-08-31T19:55:00+00:00,https://api.jolpi.ca/ergast/f1/2025/15/results/,api_fallback
+piastri,3.0,ordered,,Oscar Piastri,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+norris,2.0,ordered,,Lando Norris,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+leclerc,4.0,ordered,,Charles Leclerc,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+hamilton,5.0,ordered,,Lewis Hamilton,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+max_verstappen,1.0,ordered,,Max Verstappen,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+tsunoda,10.0,ordered,,Yuki Tsunoda,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+russell,6.0,ordered,,George Russell,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+antonelli,7.0,ordered,,Andrea Kimi Antonelli,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+stroll,17.0,ordered,,Lance Stroll,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+alonso,9.0,ordered,,Fernando Alonso,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+gasly,19.0,ordered,,Pierre Gasly,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+colapinto,18.0,ordered,,Franco Colapinto,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+ocon,15.0,ordered,,Esteban Ocon,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+bearman,11.0,ordered,,Oliver Bearman,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+hadjar,16.0,ordered,,Isack Hadjar,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+lawson,20.0,ordered,,Liam Lawson,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+albon,14.0,ordered,,Alexander Albon,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+sainz,13.0,ordered,,Carlos Sainz,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+hulkenberg,12.0,ordered,,Nico Hülkenberg,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+bortoleto,8.0,ordered,,Gabriel Bortoleto,True,2025-16,qualifying,2025-09-06T18:54:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/qualifying/,api_fallback
+piastri,3.0,ordered,1.0,Oscar Piastri,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+norris,2.0,ordered,1.0,Lando Norris,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+leclerc,4.0,ordered,0.0,Charles Leclerc,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+hamilton,6.0,ordered,0.0,Lewis Hamilton,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+max_verstappen,1.0,ordered,1.0,Max Verstappen,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+tsunoda,13.0,ordered,0.0,Yuki Tsunoda,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+russell,5.0,ordered,0.0,George Russell,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+antonelli,9.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+stroll,18.0,ordered,0.0,Lance Stroll,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+alonso,,retired_non_classified,,Fernando Alonso,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+gasly,16.0,ordered,0.0,Pierre Gasly,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+colapinto,17.0,ordered,0.0,Franco Colapinto,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+ocon,15.0,ordered,0.0,Esteban Ocon,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+bearman,12.0,ordered,0.0,Oliver Bearman,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+hadjar,10.0,ordered,0.0,Isack Hadjar,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+lawson,14.0,ordered,0.0,Liam Lawson,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+albon,7.0,ordered,0.0,Alexander Albon,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+sainz,11.0,ordered,0.0,Carlos Sainz,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+hulkenberg,,dns,,Nico Hülkenberg,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+bortoleto,8.0,ordered,0.0,Gabriel Bortoleto,True,2025-16,race,2025-09-07T17:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/16/results/,api_fallback
+piastri,9.0,ordered,,Oscar Piastri,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+norris,7.0,ordered,,Lando Norris,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+leclerc,10.0,ordered,,Charles Leclerc,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+hamilton,12.0,ordered,,Lewis Hamilton,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+max_verstappen,1.0,ordered,,Max Verstappen,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+tsunoda,6.0,ordered,,Yuki Tsunoda,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+russell,5.0,ordered,,George Russell,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+antonelli,4.0,ordered,,Andrea Kimi Antonelli,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+stroll,14.0,ordered,,Lance Stroll,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+alonso,11.0,ordered,,Fernando Alonso,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+gasly,18.0,ordered,,Pierre Gasly,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+colapinto,16.0,ordered,,Franco Colapinto,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+ocon,20.0,ordered,,Esteban Ocon,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+bearman,15.0,ordered,,Oliver Bearman,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+hadjar,8.0,ordered,,Isack Hadjar,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+lawson,3.0,ordered,,Liam Lawson,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+albon,19.0,ordered,,Alexander Albon,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+sainz,2.0,ordered,,Carlos Sainz,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+hulkenberg,17.0,ordered,,Nico Hülkenberg,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+bortoleto,13.0,ordered,,Gabriel Bortoleto,True,2025-17,qualifying,2025-09-20T18:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/qualifying/,api_fallback
+piastri,,retired_non_classified,,Oscar Piastri,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+norris,7.0,ordered,0.0,Lando Norris,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+leclerc,9.0,ordered,0.0,Charles Leclerc,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+hamilton,8.0,ordered,0.0,Lewis Hamilton,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+max_verstappen,1.0,ordered,1.0,Max Verstappen,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+tsunoda,6.0,ordered,0.0,Yuki Tsunoda,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+russell,2.0,ordered,1.0,George Russell,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+antonelli,4.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+stroll,17.0,ordered,0.0,Lance Stroll,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+alonso,15.0,ordered,0.0,Fernando Alonso,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+gasly,18.0,ordered,0.0,Pierre Gasly,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+colapinto,19.0,ordered,0.0,Franco Colapinto,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+ocon,14.0,ordered,0.0,Esteban Ocon,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+bearman,12.0,ordered,0.0,Oliver Bearman,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+hadjar,10.0,ordered,0.0,Isack Hadjar,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+lawson,5.0,ordered,0.0,Liam Lawson,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+albon,13.0,ordered,0.0,Alexander Albon,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+sainz,3.0,ordered,1.0,Carlos Sainz,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+hulkenberg,16.0,ordered,0.0,Nico Hülkenberg,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+bortoleto,11.0,ordered,0.0,Gabriel Bortoleto,True,2025-17,race,2025-09-21T16:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/17/results/,api_fallback
+piastri,3.0,ordered,,Oscar Piastri,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+norris,5.0,ordered,,Lando Norris,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+leclerc,7.0,ordered,,Charles Leclerc,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+hamilton,6.0,ordered,,Lewis Hamilton,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+max_verstappen,2.0,ordered,,Max Verstappen,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+tsunoda,13.0,ordered,,Yuki Tsunoda,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+russell,1.0,ordered,,George Russell,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+antonelli,4.0,ordered,,Andrea Kimi Antonelli,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+stroll,15.0,ordered,,Lance Stroll,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+alonso,10.0,ordered,,Fernando Alonso,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+gasly,18.0,ordered,,Pierre Gasly,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+colapinto,16.0,ordered,,Franco Colapinto,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+ocon,17.0,ordered,,Esteban Ocon,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+bearman,9.0,ordered,,Oliver Bearman,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+hadjar,8.0,ordered,,Isack Hadjar,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+lawson,12.0,ordered,,Liam Lawson,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+albon,19.0,ordered,,Alexander Albon,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+sainz,20.0,ordered,,Carlos Sainz,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+hulkenberg,11.0,ordered,,Nico Hülkenberg,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+bortoleto,14.0,ordered,,Gabriel Bortoleto,True,2025-18,qualifying,2025-10-04T18:13:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/qualifying/,api_fallback
+piastri,4.0,ordered,0.0,Oscar Piastri,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+norris,3.0,ordered,1.0,Lando Norris,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+leclerc,6.0,ordered,0.0,Charles Leclerc,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+hamilton,8.0,ordered,0.0,Lewis Hamilton,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+max_verstappen,2.0,ordered,1.0,Max Verstappen,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+tsunoda,12.0,ordered,0.0,Yuki Tsunoda,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+russell,1.0,ordered,1.0,George Russell,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+antonelli,5.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+stroll,13.0,ordered,0.0,Lance Stroll,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+alonso,7.0,ordered,0.0,Fernando Alonso,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+gasly,19.0,ordered,0.0,Pierre Gasly,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+colapinto,16.0,ordered,0.0,Franco Colapinto,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+ocon,18.0,ordered,0.0,Esteban Ocon,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+bearman,9.0,ordered,0.0,Oliver Bearman,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+hadjar,11.0,ordered,0.0,Isack Hadjar,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+lawson,15.0,ordered,0.0,Liam Lawson,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+albon,14.0,ordered,0.0,Alexander Albon,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+sainz,10.0,ordered,0.0,Carlos Sainz,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+hulkenberg,20.0,ordered,0.0,Nico Hülkenberg,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+bortoleto,17.0,ordered,0.0,Gabriel Bortoleto,True,2025-18,race,2025-10-05T17:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/18/results/,api_fallback
+piastri,6.0,ordered,,Oscar Piastri,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+norris,2.0,ordered,,Lando Norris,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+leclerc,3.0,ordered,,Charles Leclerc,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+hamilton,5.0,ordered,,Lewis Hamilton,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+max_verstappen,1.0,ordered,,Max Verstappen,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+tsunoda,13.0,ordered,,Yuki Tsunoda,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+antonelli,7.0,ordered,,Andrea Kimi Antonelli,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+stroll,18.0,ordered,,Lance Stroll,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+alonso,10.0,ordered,,Fernando Alonso,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+gasly,14.0,ordered,,Pierre Gasly,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+colapinto,15.0,ordered,,Franco Colapinto,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+ocon,17.0,ordered,,Esteban Ocon,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+bearman,8.0,ordered,,Oliver Bearman,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+hadjar,20.0,ordered,,Isack Hadjar,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+lawson,12.0,ordered,,Liam Lawson,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+albon,19.0,ordered,,Alexander Albon,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+sainz,9.0,ordered,,Carlos Sainz,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+hulkenberg,11.0,ordered,,Nico Hülkenberg,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+bortoleto,16.0,ordered,,Gabriel Bortoleto,True,2025-19,qualifying,2025-10-19T01:03:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/qualifying/,api_fallback
+piastri,5.0,ordered,0.0,Oscar Piastri,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+norris,2.0,ordered,1.0,Lando Norris,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+leclerc,3.0,ordered,1.0,Charles Leclerc,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+hamilton,4.0,ordered,0.0,Lewis Hamilton,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+max_verstappen,1.0,ordered,1.0,Max Verstappen,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+tsunoda,7.0,ordered,0.0,Yuki Tsunoda,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+russell,6.0,ordered,0.0,George Russell,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+antonelli,13.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+stroll,12.0,ordered,0.0,Lance Stroll,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+alonso,10.0,ordered,0.0,Fernando Alonso,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+gasly,19.0,ordered,0.0,Pierre Gasly,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+colapinto,17.0,ordered,0.0,Franco Colapinto,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+ocon,15.0,ordered,0.0,Esteban Ocon,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+bearman,9.0,ordered,0.0,Oliver Bearman,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+hadjar,16.0,ordered,0.0,Isack Hadjar,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+lawson,11.0,ordered,0.0,Liam Lawson,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+albon,14.0,ordered,0.0,Alexander Albon,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+sainz,,retired_non_classified,,Carlos Sainz,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+hulkenberg,8.0,ordered,0.0,Nico Hülkenberg,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+bortoleto,18.0,ordered,0.0,Gabriel Bortoleto,True,2025-19,race,2025-10-20T01:05:00+00:00,https://api.jolpi.ca/ergast/f1/2025/19/results/,api_fallback
+piastri,8.0,ordered,,Oscar Piastri,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+norris,1.0,ordered,,Lando Norris,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+leclerc,2.0,ordered,,Charles Leclerc,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+hamilton,3.0,ordered,,Lewis Hamilton,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+max_verstappen,5.0,ordered,,Max Verstappen,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+tsunoda,11.0,ordered,,Yuki Tsunoda,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+antonelli,6.0,ordered,,Andrea Kimi Antonelli,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+stroll,19.0,ordered,,Lance Stroll,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+alonso,14.0,ordered,,Fernando Alonso,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+gasly,18.0,ordered,,Pierre Gasly,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+colapinto,20.0,ordered,,Franco Colapinto,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+ocon,12.0,ordered,,Esteban Ocon,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+bearman,10.0,ordered,,Oliver Bearman,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+hadjar,9.0,ordered,,Isack Hadjar,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+lawson,15.0,ordered,,Liam Lawson,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+albon,17.0,ordered,,Alexander Albon,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+sainz,7.0,ordered,,Carlos Sainz,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+hulkenberg,13.0,ordered,,Nico Hülkenberg,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+bortoleto,16.0,ordered,,Gabriel Bortoleto,True,2025-20,qualifying,2025-10-26T01:12:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/qualifying/,api_fallback
+piastri,5.0,ordered,0.0,Oscar Piastri,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+norris,1.0,ordered,1.0,Lando Norris,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+leclerc,2.0,ordered,1.0,Charles Leclerc,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+hamilton,8.0,ordered,0.0,Lewis Hamilton,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+max_verstappen,3.0,ordered,1.0,Max Verstappen,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+tsunoda,11.0,ordered,0.0,Yuki Tsunoda,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+russell,7.0,ordered,0.0,George Russell,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+antonelli,6.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+stroll,14.0,ordered,0.0,Lance Stroll,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+alonso,,retired_non_classified,,Fernando Alonso,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+gasly,15.0,ordered,0.0,Pierre Gasly,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+colapinto,16.0,ordered,0.0,Franco Colapinto,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+ocon,9.0,ordered,0.0,Esteban Ocon,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+bearman,4.0,ordered,0.0,Oliver Bearman,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+hadjar,13.0,ordered,0.0,Isack Hadjar,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+lawson,,retired_non_classified,,Liam Lawson,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+albon,12.0,ordered,0.0,Alexander Albon,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+sainz,,retired_classified,,Carlos Sainz,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+hulkenberg,,retired_non_classified,,Nico Hülkenberg,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+bortoleto,10.0,ordered,0.0,Gabriel Bortoleto,True,2025-20,race,2025-10-26T23:38:00+00:00,https://api.jolpi.ca/ergast/f1/2025/20/results/,api_fallback
+piastri,4.0,ordered,,Oscar Piastri,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+norris,1.0,ordered,,Lando Norris,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+leclerc,3.0,ordered,,Charles Leclerc,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+hamilton,13.0,ordered,,Lewis Hamilton,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+max_verstappen,16.0,ordered,,Max Verstappen,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+tsunoda,19.0,ordered,,Yuki Tsunoda,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+russell,6.0,ordered,,George Russell,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+antonelli,2.0,ordered,,Andrea Kimi Antonelli,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+stroll,14.0,ordered,,Lance Stroll,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+alonso,11.0,ordered,,Fernando Alonso,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+gasly,9.0,ordered,,Pierre Gasly,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+colapinto,18.0,ordered,,Franco Colapinto,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+ocon,17.0,ordered,,Esteban Ocon,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+bearman,8.0,ordered,,Oliver Bearman,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+hadjar,5.0,ordered,,Isack Hadjar,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+lawson,7.0,ordered,,Liam Lawson,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+albon,12.0,ordered,,Alexander Albon,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+sainz,15.0,ordered,,Carlos Sainz,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+hulkenberg,10.0,ordered,,Nico Hülkenberg,True,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+bortoleto,,unknown,,,False,2025-21,qualifying,2025-11-08T21:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/qualifying/,api_fallback
+piastri,5.0,ordered,0.0,Oscar Piastri,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+norris,1.0,ordered,1.0,Lando Norris,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+leclerc,,retired_non_classified,,Charles Leclerc,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+hamilton,,retired_non_classified,,Lewis Hamilton,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+max_verstappen,3.0,ordered,1.0,Max Verstappen,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+tsunoda,17.0,ordered,0.0,Yuki Tsunoda,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+russell,4.0,ordered,0.0,George Russell,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+antonelli,2.0,ordered,1.0,Andrea Kimi Antonelli,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+stroll,16.0,ordered,0.0,Lance Stroll,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+alonso,14.0,ordered,0.0,Fernando Alonso,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+gasly,10.0,ordered,0.0,Pierre Gasly,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+colapinto,15.0,ordered,0.0,Franco Colapinto,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+ocon,12.0,ordered,0.0,Esteban Ocon,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+bearman,6.0,ordered,0.0,Oliver Bearman,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+hadjar,8.0,ordered,0.0,Isack Hadjar,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+lawson,7.0,ordered,0.0,Liam Lawson,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+albon,11.0,ordered,0.0,Alexander Albon,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+sainz,13.0,ordered,0.0,Carlos Sainz,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+hulkenberg,9.0,ordered,0.0,Nico Hülkenberg,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+bortoleto,,retired_non_classified,,Gabriel Bortoleto,True,2025-21,race,2025-11-09T21:45:00+00:00,https://api.jolpi.ca/ergast/f1/2025/21/results/,api_fallback
+piastri,5.0,ordered,,Oscar Piastri,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+norris,1.0,ordered,,Lando Norris,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+leclerc,9.0,ordered,,Charles Leclerc,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+hamilton,20.0,ordered,,Lewis Hamilton,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+max_verstappen,2.0,ordered,,Max Verstappen,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+tsunoda,19.0,ordered,,Yuki Tsunoda,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+antonelli,17.0,ordered,,Andrea Kimi Antonelli,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+stroll,12.0,ordered,,Lance Stroll,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+alonso,7.0,ordered,,Fernando Alonso,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+gasly,10.0,ordered,,Pierre Gasly,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+colapinto,15.0,ordered,,Franco Colapinto,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+ocon,13.0,ordered,,Esteban Ocon,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+bearman,14.0,ordered,,Oliver Bearman,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+hadjar,8.0,ordered,,Isack Hadjar,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+lawson,6.0,ordered,,Liam Lawson,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+albon,16.0,ordered,,Alexander Albon,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+sainz,3.0,ordered,,Carlos Sainz,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+hulkenberg,11.0,ordered,,Nico Hülkenberg,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+bortoleto,18.0,ordered,,Gabriel Bortoleto,True,2025-22,qualifying,2025-11-22T07:10:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/qualifying/,api_fallback
+piastri,,dsq,,Oscar Piastri,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+norris,,dsq,,Lando Norris,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+leclerc,4.0,ordered,0.0,Charles Leclerc,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+hamilton,8.0,ordered,0.0,Lewis Hamilton,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+max_verstappen,1.0,ordered,1.0,Max Verstappen,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+tsunoda,12.0,ordered,0.0,Yuki Tsunoda,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+russell,2.0,ordered,1.0,George Russell,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+antonelli,3.0,ordered,1.0,Andrea Kimi Antonelli,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+stroll,,retired_non_classified,,Lance Stroll,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+alonso,11.0,ordered,0.0,Fernando Alonso,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+gasly,13.0,ordered,0.0,Pierre Gasly,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+colapinto,15.0,ordered,0.0,Franco Colapinto,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+ocon,9.0,ordered,0.0,Esteban Ocon,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+bearman,10.0,ordered,0.0,Oliver Bearman,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+hadjar,6.0,ordered,0.0,Isack Hadjar,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+lawson,14.0,ordered,0.0,Liam Lawson,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+albon,,retired_non_classified,,Alexander Albon,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+sainz,5.0,ordered,0.0,Carlos Sainz,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+hulkenberg,7.0,ordered,0.0,Nico Hülkenberg,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+bortoleto,,retired_non_classified,,Gabriel Bortoleto,True,2025-22,race,2025-11-23T10:35:00+00:00,https://api.jolpi.ca/ergast/f1/2025/22/results/,api_fallback
+piastri,1.0,ordered,,Oscar Piastri,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+norris,2.0,ordered,,Lando Norris,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+leclerc,10.0,ordered,,Charles Leclerc,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+hamilton,18.0,ordered,,Lewis Hamilton,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+max_verstappen,3.0,ordered,,Max Verstappen,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+tsunoda,16.0,ordered,,Yuki Tsunoda,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+antonelli,5.0,ordered,,Andrea Kimi Antonelli,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+stroll,19.0,ordered,,Lance Stroll,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+alonso,8.0,ordered,,Fernando Alonso,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+gasly,9.0,ordered,,Pierre Gasly,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+colapinto,20.0,ordered,,Franco Colapinto,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+ocon,17.0,ordered,,Esteban Ocon,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+bearman,13.0,ordered,,Oliver Bearman,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+hadjar,6.0,ordered,,Isack Hadjar,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+lawson,12.0,ordered,,Liam Lawson,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+albon,15.0,ordered,,Alexander Albon,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+sainz,7.0,ordered,,Carlos Sainz,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+hulkenberg,11.0,ordered,,Nico Hülkenberg,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+bortoleto,14.0,ordered,,Gabriel Bortoleto,True,2025-23,qualifying,2025-11-29T21:20:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/qualifying/,api_fallback
+piastri,2.0,ordered,1.0,Oscar Piastri,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+norris,4.0,ordered,0.0,Lando Norris,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+leclerc,8.0,ordered,0.0,Charles Leclerc,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+hamilton,12.0,ordered,0.0,Lewis Hamilton,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+max_verstappen,1.0,ordered,1.0,Max Verstappen,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+tsunoda,10.0,ordered,0.0,Yuki Tsunoda,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+russell,6.0,ordered,0.0,George Russell,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+antonelli,5.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+stroll,,retired_classified,,Lance Stroll,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+alonso,7.0,ordered,0.0,Fernando Alonso,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+gasly,16.0,ordered,0.0,Pierre Gasly,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+colapinto,14.0,ordered,0.0,Franco Colapinto,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+ocon,15.0,ordered,0.0,Esteban Ocon,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+bearman,,retired_non_classified,,Oliver Bearman,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+hadjar,,retired_classified,,Isack Hadjar,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+lawson,9.0,ordered,0.0,Liam Lawson,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+albon,11.0,ordered,0.0,Alexander Albon,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+sainz,3.0,ordered,1.0,Carlos Sainz,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+hulkenberg,,retired_non_classified,,Nico Hülkenberg,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+bortoleto,13.0,ordered,0.0,Gabriel Bortoleto,True,2025-23,race,2025-11-30T20:16:00+00:00,https://api.jolpi.ca/ergast/f1/2025/23/results/,api_fallback
+piastri,3.0,ordered,,Oscar Piastri,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+norris,2.0,ordered,,Lando Norris,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+leclerc,5.0,ordered,,Charles Leclerc,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+hamilton,16.0,ordered,,Lewis Hamilton,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+max_verstappen,1.0,ordered,,Max Verstappen,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+tsunoda,10.0,ordered,,Yuki Tsunoda,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+russell,4.0,ordered,,George Russell,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+antonelli,14.0,ordered,,Andrea Kimi Antonelli,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+stroll,15.0,ordered,,Lance Stroll,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+alonso,6.0,ordered,,Fernando Alonso,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+gasly,19.0,ordered,,Pierre Gasly,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+colapinto,20.0,ordered,,Franco Colapinto,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+ocon,8.0,ordered,,Esteban Ocon,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+bearman,11.0,ordered,,Oliver Bearman,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+hadjar,9.0,ordered,,Isack Hadjar,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+lawson,13.0,ordered,,Liam Lawson,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+albon,17.0,ordered,,Alexander Albon,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+sainz,12.0,ordered,,Carlos Sainz,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+hulkenberg,18.0,ordered,,Nico Hülkenberg,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+bortoleto,7.0,ordered,,Gabriel Bortoleto,True,2025-24,qualifying,2025-12-06T16:40:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/qualifying/,api_fallback
+piastri,2.0,ordered,1.0,Oscar Piastri,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+norris,3.0,ordered,1.0,Lando Norris,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+leclerc,4.0,ordered,0.0,Charles Leclerc,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+hamilton,8.0,ordered,0.0,Lewis Hamilton,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+max_verstappen,1.0,ordered,1.0,Max Verstappen,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+tsunoda,14.0,ordered,0.0,Yuki Tsunoda,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+russell,5.0,ordered,0.0,George Russell,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+antonelli,15.0,ordered,0.0,Andrea Kimi Antonelli,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+stroll,10.0,ordered,0.0,Lance Stroll,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+alonso,6.0,ordered,0.0,Fernando Alonso,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+gasly,19.0,ordered,0.0,Pierre Gasly,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+colapinto,20.0,ordered,0.0,Franco Colapinto,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+ocon,7.0,ordered,0.0,Esteban Ocon,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+bearman,12.0,ordered,0.0,Oliver Bearman,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+hadjar,17.0,ordered,0.0,Isack Hadjar,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+lawson,18.0,ordered,0.0,Liam Lawson,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+albon,16.0,ordered,0.0,Alexander Albon,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+sainz,13.0,ordered,0.0,Carlos Sainz,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+hulkenberg,9.0,ordered,0.0,Nico Hülkenberg,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback
+bortoleto,11.0,ordered,0.0,Gabriel Bortoleto,True,2025-24,race,2025-12-07T16:30:00+00:00,https://api.jolpi.ca/ergast/f1/2025/24/results/,api_fallback

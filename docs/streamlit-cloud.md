@@ -5,9 +5,12 @@ Source: <https://github.com/justintimechick-bit/fastf1-ml-streamlit> (`main`).
 
 Both entrypoints now open the **real-only F1 Model Lab**. Ordinary reruns read
 verified saved tables. Explicit **Run historical test** and **Run forecast** actions
-fit models; **Refresh FastF1 data** on **Refresh & predict** downloads new observations.
-The default bundle contains 19 reviewed 2026
-weekends and the sealed Mexico experiment with nine models.
+fit models; **Refresh FastF1 data** in the sidebar downloads new observations.
+The bundle contains the 19-event 2026 base, both complete 24-race 2024/2025
+historical datasets, and the sealed Mexico experiment with nine models. Older
+seasons include explicitly labeled FastF1/Jolpica API fallback and timing proxies
+where FIA documents could not be verified. Runtime refreshes update Historical
+test, Refresh & predict, and Data & methodology together.
 
 ## Prepare a new release
 
@@ -48,7 +51,7 @@ separate, and status says exploratory historical replay. Inspect Three models
 and Data & methodology. Missing real forecasts remain unavailable until an
 explicit eligible test is run; no synthetic substitute is provided.
 
-Open **Refresh & predict**, press **Refresh FastF1 data**, and check the latest
+Press **Refresh FastF1 data** at the bottom of the sidebar and check the latest
 weekend's schedule and source issues. A pre-race forecast needs an independent
 entry list and final qualifying results. Qualifying forecasts require a published
 entry list before qualifying starts. After each target session starts, its live
@@ -58,5 +61,7 @@ these controls; local source changes alone do not update the hosted app.
 
 The existing Streamlit configuration disables source watching. After publishing
 changed imported modules, reboot the app from its management menu and verify the
-new release in Safari. The current source tree no longer ships synthetic data;
+new release. Check all three seasons, the 6/12/all-earlier training windows,
+the shared sidebar refresh control, and updated methodology coverage/timestamps.
+The current source tree no longer ships synthetic data;
 older deployment commits retain their history without rewriting it.

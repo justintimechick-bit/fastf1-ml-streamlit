@@ -36,7 +36,9 @@ TEAM_NAMES = {
     "alpine": "alpine",
     "cadillac": "cadillac",
     "mercedes": "mercedes",
+    "sauber": "sauber",
     "ferrari": "ferrari",
+    " rb ": "racing_bulls",
 }
 
 
@@ -112,7 +114,7 @@ def pdf_text(path, *, roster=False):
     with pdfplumber.open(path) as doc:
         return "\n".join(
             (
-                page.filter(lambda o: o["object_type"] != "char" or o["size"] >= 7)
+                page.filter(lambda o: o["object_type"] != "char" or o["size"] >= 8)
                 if roster
                 else page
             ).extract_text()
@@ -121,7 +123,7 @@ def pdf_text(path, *, roster=False):
         )
 
 
-def parse_roster(text, identities):
+def parse_roster(text, identities, driver_names=None):
     text = normalized(text).split("In addition to the list")[0] if "\n" not in text else text
     text = text.split("In addition to the list")[0]
     rows = []
@@ -129,8 +131,17 @@ def parse_roster(text, identities):
         line = normalized(line)
         match = re.match(r"^(\d{1,2})\s+([A-Z]{3})\s+(.+?)\s+([A-Z]{3})\s+(.+)$", line)
         if not match:
-            continue
-        number, tla, name, nation, team_text = match.groups()
+            # 2024/2025 FIA lists print names without three-letter driver codes.
+            match = re.match(r"^(\d{1,2})\s+(.+?)\s+([A-Z]{3})\s+(.+)$", line)
+            if not match or not driver_names:
+                continue
+            number, name, nation, team_text = match.groups()
+            identity = driver_names.get(normalized(name).casefold())
+            if identity is None:
+                raise ValueError(f"Unreviewed driver identity: {name}")
+            tla = identity
+        else:
+            number, tla, name, nation, team_text = match.groups()
         if tla not in identities:
             raise ValueError(f"Unreviewed driver identity {tla}: {name}")
         team = next(
@@ -171,7 +182,18 @@ def parse_classification(text, roster, kind):
             continue
         if not started:
             continue
-        if line.startswith(("FASTEST LAP", "POLE POSITION LAP", "* PENALTIES", "Timekeeper:")):
+        if line.startswith(
+            (
+                "FASTEST LAP",
+                "OVERALL FASTEST LAP",
+                "POLE POSITION LAP",
+                "* PENALTIES",
+                "Timekeeper:",
+            )
+        ):
+            break
+        if re.match(r"^\d", line) and "KM/H" in line:
+            # Some PDFs omit the pole-position heading in their text layer.
             break
         if line in ("NOT CLASSIFIED", "DISQUALIFIED", "DID NOT START", "WITHDRAWN"):
             section = {
@@ -191,7 +213,10 @@ def parse_classification(text, roster, kind):
         # Never match a timing/team line merely because it begins with a number.
         expected = normalized(known.loc[number, "driver"]).casefold().replace(" ", "")
         actual = normalized(name.replace("*", "")).casefold().replace(" ", "")
-        if expected not in actual and actual not in expected:
+        aliases = [expected]
+        if known.loc[number, "driver_id"] == "antonelli":
+            aliases.extend(("andreakimiantonelli", "kimiantonelli"))
+        if not any(alias in actual or actual in alias for alias in aliases):
             raise ValueError(f"Classification/roster identity mismatch: {number} {name}")
         rank = float(position) if position and section == "ordered" else float("nan")
         rows.append(
@@ -240,9 +265,13 @@ def parse_classification(text, roster, kind):
     return frame
 
 
-def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=False):
+def prepare_dataset(
+    catalog, cache_root, output, *, as_of, year=2026, offline=False, allow_result_fallback=False
+):
     if Path(output).exists():
         raise FileExistsError(output)
+    if allow_result_fallback and year not in (2024, 2025):
+        raise ValueError("API result fallback is restricted to archived 2024/2025 seasons")
     snapshot, receipt = current_snapshot(Path(catalog))
     events = pd.read_parquet(snapshot / "tables/events.parquet")
     sessions = pd.read_parquet(snapshot / "tables/sessions.parquet")
@@ -252,15 +281,38 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
         raise ValueError("Driver abbreviations need an explicit identity review")
     identities = pairs.set_index("source_driverCode").driver_id.to_dict()
     cache = PublicCache(cache_root, offline)
-    index_path = cache.get(INDEX)
+    index_path = cache.get(f"https://www.fia.com/documents/championships/110/{year}")
+    if year != 2026:
+        # The bare year URL does not select a season on FIA's faceted site.
+        season = re.search(
+            rf'<option value="([^\"]*/season/season-{year}-\d+)"', index_path.read_text()
+        )
+        if not season:
+            raise ValueError(f"FIA season index not found for {year}")
+        index_path = cache.get(
+            "https://www.fia.com/documents/championships/"
+            "fia-formula-one-world-championship-14/season/" + season[1].rsplit("/", 1)[-1]
+        )
     options = {
         html.unescape(name).strip(): urljoin("https://www.fia.com", url)
         for url, name in re.findall(
-            r'<option value="([^\"]*/2026/event/[^\"]+)"[^>]*>([^<]+)', index_path.read_text()
+            r'<option value="([^\"]*/event/[^\"]+)"[^>]*>([^<]+)', index_path.read_text()
         )
     }
+    driver_names = {}
+    for row in source_results.to_dict("records"):
+        for name in (
+            f"{row['source_givenName']} {row['source_familyName']}",
+            f"{row['source_familyName']} {row['source_givenName']}",
+        ):
+            driver_names[normalized(name).casefold()] = row["source_driverCode"]
+    # The FIA prints Antonelli's full given name; the results API abbreviates it.
+    if "ANT" in identities:
+        driver_names["andrea kimi antonelli"] = "ANT"
+        driver_names["kimi antonelli"] = "ANT"
     horizon = pd.Timestamp(as_of)
     rows, rosters, result_rows, docs, exclusions = [], [], [], [], []
+    fallbacks, captures = [], {}
     for event in events.loc[events.year.eq(year)].sort_values("round").to_dict("records"):
         eid = event["event_id"]
         ss = sessions.loc[sessions.event_id.eq(eid)]
@@ -271,11 +323,17 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
             continue
         name = "Barcelona-Catalunya" if event["name"] == "Barcelona Grand Prix" else event["name"]
         print(f"Reviewing {eid} {name}", flush=True)
+        records = []
         try:
-            if name not in options and event["name"] not in REVIEWED_EVENT_URLS:
+            reviewed_url = REVIEWED_EVENT_URLS.get(event["name"]) if year == 2026 else None
+            if name not in options and not reviewed_url:
                 raise ValueError("FIA event identity not found in the observed index")
-            page = cache.get(REVIEWED_EVENT_URLS.get(event["name"], options.get(name)))
-            records = document_index(page.read_text())
+            page = cache.get(reviewed_url or options[name])
+            records = [
+                d
+                for d in document_index(page.read_text())
+                if pd.Timestamp(d["published_at"]) <= horizon
+            ]
             finals = {}
             for kind in ("Qualifying", "Race"):
                 selected = [
@@ -283,6 +341,7 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
                     for d in records
                     if re.search(rf"Final {kind} Classification\s*$", d["title"], re.I)
                     and pd.Timestamp(d["published_at"]) <= horizon
+                    and re.search(rf"\b{year}\b", unquote(d["url"]).replace("_", " "))
                 ]
                 if not selected:
                     raise ValueError(f"Missing official final {kind} classification")
@@ -304,10 +363,12 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
                     raise ValueError(f"No independent entrant list before {kind} cutoff")
                 entry = max(eligible, key=lambda d: d["published_at"])
                 entry_path = cache.get(entry["url"])
-                roster = parse_roster(pdf_text(entry_path, roster=True), identities)
+                roster = parse_roster(
+                    pdf_text(entry_path, roster=True), identities, driver_names=driver_names
+                )
                 final = finals[kind]
                 final_path = cache.get(final["url"])
-                if not re.search(r"\b2026\b", normalized(pdf_text(final_path))[:600]):
+                if not re.search(rf"\b{year}\b", normalized(pdf_text(final_path))[:600]):
                     raise ValueError("Classification source has the wrong season identity")
                 labels = parse_classification(pdf_text(final_path), roster, kind)
                 task = "qualifying" if kind == "Qualifying" else "race"
@@ -355,9 +416,29 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
                 }
             )
         except (ValueError, KeyError, requests.RequestException) as exc:
+            if allow_result_fallback:
+                from f1ml_real.historical import catalog_event
+
+                try:
+                    row, rs, ls, ds, captured = catalog_event(
+                        event, ss, source_results, records, cache, identities, driver_names
+                    )
+                except (ValueError, KeyError, OSError) as fallback_error:
+                    exc = ValueError(f"{exc}; API fallback unavailable: {fallback_error}")
+                else:
+                    rows.append(row)
+                    rosters.extend(rs)
+                    result_rows.extend(ls)
+                    docs.extend(ds)
+                    captures.update(captured)
+                    fallbacks.append({"event_id": eid, "name": name, "reason": str(exc)})
+                    print(f"API fallback {eid}: {exc}", flush=True)
+                    continue
             exclusions.append({"event_id": eid, "reason": f"{type(exc).__name__}: {exc}"})
             print(f"Excluded {eid}: {exc}", flush=True)
     output = Path(output)
+    if not rows:
+        raise ValueError(f"No eligible {year} events: {exclusions}")
     output.mkdir(parents=True)
     for name, frame in {
         "events": pd.DataFrame(rows),
@@ -368,12 +449,33 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
     }.items():
         frame.to_parquet(output / f"{name}.parquet", index=False)
         frame.to_csv(output / f"{name}.csv", index=False)
+    if allow_result_fallback:
+        pd.DataFrame(fallbacks, columns=["event_id", "name", "reason"]).to_parquet(
+            output / "fallbacks.parquet", index=False
+        )
+    for relative, capture in captures.items():
+        path = output / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(capture)
     write_json(output / "identity_mapping.json", identities)
     return seal_directory(
         output,
         {
             "data_kind": "real",
-            "source": "FIA final classifications and independent entry lists",
+            "source": (
+                "FIA evidence with labeled captured FastF1/Jolpica API fallback"
+                if fallbacks
+                else "FIA final classifications and independent entry lists"
+            ),
+            "api_fallback_events": [row["event_id"] for row in fallbacks],
+            "fallback_semantics": (
+                "API captures reconstruct historical results and sometimes entrant fields. "
+                "FIA publication records are timing proxies for API labels; absent records use "
+                "qualifying just before race start and race start plus 24 hours as calendar "
+                "proxies. Historical API availability/revision timing is not verified."
+            )
+            if fallbacks
+            else None,
             "source_catalog_id": receipt["id"],
             "year": year,
             "as_of": as_of,
@@ -381,7 +483,11 @@ def prepare_dataset(catalog, cache_root, output, *, as_of, year=2026, offline=Fa
             "excluded_events": len(exclusions),
             "mode": "historical_reconstruction_exploratory",
             "availability_semantics": (
-                "Official document publication is a conservative availability/completion "
+                "FIA-only rows use official document publication as a conservative upper bound. "
+                "API fallback rows use explicitly recorded FIA publication/calendar proxies; "
+                "historical API availability and revisions are not verified."
+                if fallbacks
+                else "Official document publication is a conservative availability/completion "
                 "upper bound, not an observed session-end timestamp"
             ),
             "exposure": (

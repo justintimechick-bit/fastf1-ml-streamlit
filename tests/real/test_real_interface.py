@@ -57,12 +57,15 @@ def test_real_only_landing_page_and_ordinary_rerun_do_not_download_or_fit(
 ):
     monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
     monkeypatch.setenv("F1ML_REAL_RUNS", str(tmp_path / "no-saved-runs"))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(tmp_path / "live"))
     _no_side_effects(monkeypatch)
     at = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=30).run()
     assert not at.exception and not at.error
     assert at.selectbox(key="lab_target_event").value == "2026-19"
-    assert at.selectbox(key="lab_history_window").value == "All earlier 2026 events"
+    assert at.selectbox(key="lab_history_window").value == "All earlier races that year"
     assert at.button(key="lab_run").label == "Run historical test"
+    assert at.sidebar.button(key="lab_refresh").label == "Refresh FastF1 data"
+    assert not any(button.label == "Refresh FastF1 data" for button in at.main.button)
     assert "Synthetic demo" not in _text(at)
     assert "Linear models" in _text(at)
     assert "Random forest" in _text(at)
@@ -77,6 +80,7 @@ def test_explicit_form_submission_calls_real_engine_with_selected_history(
 ):
     monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
     monkeypatch.setenv("F1ML_REAL_RUNS", str(replay_path.parent))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(replay_path.parent / "live"))
     _no_side_effects(monkeypatch)
     calls = []
 
@@ -88,7 +92,7 @@ def test_explicit_form_submission_calls_real_engine_with_selected_history(
     at = AppTest.from_file(str(ROOT / "streamlit_app.py"), default_timeout=30).run()
     assert not calls
     at.selectbox(key="lab_target_event").set_value("2026-14")
-    at.selectbox(key="lab_history_window").set_value("Most recent 12 events")
+    at.selectbox(key="lab_history_window").set_value("Previous 12 races that year")
     at.button(key="lab_run").click().run()
     assert not at.exception and not at.error
     assert calls == [(dataset_root, "2026-14", replay_path.parent, 12)]
@@ -99,8 +103,11 @@ def test_explicit_form_submission_calls_real_engine_with_selected_history(
     assert len(calls) == 1
 
 
-def test_model_and_data_pages_use_real_coverage_without_training(monkeypatch, dataset_root):
+def test_model_and_data_pages_use_real_coverage_without_training(
+    monkeypatch, dataset_root, tmp_path
+):
     monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(tmp_path / "live"))
     _no_side_effects(monkeypatch)
     models = AppTest.from_function(_page_models, default_timeout=30).run()
     assert not models.exception and not models.error

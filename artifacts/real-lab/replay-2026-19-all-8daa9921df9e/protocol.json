@@ -1,0 +1,102 @@
+{
+  "id": "8daa9921df9e1d2e29cacf586dae2245f31387e4e491318585843cf63b5b295e",
+  "implementation_id": "2cd0b29ce2673a97e264b3130fba11af3d80cb3c08a7662164579d08419677f4",
+  "last_n": null,
+  "protocol": {
+    "baseline_podium": "0.65 for race-baseline top three; 1.05/(field_size-3) otherwise, fixed before evaluation",
+    "baseline_qualifying": "last-three-event driver qualifying form, then team form, then neutral; deterministic driver-id tie break",
+    "baseline_race": "published target qualifying rank, then prior driver race form, then team form, then neutral",
+    "calibration": "last two earlier events reserved for out-of-fold sigmoid calibration and threshold when at least eight earlier events; otherwise identity and 0.5",
+    "eligibility": "independent cutoff-valid entry lists and reviewed final labels; unknown labels masked",
+    "evaluation": "rank metrics use only explicitly numbered targets; all field drivers predicted; unknown podium labels masked; metrics macro-average events",
+    "exposure": "Historical outcomes have been consulted; no untouched holdout claim",
+    "features": [
+      "driver_id",
+      "team_id",
+      "field_size",
+      "season_round",
+      "history_event_count",
+      "driver_qualifying_rank_mean_3",
+      "driver_qualifying_rank_mean_5",
+      "driver_qualifying_rank_count_3",
+      "driver_qualifying_rank_count_5",
+      "driver_qualifying_podium_rate_3",
+      "driver_qualifying_podium_rate_5",
+      "driver_qualifying_nonclassification_rate_3",
+      "driver_qualifying_nonclassification_rate_5",
+      "driver_race_rank_mean_3",
+      "driver_race_rank_mean_5",
+      "driver_race_rank_count_3",
+      "driver_race_rank_count_5",
+      "driver_race_podium_rate_3",
+      "driver_race_podium_rate_5",
+      "driver_race_nonclassification_rate_3",
+      "driver_race_nonclassification_rate_5",
+      "team_qualifying_rank_mean_3",
+      "team_qualifying_rank_mean_5",
+      "team_qualifying_rank_count_3",
+      "team_qualifying_rank_count_5",
+      "team_qualifying_podium_rate_3",
+      "team_qualifying_podium_rate_5",
+      "team_qualifying_nonclassification_rate_3",
+      "team_qualifying_nonclassification_rate_5",
+      "team_race_rank_mean_3",
+      "team_race_rank_mean_5",
+      "team_race_rank_count_3",
+      "team_race_rank_count_5",
+      "team_race_podium_rate_3",
+      "team_race_podium_rate_5",
+      "team_race_nonclassification_rate_3",
+      "team_race_nonclassification_rate_5",
+      "driver_qualifying_previous_rank",
+      "driver_race_previous_rank",
+      "current_qualifying_rank",
+      "current_qualifying_rank_known",
+      "current_qualifying_nonclassified"
+    ],
+    "history": "strict earlier available calendar-event windows, not last driver appearances",
+    "missing_groups_excluded": [
+      "practice_laps",
+      "qualifying_laps",
+      "weather",
+      "pace"
+    ],
+    "mode": "historical_reconstruction_exploratory",
+    "prediction_seal": "config and forecast hashes frozen before target labels are joined or scored",
+    "preprocessing": "observed/nonconstant feature selection, median imputation, scale, one-hot fitted on training only",
+    "search": {
+      "gradient_boosting_max_leaf_nodes": [
+        7,
+        15
+      ],
+      "linear_podium_C": [
+        0.1,
+        1.0
+      ],
+      "linear_rank_alpha": [
+        1.0,
+        10.0
+      ],
+      "random_forest_max_depth": [
+        4,
+        null
+      ]
+    },
+    "selection": "at most last three pre-calibration development events, expanding chronological training; minimum three earlier training events",
+    "selection_metric": "event-mean rank MAE for ranks; event-mean Brier for podium",
+    "target": "explicit official numeric rank normalized by independent field size; unknown/NC/DSQ ranks excluded",
+    "threshold": "calibration-OOF F1 on 0.10..0.90 by 0.05; ties nearest 0.5",
+    "training_scope": "2026-only, earlier FIA evidence available before target weekend",
+    "training_weight": "each event has equal total sample weight within each task",
+    "version": "real-historical-lab-v1"
+  },
+  "runtime": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "python": "3.13.13",
+    "sklearn": "1.9.1"
+  },
+  "seed": 42,
+  "source_snapshot_id": "08bd7449688fda332cab42379d89cdeb295c3b200c45d2d9119e3aefc6befb2a",
+  "target_event_id": "2026-19"
+}

@@ -1,7 +1,8 @@
 # Real F1 model lab
 
 The active Streamlit interface uses real observations. Choose a completed event,
-choose how much earlier 2026 history to use, and press **Run historical test**.
+select 2024, 2025 or 2026 and how much earlier history from that year to use,
+and press **Run historical test**.
 The interface compares three learned model families on the same eligible drivers
 and events. It also displays simple baselines, so a trained model's failure to
 improve on a baseline stays visible.
@@ -20,9 +21,11 @@ The simple reference rules are baselines, not a fourth learned family.
 
 ## Use the interface
 
-1. Open **Historical test** and select the completed event to reconstruct.
-2. Use **All earlier 2026 events**, or a shorter recent-event window for an
-   explicitly exploratory comparison.
+1. Open **Historical test**, select the season and completed event to reconstruct.
+2. Select **Previous 6 races that year**, **Previous 12 races that year**, or
+   **All earlier races that year**. Only eligible earlier races from the selected
+   season can train the models. Short windows use all available earlier races
+   when fewer exist; a season opener cannot train on another year's results.
 3. Press **Run historical test**. Training occurs only on this explicit action.
    An identical request loads its saved, verified run.
 4. Compare qualifying, race and podium outputs. Review the displayed training
@@ -36,14 +39,26 @@ a download or fit. Missing real forecasts are shown as missing. The application
 never fills them with a demo forecast. Source acquisition stays outside ordinary
 Streamlit reruns.
 
+The 2024 and 2025 snapshots each contain all 24 races. Where FIA documents could
+not be verified, the app uses labeled cached FastF1/Jolpica classifications
+(8 races in 2024; 15 in 2025). Independent FIA entrant fields are retained where
+available; other fields are labeled API reconstructions. Publication timing is
+an explicit proxy for API records, using FIA publication records where present,
+otherwise qualifying just before race start and race labels 24 hours after race
+start. This does not verify historical API publication/revision timing. The
+interface, dataset receipt and saved run summary retain these limitations.
+
 ### Refresh and predict a new weekend
 
-On **Refresh & predict**, **Refresh FastF1 data** explicitly downloads the current
-season calendar and started Q/R result endpoints, together with FIA entry lists
+The **Refresh FastF1 data** button at the bottom of the sidebar is available on
+every page. It refreshes the selected season; **Refresh & predict** always refreshes
+2026. It explicitly downloads the season calendar and started Q/R result endpoints, together with FIA entry lists
 and final classification evidence. Each acquisition bypasses stale FastF1 caches
 and uses fresh FIA indexes. The original reviewed dataset stays fixed; a verified
 revision is activated atomically under `data/live`. A failed acquisition leaves
 the previous revision available, with event-level source problems shown in the UI.
+**Data & methodology** reads this active revision too, so refreshing updates its
+coverage, source details, completed-event count and last-refreshed timestamp.
 
 **Run forecast** fits only unstarted tasks whose required inputs are present.
 Qualifying needs an independent entry list. Race and podium need an independent
@@ -77,7 +92,7 @@ access failure is not proof that the underlying session never existed. The
 session-level audit distinguishes source failures, deferred downloads and
 parsing failures. Cached responses and resumable jobs preserve prior work.
 
-The functional core lab uses **2026 FIA final classifications and independently
+The original 2026 core snapshot uses **FIA final classifications and independently
 published entry lists**. Each factual table records public source URLs; the
 source manifest records publication timestamps and SHA-256 hashes. Parsed facts
 and links can be deployed; raw PDFs stay in the local source cache. A revised
@@ -85,7 +100,7 @@ FIA final classification can differ from an earlier Jolpica response after an
 administrative decision. The source is chosen before model selection; it is not
 selected according to a model's error.
 
-FIA document publication is a **conservative availability/completion upper
+For FIA-only evidence, document publication is a **conservative availability/completion upper
 bound**, not a measured session-end timestamp. The qualifying cutoff is one
 second before the scheduled qualifying start. The race reconstruction cutoff is
 one minute after publication of the chosen final qualifying classification and

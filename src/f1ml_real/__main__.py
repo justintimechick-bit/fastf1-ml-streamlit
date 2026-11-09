@@ -36,6 +36,12 @@ def main(argv=None):
     capture.add_argument("--cache", type=Path, required=True)
     capture.add_argument("--output", type=Path, required=True)
     capture.add_argument("--as-of", required=True, help="UTC acquisition horizon")
+    capture.add_argument("--year", type=int, default=2026, help="Season to prepare")
+    capture.add_argument(
+        "--allow-result-fallback",
+        action="store_true",
+        help="Allow labeled captured API reconstruction for unavailable 2024/2025 FIA documents",
+    )
     capture.add_argument("--offline", action="store_true", help="Require verified cached evidence")
     replay = commands.add_parser("backtest", help="Explicitly fit or reuse a sealed real replay")
     replay.add_argument("--dataset", type=Path, default=Path("data/real-core-20261105-v4"))
@@ -87,9 +93,15 @@ def main(argv=None):
         from f1ml_real.fia import prepare_dataset
 
         receipt = prepare_dataset(
-            args.catalog, args.cache, args.output, as_of=args.as_of, offline=args.offline
+            args.catalog,
+            args.cache,
+            args.output,
+            as_of=args.as_of,
+            year=args.year,
+            offline=args.offline,
+            allow_result_fallback=args.allow_result_fallback,
         )
-        print(f"Sealed {receipt['eligible_events']} real 2026 events: {receipt['id']}")
+        print(f"Sealed {receipt['eligible_events']} real {args.year} events: {receipt['id']}")
         return 0
     if args.command == "backtest":
         from f1ml_real.lab import cached_run, load_run
