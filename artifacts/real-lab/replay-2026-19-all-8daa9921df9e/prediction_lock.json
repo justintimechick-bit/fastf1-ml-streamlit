@@ -1,0 +1,10 @@
+{
+  "config_sha256": "0ffc586932e07ab63af915c3028edfcabde5fdcce3e51965c0e3f355c5faa50d",
+  "evaluation_status": "exploratory historical replay; outcomes previously consulted",
+  "field_source": "independent FIA pre-cutoff entry lists",
+  "forecasts_sha256": "84cdcda0e232bbc563219415c150f9ae7e7b36c3919764da9803c2cc38dd40f0",
+  "run_id": "8daa9921df9e1d2e29cacf586dae2245f31387e4e491318585843cf63b5b295e",
+  "sealed_at": "2026-11-08T14:53:01.031205+00:00",
+  "sealed_before_target_scoring": true,
+  "source_snapshot_id": "08bd7449688fda332cab42379d89cdeb295c3b200c45d2d9119e3aefc6befb2a"
+}

@@ -70,9 +70,10 @@ PROTOCOL = {
     "version": "real-historical-lab-v1",
     "mode": "historical_reconstruction_exploratory",
     "exposure": "Historical outcomes have been consulted; no untouched holdout claim",
-    "training_scope": "2026-only, earlier FIA evidence available before target weekend",
+    "training_scope": "target-season only, earlier FIA evidence available before target weekend",
     "eligibility": (
-        "independent cutoff-valid entry lists and reviewed final labels; unknown labels masked"
+        "FIA independent cutoff-valid fields/final labels or explicitly labeled archived API "
+        "reconstructions with timing proxies; unknown labels masked"
     ),
     "history": "strict earlier available calendar-event windows, not last driver appearances",
     "target": (
@@ -974,18 +975,22 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
         "source_catalog_id": dataset.receipt.get("source_catalog_id"),
         "excluded_features": exclusions,
         "missing_feature_groups": PROTOCOL["missing_groups_excluded"],
-        "training_history": "2026-only",
+        "training_history": f"{int(event.year)}-only",
         "last_n": last_n,
         "target_event_count": 1,
         "model_count": len(models),
         "rank_evaluation": (
-            "printed numeric positions only; partial field where NC/DSQ/unknown has no rank"
+            "known numeric classified positions only; NC/DSQ/unknown ranks excluded"
         ),
+        "api_fallback_events": [
+            eid for eid in [*ids, event_id] if eid in dataset.receipt.get("api_fallback_events", [])
+        ],
+        "fallback_semantics": dataset.receipt.get("fallback_semantics"),
         "calibration_diagnostics": (
             "calibration-fit diagnostics are not independent validation findings"
         ),
         "not_comparable": (
-            "2026-only replay does not establish pooled/weighted 2024-2025 "
+            "A single-season replay does not establish pooled/weighted cross-season "
             "superiority; those source/session groups remain unavailable"
         ),
     }

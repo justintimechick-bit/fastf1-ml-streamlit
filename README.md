@@ -2,7 +2,7 @@
 
 A Streamlit app for testing three course-aligned machine learning families against
 **real Formula 1 results**. Choose a completed Grand Prix, train on earlier 2026
-weekends, and compare qualifying order, post-qualifying race order and podium
+weekends from the same season, and compare qualifying order, post-qualifying race order and podium
 probabilities with simple baselines.
 
 Hosted app: [F1 Model Lab](https://fastf1-ml-pit-wall.streamlit.app/).
@@ -31,19 +31,43 @@ python -m pip install -r requirements.txt
 python -m streamlit run streamlit_app.py
 ```
 
-The **Historical test** page defaults to Mexico 2026. Choose an event and all prior
-eligible history, or the last 6/12 eligible events, then press **Run historical
+The **Historical test** page supports **2024, 2025 and 2026** and defaults to Mexico
+2026. Select a season, a target event, and **Previous 6 races that year**,
+**Previous 12 races that year**, or **All earlier races that year**, then press **Run historical
 test**. Existing verified runs are reused. Fitting occurs only on that explicit
 action, never during ordinary interface reruns. The
 **Three models** page explains each family; **Data & methodology** shows coverage,
 provenance, cutoffs and exclusions. No synthetic forecasts appear in this app.
 
-Open **Refresh & predict** and press **Refresh FastF1 data** to load new weekends,
+Training, model selection and calibration use only eligible races before the
+target weekend in the selected year. Short windows use all available earlier
+races when fewer than 6/12 exist. A season opener cannot be trained because it
+has no earlier races that year. Changing seasons resets the target and displayed
+run; runs are stored separately by season, target, training window and snapshot.
+The prepared 2024/2025 FIA datasets are under `data/historical/2024` and
+`data/historical/2025`; `F1ML_HISTORICAL_DATA` overrides their parent directory.
+Each contains all 24 races. FIA documents supply verified facts for 16 races in
+2024 and 9 in 2025; the remaining 8 and 15 use the authorized, labeled
+FastF1/Jolpica API fallback. The app shows those races and their source details.
+API fallback results are real captured records, but historical publication times
+and some entrant fields are reconstructed. FIA publication records act as timing
+proxies; when absent, qualifying is placed just before the race and race labels
+at race start plus 24 hours. These proxies cannot verify what a historical API
+actually exposed or when a later revision appeared. They support exploratory
+replays rather than a claim of prospective availability.
+
+Press **Refresh FastF1 data** at the bottom of the sidebar to load new weekends,
 including Brazil (São Paulo, `2026-20`). Select the event and press **Run forecast**.
 Before qualifying, qualifying order is available when its entry list is published.
 After final qualifying is published, race order and podium probabilities become
 available until the scheduled race start. Completed new weekends can be tested
-historically on the same page. Ordinary page reruns never download or train.
+historically on the same page. The sidebar refresh button is available on every
+page and shows the season it refreshes. **Historical test**, **Refresh & predict**,
+and **Data & methodology** share the active refreshed data; completed new events appear in the historical target
+options once final qualifying and race classifications are available. Historical
+tests train against that same data. **Data & methodology** updates coverage, source
+details, completion counts and its last-refreshed timestamp immediately after a
+refresh. Ordinary page reruns never download or train.
 
 The refresh bypasses FastF1's cached calendar/results and reads current FIA indexes.
 FastF1 supplies schedule/results captures; independent FIA entry lists and final
@@ -132,8 +156,8 @@ Missing pace affects the real pipeline too. Those groups are excluded from the
 core experiment. Entirely missing and constant training columns are also excluded
 before imputation; no median-filled empty column is presented as observed pace.
 
-The functional lab currently trains **2026 only**. Although 2024/2025 result rows
-are cached, their independent cutoff rosters/publication review is unfinished.
+The functional lab supports **2024, 2025 and 2026**, with same-year training
+windows, FIA entry lists/classifications, and labeled API fallback for older seasons.
 Pooled and weighted-history real comparisons have **not** been run. A fresh future
 holdout still needs a prospective manifest before model selection. Completed
 historical tests in this app remain exploratory.
@@ -146,6 +170,23 @@ python -m f1ml_real prepare-real --catalog data/real-20261105-catalog \
   --cache data/fia-2026-source-cache --output data/real-core-new \
   --as-of 2026-11-05T16:00:00Z --offline
 ```
+
+Prepare an older season with `--year 2024` or `--year 2025`, its own cache directory
+(`data/fia-2024-source-cache` or `data/fia-2025-source-cache`), and a new output
+directory. For example:
+
+```sh
+python -m f1ml_real prepare-real --catalog data/real-20261105-catalog \
+  --cache data/fia-2024-source-cache --output data/historical/2024 \
+  --year 2024 --as-of 2026-11-09T21:00:00Z --allow-result-fallback
+python -m f1ml_real backtest --dataset data/historical/2024 \
+  --event 2024-19 --last-n 6
+```
+
+`--allow-result-fallback` applies only to 2024/2025 and uses verified local catalog
+captures when FIA documents cannot be read. Omit it to require FIA evidence.
+`--offline` requires cached source documents and performs no downloads. Each
+preparation needs a new output directory; existing sealed datasets are preserved.
 
 The public deployment includes parsed factual tables and provenance, not the raw
 PDF cache. See the [coverage and exclusion report](docs/real-coverage-20261105.md),

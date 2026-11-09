@@ -9,12 +9,16 @@ from f1ml_real.lab import load_run
 
 DATASET = Path("data/real-core-20261105-v4")
 RUNS = Path("artifacts/real-lab")
+HISTORICAL = [Path(f"data/historical/{year}") for year in (2024, 2025)]
 
 
 def prepare(output: Path, root: Path):
     root, output = root.resolve(), output.resolve()
     receipt = verify_directory(root / DATASET)
-    if receipt.get("data_kind") != "real":
+    historical = {str(path): verify_directory(root / path) for path in HISTORICAL}
+    if receipt.get("data_kind") != "real" or any(
+        item.get("data_kind") != "real" for item in historical.values()
+    ):
         raise ValueError("Only reviewed real data may enter this release")
     runs = []
     for path in sorted((root / RUNS).glob("*/receipt.json")):
@@ -57,6 +61,9 @@ def prepare(output: Path, root: Path):
     ):
         copy(root / name)
     copy(root / DATASET)
+    for path in HISTORICAL:
+        copy(root / path)
+        verify_directory(output / path)
     for path in runs:
         copy(path)
         verify_directory(output / path.relative_to(root))
@@ -64,6 +71,8 @@ def prepare(output: Path, root: Path):
     (output / ".gitignore").write_text(
         ".venv/\n__pycache__/\n*.py[cod]\n.pytest_cache/\n.ruff_cache/\n"
         ".streamlit/secrets.toml\n.env\n.DS_Store\nbuild/\ndist/\n*.egg-info/\n"
+        "\n# Local refresh snapshots, source caches and generated live forecasts\n"
+        "data/live/\nartifacts/real-lab/forecast-*/\n"
     )
     files = {
         str(p.relative_to(output)): file_digest(p) for p in sorted(output.rglob("*")) if p.is_file()
@@ -75,6 +84,7 @@ def prepare(output: Path, root: Path):
         "data_kind": "real",
         "dataset": str(DATASET),
         "source_snapshot_id": receipt["id"],
+        "historical_snapshots": {path: item["id"] for path, item in historical.items()},
         "saved_runs": [str(path.relative_to(root)) for path in runs],
         "files": files,
         "runtime": "Read saved facts/results on rerun; fit only after explicit Run historical test",

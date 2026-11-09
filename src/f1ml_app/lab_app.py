@@ -19,7 +19,12 @@ FAMILIES = {
     "gradient_boosting": "Gradient boosting",
     "baseline": "Simple baseline",
 }
-WINDOWS = {"All earlier 2026 events": None, "Most recent 12 events": 12, "Most recent 6 events": 6}
+SEASONS = (2026, 2025, 2024)
+WINDOWS = {
+    "All earlier races that year": None,
+    "Previous 12 races that year": 12,
+    "Previous 6 races that year": 6,
+}
 TASKS = {"qualifying": "Qualifying", "race": "Race", "podium": "Podium"}
 MODEL_COPY = {
     "linear": (
@@ -75,17 +80,43 @@ def _load_run(path: str, receipt_mtime: int) -> dict:
     return load_run(Path(path))
 
 
-def _load_dataset():
-    path, _ = paths()
+def historical_paths(season: int) -> tuple[Path, Path]:
+    if season == 2026:
+        return paths()[0], live_data_path()
+    root = Path(os.environ.get("F1ML_HISTORICAL_DATA", "data/historical"))
+    if not root.is_absolute():
+        root = project_root() / root
+    return root / str(season), live_data_path() / str(season)
+
+
+def _selected_season() -> int:
+    return st.session_state.get("lab_season", st.session_state.get("lab_selected_season", 2026))
+
+
+def _season_selector() -> int:
+    if "lab_season" not in st.session_state:
+        st.session_state["lab_season"] = _selected_season()
+    season = st.selectbox("Season", SEASONS, key="lab_season")
+    st.session_state["lab_selected_season"] = season
+    return season
+
+
+def _load_dataset(*, active: bool = False, season: int = 2026):
+    path, state = historical_paths(season)
     receipt = path / "receipt.json"
     if not receipt.exists():
-        st.warning("The reviewed real dataset is not installed in this app yet.")
+        st.warning(f"The reviewed {season} dataset is not installed in this app yet.")
         st.caption(
             "Prepare and verify the source snapshot outside Streamlit, "
             "then add it to the deployment."
         )
         return None
     try:
+        if active:
+            from f1ml_real.refresh import current_dataset
+
+            path = current_dataset(path, state)
+            receipt = path / "receipt.json"
         return _dataset(str(path), receipt.stat().st_mtime_ns)
     except (ImportError, ValueError, OSError, KeyError) as exc:
         st.error(f"The real dataset could not be verified: {exc}")
@@ -400,10 +431,45 @@ def historical_test():
         "Test a race weekend",
         "Train on earlier real events. Compare three model families with simple baselines.",
     )
-    dataset = _load_dataset()
+    season = _season_selector()
+    dataset = _load_dataset(active=True, season=season)
     if dataset is None:
         return
-    events = dataset.events.sort_values(["year", "round"])
+    if dataset.receipt.get("as_of"):
+        st.caption(f"Last refreshed: {_cutoff(dataset.receipt['as_of'])}")
+    fallback_ids = dataset.receipt.get("api_fallback_events", [])
+    if fallback_ids:
+        st.warning(
+            f"{len(fallback_ids)} {season} races use captured FastF1/Jolpica API results. "
+            "API publication timing and some entrant fields are historical reconstructions."
+        )
+        with st.expander("API fallback sources and timing assumptions"):
+            st.write(dataset.receipt["fallback_semantics"])
+            _table(pd.read_parquet(dataset.root / "fallbacks.parquet"), key="lab_api_fallbacks")
+    exclusions_path = dataset.root / "exclusions.parquet"
+    if season != 2026 and exclusions_path.exists():
+        exclusions = pd.read_parquet(exclusions_path)
+        if not exclusions.empty:
+            st.warning(
+                f"{len(exclusions)} {season} races are unavailable because required source "
+                "documents could not be verified. Training uses the eligible races shown."
+            )
+            with st.expander("Unavailable races and source details"):
+                _table(exclusions, key="lab_historical_exclusions")
+    completed = (
+        dataset.events.qualifying_available_at.notna() & dataset.events.race_available_at.notna()
+    )
+    events = dataset.events.loc[completed & dataset.events.year.eq(season)].sort_values("round")
+    pending = dataset.events.loc[
+        ~completed
+        & (pd.to_datetime(dataset.events.weekend_start, utc=True) <= pd.Timestamp.now(tz="UTC"))
+    ]
+    if not pending.empty:
+        st.info(
+            "Awaiting final qualifying and race classifications: "
+            + ", ".join(pending.name)
+            + ". Refresh again when the results are published."
+        )
     event_ids = events.event_id.tolist()
     if not event_ids:
         st.info("No reviewed completed events are eligible yet.")
@@ -411,9 +477,10 @@ def historical_test():
     default = "2026-19" if "2026-19" in event_ids else event_ids[-1]
     if st.session_state.get("lab_target_event") not in event_ids:
         st.session_state["lab_target_event"] = default
-    if "lab_active_run" not in st.session_state:
+    if st.session_state.get("lab_active_season") != season:
         saved = _default_saved(default, dataset.receipt["id"])
         st.session_state["lab_active_run"] = saved["_path"] if saved else None
+        st.session_state["lab_active_season"] = season
     with st.form("lab_historical_form", border=True):
         target_col, history_col = st.columns([3, 2])
         with target_col:
@@ -426,17 +493,18 @@ def historical_test():
         with history_col:
             window = st.selectbox("Training history", list(WINDOWS), key="lab_history_window")
         st.caption(
-            "2026 only. The target and every later event are excluded from training. "
+            f"Training uses only earlier {season} races. If fewer than 6 or 12 are available, "
+            "all eligible earlier races are used. The target and later races are excluded. "
             "Practice pace and weather are unavailable and excluded from these core models."
         )
         submitted = st.form_submit_button("Run historical test", type="primary", key="lab_run")
     if submitted:
         from f1ml_real.lab import cached_run
 
-        data_path, run_root = paths()
+        _, run_root = paths()
         try:
             with st.spinner("Training and checking the real-data test…"):
-                result = cached_run(data_path, target, run_root, last_n=WINDOWS[window])
+                result = cached_run(dataset.root, target, run_root, last_n=WINDOWS[window])
             st.session_state["lab_active_run"] = str(result)
             st.success(
                 "Historical test saved. Reopening this configuration reuses the verified run."
@@ -468,8 +536,10 @@ def historical_test():
     event = target_row.iloc[0] if len(target_row) else None
     training = _frame(run, "training_events")
     st.subheader(_event_label(events, event_id))
+    if event_id in fallback_ids:
+        st.caption("Target source: captured FastF1/Jolpica API fallback.")
     st.caption(
-        "Saved 2026 historical replay. Results below belong to this saved run; "
+        f"Saved {season} historical replay. Results below belong to this saved run; "
         "submit the form to change the event or training window."
     )
     count = training.event_id.nunique() if "event_id" in training else len(training)
@@ -508,9 +578,39 @@ def live_data_path() -> Path:
     return path if path.is_absolute() else project_root() / path
 
 
+def _refresh_button(*, key: str, base: Path | None = None, state: Path | None = None):
+    from f1ml_real.refresh import refresh
+
+    if st.button(
+        "Refresh FastF1 data",
+        type="primary",
+        key=key,
+        help="Reload event options from the current API calendar and published results.",
+        width="stretch",
+    ):
+        try:
+            with st.spinner("Loading the latest event data…"):
+                refresh(
+                    base if base is not None else paths()[0],
+                    state if state is not None else live_data_path(),
+                )
+            st.success("Data refreshed. Event options and Data & methodology are up to date.")
+        except Exception as exc:
+            st.error(f"Refresh failed; the previous snapshot is still available: {exc}")
+
+
+def _sidebar_refresh(*, live_page: bool = False):
+    season = 2026 if live_page else _selected_season()
+    base, state = historical_paths(season)
+    with st.sidebar:
+        st.divider()
+        st.caption(f"Refresh season: {season}")
+        _refresh_button(key="lab_refresh", base=base, state=state)
+
+
 def live_forecast():
     from f1ml_real.lab import RealDataset, cached_forecast, cached_run
-    from f1ml_real.refresh import current_dataset, forecast_tasks, refresh
+    from f1ml_real.refresh import current_dataset, forecast_tasks
 
     _title("Refresh & predict", "Load the latest weekend and predict sessions before they start.")
     base, runs = paths()
@@ -519,13 +619,6 @@ def live_forecast():
         "Refresh downloads the current FastF1 calendar and results, plus FIA entry lists and "
         "final classifications. Training starts only when you press Run forecast."
     )
-    if st.button("Refresh FastF1 data", type="primary", key="lab_refresh"):
-        try:
-            with st.spinner("Loading the latest event data…"):
-                refresh(base, state)
-            st.success("New data snapshot saved. Select an event below.")
-        except Exception as exc:
-            st.error(f"Refresh failed; the previous snapshot is still available: {exc}")
     try:
         path = current_dataset(base, state)
         dataset = _dataset(str(path), (path / "receipt.json").stat().st_mtime_ns)
@@ -671,7 +764,8 @@ def data_methodology():
         "Real data and the rules",
         "Public source records, explicit cutoffs and an honest account of what is missing.",
     )
-    dataset = _load_dataset()
+    season = _season_selector()
+    dataset = _load_dataset(active=True, season=season)
     if dataset is None:
         return
     events, rosters, labels, receipt = (
@@ -681,15 +775,19 @@ def data_methodology():
         dataset.receipt,
     )
     st.write(
-        "The active experiment uses official FIA final classifications and independently published "
-        "entry lists, with the FastF1 event schedule and stable driver identities "
-        "from public results. "
+        "Historical datasets use FIA final classifications and independent entry lists where "
+        "verified, with the FastF1 calendar and stable public driver identities. Older seasons "
+        "also contain explicitly labeled captured FastF1/Jolpica API fallback results. "
         "No synthetic observations or forecasts are used in these tests."
     )
+    if receipt.get("api_fallback_events"):
+        st.warning(receipt["fallback_semantics"])
+    st.caption(f"Last refreshed: {_cutoff(receipt.get('as_of'))}")
+    completed = events.qualifying_available_at.notna() & events.race_available_at.notna()
     counts = st.columns(3)
-    counts[0].metric("Reviewed completed events", events.event_id.nunique())
+    counts[0].metric("Completed events", events.loc[completed].event_id.nunique())
     counts[1].metric("Season", str(receipt.get("year", 2026)))
-    counts[2].metric("Source snapshot date", str(receipt.get("as_of", ""))[:10])
+    counts[2].metric("Last refreshed", str(receipt.get("as_of", ""))[:10])
     st.subheader("Coverage by event and session")
     coverage = []
     for _, event in events.sort_values(["year", "round"]).iterrows():
@@ -700,6 +798,9 @@ def data_methodology():
                 {
                     "Event": _event_label(events, event.event_id),
                     "Session": TASKS[task],
+                    "Status": "Final classification available"
+                    if pd.notna(event[f"{task}_available_at"])
+                    else "Awaiting final classification",
                     "Rostered drivers": rs.driver_id.nunique(),
                     "Known numeric ranks": int(ls.official_position.notna().sum()),
                     "Known race-podium labels": int(ls.podium.notna().sum())
@@ -720,13 +821,15 @@ def data_methodology():
                 },
                 {
                     "Feature group": "Current entry list",
-                    "Status": "Observed",
-                    "Treatment": "Roster and team membership known by each cutoff",
+                    "Status": "Observed / API reconstruction"
+                    if receipt.get("api_fallback_events")
+                    else "Observed",
+                    "Treatment": "Independent FIA entry lists, or labeled API entrant fields",
                 },
                 {
                     "Feature group": "Current qualifying result",
                     "Status": "Observed for race only",
-                    "Treatment": "Published result available before the race prediction cutoff",
+                    "Treatment": "FIA publication cutoff, or the disclosed API timing proxy",
                 },
                 {
                     "Feature group": "Practice and qualifying lap pace",
@@ -750,7 +853,8 @@ def data_methodology():
     st.subheader("A chronological historical replay")
     st.markdown(
         "1. Select completed events by source availability, before inspecting model performance.\n"
-        "2. Build history from earlier weekends only, using conservative publication times.\n"
+        "2. Build history from earlier weekends only, using source publication times "
+        "or disclosed API timing proxies.\n"
         "3. Select settings on earlier chronological development events. "
         "Fit preprocessing on each training fold.\n"
         "4. Save the selected configuration and target predictions before scoring target labels.\n"
@@ -761,9 +865,9 @@ def data_methodology():
         "during development and source review, so none are presented as an untouched final holdout."
     )
     st.write(
-        "The active model lab currently compares 2026-only training windows. Pooled and weighted "
-        "2024–2026 comparisons require the same independent source "
-        "and cutoff review for older seasons."
+        "Historical tests support 2024, 2025 and 2026. Training uses the previous 6, previous 12 "
+        "or all eligible earlier races from the target season. Each season has its own "
+        "FIA evidence and labeled API reconstructions."
     )
     st.write(
         "An NC or disqualified driver can lack an official numeric rank. The driver remains in the "
@@ -781,9 +885,9 @@ def data_methodology():
             key="lab_source_documents",
             column_config={"url": st.column_config.LinkColumn("Official source")},
         )
-        excluded_path = paths()[0] / "exclusions.parquet"
+        excluded_path = dataset.root / "exclusions.parquet"
         if excluded_path.exists() and len(excluded := pd.read_parquet(excluded_path)):
-            st.markdown("**Excluded source events**")
+            st.markdown("**Source availability details**")
             _table(excluded, key="lab_source_exclusions")
         st.json(receipt, expanded=False)
     st.caption(
@@ -838,8 +942,11 @@ def main():
     )
     with st.sidebar:
         st.markdown("**Real F1 model lab**")
-        st.caption("2026 official records\n\nQualifying, race order and podium probabilities.")
+        st.caption(
+            "2024–2026 historical records\n\nQualifying, race order and podium probabilities."
+        )
         st.caption("Historical replay · exploratory evaluation")
+    _sidebar_refresh(live_page=navigation.url_path == "live")
     navigation.run()
 
 

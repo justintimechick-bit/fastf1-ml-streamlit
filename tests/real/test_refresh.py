@@ -2,6 +2,7 @@
 
 from contextlib import nullcontext
 from pathlib import Path
+from shutil import copytree
 from types import SimpleNamespace
 
 import pandas as pd
@@ -10,7 +11,7 @@ import requests
 from streamlit.testing.v1 import AppTest
 
 from f1ml.ingestion.types import SourceBatch
-from f1ml.storage import read_json, verify_directory
+from f1ml.storage import read_json, seal_directory, verify_directory
 from f1ml_real import lab
 from f1ml_real import refresh as live
 
@@ -187,10 +188,171 @@ def test_live_page_ordinary_rerun_is_read_only_and_displays_brazil(
     ).run()
     assert not at.exception and not at.error
     assert at.selectbox(key="lab_live_event").value == "2026-20"
-    assert at.button(key="lab_refresh").label == "Refresh FastF1 data"
+    assert not any(button.label == "Refresh FastF1 data" for button in at.button)
     assert not at.button(key="lab_live_run").disabled
     at.run()
     assert not at.exception and not at.error
+
+
+def test_historical_refresh_updates_options_and_uses_selected_snapshot(
+    refreshed, dataset_root, tmp_path, monkeypatch
+):
+    state, active, _ = refreshed
+    # Replay a bundled dataset from before Mexico using only real captured facts.
+    older = tmp_path / "older-base"
+    copytree(dataset_root, older)
+    metadata = read_json(older / "receipt.json")
+    (older / "receipt.json").unlink()
+    for name in ("events", "rosters", "labels", "documents"):
+        table = older / f"{name}.parquet"
+        frame = pd.read_parquet(table)
+        frame.loc[~frame.event_id.eq("2026-19")].to_parquet(table, index=False)
+    seal_directory(older, {k: v for k, v in metadata.items() if k not in {"files", "id"}})
+    monkeypatch.setenv("F1ML_REAL_DATASET", str(older))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(state))
+    monkeypatch.setenv("F1ML_REAL_RUNS", str(tmp_path / "runs"))
+    selected = [older]
+    refresh_calls, run_calls = [], []
+
+    def current(base, live_state):
+        assert (base, live_state) == (older, state)
+        return selected[0]
+
+    def refresh(base, live_state):
+        refresh_calls.append((base, live_state))
+        selected[0] = active
+        return active
+
+    def run(dataset, target, output, *, last_n):
+        run_calls.append((dataset, target, output, last_n))
+        raise ValueError("Stopped before fitting in this interface test")
+
+    monkeypatch.setattr(live, "current_dataset", current)
+    monkeypatch.setattr(live, "refresh", refresh)
+    monkeypatch.setattr(lab, "cached_run", run)
+    at = AppTest.from_string("from f1ml_app.lab_app import main\nmain()", default_timeout=30).run()
+    assert not at.exception and not at.error
+    assert len(at.selectbox(key="lab_target_event").options) == 18
+    at.selectbox(key="lab_target_event").set_value("2026-18").run()
+    assert not refresh_calls and not run_calls
+    at.sidebar.button(key="lab_refresh").click().run()
+    assert not at.exception and not at.error
+    assert refresh_calls == [(older, state)]
+    assert len(at.selectbox(key="lab_target_event").options) == 19
+    assert any("Mexico" in option for option in at.selectbox(key="lab_target_event").options)
+    assert not any("Paulo" in option for option in at.selectbox(key="lab_target_event").options)
+    assert any("São Paulo" in item.value for item in at.info)
+    assert at.selectbox(key="lab_target_event").value == "2026-18"
+    assert not run_calls
+    at.selectbox(key="lab_target_event").set_value("2026-19")
+    at.button(key="lab_run").click().run()
+    assert not at.exception
+    assert run_calls == [(active, "2026-19", tmp_path / "runs", None)]
+    at.run()
+    assert len(refresh_calls) == len(run_calls) == 1
+
+
+def test_historical_refresh_failure_keeps_previous_options(
+    refreshed, dataset_root, tmp_path, monkeypatch
+):
+    state, _, _ = refreshed
+    monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(state))
+    monkeypatch.setenv("F1ML_REAL_RUNS", str(tmp_path / "runs"))
+    pointer = (state / "CURRENT.json").read_bytes()
+
+    def unavailable(*args):
+        raise requests.ConnectionError("Calendar service unavailable")
+
+    monkeypatch.setattr(live, "refresh", unavailable)
+    at = AppTest.from_string("from f1ml_app.lab_app import main\nmain()", default_timeout=30).run()
+    assert not at.exception and not at.error
+    previous = at.selectbox(key="lab_target_event").options
+    at.sidebar.button(key="lab_refresh").click().run()
+    assert not at.exception
+    assert "previous snapshot is still available" in at.error[0].value
+    assert at.selectbox(key="lab_target_event").options == previous
+    assert (state / "CURRENT.json").read_bytes() == pointer
+
+
+def test_methodology_refresh_updates_coverage_sources_and_timestamp(
+    dataset_root, tmp_path, captured_sources, monkeypatch
+):
+    state = tmp_path / "live"
+    monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(state))
+    monkeypatch.setenv("F1ML_REAL_RUNS", str(tmp_path / "runs"))
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Refreshing methodology must not train models")
+
+    monkeypatch.setattr(lab, "_fit", forbidden)
+    at = AppTest.from_string(
+        "from f1ml_app.lab_app import _sidebar_refresh, data_methodology\n"
+        "_sidebar_refresh()\ndata_methodology()",
+        default_timeout=30,
+    ).run()
+    assert not at.exception and not at.error
+    before = next(frame.value for frame in at.dataframe if "Known numeric ranks" in frame.value)
+    assert len(before) == 38
+    assert len(at.sidebar.button) == 1
+    assert not at.main.button
+    at.sidebar.button(key="lab_refresh").click().run()
+    assert not at.exception and not at.error
+    coverage = next(frame.value for frame in at.dataframe if "Known numeric ranks" in frame.value)
+    assert len(coverage) == 46
+    brazil = coverage.loc[coverage.Event.str.contains("São Paulo")]
+    assert len(brazil) == 2
+    assert brazil["Rostered drivers"].eq(22).all()
+    assert brazil.loc[brazil.Session.eq("Qualifying"), "Known numeric ranks"].iloc[0] > 0
+    assert brazil.loc[brazil.Session.eq("Race"), "Known numeric ranks"].iloc[0] == 0
+    assert (
+        brazil.loc[brazil.Session.eq("Race"), "Status"].iloc[0] == "Awaiting final classification"
+    )
+    assert next(metric.value for metric in at.metric if metric.label == "Completed events") == "19"
+    assert any("Last refreshed: 08 Nov 2026, 14:50 UTC" in caption.value for caption in at.caption)
+    docs = next(frame.value for frame in at.dataframe if "published_at" in frame.value)
+    assert "2026-20" in set(docs.event_id)
+    details = next(frame.value for frame in at.dataframe if "issues" in frame.value)
+    assert "2026-20" in set(details.event_id)
+    pointer = (state / "CURRENT.json").read_bytes()
+    at.run()
+    assert not at.exception and not at.error
+    assert (state / "CURRENT.json").read_bytes() == pointer
+    assert captured_sources == [("2026-20", "Qualifying")]
+
+
+def test_sidebar_refresh_uses_selected_season_and_live_page_uses_current_season(
+    dataset_root, tmp_path, monkeypatch
+):
+    root = Path(__file__).resolve().parents[2]
+    monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
+    monkeypatch.setenv("F1ML_HISTORICAL_DATA", str(root / "data/historical"))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(tmp_path / "live"))
+    monkeypatch.setenv("F1ML_REAL_RUNS", str(tmp_path / "runs"))
+    calls = []
+
+    def refresh(base, state):
+        calls.append((base, state))
+
+    monkeypatch.setattr(live, "refresh", refresh)
+    at = AppTest.from_string(
+        "import streamlit as st\n"
+        "from f1ml_app.lab_app import _sidebar_refresh, data_methodology\n"
+        "_sidebar_refresh(live_page=st.session_state.get('test_live_page', False))\n"
+        "data_methodology()",
+        default_timeout=30,
+    ).run()
+    at.selectbox(key="lab_season").set_value(2024).run()
+    assert not at.exception and not at.error and not calls
+    assert any(caption.value == "Refresh season: 2024" for caption in at.sidebar.caption)
+    at.sidebar.button(key="lab_refresh").click().run()
+    assert calls == [(root / "data/historical/2024", tmp_path / "live/2024")]
+    at.session_state["test_live_page"] = True
+    at.run()
+    assert any(caption.value == "Refresh season: 2026" for caption in at.sidebar.caption)
+    at.sidebar.button(key="lab_refresh").click().run()
+    assert calls[-1] == (dataset_root, tmp_path / "live")
 
 
 def test_forecast_is_not_sealed_if_session_starts_during_fit(refreshed, tmp_path, monkeypatch):

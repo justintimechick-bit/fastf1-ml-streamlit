@@ -28,7 +28,10 @@ def test_real_cloud_release_keeps_provenance_and_excludes_demo_cache_and_secrets
         assert run.startswith(str(RUNS))
         assert verify_directory(output / run) == verify_directory(ROOT / run)
     assert verify_directory(output / DATASET) == verify_directory(ROOT / DATASET)
-    assert set(path.name for path in (output / "data").iterdir()) == {DATASET.name}
+    assert set(path.name for path in (output / "data").iterdir()) == {DATASET.name, "historical"}
+    for year in (2024, 2025):
+        path = Path(f"data/historical/{year}")
+        assert verify_directory(output / path) == verify_directory(ROOT / path)
     assert not (output / "data/final-evaluation-ledger").exists()
     for relative, checksum in metadata["files"].items():
         path = Path(relative)
