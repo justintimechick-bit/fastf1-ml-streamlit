@@ -15,7 +15,7 @@ from f1ml.domain import PRACTICES, utc
 from f1ml.evaluation.splits import gp_session, load_manifest
 from f1ml.features.source import available, load_source
 from f1ml.storage import read_json, verify_directory
-from f1ml_app.settings import AppPaths
+from f1ml_app.settings import MODEL_ALIASES, AppPaths
 
 ROLE_LABELS = {
     "final_test": "Final test · frozen",
@@ -111,6 +111,19 @@ def _first(frame: pd.DataFrame, **match) -> pd.Series | None:
 
 class Experiment:
     """The frozen experiment named by ``AppPaths`` (Phase 3 dataset → Phase 7 results)."""
+
+    def family_choice(self, task: str, event_id: str, family: str) -> tuple | None:
+        """Prefer the saved selected strategy within a requested canonical model family."""
+        cards = [
+            card
+            for card in self.fold_cards(task, event_id)
+            if MODEL_ALIASES.get(card.family, card.family) == family
+        ]
+        if not cards:
+            return None
+        selected = self.selected_config(task)
+        card = next((card for card in cards if selected and card.strategy == selected[1]), cards[0])
+        return card.family, card.strategy
 
     def __init__(self, paths: AppPaths):
         self.paths = paths

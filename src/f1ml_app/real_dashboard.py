@@ -3,7 +3,7 @@
 import pandas as pd
 import streamlit as st
 
-from f1ml_app import ui
+from f1ml_app import theme, ui
 
 
 def coverage_summary(sessions):
@@ -52,8 +52,27 @@ def event_coverage(exp, year):
 
 
 def render():
+    theme.inject()
+    sel = ui.sidebar(fixed_source="real")
     exp = ui.real_experiment()
     status = exp.status
+    task = st.session_state.get("real_evaluation_task", "qualifying")
+    selected = exp.events.loc[exp.events.event_id.eq(sel.event_id)]
+    event = (
+        f"R{int(selected.iloc[0]['round']):02d} · {selected.iloc[0]['name']}"
+        if not selected.empty
+        else "No Grand Prix selected"
+    )
+    with st.container(key="f1_context_ribbon"):
+        ui.context_ribbon(
+            artifact_id=status["experiment_id"],
+            season=sel.season,
+            event=event,
+            family="Unavailable · no trained real model",
+            task=task,
+            lock_status="No prediction lock · training blocked",
+            receipt_verified=bool(exp.experiment_receipt.get("id")),
+        )
     ui.hero(
         [("Real F1 observations", "solid"), ("2024–2026", "")],
         "Real-data experiment",
@@ -73,6 +92,15 @@ def render():
     st.caption(
         f"Saved experiment {status['experiment_id']} · source horizon {ui.when(status['as_of'])}"
     )
+    if not ui.full_telemetry():
+        ui.info_card(
+            "Training remains blocked", "Independent cutoff and entrant reviews are required."
+        )
+        ui.info_card(
+            "No evaluation result", "Development and final-test scores have not been produced."
+        )
+        st.info(status["prior_consultation"])
+        return
 
     coverage, blockers, evaluation, provenance = st.tabs(
         ["Data coverage", "What blocks training", "Evaluation", "Provenance & downloads"],
@@ -174,16 +202,6 @@ def render():
             )
             st.caption(
                 "Planned comparisons below have not run. Blank metric values are not zero loss."
-            )
-            task = st.selectbox(
-                "Prediction task",
-                ["qualifying", "race", "podium"],
-                format_func={
-                    "qualifying": "Qualifying order",
-                    "race": "Race order",
-                    "podium": "Podium probabilities",
-                }.get,
-                key="real_evaluation_task",
             )
             records = exp.evaluation_records.loc[exp.evaluation_records.task.eq(task)].copy()
             records["status"] = "Not run"

@@ -64,8 +64,8 @@ def test_real_only_landing_page_and_ordinary_rerun_do_not_download_or_fit(
     assert at.selectbox(key="lab_target_event").value == "2026-19"
     assert at.selectbox(key="lab_history_window").value == "All earlier races that year"
     assert at.button(key="lab_run").label == "Run historical test"
-    assert at.sidebar.button(key="lab_refresh").label == "Refresh FastF1 data"
-    assert not any(button.label == "Refresh FastF1 data" for button in at.main.button)
+    assert at.main.button(key="lab_refresh").label == "Refresh FastF1 data"
+    assert not any(button.label == "Refresh FastF1 data" for button in at.sidebar.button)
     assert "Synthetic demo" not in _text(at)
     assert "Linear models" in _text(at)
     assert "Random forest" in _text(at)

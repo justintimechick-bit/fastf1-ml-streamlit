@@ -77,8 +77,26 @@ def experiment_overview(sel):
     exp = ui.experiment()
     event = exp.events.set_index("event_id").loc[sel.event_id]
     role = event["role"]
-    quali = ui.qualifying_forecast(sel.event_id)
-    race = ui.race_forecast(sel.event_id, sel.moment)
+    qualifying_models = ui.selected_forecasts("qualifying", sel.event_id, sel.moment)
+    race_models = ui.selected_forecasts("race", sel.event_id, sel.moment)
+    quali = qualifying_models.get(
+        ui.primary_model(),
+        next(
+            iter(qualifying_models.values()),
+            fc.Forecast("qualifying", sel.event_id, False, "No eligible active model"),
+        ),
+    )
+    race = race_models.get(
+        ui.primary_model(),
+        next(
+            iter(race_models.values()),
+            fc.Forecast("race", sel.event_id, False, "No eligible active model"),
+        ),
+    )
+    for task, forecasts in (("qualifying", qualifying_models), ("race", race_models)):
+        outcome = fc.actual_outcome(exp, sel.event_id, task, sel.moment)
+        if outcome.visible:
+            ui.forecast_metrics(exp, forecasts, task)
     st.markdown(f"**{ROLE_LABELS[role]}.** {ROLE_TEXT[role]}")
     if role == "excluded":
         st.caption(f"Manifest exclusion reason: `{exp.exclusion_reason(sel.event_id)}`")
@@ -138,10 +156,14 @@ def experiment_overview(sel):
 
     st.subheader("Models and training cutoffs")
     cols = st.columns(2)
-    for col, forecast, title in (
-        (cols[0], quali, "Qualifying forecast"),
-        (cols[1], race, "Race & podium forecast"),
-    ):
+    entries = [
+        (cols[0], forecast, "Qualifying · " + model)
+        for model, forecast in qualifying_models.items()
+    ]
+    entries += [
+        (cols[1], forecast, "Race & podium · " + model) for model, forecast in race_models.items()
+    ]
+    for col, forecast, title in entries:
         with col.container(border=True):
             st.markdown(f"**{title}**")
             if not forecast.available:
@@ -208,14 +230,14 @@ def experiment_overview(sel):
     season = exp.events.loc[exp.events.year.eq(event["year"])]
     rows = []
     for item in season.itertuples():
-        q = ui.qualifying_forecast(item.event_id)
-        r = ui.race_forecast(item.event_id, "post_race")
+        q = ui.selected_forecasts("qualifying", item.event_id)
+        r = ui.selected_forecasts("race", item.event_id, "post_race")
         rows.append(
             {
                 "event": f"R{item.round:02d} · {item.name}",
                 "role": ROLE_LABELS[item.role],
-                "qualifying": _forecast_status(q),
-                "race": _forecast_status(r),
+                "qualifying": f"{len(q)} active models available",
+                "race": f"{len(r)} active models available",
             }
         )
     ui.table(

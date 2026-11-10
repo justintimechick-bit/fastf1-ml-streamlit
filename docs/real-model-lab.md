@@ -21,6 +21,14 @@ The simple reference rules are baselines, not a fourth learned family.
 
 ## Use the interface
 
+The four main views are tabs below the context ribbon. Global sidebar selections
+persist between views. Select one, two or three models, then choose the primary
+model for field ordering and the P1–P4 spotlight. Multi-model tables show each
+model's ranks/probabilities, the mean rank and the maximum-minus-minimum spread;
+the cards show compact GB/RF/LIN comparisons. Constructor and driver filters apply
+to driver tables and charts; saved evaluation scores continue to describe the full
+scored field. Use **Reset Filters** to restore defaults.
+
 1. Open **Historical test**, select the season and completed event to reconstruct.
 2. Select **Previous 6 races that year**, **Previous 12 races that year**, or
    **All earlier races that year**. Only eligible earlier races from the selected
@@ -50,7 +58,7 @@ interface, dataset receipt and saved run summary retain these limitations.
 
 ### Refresh and predict a new weekend
 
-The **Refresh FastF1 data** button at the bottom of the sidebar is available on
+The **Refresh FastF1 data** button in **Refresh source data** on the main page is available on
 every page. It refreshes the selected season; **Refresh & predict** always refreshes
 2026. It explicitly downloads the season calendar and started Q/R result endpoints, together with FIA entry lists
 and final classification evidence. Each acquisition bypasses stale FastF1 caches

@@ -2,11 +2,11 @@
 
 import streamlit as st
 
-from f1ml_app import charts, ui
 from f1ml_app import forecasts as fc
+from f1ml_app import ui
 from f1ml_app.catalog import NO_MODEL_REASON
 from f1ml_app.experiment import FAMILY_LABELS
-from f1ml_app.text import METRICS
+from f1ml_app.text import METRICS, metric_help, metric_label
 
 FORM_COLUMNS = {
     "predicted_position": st.column_config.NumberColumn("Pred.", format="P%d", width=64),
@@ -45,32 +45,6 @@ FORM_COLUMNS = {
 }
 
 
-def model_choice(exp, sel):
-    """Saved outer-fold candidates for a development weekend; default = selected config."""
-    options = fc.candidates(exp, "qualifying", sel.event_id)
-    usable = [(o["family"], o["strategy"]) for o in options if o["available"]]
-    labels = {(o["family"], o["strategy"]): o["label"] for o in options}
-    selected = exp.selected_config("qualifying")
-    pick = st.selectbox(
-        "Saved model bundle for this weekend",
-        usable,
-        index=usable.index(selected) if selected in usable else 0,
-        format_func=lambda key: (
-            labels[key] + ("  ★ selected in development" if key == selected else "")
-        ),
-        key=f"qualifying_model_{sel.event_id}",
-        help="Outer-fold bundles trained only on weekends before this one. Viewing a "
-        "candidate does not change any saved selection.",
-    )
-    missing = [o for o in options if not o["available"]]
-    if missing:
-        st.caption(
-            "Not trained for this weekend: "
-            + "; ".join(f"{o['label']} ({o['reason']})" for o in missing)
-        )
-    return pick
-
-
 def official_only(exp, sel):
     outcome = fc.actual_outcome(exp, sel.event_id, "qualifying", sel.moment)
     if outcome.visible:
@@ -99,14 +73,18 @@ def render():
         ui.empty_state("No qualifying forecast for real catalog events", NO_MODEL_REASON)
         return
     exp = ui.experiment()
-    choice = (None, None)
-    if exp.role(sel.event_id) == "development_validation":
-        choice = model_choice(exp, sel)
-    forecast = ui.qualifying_forecast(sel.event_id, *choice)
-    if not forecast.available:
-        ui.empty_state(forecast.headline, forecast.explanation)
+    forecasts = ui.selected_forecasts("qualifying", sel.event_id, sel.moment)
+    if not forecasts:
+        ui.empty_state(
+            "No qualifying forecast for the active models",
+            "Choose another event or model with an eligible saved bundle.",
+        )
         official_only(exp, sel)
         return
+    forecast = forecasts.get(ui.primary_model(), next(iter(forecasts.values())))
+    missing = set(ui.selected_models()) - set(forecasts)
+    if missing:
+        st.caption("No eligible saved qualifying forecast for: " + ", ".join(sorted(missing)))
 
     ui.provenance(forecast)
     table = forecast.predictions.merge(
@@ -155,12 +133,13 @@ def render():
         "values are normalized ranks (0 = front, 1 = back). The score is a regression output, "
         "**not a probability**."
     )
-    ui.table(
-        table[list(FORM_COLUMNS)].sort_values("predicted_position"),
-        hide_index=True,
-        width="stretch",
-        column_config=FORM_COLUMNS,
-    )
+    outcome = fc.actual_outcome(exp, sel.event_id, "qualifying", sel.moment)
+    field = ui.forecast_fields(forecasts, outcome)
+    ui.prediction_field(field, key="qualifying_field")
+    with st.expander("Practice and recent-form input audit"):
+        ui.table(
+            table[list(FORM_COLUMNS)].sort_values("predicted_position"), column_config=FORM_COLUMNS
+        )
     if coverage["drivers_with_practice_pace"] == 0:
         st.caption(
             f"Practice: {coverage['practice_sessions_used']} session(s) completed before the "
@@ -169,61 +148,35 @@ def render():
         )
 
     st.subheader("Predicted vs official classification")
-    outcome = fc.actual_outcome(exp, sel.event_id, "qualifying", sel.moment)
     if not outcome.visible:
         ui.empty_state("Official result not shown", outcome.message, icon="🔒")
     else:
-        joined = fc.compare_to_actual(forecast.predictions, outcome)
+        ui.forecast_metrics(exp, forecasts, "qualifying")
         metrics = fc.saved_event_metrics(exp, forecast, "qualifying") or {}
         m = st.columns(4)
         m[0].metric(
-            METRICS["position_mae"]["name"],
+            metric_label(METRICS["position_mae"]["name"]),
             ui.num(metrics.get("position_mae"), 2),
             border=True,
-            help=METRICS["position_mae"]["what"],
+            help=metric_help("position_mae"),
         )
         m[1].metric(
-            METRICS["spearman"]["name"],
+            metric_label(METRICS["spearman"]["name"]),
             ui.num(metrics.get("spearman"), 3),
             border=True,
-            help=METRICS["spearman"]["what"],
+            help=metric_help("spearman"),
         )
         m[2].metric(
             "Pole correct", "Yes" if metrics.get("pole_accuracy") == 1 else "No", border=True
         )
         m[3].metric(
-            METRICS["top3_overlap"]["name"],
+            metric_label(METRICS["top3_overlap"]["name"]),
             f"{int(metrics.get('top3_overlap_count', 0))} / "
             f"{int(metrics.get('top3_denominator', 3))}",
             border=True,
         )
         st.caption(f"Metrics from the saved evaluation record. Outcomes: {outcome.source}.")
-        left, right = st.columns([1.15, 1])
-        with left:
-            st.altair_chart(charts.predicted_vs_official(joined, "Forecast"), width="stretch")
-        with right:
-            ui.table(
-                joined,
-                hide_index=True,
-                width="stretch",
-                column_config={
-                    "driver_id": st.column_config.TextColumn("Driver", width=150),
-                    "predicted_position": st.column_config.NumberColumn(
-                        "Forecast", format="P%d", width=70
-                    ),
-                    "official_position": st.column_config.NumberColumn(
-                        "Official", format="P%d", width=70
-                    ),
-                    "outcome": None,
-                    "absolute_error": st.column_config.NumberColumn("Error", format="%d", width=56),
-                    "places_vs_forecast": st.column_config.NumberColumn(
-                        "Beat forecast",
-                        format="%+d",
-                        width=90,
-                        help="Places gained vs the forecast; positive = qualified ahead of it.",
-                    ),
-                },
-            )
+        st.caption("The full-field chart and table above include these revealed actual results.")
 
     if forecast.references is not None and len(forecast.references):
         with st.expander("Fixed-rule references for this weekend"):

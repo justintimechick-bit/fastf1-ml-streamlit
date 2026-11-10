@@ -39,6 +39,23 @@ action, never during ordinary interface reruns. The
 **Three models** page explains each family; **Data & methodology** shows coverage,
 provenance, cutoffs and exclusions. No synthetic forecasts appear in this app.
 
+Use the four tabs at the top of the page to switch pages. Each page opens with a
+**Race setup** card (season, race and training history, plus **Run historical test**
+on the main page, saved runs and the data update), and a sticky context ribbon
+shows exactly which saved run is displayed. Results lead with a scoreboard of
+each model's saved score against the simple baseline, then the podium spotlight,
+then tabs for the full grid, every score and the audit trail. A **Qualifying order /
+Race order & podium** switch above the results selects the prediction.
+
+The sidebar holds app-wide preferences only: models, team or driver filters, and
+**Detail level** (**Summary** or **Full detail**). All three models start selected;
+choose a **Spotlight model** to set the grid order and podium cards. Multiple
+selections add per-model ranks and podium probabilities, mean rank, and rank
+spread. **Compare all three models** and **Reset all filters** restore selections
+quickly, and clearing the model list keeps the spotlight model active.
+Page switches preserve these controls. Saved run labels show season, round,
+training scope and a short artifact hash.
+
 Training, model selection and calibration use only eligible races before the
 target weekend in the selected year. Short windows use all available earlier
 races when fewer than 6/12 exist. A season opener cannot be trained because it
@@ -56,12 +73,12 @@ at race start plus 24 hours. These proxies cannot verify what a historical API
 actually exposed or when a later revision appeared. They support exploratory
 replays rather than a claim of prospective availability.
 
-Press **Refresh FastF1 data** at the bottom of the sidebar to load new weekends,
+Press **Refresh FastF1 data** in **Refresh source data** on the main page to load new weekends,
 including Brazil (São Paulo, `2026-20`). Select the event and press **Run forecast**.
 Before qualifying, qualifying order is available when its entry list is published.
 After final qualifying is published, race order and podium probabilities become
 available until the scheduled race start. Completed new weekends can be tested
-historically on the same page. The sidebar refresh button is available on every
+historically on the same page. The refresh action is available on every
 page and shows the season it refreshes. **Historical test**, **Refresh & predict**,
 and **Data & methodology** share the active refreshed data; completed new events appear in the historical target
 options once final qualifying and race classifications are available. Historical

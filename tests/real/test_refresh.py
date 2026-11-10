@@ -235,7 +235,7 @@ def test_historical_refresh_updates_options_and_uses_selected_snapshot(
     assert len(at.selectbox(key="lab_target_event").options) == 18
     at.selectbox(key="lab_target_event").set_value("2026-18").run()
     assert not refresh_calls and not run_calls
-    at.sidebar.button(key="lab_refresh").click().run()
+    at.main.button(key="lab_refresh").click().run()
     assert not at.exception and not at.error
     assert refresh_calls == [(older, state)]
     assert len(at.selectbox(key="lab_target_event").options) == 19
@@ -268,7 +268,7 @@ def test_historical_refresh_failure_keeps_previous_options(
     at = AppTest.from_string("from f1ml_app.lab_app import main\nmain()", default_timeout=30).run()
     assert not at.exception and not at.error
     previous = at.selectbox(key="lab_target_event").options
-    at.sidebar.button(key="lab_refresh").click().run()
+    at.main.button(key="lab_refresh").click().run()
     assert not at.exception
     assert "previous snapshot is still available" in at.error[0].value
     assert at.selectbox(key="lab_target_event").options == previous
@@ -295,9 +295,9 @@ def test_methodology_refresh_updates_coverage_sources_and_timestamp(
     assert not at.exception and not at.error
     before = next(frame.value for frame in at.dataframe if "Known numeric ranks" in frame.value)
     assert len(before) == 38
-    assert len(at.sidebar.button) == 1
-    assert not at.main.button
-    at.sidebar.button(key="lab_refresh").click().run()
+    assert len(at.sidebar.button) == 2  # Select All Models and Reset Filters
+    assert at.main.button(key="lab_refresh").label == "Refresh FastF1 data"
+    at.main.button(key="lab_refresh").click().run()
     assert not at.exception and not at.error
     coverage = next(frame.value for frame in at.dataframe if "Known numeric ranks" in frame.value)
     assert len(coverage) == 46
@@ -345,13 +345,13 @@ def test_sidebar_refresh_uses_selected_season_and_live_page_uses_current_season(
     ).run()
     at.selectbox(key="lab_season").set_value(2024).run()
     assert not at.exception and not at.error and not calls
-    assert any(caption.value == "Refresh season: 2024" for caption in at.sidebar.caption)
-    at.sidebar.button(key="lab_refresh").click().run()
+    assert any(caption.value == "Refresh season: 2024" for caption in at.main.caption)
+    at.main.button(key="lab_refresh").click().run()
     assert calls == [(root / "data/historical/2024", tmp_path / "live/2024")]
     at.session_state["test_live_page"] = True
     at.run()
-    assert any(caption.value == "Refresh season: 2026" for caption in at.sidebar.caption)
-    at.sidebar.button(key="lab_refresh").click().run()
+    assert any(caption.value == "Refresh season: 2026" for caption in at.main.caption)
+    at.main.button(key="lab_refresh").click().run()
     assert calls[-1] == (dataset_root, tmp_path / "live")
 
 

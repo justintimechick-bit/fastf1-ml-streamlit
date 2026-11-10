@@ -5,6 +5,38 @@ import tomllib
 from dataclasses import dataclass, fields
 from pathlib import Path
 
+# Presentation defaults are shared by the active lab and the saved-source review.
+VIEW_MODES = ("Executive Skim", "Full Telemetry & Audits")
+DEFAULT_VIEW_MODE = VIEW_MODES[1]
+MODEL_LABELS = {
+    "gradient_boosting": "Gradient Boosting",
+    "random_forest": "Random Forest",
+    "linear": "Linear",
+}
+MODEL_SHORT = {"gradient_boosting": "GB", "random_forest": "RF", "linear": "LIN"}
+MODEL_ALIASES = {"ridge": "linear", "logistic": "linear"}
+PERSISTENT_FILTER_KEYS = (
+    "view_mode",
+    "lab_season",
+    "lab_target_event",
+    "lab_history_window",
+    "lab_replay_artifact",
+    "lab_prediction_family",
+    "lab_selected_models",
+    "grid_teams",
+    "grid_driver_search",
+    "lab_forecast_tab",
+    "lab_live_event",
+    "lab_live_window",
+    "lab_live_family",
+    "lab_live_task",
+    "real_evaluation_task",
+    "real_missing_only",
+    "real_review_section",
+    "source",
+    "moment",
+)
+
 DEFAULTS = {
     "dataset": "data/phase3-final/dataset",
     "manifest": "data/phase3-final/manifest.json",

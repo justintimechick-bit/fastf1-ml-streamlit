@@ -84,6 +84,36 @@ METRICS = {
     },
 }
 
+
+def _metric_spec(value: str) -> dict | None:
+    text = value.casefold().replace("_", " ")
+    for key, spec in METRICS.items():
+        if key.replace("_", " ") == text or spec["name"].casefold() == text:
+            return spec
+    for term, key in (
+        ("mae", "position_mae"),
+        ("spearman", "spearman"),
+        ("brier", "brier"),
+        ("log loss", "log_loss"),
+    ):
+        if term in text:
+            return METRICS[key]
+    return None
+
+
+def metric_label(value: str) -> str:
+    spec = _metric_spec(value)
+    if spec and "is better" not in value:
+        value = value.replace(" ↓", "").replace(" ↑", "")
+        return f"{value} {'↓ lower' if spec['better'] == 'lower' else '↑ higher'} is better"
+    return value
+
+
+def metric_help(value: str) -> str | None:
+    spec = _metric_spec(value)
+    return f"{spec['what']} {spec['better'].capitalize()} is better." if spec else None
+
+
 STRATEGIES = {
     "2026_only": (
         "A · 2026-only",

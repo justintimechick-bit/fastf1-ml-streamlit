@@ -548,6 +548,178 @@ def compare_to_actual(predictions: pd.DataFrame, outcome: Outcome) -> pd.DataFra
     return joined.sort_values("predicted_position").reset_index(drop=True)
 
 
+def presentation_frame(
+    predictions: pd.DataFrame,
+    *,
+    task: str | None = None,
+    family: str | None = None,
+    outcome: Outcome | None = None,
+) -> pd.DataFrame:
+    """Copy a single event's saved field into a common display schema.
+
+    Real-lab ``predicted_rank`` is the discrete order; its ``predicted_position``
+    is a regression score. Legacy forecasts use ``predicted_position`` as order.
+    Race probabilities always join the separate podium task by event/driver/model.
+    An explicit Outcome enforces the legacy replay's result-visibility boundary.
+    """
+    data = predictions.copy()
+    if task is not None and "task" in data:
+        data = data.loc[data.task.eq(task)].copy()
+    if family is not None and "family" in data:
+        data = data.loc[data.family.eq(family)].copy()
+    if task == "race" and "task" in predictions:
+        podium = predictions.loc[predictions.task.eq("podium")].copy()
+        if family is not None and "family" in podium:
+            podium = podium.loc[podium.family.eq(family)]
+        if not podium.empty:
+            keys = [
+                c
+                for c in ("event_id", "driver_id", "family", "strategy", "cutoff", "mode")
+                if c in data and c in podium
+            ]
+            columns = [
+                c
+                for c in (
+                    "podium_probability",
+                    "raw_podium_probability",
+                    "podium_prediction",
+                    "threshold",
+                )
+                if c in podium
+            ]
+            data = data.drop(columns=columns, errors="ignore").merge(
+                podium[keys + columns],
+                on=keys,
+                how="left",
+                validate="one_to_one",
+            )
+    if outcome is not None:
+        data = data.drop(
+            columns=[
+                "actual_rank",
+                "official_position",
+                "actual_podium",
+                "podium",
+                "outcome",
+                "absolute_error",
+                "places_vs_forecast",
+                "label_source",
+                "label_available_at",
+            ],
+            errors="ignore",
+        )
+        if outcome.visible and outcome.table is not None:
+            keys = [c for c in ("event_id", "driver_id") if c in data and c in outcome.table]
+            cols = [c for c in ("official_position", "outcome", "podium") if c in outcome.table]
+            data = data.merge(
+                outcome.table[keys + cols], on=keys, how="left", validate="one_to_one"
+            )
+    for target, source in (
+        ("predicted_rank", "predicted_position"),
+        ("actual_rank", "official_position"),
+        ("actual_podium", "podium"),
+    ):
+        if target not in data:
+            data[target] = data[source] if source in data else float("nan")
+    for column in ("predicted_rank", "actual_rank"):
+        data[column] = pd.to_numeric(data[column], errors="coerce").where(lambda x: x.ge(1))
+    if "driver_id" not in data:
+        data["driver_id"] = data.index.astype(str)
+    fallback = data.driver_id.astype(str).str.replace("_", " ").str.title()
+    data["driver"] = data["driver"].fillna(fallback) if "driver" in data else fallback
+    if "team_id" not in data:
+        data["team_id"] = None
+    if "podium_probability" not in data:
+        data["podium_probability"] = float("nan")
+    data["podium_probability"] = pd.to_numeric(data.podium_probability, errors="coerce")
+    data["podium_probability"] = data.podium_probability.where(
+        data.podium_probability.between(0, 1)
+    )
+    data["rank_delta"] = data.predicted_rank - data.actual_rank
+    data["rank_error"] = data.rank_delta.abs()
+    data["rank_delta_label"] = data.rank_delta.map(rank_delta_label)
+    return data.sort_values(["predicted_rank", "driver_id"], kind="stable").reset_index(drop=True)
+
+
+def rank_delta_label(value) -> str:
+    """Places gained versus forecast, with a distinct label for unknown outcomes."""
+    if pd.isna(value):
+        return "—"
+    return f"▲ +{int(value)}" if value > 0 else f"▼ {int(value)}" if value < 0 else "— 0"
+
+
+def compare_fields(fields: dict[str, pd.DataFrame], primary: str) -> pd.DataFrame:
+    """Align saved model outputs by driver, retaining missing outputs as unknown.
+
+    Ranks are never recomputed after filtering. Consensus is a descriptive mean of
+    available ranks, not a new forecast or a metric evaluated against target labels.
+    """
+    nonempty = {model: frame for model, frame in fields.items() if not frame.empty}
+    if not nonempty:
+        return presentation_frame(pd.DataFrame())
+    primary = primary if primary in nonempty else next(iter(nonempty))
+    base = nonempty[primary].copy()
+    # Keep entrants absent from the primary output, with its prediction left unknown.
+    for frame in nonempty.values():
+        missing = frame.loc[~frame.driver_id.isin(base.driver_id)].copy()
+        if not missing.empty:
+            missing[["predicted_rank", "podium_probability", "rank_error"]] = float("nan")
+            missing["rank_delta"] = float("nan")
+            missing["rank_delta_label"] = "—"
+            base = pd.concat([base, missing], ignore_index=True)
+    if len(fields) > 1:
+        for model, frame in fields.items():
+            indexed = frame.drop_duplicates("driver_id").set_index("driver_id")
+            for source, prefix in (
+                ("predicted_rank", "rank"),
+                ("podium_probability", "podium"),
+                ("rank_error", "error"),
+            ):
+                base[f"{prefix}__{model}"] = base.driver_id.map(indexed[source])
+        ranks = base[[f"rank__{model}" for model in fields]]
+        base["Consensus / Mean Rank"] = ranks.mean(axis=1)
+        base["Model Spread (Max - Min Rank)"] = ranks.max(axis=1) - ranks.min(axis=1)
+        base["Models with rank"] = ranks.notna().sum(axis=1)
+    base.attrs["models"] = list(fields)
+    base.attrs["primary"] = primary
+    return base.sort_values(["predicted_rank", "driver_id"], kind="stable").reset_index(drop=True)
+
+
+def comparison_frame(
+    predictions: pd.DataFrame, *, task: str, models: list[str], primary: str
+) -> pd.DataFrame:
+    return compare_fields(
+        {model: presentation_frame(predictions, task=task, family=model) for model in models},
+        primary,
+    )
+
+
+def comparison_long(field: pd.DataFrame) -> pd.DataFrame:
+    """One row per driver and active model for grouped charts, including unknown actuals."""
+    rows = []
+    for column in field:
+        if not column.startswith("rank__"):
+            continue
+        model = column.removeprefix("rank__")
+        frame = field[["driver_id", "driver", "team_id", "actual_rank"]].copy()
+        frame["family"] = model
+        frame["predicted_rank"] = field[column]
+        frame["podium_probability"] = field[f"podium__{model}"]
+        frame["rank_error"] = field[f"error__{model}"]
+        rows.append(frame)
+    return pd.concat(rows, ignore_index=True) if rows else field.copy()
+
+
+def spotlight_candidates(field: pd.DataFrame) -> pd.DataFrame:
+    """Race-order P1–P3 and P4; never select cards using observed outcomes."""
+    return (
+        field.loc[field.predicted_rank.notna()]
+        .sort_values(["predicted_rank", "driver_id"], kind="stable")
+        .head(4)
+        .copy()
+    )
+
+
 def saved_event_metrics(exp: Experiment, forecast: Forecast, task: str) -> dict | None:
     """Metrics from the saved evaluation record for this exact model, not recomputed."""
     card = forecast.models.get(task)

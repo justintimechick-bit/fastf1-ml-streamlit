@@ -1,4 +1,91 @@
-# Interface (Phase 8)
+# Interface
+
+## Real model lab navigation
+
+The current entrypoints (`streamlit_app.py` and `python -m f1ml_app`) open the real
+model lab: **Historical test**, **Refresh & predict**, **Three models**, and
+**Data & methodology**. Normal navigation and saved-artifact selection read local
+artifacts. Only the explicit run buttons can train models; **Refresh FastF1 data**
+is a separate, explicit download action.
+
+Every view shows a compact telemetry context ribbon at the top of the main pane.
+It stays at the top while scrolling and wraps on narrow screens. It identifies:
+
+- The full inspected replay directory/artifact ID, without an ambiguous shortened suffix.
+- The artifact's season and event, the selected model family, and prediction task.
+- Whether the displayed artifact's receipt and prediction lock verified.
+
+The historical form is a request for another run. Changing its event or history
+does not relabel the saved results already on screen. When the request differs,
+the ribbon labels it **Next request** while keeping the inspected replay's identity
+and weekend. The **Saved replay artifact** picker opens a different local artifact
+without training. A failed verification clears success badges and suppresses its
+results. Cache keys include saved-file metadata, so editing a lock or prediction
+table triggers verification again.
+
+The source-coverage view identifies its dataset rather than claiming to display a
+model replay. The separate saved real-experiment review identifies its experiment,
+reports its verified receipt, and explicitly says training is blocked and no model
+or prediction lock exists. Neither a verified receipt nor a sealed historical
+prediction establishes an untouched holdout.
+
+The sidebar uses the same organization throughout:
+
+1. **Event & Replay Selection**: season, event/history request, saved replay, and refresh.
+2. **Model & Task Filter**: model family and qualifying/race cutoff. Live discovery
+   also offers all available tasks. Coverage keeps the filters without applying them
+   to source counts; the blocked real-experiment review only filters planned tasks.
+3. **Display Preferences**: the **View Mode** preset.
+
+**Full Telemetry & Audits** is the default and keeps the full prediction tables,
+comparison scores, source records and provenance. **Executive Skim** shows compact
+KPIs and leading drivers, with independent podium probabilities for the race task;
+deep diagnostic tables are omitted. Source gaps, blocked training, and exploratory
+evaluation disclosures remain visible in both modes.
+
+Filter values persist within the current Streamlit session when changing pages or
+view mode. Season-specific event/history/replay choices return when switching back
+to that season. The three fitted model-family choices follow the user between lab
+views; the live baseline remains available on the live page. Persistence does not
+write user preferences to disk or carry them into another browser session. Existing
+run/refresh widget keys and initial selections remain unchanged, including the
+2026 Mexico target, all-earlier-races history, and linear model. The existing
+`lab_forecast_tab` key now belongs to the sidebar task radio, with the same two cutoff
+labels and qualifying default.
+
+### Prediction storylines
+
+Race views open the field with a three-column **Predicted Podium Spotlight** and a
+**P4 Challenger**. The cards follow race-order ranks, while their bars use each
+driver's separate podium classifier probability. Result badges report an observed
+podium hit or miss and the actual numeric finish when known; they do not claim an
+exact-position hit. Forecast-only artifacts leave result badges unavailable.
+
+Qualifying and race fields share a constructor filter, a largest-surprise highlight,
+and an interactive rank chart. Circles are forecasts; diamonds are actual results.
+Hover shows driver/team/rank details; zoom and pan apply to the rank axis. Drivers
+without a numeric actual rank keep their forecast marker and a blank rank error.
+The default table puts readable driver/team names and ranks first, uses probability
+progress bars on a 0–100% scale, and hides internal IDs and model scores.
+
+**Rank delta = Predicted − Actual**: `▲ +3` means three places ahead of the forecast,
+`▼ -2` means two behind, and `— 0` is an exact rank match. A lone `—` means unknown,
+not zero error. Highlights select up to three non-zero absolute errors within the
+constructor filter. Filters change the view, not saved scores or exported full fields.
+
+The **Calibration probability audit** reads saved `calibration_predictions.parquet`
+records for earlier development events. Raw and saved calibrated probabilities
+appear together as fit diagnostics, separately from target-event accuracy. No display
+operation fits a calibrator, renormalizes probabilities, or changes prediction files.
+
+Shared UI defaults live in `src/f1ml_app/settings.py`; artifact path overrides below
+retain their original meaning. Verify the lab with:
+
+```sh
+pytest tests/real/test_real_interface.py tests/real/test_real_cloud.py tests/real/test_navigation.py
+```
+
+## Saved Phase 8–9 artifact review
 
 A local, read-only Streamlit interface over the saved Phase 2–9 artifacts. It never
 downloads data, fits or recalibrates a model, selects thresholds, or opens the final-test
