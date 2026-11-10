@@ -1,4 +1,4 @@
-# Streamlit settings for the Phase 8 interface. Read from the project root.
+# Pit-wall telemetry defaults. Read from the project root.
 
 [server]
 headless = true
@@ -13,25 +13,26 @@ gatherUsageStats = false
 toolbarMode = "minimal"
 
 [theme]
+base = "dark"
 font = "sans-serif"
-baseRadius = "0.55rem"
-buttonRadius = "0.5rem"
+baseRadius = "0.35rem"
+buttonRadius = "0.3rem"
 showSidebarBorder = true
 
 [theme.light]
-primaryColor = "#d7263d"
-backgroundColor = "#fbfbfa"
-secondaryBackgroundColor = "#f1f0ec"
-textColor = "#141413"
-borderColor = "#e1e0d9"
-linkColor = "#1c5cab"
-chartCategoricalColors = ["#2a78d6", "#eb6834", "#1baf7a"]
+primaryColor = "#bd2035"
+backgroundColor = "#f4f6f8"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#101820"
+borderColor = "#cbd3dc"
+linkColor = "#006c91"
+chartCategoricalColors = ["#007ba6", "#b84e00", "#157445"]
 
 [theme.dark]
-primaryColor = "#e2475a"
-backgroundColor = "#141416"
-secondaryBackgroundColor = "#1f1f23"
-textColor = "#f0efec"
-borderColor = "#2c2c2a"
-linkColor = "#6da7ec"
-chartCategoricalColors = ["#3987e5", "#d95926", "#199e70"]
+primaryColor = "#ff5263"
+backgroundColor = "#080d12"
+secondaryBackgroundColor = "#121b25"
+textColor = "#f4f7fa"
+borderColor = "#304152"
+linkColor = "#65d9f5"
+chartCategoricalColors = ["#65d9f5", "#ffac63", "#67e8a5"]
