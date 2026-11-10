@@ -5,7 +5,7 @@ import streamlit as st
 
 from f1ml_app import charts, ui
 from f1ml_app.experiment import FAMILY_LABELS, STRATEGY_LABELS
-from f1ml_app.text import METRICS, STRATEGIES
+from f1ml_app.text import METRICS, STRATEGIES, metric_help, metric_label
 
 TASKS = {"qualifying": "Qualifying order", "race": "Race order", "podium": "Podium probability"}
 TASK_METRICS = {
@@ -41,7 +41,7 @@ def _averages(exp, task) -> tuple[pd.DataFrame, list[str]]:
     else:
         summary = exp.race_comparison["summary"]
         rows, common = summary["event_averages"][task], summary["common_evaluation_events"][task]
-    frame = pd.DataFrame(rows)
+    frame = ui.filter_models(pd.DataFrame(rows))
     frame["model"] = frame.family.map(FAMILY_LABELS)
     frame["strategy_label"] = frame.strategy.map(STRATEGY_LABELS)
     return frame, common
@@ -70,6 +70,9 @@ def development(exp):
         key="dev_task",
     )
     frame, common = _averages(exp, task)
+    if frame.empty:
+        st.info("No saved development scores for the active models.")
+        return
     metrics = [m for m in TASK_METRICS[task] if m in frame]
     metric = st.segmented_control(
         "Metric",
@@ -87,16 +90,18 @@ def development(exp):
     chart = frame.assign(value=frame[metric], strategy=frame.strategy_label)
     st.altair_chart(charts.strategy_dots(chart, metric_name(metric), better), width="stretch")
 
-    selected = exp.selected_config(task)
     learned = frame.loc[frame.strategy.ne("fixed_rule")]
     rules = frame.loc[frame.strategy.eq("fixed_rule")]
-    pick = frame.loc[frame.family.eq(selected[0]) & frame.strategy.eq(selected[1])].iloc[0]
     primary = PRIMARY[task]
+    if learned.empty or not learned[primary].notna().any():
+        st.info("No scored learned candidates in the active selection.")
+        return
+    pick = learned.sort_values(primary).iloc[0]
     best_rule = rules.sort_values(primary).iloc[0] if len(rules) else None
     with st.container(border=True):
         st.markdown(
-            f"**Selected for the lock:** {FAMILY_LABELS[selected[0]]} · "
-            f"{STRATEGY_LABELS[selected[1]]}: lowest common-event {metric_name(primary)} "
+            f":green-badge[Active selection winner] **{FAMILY_LABELS[pick.family]}** · "
+            f"{STRATEGY_LABELS[pick.strategy]}: lowest common-event {metric_name(primary)} "
             f"among {len(learned)} learned candidates ({ui.num(pick[primary], 4)}; ties broken "
             "by predeclared order)."
         )
@@ -122,11 +127,16 @@ def development(exp):
             "model": "Model",
             "strategy_label": "Strategy",
             "events": st.column_config.NumberColumn("Events", format="%d"),
-            **{m: st.column_config.NumberColumn(metric_name(m), format="%.4f") for m in show[3:]},
+            **{
+                m: st.column_config.NumberColumn(
+                    metric_label(metric_name(m)), format="%.4f", help=metric_help(m)
+                )
+                for m in show[3:]
+            },
         },
     )
     comparison = exp.qualifying_comparison if task == "qualifying" else exp.race_comparison
-    events = comparison["event_metrics"]
+    events = ui.filter_models(comparison["event_metrics"])
     if "task" in events:
         events = events.loc[events.task.eq(task)]
     with st.expander("Every development fold, including early folds outside the common cohort"):
@@ -195,6 +205,8 @@ def final_test(exp):
     locked = []
     for task in ("qualifying", "race", "podium"):
         card = exp.locked_card(task)
+        if card is None or ui.filter_models(pd.DataFrame({"family": [card.family]})).empty:
+            continue
         locked.append(
             {
                 "task": TASKS[task],
@@ -225,6 +237,13 @@ def final_test(exp):
         required=True,
         key="final_task",
     )
+    card = exp.locked_card(task)
+    if card is None or ui.filter_models(pd.DataFrame({"family": [card.family]})).empty:
+        st.info(
+            "The frozen result's locked family is outside the active selection. "
+            "Other families have no sealed final-test predictions for this task."
+        )
+        return
     aggregate = final["aggregate_metrics"]
     aggregate = aggregate.loc[aggregate.task.eq(task)].copy()
     metrics = [m for m in TASK_METRICS[task] if m in set(aggregate.metric)]
@@ -332,7 +351,7 @@ def feature_groups(exp):
         "weather) on identical development weekends. A group is promoted only with measured "
         "benefit, enough observed data and acceptable runtime."
     )
-    retention = data["retention"].assign(
+    retention = ui.filter_models(data["retention"]).assign(
         reasons=lambda f: f.reasons.map(lambda r: ", ".join(r).replace("_", " "))
     )
     ui.table(
@@ -360,7 +379,7 @@ def feature_groups(exp):
             "runtime_ratio_vs_core": st.column_config.NumberColumn("Runtime ratio", format="%.2f×"),
         },
     )
-    promoted = data["retention"].decision.ne("do_not_promote").sum()
+    promoted = retention.decision.ne("do_not_promote").sum()
     st.markdown(
         f"**{promoted}** optional group(s) promoted; the locked models use core features only."
     )

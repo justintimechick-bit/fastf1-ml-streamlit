@@ -8,22 +8,7 @@ from f1ml_app import charts, ui
 from f1ml_app import forecasts as fc
 from f1ml_app.catalog import NO_MODEL_REASON
 from f1ml_app.experiment import FAMILY_LABELS
-from f1ml_app.text import METRICS
-from f1ml_app.theme import tokens
-
-
-def model_choice(exp, sel, task):
-    options = fc.candidates(exp, task, sel.event_id)
-    usable = [(o["family"], o["strategy"]) for o in options if o["available"]]
-    labels = {(o["family"], o["strategy"]): o["label"] for o in options}
-    selected = exp.selected_config(task)
-    return st.selectbox(
-        f"Saved {'race-order' if task == 'race' else 'podium'} bundle",
-        usable,
-        index=usable.index(selected) if selected in usable else 0,
-        format_func=lambda key: labels[key] + ("  ★ selected" if key == selected else ""),
-        key=f"{task}_model_{sel.event_id}",
-    )
+from f1ml_app.text import METRICS, metric_help, metric_label
 
 
 def render():
@@ -35,18 +20,14 @@ def render():
         ui.empty_state("No race forecast for real catalog events", NO_MODEL_REASON)
         return
     exp = ui.experiment()
-    race_choice = podium_choice = (None, None)
-    if exp.role(sel.event_id) == "development_validation" and sel.moment != "pre_qualifying":
-        cols = st.columns(2)
-        with cols[0]:
-            race_choice = model_choice(exp, sel, "race")
-        with cols[1]:
-            podium_choice = model_choice(exp, sel, "podium")
-    forecast = ui.race_forecast(sel.event_id, sel.moment, race_choice, podium_choice)
-    if not forecast.available:
+    forecasts = ui.selected_forecasts("race", sel.event_id, sel.moment)
+    if not forecasts:
+        forecast = ui.race_forecast(sel.event_id, sel.moment)
         ui.empty_state(
-            forecast.headline,
-            forecast.explanation,
+            "No race forecast for the active models" if forecast.available else forecast.headline,
+            "Choose a model with an eligible saved bundle."
+            if forecast.available
+            else forecast.explanation,
             icon="⏳" if sel.moment == "pre_qualifying" else "⏸",
         )
         if sel.moment == "pre_qualifying" and ui.qualifying_forecast(sel.event_id).available:
@@ -56,11 +37,17 @@ def render():
                 icon=":material/timer:",
             )
         return
+    forecast = forecasts.get(ui.primary_model(), next(iter(forecasts.values())))
+    missing = set(ui.selected_models()) - set(forecasts)
+    if missing:
+        st.caption("No eligible saved race forecast for: " + ", ".join(sorted(missing)))
 
     ui.provenance(forecast)
     preds = forecast.predictions.sort_values("predicted_position")
     top = forecast.top_three or {}
-    by_probability = preds.sort_values("podium_probability_rank")
+    outcome = fc.actual_outcome(exp, sel.event_id, "race", sel.moment)
+    field = ui.forecast_fields(forecasts, outcome)
+    by_probability = field.sort_values("podium_probability", ascending=False)
     tiles = st.columns(4)
     tiles[0].metric("Field", f"{len(preds)} drivers", border=True)
     tiles[1].metric(
@@ -85,24 +72,13 @@ def render():
         "to sum to exactly three.",
     )
 
-    st.subheader("Two different top threes")
-    left, right = st.columns(2)
-    with left.container(border=True):
-        st.markdown("**Race-order model · predicted P1–P3**")
-        st.caption("Regression of official classification, ordered by ranking score.")
+    ui.podium_spotlight(field)
+    with st.expander("Podium classifier · three highest probabilities"):
+        st.caption("These can differ from the race-order P1–P3 shown in the spotlight.")
         ui.tower(
             [
-                (int(r.predicted_position), r.driver_id, f"score {r.raw_score:.3f}")
-                for r in preds.head(3).itertuples()
-            ]
-        )
-    with right.container(border=True):
-        st.markdown("**Podium classifier · three highest probabilities**")
-        st.caption("Independent P(podium) per driver, after development-fitted calibration.")
-        ui.tower(
-            [
-                (int(r.podium_probability_rank), r.driver_id, ui.pct(r.podium_probability))
-                for r in by_probability.head(3).itertuples()
+                (i + 1, str(row.driver), ui.pct(row.podium_probability))
+                for i, row in enumerate(by_probability.head(3).itertuples())
             ]
         )
     if top.get("disagree"):
@@ -113,54 +89,21 @@ def render():
 
     st.subheader("Podium probability by driver")
     threshold = float(preds.podium_threshold.iloc[0])
-    st.altair_chart(charts.podium_probabilities(preds, threshold), width="stretch")
+    filtered = ui.filter_grid(field)
+    if not filtered.empty:
+        chart = (
+            charts.model_field_comparison(filtered, "podium_probability")
+            if len(ui.selected_models()) > 1
+            else charts.podium_probabilities(filtered, threshold)
+        )
+        st.altair_chart(chart, width="stretch")
     st.caption(
         f"Bars are independent marginal probabilities. The dashed line is the decision "
         f"threshold ({threshold:.0%}) selected on earlier development weekends, never on this one."
     )
 
-    st.subheader("Predicted race order")
-    order = preds.merge(
-        forecast.inputs[["driver_id", "team_id", "qualifying_position"]],
-        on="driver_id",
-        validate="one_to_one",
-    )
-    ui.table(
-        order[
-            [
-                "predicted_position",
-                "driver_id",
-                "team_id",
-                "qualifying_position",
-                "raw_score",
-                "podium_probability",
-                "raw_podium_probability",
-                "podium_probability_rank",
-                "predicted_podium",
-            ]
-        ],
-        hide_index=True,
-        width="stretch",
-        column_config={
-            "predicted_position": st.column_config.NumberColumn("Pred.", format="P%d", width=64),
-            "driver_id": st.column_config.TextColumn("Driver", width=160),
-            "team_id": st.column_config.TextColumn("Team", width=140),
-            "qualifying_position": st.column_config.NumberColumn("Qualified", format="P%d"),
-            "raw_score": st.column_config.NumberColumn(
-                "Ranking score",
-                format="%.3f",
-                help="Regression output; lower = ahead. Not a probability.",
-            ),
-            "podium_probability": st.column_config.ProgressColumn(
-                "P(podium)", min_value=0, max_value=1, format="percent", color=tokens()["series"][0]
-            ),
-            "raw_podium_probability": st.column_config.NumberColumn(
-                "Before calibration", format="percent"
-            ),
-            "podium_probability_rank": st.column_config.NumberColumn("Prob. rank", format="%d"),
-            "predicted_podium": st.column_config.CheckboxColumn("≥ threshold"),
-        },
-    )
+    st.subheader("Full-field race order and rank surprises")
+    ui.prediction_field(field, key="race_field")
 
     st.subheader("Qualifying information used")
     coverage = fc.event_coverage(forecast.inputs, "race")
@@ -219,64 +162,41 @@ def render():
     )
 
     st.subheader("Predicted vs official race result")
-    outcome = fc.actual_outcome(exp, sel.event_id, "race", sel.moment)
     if not outcome.visible:
         ui.empty_state("Official race result not shown", outcome.message, icon="🔒")
     else:
-        joined = fc.compare_to_actual(preds, outcome)
+        ui.forecast_metrics(exp, forecasts, "race")
+        ui.forecast_metrics(exp, forecasts, "podium")
         race_m = fc.saved_event_metrics(exp, forecast, "race") or {}
         pod_m = fc.saved_event_metrics(exp, forecast, "podium") or {}
         m = st.columns(5)
         m[0].metric(
-            METRICS["position_mae"]["name"], ui.num(race_m.get("position_mae"), 2), border=True
+            metric_label(METRICS["position_mae"]["name"]),
+            ui.num(race_m.get("position_mae"), 2),
+            border=True,
         )
         m[1].metric(
             "Winner correct", "Yes" if race_m.get("winner_accuracy") == 1 else "No", border=True
         )
         m[2].metric(
-            METRICS["top3_overlap"]["name"], ui.pct(race_m.get("top3_overlap"), 0), border=True
+            metric_label(METRICS["top3_overlap"]["name"]),
+            ui.pct(race_m.get("top3_overlap"), 0),
+            border=True,
         )
         m[3].metric(
-            "Podium log loss",
+            metric_label("Podium log loss"),
             ui.num(pod_m.get("log_loss"), 4),
             border=True,
-            help=METRICS["log_loss"]["what"],
+            help=metric_help("log_loss"),
         )
         m[4].metric(
-            "Podium Brier",
+            metric_label("Podium Brier"),
             ui.num(pod_m.get("brier"), 4),
             border=True,
-            help=METRICS["brier"]["what"],
+            help=metric_help("brier"),
         )
         st.caption(f"Metrics from the saved evaluation record. Outcomes: {outcome.source}.")
-        left, right = st.columns([1.15, 1])
-        with left:
-            st.altair_chart(
-                charts.predicted_vs_official(joined, "Race-order forecast"), width="stretch"
-            )
-        with right:
-            podium = (
-                preds[["driver_id", "podium_probability"]]
-                .merge(
-                    outcome.table[["driver_id", "official_position", "podium"]],
-                    on="driver_id",
-                    validate="one_to_one",
-                )
-                .sort_values("official_position")
-            )
-            ui.table(
-                podium,
-                hide_index=True,
-                width="stretch",
-                column_config={
-                    "driver_id": "Driver",
-                    "podium_probability": st.column_config.NumberColumn(
-                        "P(podium)", format="percent"
-                    ),
-                    "official_position": st.column_config.NumberColumn("Official", format="P%d"),
-                    "podium": st.column_config.CheckboxColumn("Podium"),
-                },
-            )
+        st.caption("The full-field chart and table above include these revealed actual results.")
 
     if forecast.references is not None and len(forecast.references):
         with st.expander("Fixed-rule references for this weekend"):

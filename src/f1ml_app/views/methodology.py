@@ -6,6 +6,7 @@ import streamlit as st
 from f1ml.domain import utc
 from f1ml_app import ui
 from f1ml_app.experiment import FAMILY_LABELS, ROLE_LABELS, STRATEGY_LABELS
+from f1ml_app.settings import MODEL_ALIASES
 from f1ml_app.text import CUTOFF_RULES, FAMILIES, LIMITATIONS, PREPROCESSING, STRATEGIES
 from f1ml_app.theme import tokens
 
@@ -260,7 +261,12 @@ def cutoffs(exp):
 
 def models(exp):
     cols = st.columns(2)
-    for i, (title, body) in enumerate(FAMILIES.values()):
+    active = [
+        text
+        for family, text in FAMILIES.items()
+        if MODEL_ALIASES.get(family, family) in ui.selected_models()
+    ]
+    for i, (title, body) in enumerate(active):
         with cols[i % 2].container(border=True):
             st.markdown(f"**{title}**")
             st.caption(body)
@@ -279,6 +285,8 @@ def models(exp):
     for task in ("qualifying", "race", "podium"):
         card = exp.locked_card(task)
         if card is None:
+            continue
+        if MODEL_ALIASES.get(card.family, card.family) not in ui.selected_models():
             continue
         meta = card.metadata
         rows.append(

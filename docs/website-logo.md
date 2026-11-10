@@ -1,15 +1,63 @@
-# Website logo
+# Pit-wall telemetry design
+
+The app uses `src/f1ml_app/assets/logo.svg`, a compact instrument-mark lockup,
+in both navigation and the shared horizontal header. The header pairs the logo
+with the page title, subtitle, and wrapping status badges. It replaces the large
+page logo and keeps the first controls close to the top of the viewport.
+
+The default theme is dark: carbon `#080d12`, card `#121b25`, raised surface
+`#1b2937`, hairline `#304152`, text `#f4f7fa`, and red accent `#ff5263`.
+Locked predictions use cyan, verified receipts green, and warnings amber.
+An explicit light theme remains available. `theme.tokens()` keeps its existing
+chart keys and adds surface and status tokens. `theme.inject()` supplies matching
+`--f1-*` CSS variables, compact page padding, and tabular numeric styling.
+Metric values and timing-tower numbers use a local monospace font stack;
+headings use a condensed sans-serif stack without remote font downloads.
+
+`ui.hero(kicker, title, meta)` keeps its existing signature. The active real-data
+lab uses `ui.brand_header(title, subtitle, dataset_version=..., verified_run=...)`.
+The config badge reads `experiment_id` from `configs/real-20261105.toml`;
+the separate dataset badge identifies the actual loaded dataset directory.
+Only pass runs returned by the verified saved-run loader. The prediction lock
+badge requires both a seal timestamp and `sealed_before_target_scoring = true`
+from that run's `prediction_lock.json`. A prediction lock does not establish an
+untouched holdout; the exploratory evaluation badge preserves that distinction.
+
+Constructor accents are presentation tokens in `theme.TEAM_COLORS`, keyed by
+canonical `team_id` from `configs/team_mapping.json`. `theme.team_color(name)`
+also resolves configured source IDs and aliases, ignoring case and separator
+differences, and returns `#98AABD` for unknown teams. Colors deliberately remain
+outside the mapping document because its checksum identifies ingestion history.
+These are interface accents, not a claim of official team brand specifications.
+
+Reusable helpers (plain text inputs are HTML-escaped):
+
+```python
+from f1ml_app import ui
+
+st.html(ui.team_pill("McLaren"))
+st.html(ui.team_row("Driver name", "mclaren", "72.4%", rank=2,
+                    caption="Race podium", tooltip="Independent podium probability"))
+ui.metric_card("Rank MAE", "2.18", tooltip="Lower is better", caption="Known ranks only")
+ui.info_card("Prediction cutoff", "Before qualifying", label="Availability",
+             tooltip="Only earlier published information is used")
+```
+
+The prediction table also offers a collapsed constructor timing tower. Constructor
+colors decorate a stripe and pill; readable team names remain visible. Cards have
+quiet border hover states; tooltips can receive keyboard focus, and reduced-motion
+preferences disable transitions.
+
+## Retained artwork
 
 `src/f1ml_app/assets/logo-ml.png` combines the supplied FastF1 banner with a
-matching generated neural network emblem and a plus sign. The Streamlit navigation
-uses this transparent logo. Each page also displays it at the top right beside
-the page heading, with a wrapping layout on narrow screens. PNG assets are included
-in source and wheel packages.
+generated neural network emblem and a plus sign. It remains available for exports
+and other brand uses. SVG and PNG assets are included in source and wheel packages.
 
 Original banner: `src/f1ml_app/assets/banner.png`, copied unchanged from
-`~/Downloads/banner.png`. The previous `logo.svg` is retained.
+`~/Downloads/banner.png`. It is not rendered as a full-width page banner.
 
-Created with the built-in image generation tool. Final prompt:
+The retained PNG lockup was created with the built-in image generation tool. Final prompt:
 
 ```text
 Use case: compositing, logo-brand.
