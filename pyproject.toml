@@ -32,7 +32,7 @@ f1ml-real = "f1ml_real.__main__:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-f1ml_app = ["views/*.py", "assets/*.svg"]
+f1ml_app = ["views/*.py", "assets/*.svg", "assets/*.png"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/real"]

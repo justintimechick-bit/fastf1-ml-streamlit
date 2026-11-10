@@ -4,7 +4,7 @@ recursive-include docs *.md *.json *.csv
 recursive-include examples *.csv *.md
 recursive-include tests *.py
 recursive-include src/f1ml_app/views *.py
-recursive-include src/f1ml_app/assets *.svg
+recursive-include src/f1ml_app/assets *.svg *.png
 include requirements-app.lock.txt
 include requirements.txt streamlit_app.py
 include requirements-real.lock.txt
