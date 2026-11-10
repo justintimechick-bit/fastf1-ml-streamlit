@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import html
 import os
 from pathlib import Path
@@ -179,12 +180,16 @@ def _table(frame: pd.DataFrame, *, key: str, **kwargs):
 
 
 def _title(title: str, detail: str):
+    logo = Path(__file__).parent / "assets" / "logo-ml.png"
+    logo_data = base64.b64encode(logo.read_bytes()).decode("ascii")
     st.html(
-        '<div class="lab-heading"><h1>'
+        '<div class="lab-page-header"><div class="lab-heading"><h1>'
         + html.escape(title)
         + "</h1><p>"
         + html.escape(detail)
-        + "</p></div>"
+        + '</p></div><img class="lab-page-logo" src="data:image/png;base64,'
+        + logo_data
+        + '" alt="FastF1 plus machine learning" width="2172" height="724"></div>'
     )
 
 
@@ -905,12 +910,21 @@ def main():
     )
     theme.inject()
     st.html("""<style>
-    .lab-heading{border-left:5px solid #d7263d;padding:.15rem 0 .15rem 1.1rem;margin:0 0 1.3rem}
+    .lab-page-header{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:2rem;margin:0 0 1.3rem}
+    .lab-heading{flex:1;min-width:0;border-left:5px solid #d7263d;
+      padding:.15rem 0 .15rem 1.1rem}
+    .lab-page-logo{display:block;width:clamp(160px,22vw,300px);max-width:40%;height:auto}
     .lab-heading h1{font-size:2.1rem;line-height:1.15;letter-spacing:-.025em;
       padding:0;margin:0 0 .45rem}
     .lab-heading p{max-width:72ch;margin:0;line-height:1.5;opacity:.78}
+    @media(max-width:640px){
+      .lab-page-header{flex-wrap:wrap;gap:.75rem}
+      .lab-heading{flex-basis:100%}
+      .lab-page-logo{order:-1;width:220px;max-width:60%;margin-left:auto}
+    }
     </style>""")
-    st.logo(str(Path(__file__).parent / "assets" / "logo.svg"), size="large")
+    st.logo(str(Path(__file__).parent / "assets" / "logo-ml.png"), size="large")
     navigation = st.navigation(
         [
             st.Page(
