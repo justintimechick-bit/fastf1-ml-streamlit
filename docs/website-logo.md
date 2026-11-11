@@ -1,9 +1,12 @@
 # Pit-wall telemetry design
 
-The app uses `src/f1ml_app/assets/logo.svg`, a compact instrument-mark lockup,
-in both navigation and the shared horizontal header. The header pairs the logo
-with the page title, subtitle, and wrapping status badges. It replaces the large
-page logo and keeps the first controls close to the top of the viewport.
+The app uses the generated `src/f1ml_app/assets/logo-ml.png` lockup: FastF1 plus
+a neural network emblem. `ui.BRAND_LOGO` is the shared asset path used by the
+navigation logo and the optional logo in the shared horizontal header. Navigation
+uses Streamlit's large logo size with a CSS height of 4rem, twice the default
+large size. The optional header image is 336 × 112px on desktop and 264 × 88px
+on mobile, preserving the artwork's 3:1 aspect ratio. Page headers show the title, subtitle,
+and wrapping status badges without repeating the navigation logo.
 
 The default theme is dark: carbon `#080d12`, card `#121b25`, raised surface
 `#1b2937`, hairline `#304152`, text `#f4f7fa`, and red accent `#ff5263`.
@@ -48,16 +51,17 @@ colors decorate a stripe and pill; readable team names remain visible. Cards hav
 quiet border hover states; tooltips can receive keyboard focus, and reduced-motion
 preferences disable transitions.
 
-## Retained artwork
+## Logo artwork
 
 `src/f1ml_app/assets/logo-ml.png` combines the supplied FastF1 banner with a
-generated neural network emblem and a plus sign. It remains available for exports
-and other brand uses. SVG and PNG assets are included in source and wheel packages.
+generated neural network emblem and a plus sign. It is the active website logo.
+The previous Pit Wall mark remains in `src/f1ml_app/assets/logo.svg` as an unused
+asset. SVG and PNG assets are included in source and wheel packages.
 
 Original banner: `src/f1ml_app/assets/banner.png`, copied unchanged from
 `~/Downloads/banner.png`. It is not rendered as a full-width page banner.
 
-The retained PNG lockup was created with the built-in image generation tool. Final prompt:
+The PNG lockup was created with the built-in image generation tool. Final prompt:
 
 ```text
 Use case: compositing, logo-brand.
