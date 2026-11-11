@@ -340,7 +340,7 @@ def _refresh(base, state):
 
 
 def forecast_tasks(dataset, event_id, now=None):
-    """Enable only unstarted targets with the required independently sourced inputs."""
+    """Enable unstarted targets, including early race scenarios from predicted qualifying."""
     now = _now() if now is None else pd.Timestamp(now).tz_convert("UTC")
     event = dataset.event(event_id)
     tasks = []
@@ -348,16 +348,38 @@ def forecast_tasks(dataset, event_id, now=None):
         start = event.get(f"{task}_start")
         if pd.isna(start) or now >= pd.Timestamp(start):
             continue
-        roster = dataset.rosters.loc[
-            dataset.rosters.event_id.eq(event_id) & dataset.rosters.task.eq(task)
-        ]
-        if roster.empty or dataset.history_events(event_id).empty:
+        if pd.notna(event.get(f"{task}_available_at")) or dataset.history_events(event_id).empty:
             continue
-        if task == "race" and (
-            pd.isna(event.qualifying_available_at)
-            or pd.Timestamp(event.qualifying_available_at) >= now
+        predicted_q = "qualifying" in tasks
+        if (
+            task == "race"
+            and not predicted_q
+            and (
+                pd.isna(event.qualifying_available_at)
+                or pd.Timestamp(event.qualifying_available_at) >= now
+            )
         ):
             continue
-        dataset.feature_frame(event_id, task)  # Enforce roster and qualifying cutoffs too.
+        cutoff = (
+            event.qualifying_cutoff if task == "qualifying" or predicted_q else event.race_cutoff
+        )
+        if pd.isna(cutoff) or pd.Timestamp(cutoff) > now:
+            continue
+        try:
+            dataset.forecast_field(event_id, task, cutoff)
+        except ValueError:
+            continue
         tasks.extend(("race", "podium") if task == "race" else ("qualifying",))
     return tuple(tasks)
+
+
+def upcoming_events(dataset, now=None):
+    """Upcoming means a target session is unstarted, independently of label ingestion."""
+    now = _now() if now is None else pd.Timestamp(now).tz_convert("UTC")
+    events = dataset.events
+    mask = pd.Series(False, index=events.index)
+    for task in ("qualifying", "race"):
+        mask |= (pd.to_datetime(events[f"{task}_start"], utc=True) > now) & events[
+            f"{task}_available_at"
+        ].isna()
+    return events.loc[mask].copy()

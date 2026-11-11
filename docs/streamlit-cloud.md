@@ -52,11 +52,12 @@ and Data & methodology. Missing real forecasts remain unavailable until an
 explicit eligible test is run; no synthetic substitute is provided.
 
 Press **Refresh FastF1 data** at the bottom of the sidebar and check the latest
-weekend's schedule and source issues. A pre-race forecast needs an independent
-entry list and final qualifying results. Qualifying forecasts require a published
-entry list before qualifying starts. After each target session starts, its live
-forecast action is disabled. Refreshing a completed weekend enables a historical
-test on that page. This release must be redeployed before the hosted app gains
+weekend's schedule and source issues. Before qualifying, forecasts use the event
+entry list or an explicitly labeled latest-known-field assumption. Each model's
+predicted qualifying positions feed its race and podium forecasts. After qualifying,
+race forecasts use the final published classification. Check all/12/6 training windows.
+Finished weekends leave the upcoming selector by session time, even when source
+results are delayed, and become available in Historical test once collected. This release must be redeployed before the hosted app gains
 these controls; local source changes alone do not update the hosted app.
 
 The existing Streamlit configuration disables source watching. After publishing

@@ -74,11 +74,16 @@ actually exposed or when a later revision appeared. They support exploratory
 replays rather than a claim of prospective availability.
 
 Press **Refresh FastF1 data** in **Refresh source data** on the main page to load new weekends,
-including Brazil (São Paulo, `2026-20`). Select the event and press **Run forecast**.
-Before qualifying, qualifying order is available when its entry list is published.
-After final qualifying is published, race order and podium probabilities become
-available until the scheduled race start. Completed new weekends can be tested
-historically on the same page. The refresh action is available on every
+Select an upcoming event (for example Las Vegas, `2026-21`) and press **Run forecast**.
+Before the weekend starts, qualifying uses earlier form and the event entry list,
+or an explicitly labeled assumption that the latest known same-season field continues.
+Each model then feeds its own predicted qualifying positions into its race and podium
+forecasts. These conditional forecasts do not propagate qualifying uncertainty or model
+grid penalties. After final qualifying is published, race and podium forecasts use
+the official qualifying positions until race start. All three tasks share the
+**all earlier / last 12 / last 6** training window. Finished weekends leave the upcoming
+selector by scheduled session time, even if final results are still being collected;
+completed classifications enable them in **Historical test**. The refresh action is available on every
 page and shows the season it refreshes. **Historical test**, **Refresh & predict**,
 and **Data & methodology** share the active refreshed data; completed new events appear in the historical target
 options once final qualifying and race classifications are available. Historical
@@ -98,7 +103,7 @@ The same actions are available from the CLI:
 
 ```sh
 python -m f1ml_real refresh
-python -m f1ml_real forecast --event 2026-20
+python -m f1ml_real forecast --event 2026-21
 # Optional: --last-n 6 or --last-n 12
 ```
 
