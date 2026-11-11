@@ -134,6 +134,13 @@ CSS = """
 }
 /* Stable Streamlit hooks only; no generated emotion class names. */
 [data-testid="stAppViewContainer"]{font-variant-numeric:tabular-nums lining-nums}
+/* Double Streamlit's large (2rem) logo while preserving the artwork's proportions. */
+[data-testid="stLogo"],[data-testid="stHeaderLogo"]{
+  height:4rem;width:auto;max-width:100%;object-fit:contain}
+[data-testid="stSidebarHeader"]{height:auto;min-height:4.5rem}
+[data-testid="stHeader"]:has([data-testid="stHeaderLogo"]){height:5rem}
+[data-testid="stAppViewContainer"]:has([data-testid="stHeaderLogo"]) .block-container{
+  padding-top:6rem}
 [data-testid="stBaseButton-primary"],
 [data-testid="stBaseButton-primaryFormSubmit"]{color:var(--f1-on-accent)}
 .block-container{padding-top:3.5rem;padding-bottom:1.25rem}
@@ -150,7 +157,7 @@ CSS = """
 .f1-hero{display:flex;align-items:flex-end;gap:1rem;color:var(--f1-ink);
   border-left:3px solid var(--f1-accent);padding:.15rem 0 .15rem .9rem;margin:.4rem 0 .5rem;
   min-width:0}
-.f1-logo{display:block;width:116px;height:40px;object-fit:contain;flex:none}
+.f1-logo{display:block;width:336px;height:112px;max-width:100%;object-fit:contain;flex:none}
 .f1-heading{flex:1;min-width:0}
 .f1-title{font-family:"Arial Narrow","Roboto Condensed",system-ui,sans-serif;
   font-stretch:condensed;font-size:1.5rem;font-weight:750;line-height:1.15;
@@ -292,7 +299,7 @@ CSS = """
 @media(max-width:540px){
   .block-container{padding-top:3.25rem;padding-bottom:1rem}
   .f1-hero{padding:.75rem;gap:.6rem}
-  .f1-logo{width:76px;height:32px}
+  .f1-logo{width:264px;height:88px}
   .f1-title{font-size:1.2rem}
   .f1-meta{font-size:.78rem}
   .f1-team-row{flex-wrap:wrap}

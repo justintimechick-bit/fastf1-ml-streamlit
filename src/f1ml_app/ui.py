@@ -26,6 +26,8 @@ from f1ml_app.settings import (
     project_root,
 )
 
+BRAND_LOGO = Path(__file__).parent / "assets" / "logo-ml.png"
+
 SOURCES = {
     "experiment": "Synthetic demo",
     "real": "Real experiment",
@@ -687,11 +689,10 @@ def _tags(items: list[tuple[str, str]]) -> str:
 
 
 def _brand_image() -> str:
-    logo = Path(__file__).parent / "assets" / "logo.svg"
-    data = base64.b64encode(logo.read_bytes()).decode("ascii")
+    data = base64.b64encode(BRAND_LOGO.read_bytes()).decode("ascii")
     return (
-        f'<img class="f1-logo" src="data:image/svg+xml;base64,{data}" '
-        'alt="Pit Wall telemetry" width="116" height="40">'
+        f'<img class="f1-logo" src="data:image/png;base64,{data}" '
+        'alt="FastF1 plus machine learning" width="336" height="112">'
     )
 
 

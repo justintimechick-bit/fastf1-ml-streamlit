@@ -1641,7 +1641,7 @@ def main():
         initial_sidebar_state="auto",
     )
     theme.inject()
-    st.logo(str(Path(__file__).parent / "assets" / "logo.svg"), size="medium")
+    st.logo(str(ui.BRAND_LOGO), size="large")
     ui.persist_filters()
     pages = {
         "Historical test": historical_test,
