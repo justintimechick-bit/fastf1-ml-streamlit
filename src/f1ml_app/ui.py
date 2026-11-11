@@ -369,11 +369,12 @@ def grid_preferences():
     )
 
 
-def top_navigation(options: list[str]) -> str:
+def top_navigation(options: list[str], *, labels: dict[str, str] | None = None) -> str:
     return st.radio(
         "Main views",
         options,
         key="lab_page",
+        format_func=lambda option: labels.get(option, option) if labels else option,
         horizontal=True,
         label_visibility="collapsed",
         width="stretch",

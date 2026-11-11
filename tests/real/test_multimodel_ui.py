@@ -122,10 +122,10 @@ def test_all_model_combinations_render_both_tasks_and_calibration(app):
 def test_top_navigation_preserves_global_filters_and_reset_restores_defaults(app, replay_path):
     at = app
     assert at.main.radio(key="lab_page").options == [
-        "Historical test",
-        "Refresh & predict",
-        "Three models",
-        "Data & methodology",
+        "Predict Past Races",
+        "Predict Future Races",
+        "Three Models",
+        "Data & Methodology",
     ]
     assert not any(node.key == "lab_page" for node in at.sidebar.radio)
     assert {node.key for node in at.sidebar.button} == {"select_all_models", "reset_filters"}
@@ -140,7 +140,12 @@ def test_top_navigation_preserves_global_filters_and_reset_restores_defaults(app
     assert not any("Predicted rank" in node.value for node in at.dataframe)
     at.text_input(key="grid_driver_search").set_value("").run()
     at.radio(key="view_mode").set_value("Executive Skim").run()
-    for page in ("Three models", "Data & methodology", "Refresh & predict", "Historical test"):
+    for page in (
+        "Three models",
+        "Data & methodology",
+        "Refresh & predict",
+        "Historical test",
+    ):
         at.radio(key="lab_page").set_value(page).run()
         assert not at.exception and not at.error
         assert at.multiselect(key="lab_selected_models").value == ["linear", "random_forest"]

@@ -123,21 +123,46 @@ def tokens() -> dict:
     return LIGHT if kind == "light" else DARK
 
 
-CSS = """
+# Streamlit updates stApp's native color-scheme immediately when the browser theme
+# changes. Resolve both palettes there: st.context.theme can lag until a rerun,
+# leaving Python-selected CSS colors out of sync with the native widgets.
+_CSS_COLOR_NAMES = {
+    "surface": "surface",
+    "card": "card",
+    "raised": "raised",
+    "ink": "ink",
+    "ink2": "ink2",
+    "muted": "muted",
+    "grid": "border",
+    "accent": "accent",
+    "on_accent": "on-accent",
+    "locked": "locked",
+    "verified": "verified",
+    "warning": "warning",
+}
+_COLOR_VARIABLES = ";".join(
+    f"--f1-{name}:light-dark({LIGHT[key]},{DARK[key]})" for key, name in _CSS_COLOR_NAMES.items()
+)
+
+CSS = (
+    f'<style>[data-testid="stApp"]{{{_COLOR_VARIABLES}}}</style>'
+    + """
 <style>
 :root{
-  --f1-carbon:#080d12;--f1-surface:#080d12;--f1-card:#121b25;--f1-raised:#1b2937;
-  --f1-ink:#f4f7fa;--f1-ink2:#c3cfdb;--f1-muted:#98aabd;--f1-border:#304152;
-  --f1-accent:#ff5263;--f1-on-accent:#080d12;
-  --f1-locked:#65d9f5;--f1-verified:#67e8a5;--f1-warning:#ffd071;
   --f1-numeric:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
 }
 /* Stable Streamlit hooks only; no generated emotion class names. */
 [data-testid="stAppViewContainer"]{font-variant-numeric:tabular-nums lining-nums}
-/* Double Streamlit's large (2rem) logo while preserving the artwork's proportions. */
+/* Fill the sidebar's brand area; reserve a column for the collapse control. */
+[data-testid="stSidebarHeader"]{display:grid;grid-template-columns:minmax(0,1fr) 2rem;
+  gap:.5rem;height:auto;min-height:6rem;align-items:center}
+[data-testid="stSidebarHeader"]>div:first-child{width:100%;min-width:0}
+[data-testid="stSidebarHeader"] [data-testid="stSidebarLogo"]{
+  display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+[data-testid="stSidebarHeader"] [data-testid="stSidebarCollapseButton"]{margin-left:0}
+/* The compact header logo appears when the sidebar is collapsed. */
 [data-testid="stLogo"],[data-testid="stHeaderLogo"]{
   height:4rem;width:auto;max-width:100%;object-fit:contain}
-[data-testid="stSidebarHeader"]{height:auto;min-height:4.5rem}
 [data-testid="stHeader"]:has([data-testid="stHeaderLogo"]){height:5rem}
 [data-testid="stAppViewContainer"]:has([data-testid="stHeaderLogo"]) .block-container{
   padding-top:6rem}
@@ -205,18 +230,23 @@ CSS = """
 .st-key-f1_context_ribbon{position:sticky;top:2.9rem;z-index:50;
   background:var(--f1-surface);padding:.25rem 0}
 /* Top navigation: a radio (stable test contract) drawn as a tab bar. */
-.st-key-lab_page [role="radiogroup"]{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:0;width:100%;padding:0;border-bottom:1px solid var(--f1-border)}
+.st-key-lab_page [role="radiogroup"]{display:grid;
+  grid-template-columns:repeat(4,minmax(max-content,1fr));gap:.25rem;
+  width:100%;padding:.3rem;border:1px solid var(--f1-border);border-radius:8px;
+  background:var(--f1-card);overflow-x:auto;scrollbar-width:thin}
 .st-key-lab_page label[data-testid="stRadioOption"]{display:flex;align-items:center;
-  justify-content:center;min-height:46px;box-sizing:border-box;margin:0;padding:.55rem .8rem;
-  border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;
-  color:var(--f1-muted);cursor:pointer;transition:color 120ms ease,border-color 120ms ease}
-.st-key-lab_page label[data-testid="stRadioOption"] p{font-weight:600;font-size:.95rem}
-.st-key-lab_page label[data-testid="stRadioOption"]:hover{color:var(--f1-ink);
-  border-bottom-color:var(--f1-border)}
+  justify-content:center;width:100%;min-height:46px;box-sizing:border-box;
+  margin:0;padding:.6rem 1rem;border:0;border-bottom:3px solid transparent;
+  border-radius:5px;background:transparent;white-space:nowrap;cursor:pointer;
+  transition:background 120ms ease,border-color 120ms ease}
+.st-key-lab_page label[data-testid="stRadioOption"] p{font-weight:600;font-size:.9rem;
+  line-height:1.4;color:var(--f1-muted)}
+.st-key-lab_page label[data-testid="stRadioOption"]:hover{background:var(--f1-raised)}
+.st-key-lab_page label[data-testid="stRadioOption"]:hover p{color:var(--f1-ink)}
 .st-key-lab_page label[data-testid="stRadioOption"]:has(input:checked){
-  color:var(--f1-ink);border-bottom-color:var(--f1-accent)}
-.st-key-lab_page label[data-testid="stRadioOption"]:has(input:checked) p{font-weight:750}
+  background:var(--f1-raised);border-bottom-color:var(--f1-accent)}
+.st-key-lab_page label[data-testid="stRadioOption"]:has(input:checked) p{
+  color:var(--f1-ink);font-weight:700}
 .st-key-lab_page label[data-testid="stRadioOption"]:has(input:focus-visible){
   outline:2px solid var(--f1-locked);outline-offset:-2px}
 /* Hide the radio dots on tab-like and segmented radios (labels stay readable). */
@@ -292,7 +322,7 @@ CSS = """
   .f1-status{max-width:100%;justify-content:flex-start;flex-basis:100%}
 }
 @media(max-width:700px){
-  .st-key-lab_page [role="radiogroup"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .st-key-lab_page label[data-testid="stRadioOption"]{padding:.55rem .8rem}
   .f1-context-artifact{margin-left:0;max-width:100%}
   .st-key-f1_context_ribbon{position:static}
 }
@@ -305,36 +335,13 @@ CSS = """
   .f1-team-row{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){
-  .f1-card,.f1-team-row,.f1-tower .row,[data-testid="stMetric"]{transition:none}
+  .f1-card,.f1-team-row,.f1-tower .row,[data-testid="stMetric"],
+  .st-key-lab_page label[data-testid="stRadioOption"]{transition:none}
 }
 </style>
 """
-
-# Retained as a public constant for existing callers. Theme overrides are now variables.
-DARK_CSS = "<style>:root{color-scheme:dark}</style>"
+)
 
 
 def inject():
     st.html(CSS)
-    t = tokens()
-    names = {"grid": "border"}
-    variables = ";".join(
-        f"--f1-{names.get(key, key).replace('_', '-')}:{t[key]}"
-        for key in (
-            "surface",
-            "card",
-            "raised",
-            "ink",
-            "ink2",
-            "muted",
-            "grid",
-            "accent",
-            "on_accent",
-            "locked",
-            "verified",
-            "warning",
-        )
-    )
-    st.html(f"<style>:root{{{variables}}}</style>")
-    if t is DARK:
-        st.html(DARK_CSS)

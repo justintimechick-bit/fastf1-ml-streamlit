@@ -852,7 +852,7 @@ def _empty_steps(season: int):
 
 
 def historical_test(*, _slots=None):
-    title = "Test a race weekend"
+    title = "Predict Past Races"
     detail = (
         "Pick a finished Grand Prix, train on the races before it, and see how three model "
         "families and a simple baseline would have called it."
@@ -1120,7 +1120,7 @@ def _refresh_button(*, key: str, base: Path | None = None, state: Path | None = 
                     state if state is not None else live_data_path(),
                 )
             st.session_state["_lab_refresh_notice"] = (
-                "Data refreshed. Event options and Data & methodology are up to date."
+                "Data refreshed. Event options and Data & Methodology are up to date."
             )
             st.rerun()
         except Exception as exc:
@@ -1163,7 +1163,7 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
     from f1ml_real.lab import cached_forecast
     from f1ml_real.refresh import current_dataset, forecast_tasks, upcoming_events
 
-    title = "Refresh & predict"
+    title = "Predict Future Races"
     detail = (
         "Pull the latest calendar and results, then predict sessions that haven't happened yet."
     )
@@ -1220,7 +1220,7 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
             format_func=_event_option(events),
             help=(
                 "Weekends with an unstarted qualifying or race session. "
-                "Finished weekends are in Historical test."
+                "Finished weekends are in Predict Past Races."
             ),
         )
     _render_context(
@@ -1338,10 +1338,10 @@ def _model_strip():
 
 
 def three_models(*, _with_refresh: bool = False, _slots=None):
-    title = "Three models, one fair comparison"
+    title = "Three Models"
     detail = (
-        "Every family gets the same data, the same cutoffs and the same scoring. The methods "
-        "match the regression, trees and ensembles covered in class."
+        "How each model works and how its results compare, with the same data, "
+        "prediction cutoffs and scoring rules."
     )
     header, ribbon = _title(title, detail, _slots)
     model_controls = _sidebar_sections()
@@ -1395,7 +1395,9 @@ def three_models(*, _with_refresh: bool = False, _slots=None):
                 if task == "race":
                     st.markdown("**Podium classification**")
                     _metrics_table(_frame(run, "metrics"), "podium", "lab_metrics_podium")
-        st.caption("The driver-by-driver grid for this run is on the **Historical test** tab.")
+        st.caption("The driver-by-driver grid is on the **Predict Past Races** tab.")
+    else:
+        st.info("Open a saved run or run a test in Predict Past Races to compare model results.")
     if not ui.full_telemetry():
         st.caption("Regressors predict order; a separate classifier estimates podium probability.")
         return
@@ -1441,7 +1443,7 @@ def three_models(*, _with_refresh: bool = False, _slots=None):
 
 
 def data_methodology(*, _with_refresh: bool = False, _slots=None):
-    title = "Real data and the rules"
+    title = "Data & Methodology"
     detail = "Public source records, explicit cutoffs and an honest account of what is missing."
     header, ribbon = _title(title, detail, _slots)
     model_controls = _sidebar_sections()
@@ -1649,8 +1651,15 @@ def main():
         "Three models": three_models,
         "Data & methodology": data_methodology,
     }
+    # Preserve existing route values and session state while improving visible labels.
+    page_labels = {
+        "Historical test": "Predict Past Races",
+        "Refresh & predict": "Predict Future Races",
+        "Three models": "Three Models",
+        "Data & methodology": "Data & Methodology",
+    }
     # Navigation leads the page; the page title and the sticky context ribbon follow it.
-    page = ui.top_navigation(list(pages))
+    page = ui.top_navigation(list(pages), labels=page_labels)
     header = st.empty()
     with st.container(key="f1_context_ribbon"):
         ribbon = st.empty()

@@ -3,9 +3,11 @@
 ## Real model lab navigation
 
 The current entrypoints (`streamlit_app.py` and `python -m f1ml_app`) open the real
-model lab: **Historical test**, **Refresh & predict**, **Three models**, and
-**Data & methodology**. Normal navigation and saved-artifact selection read local
-artifacts. Only the explicit run buttons can train models; **Refresh FastF1 data**
+model lab: **Predict Past Races**, **Predict Future Races**, **Three Models**, and
+**Data & Methodology**. Three Models explains each family and compares their saved
+results. The navigation scrolls horizontally on narrow screens. Normal navigation
+and saved-artifact selection read local artifacts. Only the explicit run buttons
+can train models; **Refresh FastF1 data**
 is a separate, explicit download action.
 
 Every view shows a compact telemetry context ribbon at the top of the main pane.

@@ -31,15 +31,18 @@ python -m pip install -r requirements.txt
 python -m streamlit run streamlit_app.py
 ```
 
-The **Historical test** page supports **2024, 2025 and 2026** and defaults to Mexico
+The **Predict Past Races** page supports **2024, 2025 and 2026** and defaults to Mexico
 2026. Select a season, a target event, and **Previous 6 races that year**,
 **Previous 12 races that year**, or **All earlier races that year**, then press **Run historical
 test**. Existing verified runs are reused. Fitting occurs only on that explicit
 action, never during ordinary interface reruns. The
-**Three models** page explains each family; **Data & methodology** shows coverage,
-provenance, cutoffs and exclusions. No synthetic forecasts appear in this app.
+**Three Models** page explains each family and compares their saved results;
+**Data & Methodology** shows coverage, provenance, cutoffs and
+exclusions. **Predict Future Races** forecasts upcoming sessions after a data refresh.
+No synthetic forecasts appear in this app.
 
-Use the four tabs at the top of the page to switch pages. Each page opens with a
+Use the four tabs at the top of the page to switch pages. The navigation scrolls
+horizontally on narrow screens. Each page opens with a
 **Race setup** card (season, race and training history, plus **Run historical test**
 on the main page, saved runs and the data update), and a sticky context ribbon
 shows exactly which saved run is displayed. Results lead with a scoreboard of

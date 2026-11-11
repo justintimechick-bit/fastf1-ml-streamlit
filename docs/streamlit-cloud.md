@@ -9,8 +9,8 @@ fit models; **Refresh FastF1 data** in the sidebar downloads new observations.
 The bundle contains the 19-event 2026 base, both complete 24-race 2024/2025
 historical datasets, and the sealed Mexico experiment with nine models. Older
 seasons include explicitly labeled FastF1/Jolpica API fallback and timing proxies
-where FIA documents could not be verified. Runtime refreshes update Historical
-test, Refresh & predict, and Data & methodology together.
+where FIA documents could not be verified. Runtime refreshes update Predict Past
+Races, Predict Future Races, and Data & Methodology together.
 
 ## Prepare a new release
 
@@ -44,11 +44,11 @@ access was not granted. Other repositories were not changed.
 .venv/bin/streamlit run streamlit_app.py
 ```
 
-Check Historical test defaults to Mexico, all 18 earlier eligible events, three
+Check Predict Past Races defaults to Mexico, all 18 earlier eligible events, three
 model families and a baseline. Each qualifying/race forecast retains all 22
 drivers. Metrics label partial numeric targets, development findings remain
-separate, and status says exploratory historical replay. Inspect Three models
-and Data & methodology. Missing real forecasts remain unavailable until an
+separate, and status says exploratory historical replay. Inspect Three Models and
+Data & Methodology. Missing real forecasts remain unavailable until an
 explicit eligible test is run; no synthetic substitute is provided.
 
 Press **Refresh FastF1 data** at the bottom of the sidebar and check the latest
@@ -57,7 +57,7 @@ entry list or an explicitly labeled latest-known-field assumption. Each model's
 predicted qualifying positions feed its race and podium forecasts. After qualifying,
 race forecasts use the final published classification. Check all/12/6 training windows.
 Finished weekends leave the upcoming selector by session time, even when source
-results are delayed, and become available in Historical test once collected. This release must be redeployed before the hosted app gains
+results are delayed, and become available in Predict Past Races once collected. This release must be redeployed before the hosted app gains
 these controls; local source changes alone do not update the hosted app.
 
 The existing Streamlit configuration disables source watching. After publishing
