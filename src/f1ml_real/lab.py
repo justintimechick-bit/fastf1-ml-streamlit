@@ -7,8 +7,12 @@ and its sealed software/demo experiment are not opened or changed here.
 
 from __future__ import annotations
 
+import fcntl
 import platform
+from contextlib import contextmanager
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from uuid import uuid4
 
 import joblib
 import numpy as np
@@ -205,7 +209,50 @@ class RealDataset:
             self._history_cache[key] = frame
         return self._history_cache[key]
 
-    def feature_frame(self, event_id: str, task: str, history_ids=None):
+    def forecast_field(self, event_id: str, task: str, cutoff):
+        """Use an event entry list, or explicitly assume the latest known same-season field."""
+        event = self.event(event_id)
+        available = self.rosters.loc[
+            pd.to_datetime(self.rosters.known_at, utc=True) <= _utc(cutoff)
+        ]
+        own = available.loc[available.event_id.eq(event_id)]
+        field = own.loc[own.task.eq("race" if task == "podium" else task)]
+        if field.empty:
+            field = own.loc[own.task.eq("qualifying")]
+        source_event = event_id
+        if field.empty:
+            earlier = self.events.loc[
+                self.events.year.eq(event.year)
+                & (pd.to_datetime(self.events.weekend_start, utc=True) < _utc(cutoff))
+                & self.events.event_id.ne(event_id)
+            ]
+            for source_event in reversed(earlier.event_id.tolist()):
+                candidates = available.loc[available.event_id.eq(source_event)]
+                field = candidates.loc[candidates.task.eq("race")]
+                if field.empty:
+                    field = candidates.loc[candidates.task.eq("qualifying")]
+                if not field.empty:
+                    break
+        if field.empty:
+            raise ValueError("No known same-season field is available for this forecast")
+        field = field.copy()
+        field["field_source_event_id"] = source_event
+        field["field_source"] = (
+            "event_entry_list" if source_event == event_id else "latest_known_field_assumption"
+        )
+        field["event_id"], field["task"], field["cutoff"] = event_id, task, str(cutoff)
+        return field
+
+    def feature_frame(
+        self,
+        event_id: str,
+        task: str,
+        history_ids=None,
+        *,
+        field=None,
+        cutoff=None,
+        qualifying_predictions=None,
+    ):
         """Build features without reading the target task's outcomes.
 
         A race/podium forecast may read this event's final qualifying label only
@@ -215,7 +262,7 @@ class RealDataset:
             raise ValueError(f"Unknown task {task}")
         source_task = "race" if task == "podium" else task
         event = self.event(event_id)
-        cutoff = _utc(event[f"{source_task}_cutoff"])
+        cutoff = _utc(event[f"{source_task}_cutoff"] if cutoff is None else cutoff)
         eligible = self.history_events(event_id)
         calendar_ids = self._calendar_events(event_id).event_id.tolist()
         ids = calendar_ids
@@ -228,7 +275,13 @@ class RealDataset:
                 )
             ids = [eid for eid in ids if eid in requested]
         frame = (
-            self.rosters.loc[self.rosters.event_id.eq(event_id) & self.rosters.task.eq(source_task)]
+            (
+                self.rosters.loc[
+                    self.rosters.event_id.eq(event_id) & self.rosters.task.eq(source_task)
+                ]
+                if field is None
+                else field
+            )
             .sort_values("driver_id")
             .copy()
             .reset_index(drop=True)
@@ -273,8 +326,22 @@ class RealDataset:
             rank = previous.set_index("driver_id").rank_fraction if not previous.empty else {}
             frame[f"driver_{session}_previous_rank"] = frame.driver_id.map(rank)
         current_q_used = False
-        if source_task == "race":
-            if _utc(event.qualifying_available_at) >= cutoff:
+        if source_task == "race" and qualifying_predictions is not None:
+            q = qualifying_predictions.set_index("driver_id").predicted_rank
+            if (
+                q.index.duplicated().any()
+                or set(q.index) != set(frame.driver_id)
+                or set(q) != set(range(1, len(frame) + 1))
+            ):
+                raise ValueError("Predicted qualifying must contain one rank per forecast driver")
+            frame["current_qualifying_rank"] = frame.driver_id.map(q) / len(frame)
+            frame["current_qualifying_rank_known"] = 1.0
+            frame["current_qualifying_nonclassified"] = 0.0
+        elif source_task == "race":
+            if (
+                pd.isna(event.qualifying_available_at)
+                or _utc(event.qualifying_available_at) >= cutoff
+            ):
                 raise ValueError(
                     "Final qualifying was unavailable at the post-qualifying race cutoff"
                 )
@@ -312,6 +379,21 @@ class RealDataset:
                 else None
             ),
             "current_qualifying_used": current_q_used,
+            "qualifying_source": (
+                "predicted"
+                if qualifying_predictions is not None
+                else "official"
+                if current_q_used
+                else None
+            ),
+            "field_source": frame.field_source.iloc[0]
+            if "field_source" in frame
+            else "event_entry_list",
+            "field_source_event_id": (
+                frame.field_source_event_id.iloc[0]
+                if "field_source_event_id" in frame
+                else event_id
+            ),
             "current_qualifying_available_at": event.qualifying_available_at
             if current_q_used
             else None,
@@ -720,6 +802,7 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
     dataset = RealDataset(dataset_root)
     event = dataset.event(event_id)
     tasks = tuple(live_tasks) if live_tasks is not None else TASKS
+    predicted_q = live_tasks is not None and "qualifying" in tasks and "race" in tasks
     if live_tasks is not None:
         from f1ml_real.refresh import forecast_tasks
 
@@ -750,7 +833,16 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
             parts.append(_label_training(dataset, frame, task))
             audits[f"{eid}/{task}"] = audit
         matrices[task] = pd.concat(parts, ignore_index=True)
-        target_frames[task], audits[f"{event_id}/{task}"] = dataset.feature_frame(event_id, task)
+        if live_tasks is None:
+            target_frames[task], audits[f"{event_id}/{task}"] = dataset.feature_frame(
+                event_id, task
+            )
+        elif task == "qualifying" or not predicted_q:
+            cutoff = event.qualifying_cutoff if task == "qualifying" else event.race_cutoff
+            field = dataset.forecast_field(event_id, task, cutoff)
+            target_frames[task], audits[f"{event_id}/{task}"] = dataset.feature_frame(
+                event_id, task, field=field, cutoff=cutoff
+            )
         save_table(output / f"training_{task}.parquet", matrices[task])
     # Reserve these later events before searching; all choices depend only on chronology.
     calibration_ids = ids[-2:] if len(ids) >= 8 else []
@@ -866,7 +958,6 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
         output / "development_metrics.parquet",
         pd.concat([dev_metrics, cal_metrics], ignore_index=True),
     )
-    write_json(output / "feature_audits.json", audits)
     write_json(output / "search_results.json", search_results)
     config = {
         **base_config,
@@ -886,6 +977,7 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
         "thresholds": thresholds,
         "excluded_features": exclusions,
         "insufficient_development_history": not bool(development_ids),
+        "qualifying_source": "predicted" if predicted_q else "official",
         "frozen_at": pd.Timestamp.now(tz="UTC").isoformat(),
     }
     write_json(output / "config.json", config)
@@ -908,20 +1000,54 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
             )
     # No target labels are joined before this whole-field forecast is frozen.
     forecasts = []
+    qualifying_forecasts = {}
     for task in tasks:
-        frame = target_frames[task]
-        expected = set(frame.driver_id)
-        for family in FAMILIES:
+        for family in (*FAMILIES, "baseline"):
+            if predicted_q and task != "qualifying":
+                # The chained scenario must keep the qualifying forecast's exact field.
+                field = target_frames["qualifying"].copy()
+                field["task"] = task
+                frame, audit = dataset.feature_frame(
+                    event_id,
+                    task,
+                    field=field,
+                    cutoff=event.qualifying_cutoff,
+                    qualifying_predictions=qualifying_forecasts[family],
+                )
+                audits[f"{event_id}/{task}/{family}"] = audit
+            else:
+                frame = target_frames[task]
+            if live_tasks is not None:
+                save_table(output / "inputs" / f"{task}-{family}.parquet", frame)
+            expected = set(frame.driver_id)
             key = f"{task}/{family}"
-            forecast = _forecast(
-                models[key], frame, task, family, calibration.get(key), thresholds.get(key, 0.5)
+            forecast = (
+                _baseline(frame, task)
+                if family == "baseline"
+                else _forecast(
+                    models[key], frame, task, family, calibration.get(key), thresholds.get(key, 0.5)
+                )
             )
             if set(forecast.driver_id) != expected or forecast.driver_id.duplicated().any():
-                raise ValueError(
-                    "Forecast field differs from the independent pre-cutoff entry list"
+                raise ValueError("Forecast field differs from its pre-cutoff field")
+            if task == "qualifying":
+                qualifying_forecasts[family] = forecast
+            if live_tasks is not None:
+                forecast["qualifying_source"] = (
+                    "predicted"
+                    if predicted_q and task != "qualifying"
+                    else "official"
+                    if task != "qualifying"
+                    else "not_used"
                 )
+                for column in ("field_source", "field_source_event_id"):
+                    forecast[column] = frame[column].iloc[0]
+                if task != "qualifying":
+                    forecast["input_qualifying_position"] = forecast.driver_id.map(
+                        frame.set_index("driver_id").current_qualifying_rank
+                    ) * len(frame)
             forecasts.append(forecast)
-        forecasts.append(_baseline(frame, task))
+    write_json(output / "feature_audits.json", audits)
     forecasts = pd.concat(forecasts, ignore_index=True)
     if live_tasks is not None:
         # A long fit must not be published as a pre-session prediction after the start.
@@ -937,7 +1063,12 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
             "forecasts_sha256": file_digest(output / "forecasts.parquet"),
             "sealed_at": pd.Timestamp.now(tz="UTC").isoformat(),
             "sealed_before_target_scoring": True,
-            "field_source": "independent FIA pre-cutoff entry lists",
+            "field_source": (
+                sorted(forecasts.field_source.unique())
+                if live_tasks is not None
+                else "independent FIA pre-cutoff entry lists"
+            ),
+            "qualifying_source": "predicted" if predicted_q else "official",
             "evaluation_status": "unscored live forecast"
             if live_tasks is not None
             else "exploratory historical replay; outcomes previously consulted",
@@ -962,7 +1093,7 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
         "training_last_event_id": ids[-1],
         "training_last_available_at": training.race_available_at.max(),
         "qualifying_cutoff": event.qualifying_cutoff,
-        "race_cutoff": event.race_cutoff,
+        "race_cutoff": event.qualifying_cutoff if predicted_q else event.race_cutoff,
         "development_event_ids": development_ids,
         "calibration_event_ids": calibration_ids,
         "data_kind": "real",
@@ -977,6 +1108,11 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
         "missing_feature_groups": PROTOCOL["missing_groups_excluded"],
         "training_history": f"{int(event.year)}-only",
         "last_n": last_n,
+        "qualifying_source": "predicted" if predicted_q else "official",
+        "field_sources": sorted(forecasts.field_source.unique()) if live_tasks is not None else [],
+        "field_source_event_ids": (
+            sorted(forecasts.field_source_event_id.unique()) if live_tasks is not None else []
+        ),
         "target_event_count": 1,
         "model_count": len(models),
         "rank_evaluation": (
@@ -1009,21 +1145,61 @@ def _run_backtest(dataset_root, event_id, output, *, last_n, seed, live_tasks=No
     return summary
 
 
+@contextmanager
+def _run_cache_lock(path):
+    """Serialize identical requests across both Streamlit sessions and processes."""
+    locks = path.parent / ".locks"
+    locks.mkdir(parents=True, exist_ok=True)
+    with (locks / f"{path.name}.lock").open("a") as stream:
+        fcntl.flock(stream, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(stream, fcntl.LOCK_UN)
+
+
+def _cached_artifact(path, run_id, build, validate=None):
+    """Publish a verified run atomically; never expose a partially written cache entry."""
+    with _run_cache_lock(path):
+        if validate is not None:
+            validate()
+        if path.exists():
+            if (path / "receipt.json").exists():
+                run = load_run(path)
+                if run["receipt"].get("run_id") != run_id:
+                    raise ValueError("Saved run configuration differs")
+                return path
+            # Older versions wrote directly to the public path. Preserve unfinished
+            # attempts for inspection, then retry instead of reading a missing receipt.
+            incomplete = path.parent / ".incomplete"
+            incomplete.mkdir(exist_ok=True)
+            path.rename(incomplete / f"{path.name}-{uuid4().hex}")
+        pending = path.parent / ".pending"
+        pending.mkdir(exist_ok=True)
+        with TemporaryDirectory(dir=pending, prefix=f"{path.name}-") as temporary:
+            staging = Path(temporary) / "run"
+            build(staging)
+            run = load_run(staging)
+            if run["receipt"].get("run_id") != run_id:
+                raise ValueError("New run configuration differs")
+            if validate is not None:
+                validate()
+            staging.rename(path)
+    return path
+
+
 def cached_run(dataset_root: Path, event_id: str, output_root: Path, *, last_n: int | None = None):
-    """Explicit-action cache; existing runs must verify, never silently regenerate."""
+    """Explicit-action cache; sealed runs must verify, unfinished attempts can retry."""
     dataset = RealDataset(dataset_root)
     config = _configuration(dataset, event_id, last_n, 42)
     run_id = digest(config)
     suffix = "all" if last_n is None else f"last{last_n}"
     path = Path(output_root) / f"replay-{event_id}-{suffix}-{run_id[:12]}"
-    if path.exists():
-        receipt = verify_directory(path)
-        if receipt.get("run_id") != run_id:
-            raise ValueError("An existing cached run has a different immutable configuration")
-        load_run(path)
-    else:
-        run_backtest(Path(dataset_root), event_id, path, last_n=last_n)
-    return path
+    return _cached_artifact(
+        path,
+        run_id,
+        lambda staging: run_backtest(Path(dataset_root), event_id, staging, last_n=last_n),
+    )
 
 
 def cached_forecast(dataset_root, event_id, output_root, *, last_n=None):
@@ -1041,16 +1217,19 @@ def cached_forecast(dataset_root, event_id, output_root, *, last_n=None):
     }
     run_id = digest(config)
     path = Path(output_root) / f"forecast-{event_id}-{run_id[:12]}"
-    if path.exists():
-        run = load_run(path)
-        if run["receipt"].get("run_id") != run_id:
-            raise ValueError("Saved forecast configuration differs")
-    else:
+
+    def validate():
+        # Waiting for a concurrent fit must not bypass session-start guards.
+        if not set(tasks).issubset(forecast_tasks(dataset, event_id)):
+            raise ValueError("Forecast inputs are unavailable or the target session has started")
+
+    def build(staging):
         with threadpool_limits(limits=1):
             _run_backtest(
-                Path(dataset_root), event_id, path, last_n=last_n, seed=42, live_tasks=tasks
+                Path(dataset_root), event_id, staging, last_n=last_n, seed=42, live_tasks=tasks
             )
-    return path
+
+    return _cached_artifact(path, run_id, build, validate)
 
 
 def load_run(path: Path | str):

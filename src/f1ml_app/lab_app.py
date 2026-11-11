@@ -191,6 +191,8 @@ def _default_saved(event_id: str, source_snapshot_id: str) -> dict | None:
         return None
     candidates = []
     for marker in root.glob("*/config.json"):
+        if not (marker.parent / "receipt.json").is_file():
+            continue
         try:
             config = json.loads(marker.read_text())
         except (OSError, ValueError):
@@ -358,6 +360,8 @@ def _saved_options(dataset, season: int) -> list[str]:
     """Discover candidate replay headers. Selection still goes through load_run verification."""
     candidates = []
     for marker in paths()[1].glob("*/config.json"):
+        if not (marker.parent / "receipt.json").is_file():
+            continue
         try:
             config = json.loads(marker.read_text())
             event_id = config.get("event_id", config.get("target_event_id", ""))
@@ -441,6 +445,8 @@ def _has_saved(event_id: str, last_n, snapshot_id: str) -> bool:
     """Cheap header scan for a matching saved run; loading still verifies it."""
     root = paths()[1]
     for marker in root.glob("*/config.json") if root.is_dir() else []:
+        if not (marker.parent / "receipt.json").is_file():
+            continue
         try:
             config = json.loads(marker.read_text())
         except (OSError, ValueError):
@@ -1154,8 +1160,8 @@ def _sidebar_refresh(*, live_page: bool = False, as_of: str | None = None):
 
 
 def live_forecast(*, _with_refresh: bool = False, _slots=None):
-    from f1ml_real.lab import RealDataset, cached_forecast, cached_run
-    from f1ml_real.refresh import current_dataset, forecast_tasks
+    from f1ml_real.lab import cached_forecast
+    from f1ml_real.refresh import current_dataset, forecast_tasks, upcoming_events
 
     title = "Refresh & predict"
     detail = (
@@ -1192,15 +1198,14 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
         )
         st.caption(
             "Live discovery uses the 2026 season. After a refresh, upcoming weekends with a "
-            "published entry list can be forecast here; finished ones can be tested."
+            "published entry list or the latest known field can be forecast here."
         )
         return
     st.caption(f"Last refreshed: {_cutoff(dataset.receipt.get('as_of'))}")
-    original = RealDataset(base)
-    events = dataset.events.loc[~dataset.events.event_id.isin(original.events.event_id)]
+    events = upcoming_events(dataset)
     ids = events.event_id.tolist()
     if not ids:
-        st.info("The calendar has no additional events yet.")
+        st.info("There are no upcoming sessions in this calendar. Refresh to check for updates.")
         return
     if st.session_state.get("lab_live_event") not in ids:
         st.session_state["lab_live_event"] = next(
@@ -1213,7 +1218,10 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
             ids,
             key="lab_live_event",
             format_func=_event_option(events),
-            help="New 2026 weekends discovered by the latest refresh.",
+            help=(
+                "Weekends with an unstarted qualifying or race session. "
+                "Finished weekends are in Historical test."
+            ),
         )
     _render_context(
         ribbon,
@@ -1225,17 +1233,15 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
     )
     event = dataset.event(target)
     tasks = forecast_tasks(dataset, target)
-    completed = pd.notna(event.race_available_at) and pd.notna(event.qualifying_available_at)
     with window_col:
         window = st.selectbox(
             "Train on", list(WINDOWS), key="lab_live_window", format_func=_window_label
         )
-    action = "Run historical test" if completed else "Run forecast"
     with run_col:
         submitted = st.button(
-            action,
+            "Run forecast",
             key="lab_live_run",
-            disabled=not tasks and not completed,
+            disabled=not tasks,
             type="primary",
             width="stretch",
             icon=":material/play_arrow:",
@@ -1246,17 +1252,30 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
                 "Ready to predict: " + ", ".join(TASKS[task] for task in tasks) + ".",
                 icon=":material/check_circle:",
             )
-        elif completed:
-            st.info(
-                "This weekend is complete. You can run a historical test using its new data.",
-                icon=":material/flag:",
-            )
         else:
             st.info(
-                "No forecast is ready. A session must still be in the future, with a published "
-                "entry list. Race and podium forecasts also need final qualifying results.",
+                "No forecast is ready. Refresh for the latest inputs. After qualifying starts, "
+                "race forecasts wait for its final results.",
                 icon=":material/hourglass_top:",
             )
+        if tasks:
+            early = "qualifying" in tasks
+            cutoff = event.qualifying_cutoff if early else event.race_cutoff
+            field = dataset.forecast_field(target, "qualifying" if early else "race", cutoff)
+            if field.field_source.iloc[0] == "latest_known_field_assumption":
+                source = dataset.event(field.field_source_event_id.iloc[0])
+                st.info(
+                    f"Provisional field: using the latest known entrants from {source['name']}. "
+                    "Refresh when the event entry list is published to include any changes."
+                )
+            if early:
+                st.caption(
+                    "Race and podium forecasts use each model's own predicted qualifying "
+                    "positions. These are conditional forecasts; qualifying uncertainty "
+                    "and grid penalties are not modeled."
+                )
+            else:
+                st.caption("Race and podium forecasts use the published qualifying results.")
         with st.expander("Schedule and refresh details", icon=":material/event:"):
             st.write(f"Qualifying: {_cutoff(event.get('qualifying_start'))}")
             st.write(f"Race: {_cutoff(event.get('race_start'))}")
@@ -1268,8 +1287,7 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
     if submitted:
         try:
             with st.spinner("Training on earlier events and saving predictions…"):
-                runner = cached_run if completed else cached_forecast
-                result = runner(path, target, runs, last_n=WINDOWS[window])
+                result = cached_forecast(path, target, runs, last_n=WINDOWS[window])
             st.session_state["lab_live_run_path"] = str(result)
         except (ValueError, OSError, KeyError, RuntimeError) as exc:
             st.error(f"The prediction could not run: {exc}")
@@ -1279,6 +1297,9 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
         run = _default_saved(target, dataset.receipt["id"])
     if run is None or run["summary"]["target_event_id"] != target:
         return
+    if run["summary"].get("last_n") != WINDOWS[window]:
+        st.info("Run forecast to generate predictions for the selected training window.")
+        return
     st.markdown(f"## {event.get('name', _event_label(events, target))}")
     st.caption(
         f"Saved predictions · {run['summary']['training_event_count']} earlier training events · "
@@ -1286,6 +1307,10 @@ def live_forecast(*, _with_refresh: bool = False, _slots=None):
     )
     if run["summary"]["source_snapshot_id"] != dataset.receipt["id"]:
         st.warning("These saved predictions use an earlier refresh snapshot.")
+    if run["summary"].get("qualifying_source") == "predicted":
+        st.info("Saved race and podium predictions use predicted qualifying positions.")
+    elif "race" in set(_frame(run, "predictions").task):
+        st.caption("Saved race and podium predictions use official qualifying results.")
     with header:
         ui.brand_header(title, detail, dataset_version=dataset.root.name, verified_run=run)
     predictions = _frame(run, "predictions")

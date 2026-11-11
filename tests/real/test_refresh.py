@@ -1,8 +1,10 @@
 """Offline replay of real Brazil source captures, with no invented event/result rows."""
 
-from contextlib import nullcontext
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager, nullcontext
 from pathlib import Path
 from shutil import copytree
+from threading import Event
 from types import SimpleNamespace
 
 import pandas as pd
@@ -75,7 +77,7 @@ def test_real_refresh_adds_brazil_and_preserves_reviewed_history(
     assert len(dataset.events) == 23
     assert captured_sources == [("2026-20", "Qualifying")]
     assert live.forecast_tasks(dataset, "2026-20") == ("race", "podium")
-    assert not live.forecast_tasks(dataset, "2026-21")
+    assert live.forecast_tasks(dataset, "2026-21") == ("qualifying", "race", "podium")
     for name in ("rosters", "labels", "documents"):
         original = getattr(real_dataset, name)
         actual = getattr(dataset, name)
@@ -126,13 +128,15 @@ def test_refresh_failure_keeps_active_snapshot_and_partial_sources_keep_previous
 
 def test_unstarted_tasks_enforce_clock_roster_and_qualifying_availability(refreshed):
     _, _, dataset = refreshed
-    assert live.forecast_tasks(dataset, "2026-20", "2026-11-07T17:50:00Z") == ("qualifying",)
+    # A snapshot acquired after the queried time cannot be used as an earlier forecast.
+    assert live.forecast_tasks(dataset, "2026-20", "2026-11-07T17:50:00Z") == ()
     assert live.forecast_tasks(dataset, "2026-20", "2026-11-07T19:00:00Z") == ()
     assert live.forecast_tasks(dataset, "2026-20", "2026-11-08T17:00:00Z") == ()
     dataset.rosters = dataset.rosters.loc[
         ~(dataset.rosters.event_id.eq("2026-20") & dataset.rosters.task.eq("race"))
     ]
-    assert live.forecast_tasks(dataset, "2026-20") == ()
+    # The event's qualifying entry list remains a usable known field.
+    assert live.forecast_tasks(dataset, "2026-20") == ("race", "podium")
 
 
 def test_live_forecast_never_scores_target_and_reuses_verified_artifacts(
@@ -377,3 +381,219 @@ def test_corrupt_refreshed_snapshot_is_never_loaded(refreshed, dataset_root):
     (path / "refresh_status.json").write_text("[]")
     with pytest.raises(ValueError, match="Snapshot contents changed"):
         live.current_dataset(dataset_root, state)
+
+
+@pytest.mark.parametrize("last_n", [None, 12, 6])
+def test_pre_weekend_forecast_chains_each_familys_qualifying(
+    refreshed, tmp_path, monkeypatch, last_n
+):
+    _, path, dataset = refreshed
+    original_labels = dataset.labels.copy(deep=True)
+    attach = lab._attach_actuals
+
+    def no_target_labels(source, forecasts):
+        assert "2026-21" not in set(forecasts.event_id)
+        return attach(source, forecasts)
+
+    monkeypatch.setattr(lab, "_attach_actuals", no_target_labels)
+    output = lab.cached_forecast(path, "2026-21", tmp_path / "runs", last_n=last_n)
+    run = lab.load_run(output)
+    expected_ids = dataset.history_events("2026-21").event_id.tolist()
+    if last_n:
+        expected_ids = expected_ids[-last_n:]
+    assert run["summary"]["training_event_ids"] == expected_ids
+    assert run["summary"]["qualifying_source"] == "predicted"
+    assert run["metrics"].empty
+    assert set(run["forecasts"].task) == {"qualifying", "race", "podium"}
+    assert run["forecasts"].field_source.eq("latest_known_field_assumption").all()
+    assert set(run["forecasts"].field_source_event_id) == {"2026-20"}
+    assert not {"actual_rank", "actual_podium"} & set(run["forecasts"])
+    audits = read_json(output / "feature_audits.json")
+    for family in (*lab.FAMILIES, "baseline"):
+        q = run["forecasts"].query('task == "qualifying" and family == @family')
+        assert len(q) == 22
+        assert set(q.predicted_rank) == set(range(1, 23))
+        for task in ("race", "podium"):
+            inputs = pd.read_parquet(output / "inputs" / f"{task}-{family}.parquet")
+            ranks = inputs.set_index("driver_id").current_qualifying_rank * len(inputs)
+            expected = q.set_index("driver_id").predicted_rank
+            pd.testing.assert_series_equal(
+                ranks.sort_index(), expected.sort_index(), check_names=False
+            )
+            forecast = run["forecasts"].query("task == @task and family == @family")
+            assert forecast.qualifying_source.eq("predicted").all()
+            assert set(forecast.predicted_rank) == set(range(1, 23))
+            audit = audits[f"2026-21/{task}/{family}"]
+            assert audit["qualifying_source"] == "predicted"
+            assert not audit["current_qualifying_used"]
+    pd.testing.assert_frame_equal(dataset.labels, original_labels)
+
+
+def test_finished_weekend_leaves_upcoming_list_even_without_final_labels(
+    refreshed, dataset_root, tmp_path, monkeypatch
+):
+    state, _, dataset = refreshed
+    monkeypatch.setattr(live, "_now", lambda: pd.Timestamp("2026-11-11T14:00:00Z"))
+    assert "2026-20" not in set(live.upcoming_events(dataset).event_id)
+    assert set(live.upcoming_events(dataset).event_id) == {"2026-21", "2026-22", "2026-23"}
+    monkeypatch.setenv("F1ML_REAL_DATASET", str(dataset_root))
+    monkeypatch.setenv("F1ML_LIVE_DATA", str(state))
+    monkeypatch.setenv("F1ML_REAL_RUNS", str(tmp_path / "runs"))
+    at = AppTest.from_string(
+        "from f1ml_app.lab_app import live_forecast\nlive_forecast()", default_timeout=30
+    ).run()
+    assert not at.exception and not at.error
+    assert at.selectbox(key="lab_live_event").value == "2026-21"
+    assert not any("Paulo" in option for option in at.selectbox(key="lab_live_event").options)
+    assert not at.button(key="lab_live_run").disabled
+    assert any("Provisional field" in message.value for message in at.info)
+    at.button(key="lab_live_run").click().run(timeout=60)
+    assert not at.exception and not at.error
+    assert any("predicted qualifying" in message.value for message in at.info)
+    # Changing training scope cannot display the previous window's predictions as its result.
+    at.selectbox(key="lab_live_window").set_value("Previous 6 races that year").run()
+    assert any("selected training window" in message.value for message in at.info)
+
+
+def test_live_field_prefers_event_entry_list_and_rejects_later_information(refreshed):
+    _, _, dataset = refreshed
+    cutoff = dataset.event("2026-21").qualifying_cutoff
+    field = dataset.forecast_field("2026-21", "qualifying", cutoff)
+    assert set(field.field_source_event_id) == {"2026-20"}
+    known = dataset.forecast_field("2026-20", "race", dataset.event("2026-20").race_cutoff)
+    assert known.field_source.eq("event_entry_list").all()
+    # A roster from a later weekend, even if present, cannot cross the prediction cutoff.
+    later = field.copy()
+    later["event_id"] = "2026-21"
+    later["known_at"] = "2026-11-20T00:00:00Z"
+    dataset.rosters = pd.concat([dataset.rosters, later], ignore_index=True)
+    again = dataset.forecast_field("2026-21", "qualifying", cutoff)
+    assert again.field_source.eq("latest_known_field_assumption").all()
+
+
+def test_interrupted_forecast_can_retry_without_exposing_partial_output(
+    refreshed, tmp_path, monkeypatch
+):
+    _, dataset, _ = refreshed
+    runs = tmp_path / "runs"
+    build = lab._run_backtest
+
+    def interrupted(dataset, event_id, output, **kwargs):
+        output.mkdir()
+        (output / "attempt.txt").write_text("Interrupted before the receipt was written")
+        raise RuntimeError("Training interrupted")
+
+    monkeypatch.setattr(lab, "_run_backtest", interrupted)
+    with pytest.raises(RuntimeError, match="Training interrupted"):
+        lab.cached_forecast(dataset, "2026-21", runs, last_n=3)
+    assert not list(runs.glob("forecast-*"))
+    assert not list((runs / ".pending").iterdir())
+
+    monkeypatch.setattr(lab, "_run_backtest", build)
+    output = lab.cached_forecast(dataset, "2026-21", runs, last_n=3)
+    assert lab.load_run(output)["summary"]["training_event_count"] == 3
+
+
+def test_legacy_incomplete_forecast_is_preserved_and_retried_but_sealed_corruption_is_rejected(
+    refreshed, tmp_path, monkeypatch
+):
+    _, dataset, _ = refreshed
+    runs = tmp_path / "runs"
+    output = lab.cached_forecast(dataset, "2026-21", runs, last_n=3)
+    # Simulate an older run interrupted just before the final receipt write.
+    (output / "receipt.json").unlink()
+    previous = {
+        str(p.relative_to(output)): p.read_bytes() for p in output.rglob("*") if p.is_file()
+    }
+    assert lab.cached_forecast(dataset, "2026-21", runs, last_n=3) == output
+    assert lab.load_run(output)["summary"]["training_event_count"] == 3
+    (archived,) = (runs / ".incomplete").iterdir()
+    assert {
+        str(p.relative_to(archived)): p.read_bytes() for p in archived.rglob("*") if p.is_file()
+    } == previous
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Sealed but corrupt runs must never be silently regenerated")
+
+    monkeypatch.setattr(lab, "_run_backtest", forbidden)
+    config = output / "config.json"
+    config.write_text(config.read_text() + "\n")
+    with pytest.raises(ValueError, match="Snapshot contents changed"):
+        lab.cached_forecast(dataset, "2026-21", runs, last_n=3)
+
+
+def test_simultaneous_forecast_requests_publish_once_and_reuse_the_completed_run(
+    refreshed, tmp_path, monkeypatch
+):
+    _, dataset, _ = refreshed
+    build = lab._run_backtest
+    cache_lock = lab._run_cache_lock
+    ready, release, second_request = Event(), Event(), Event()
+    builds, requests = [], []
+
+    def pause_before_publication(*args, **kwargs):
+        builds.append(args[2])
+        result = build(*args, **kwargs)
+        ready.set()
+        assert release.wait(timeout=30)
+        return result
+
+    @contextmanager
+    def observed_lock(path):
+        requests.append(path)
+        if len(requests) == 2:
+            second_request.set()
+        with cache_lock(path):
+            yield
+
+    monkeypatch.setattr(lab, "_run_backtest", pause_before_publication)
+    monkeypatch.setattr(lab, "_run_cache_lock", observed_lock)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        first = pool.submit(lab.cached_forecast, dataset, "2026-21", tmp_path, last_n=3)
+        try:
+            assert ready.wait(timeout=30)
+            assert not requests[0].exists()
+            assert not list(tmp_path.glob("*/config.json"))
+            second = pool.submit(lab.cached_forecast, dataset, "2026-21", tmp_path, last_n=3)
+            assert second_request.wait(timeout=10)
+            assert not second.done()
+        finally:
+            release.set()
+        first_output, second_output = first.result(timeout=30), second.result(timeout=30)
+    assert first_output == second_output
+    assert len(builds) == 1
+    assert lab.load_run(first_output)["summary"]["training_event_count"] == 3
+    assert not list((tmp_path / ".pending").iterdir())
+
+
+def test_waiting_for_cache_lock_cannot_bypass_session_start(refreshed, tmp_path, monkeypatch):
+    _, dataset, _ = refreshed
+
+    @contextmanager
+    def after_session_starts(path):
+        monkeypatch.setattr(live, "_now", lambda: pd.Timestamp("2026-11-08T17:00:00Z"))
+        yield
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("A request that waited past session start must not train")
+
+    monkeypatch.setattr(lab, "_run_cache_lock", after_session_starts)
+    monkeypatch.setattr(lab, "_run_backtest", forbidden)
+    with pytest.raises(ValueError, match="target session has started"):
+        lab.cached_forecast(dataset, "2026-20", tmp_path, last_n=3)
+
+
+def test_saved_run_discovery_skips_unsealed_attempts(refreshed, tmp_path, monkeypatch):
+    from f1ml.storage import write_json
+    from f1ml_app import lab_app
+
+    _, dataset, source = refreshed
+    runs = tmp_path / "runs"
+    write_json(
+        runs / "forecast-unfinished" / "config.json",
+        {"target_event_id": "2026-21", "source_snapshot_id": source.receipt["id"], "last_n": None},
+    )
+    monkeypatch.setattr(lab_app, "paths", lambda: (dataset, runs))
+    assert lab_app._default_saved("2026-21", source.receipt["id"]) is None
+    assert lab_app._saved_options(source, 2026) == []
+    assert not lab_app._has_saved("2026-21", None, source.receipt["id"])

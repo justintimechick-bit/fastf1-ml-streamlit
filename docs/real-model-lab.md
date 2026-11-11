@@ -69,18 +69,30 @@ the previous revision available, with event-level source problems shown in the U
 coverage, source details, completed-event count and last-refreshed timestamp.
 
 **Run forecast** fits only unstarted tasks whose required inputs are present.
-Qualifying needs an independent entry list. Race and podium need an independent
-race field and final qualifying published before their forecast cutoff. Live
+Before qualifying starts, the field uses the event entry list if published before
+the cutoff; otherwise it explicitly assumes the latest known same-season field.
+This provisional field is used only for live inputs and never inserted into official
+rosters or labels. Each model family (and the baseline) predicts qualifying first,
+then uses its own complete qualifying ranks for race and podium inputs. Race forecasts
+are conditional on that order; qualifying uncertainty and grid penalties are not modeled.
+After qualifying starts, race forecasts wait for its final published classification
+and use official qualifying positions. All tasks use the selected all-earlier, last-12,
+or last-6 training events, with the same feature-history rules as historical tests.
+Saved forecasts and per-family input tables record the field source, source event,
+and predicted/official qualifying provenance. Live
 cutoffs use the acquisition horizon; new completed-event reconstructions retain
 the historical cutoffs described below. Current-season earlier published events
 supply training, development selection and calibration. The target's labels are
 never joined or scored for a live forecast. Training checks the session clock
 again before sealing; if the target starts during fitting, it does not seal a
-live forecast. Saved forecasts remain viewable after the target starts.
+live forecast. Finished sessions are removed from the upcoming selector using scheduled start
+times, independently of whether final labels have been ingested. Completed weekends
+are available through Historical test once both classifications are collected.
+Saved forecast artifacts remain on disk after the target starts.
 
 ```sh
 python -m f1ml_real refresh
-python -m f1ml_real forecast --event 2026-20
+python -m f1ml_real forecast --event 2026-21
 ```
 
 Both commands accept `--dataset` and `--state`; forecast also accepts `--runs` and
