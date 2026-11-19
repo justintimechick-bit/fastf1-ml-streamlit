@@ -694,6 +694,49 @@ def comparison_frame(
     )
 
 
+def _excel_cell(value):
+    """Excel cells hold scalars only: join list-like values, drop time zones (as UTC)."""
+    if isinstance(value, np.ndarray):
+        value = value.tolist()
+    if isinstance(value, (list, tuple, set)):
+        return "; ".join(str(v) for v in value)
+    if isinstance(value, dict):
+        import json
+
+        return json.dumps(value, default=str)
+    if isinstance(value, pd.Timestamp) and value.tzinfo is not None:
+        return value.tz_convert("UTC").tz_localize(None)
+    return value
+
+
+def excel_workbook(sheets: dict[str, pd.DataFrame]) -> bytes:
+    """An .xlsx file with one sheet per entry; CSV cannot hold multiple sheets.
+
+    Sheet names are trimmed to Excel's 31-character limit and stripped of the
+    characters Excel forbids. Empty frames still get a sheet with headers.
+    """
+    import io
+
+    buffer = io.BytesIO()
+    used: set[str] = set()
+    with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
+        for name, frame in sheets.items():
+            title = "".join("_" if ch in "[]:*?/\\" else ch for ch in str(name))[:31] or "Sheet"
+            base, n = title, 2
+            while title.lower() in used:
+                suffix = f" ({n})"
+                title, n = base[: 31 - len(suffix)] + suffix, n + 1
+            used.add(title.lower())
+            frame = frame.copy()
+            for column in frame:
+                if isinstance(frame[column].dtype, pd.DatetimeTZDtype):
+                    frame[column] = frame[column].dt.tz_convert("UTC").dt.tz_localize(None)
+                elif frame[column].dtype == object:
+                    frame[column] = frame[column].map(_excel_cell)
+            frame.to_excel(writer, sheet_name=title, index=False)
+    return buffer.getvalue()
+
+
 def comparison_long(field: pd.DataFrame) -> pd.DataFrame:
     """One row per driver and active model for grouped charts, including unknown actuals."""
     rows = []

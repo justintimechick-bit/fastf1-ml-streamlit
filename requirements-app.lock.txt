@@ -18,3 +18,5 @@ rpds-py==2026.9.1
 starlette==1.10.0
 streamlit==1.66.1
 uvicorn==0.54.0
+et_xmlfile==2.0.0
+openpyxl==3.1.5

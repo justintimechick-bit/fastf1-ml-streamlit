@@ -20,7 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1,<2"]
-app = ["streamlit>=1.50,<2"]
+app = ["streamlit>=1.50,<2", "openpyxl>=3.1,<4"]
 real = ["pypdf>=6,<7", "pdfplumber>=0.11.10,<0.12"]
 
 [project.scripts]
