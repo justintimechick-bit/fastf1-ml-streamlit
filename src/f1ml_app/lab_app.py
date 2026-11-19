@@ -586,11 +586,22 @@ def _prediction_table(predictions: pd.DataFrame, task: str, family: str, *, spot
         "for scoring. Unranked NC / DSQ entries stay in the forecast and do not receive "
         "an invented finish position."
     )
+    sheets = {
+        MODEL_LABELS.get(model, model): ui.filter_grid(
+            fc.presentation_frame(predictions, task=task, family=model)
+        )
+        for model in ui.selected_models()
+    }
+    try:
+        workbook = fc.excel_workbook(sheets)
+    except ImportError:
+        st.caption("Install openpyxl (`pip install openpyxl`) to download predictions.")
+        return
     st.download_button(
-        "Download predictions (CSV)",
-        ui.filter_grid(data).to_csv(index=False).encode(),
-        file_name=f"{task}-{family}-predictions.csv",
-        mime="text/csv",
+        "Download predictions (Excel, one sheet per model)",
+        workbook,
+        file_name=f"{task}-predictions.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         key=f"lab_download_{task}_{family}",
         icon=":material/download:",
         on_click="ignore",
@@ -1442,6 +1453,54 @@ def three_models(*, _with_refresh: bool = False, _slots=None):
     )
 
 
+RAW_SHEETS = {
+    "events": "Events",
+    "rosters": "Entry lists",
+    "labels": "Official results",
+    "documents": "Source documents",
+    "exclusions": "Exclusions",
+    "fallbacks": "API fallbacks",
+}
+
+
+@st.cache_data(show_spinner=False)
+def _raw_workbook(path: str, receipt_mtime: int) -> bytes:
+    """Every table in the active snapshot exactly as stored, plus its receipt."""
+    root = Path(path)
+    receipt = json.loads((root / "receipt.json").read_text())
+    sheets = {
+        "About": pd.DataFrame(
+            {"field": list(receipt), "value": [fc._excel_cell(v) for v in receipt.values()]}
+        )
+    }
+    for name, label in RAW_SHEETS.items():
+        table = root / f"{name}.parquet"
+        if table.exists():
+            sheets[label] = pd.read_parquet(table)
+    return fc.excel_workbook(sheets)
+
+
+def _raw_data_download(dataset, season: int):
+    try:
+        workbook = _raw_workbook(
+            str(dataset.root), (dataset.root / "receipt.json").stat().st_mtime_ns
+        )
+    except ImportError:
+        st.caption("Install openpyxl (`pip install openpyxl`) to download the raw data.")
+        return
+    st.download_button(
+        f"Download {season} raw data (Excel)",
+        workbook,
+        file_name=f"{season}-raw-data-{dataset.root.name[:12]}.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        key=f"lab_raw_download_{season}",
+        icon=":material/download:",
+        help="The refreshed snapshot the models train on: events, entry lists, official "
+        "results and source documents, one sheet each. Unmodified, no derived features.",
+        on_click="ignore",
+    )
+
+
 def data_methodology(*, _with_refresh: bool = False, _slots=None):
     title = "Data & Methodology"
     detail = "Public source records, explicit cutoffs and an honest account of what is missing."
@@ -1502,6 +1561,7 @@ def data_methodology(*, _with_refresh: bool = False, _slots=None):
         len(dataset.documents),
         help="Official entry lists and classifications retained with URLs and hashes.",
     )
+    _raw_data_download(dataset, season)
     if not ui.full_telemetry():
         left, right = st.columns(2)
         with left:
