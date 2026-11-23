@@ -1,0 +1,37 @@
+{
+  "as_of": "2026-11-23T16:01:08.469918+00:00",
+  "availability_semantics": "Official document publication is a conservative availability/completion upper bound, not an observed session-end timestamp",
+  "base_snapshot_id": "08bd7449688fda332cab42379d89cdeb295c3b200c45d2d9119e3aefc6befb2a",
+  "data_kind": "real",
+  "files": {
+    "documents.parquet": "7e9aea93f22412174872e1b6706db6905278106d6e9277f1ec6047ad146e4fea",
+    "events.parquet": "279e48c395e6fa881f73460a68519abe3cd76b2a17bd4d14dc4f2f408478c73b",
+    "exclusions.parquet": "92d0be090efbd7a37fb2bd72825939dd925b18e3f3cec3b171059b94c374669b",
+    "fastf1/2026-20/Qualifying/description.parquet": "1debed3126da6dbbeee251b24d6268f86e863688f41720bf30bf0d2250b0cf78",
+    "fastf1/2026-20/Qualifying/metadata.json": "b54f8b3e02e2062f1384c5e4e1927e36be08f778a995e4b89be719af3116a469",
+    "fastf1/2026-20/Qualifying/results.parquet": "67785b355cda669a99e756d6d21eec98745700251bb76c6ba1a1af0d34d31e95",
+    "fastf1/2026-20/Race/description.parquet": "1debed3126da6dbbeee251b24d6268f86e863688f41720bf30bf0d2250b0cf78",
+    "fastf1/2026-20/Race/metadata.json": "f18bea8bf2a43bb23690a843f8b0558b9644f716c1f17a3e53c29c5ceea57d12",
+    "fastf1/2026-20/Race/results.parquet": "e7814945a682106958cf13da94fc7de26a50449efdcf9f5aea6e0ba84e94e254",
+    "fastf1/2026-21/Qualifying/description.parquet": "fc723961d85aad76ae9cc50804d43021b31ab8817574abbfffe6877f13b3610f",
+    "fastf1/2026-21/Qualifying/metadata.json": "e31680dc06e275bcb20f69778623438c8d4303427a76c1585f3575d24a34e659",
+    "fastf1/2026-21/Qualifying/results.parquet": "61746e52db6c5dc744cb8a9a90f5ae901d044e4e0d57ee20f1e5b5a5e809f25c",
+    "fastf1/2026-21/Race/description.parquet": "fc723961d85aad76ae9cc50804d43021b31ab8817574abbfffe6877f13b3610f",
+    "fastf1/2026-21/Race/metadata.json": "b935c786294b666025133408c99dc89796c6443cfbb160eeb474d8dbf49eb6cc",
+    "fastf1/2026-21/Race/results.parquet": "6f465076c73722551fb9a15a178163488d6b80876e2ff68be5a1435a0b350b0c",
+    "identity_mapping.json": "214b13ac4ec6957328f5c2a952d4b371adcb441cd2fe6a480f685b77054a3e0b",
+    "labels.parquet": "fdbbd8a8922877d3b6c0978e72957ddf5b7cf443f3ad01f51010615c98cfbc2d",
+    "refresh_status.json": "6bc99fa726a232219f284cafedbc7fc340c9e8056c22983204cd0be5e87c7c12",
+    "rosters.parquet": "17bcc27940a760dca6cd5c9922f062cf7930c7700501400e823cc8f9bf615eee",
+    "schedule.json": "a54a0de6bf1eae0c698619f0e352b0c870a5d2b5b123b3bc27c76c7e0f5496bc"
+  },
+  "id": "c4c619f71c3f5fa3cf513fc4d87efd5a4dfad067df43087e7d5453b8a83c4e53",
+  "kind": "refreshed_live_dataset",
+  "missing_groups": [
+    "practice_laps",
+    "qualifying_laps",
+    "weather"
+  ],
+  "source": "FastF1 calendar/results and FIA final classifications/independent entry lists",
+  "year": 2026
+}

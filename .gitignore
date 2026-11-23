@@ -11,5 +11,10 @@ dist/
 *.egg-info/
 
 # Local refresh snapshots, source caches and generated live forecasts
-data/live/
+data/live/*
+!data/live/CURRENT.json
+!data/live/snapshots/
+data/live/snapshots/*
+# Shipped refreshed snapshot (through Las Vegas 2026-21); runtime refreshes stay untracked
+!data/live/snapshots/85f699e8753e4ab09e24d489fbd01540/
 artifacts/real-lab/forecast-*/

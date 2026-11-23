@@ -1,0 +1,26 @@
+[
+  {
+    "event_id": "2026-20",
+    "issues": [],
+    "name": "S\u00e3o Paulo Grand Prix"
+  },
+  {
+    "event_id": "2026-21",
+    "issues": [],
+    "name": "Las Vegas Grand Prix"
+  },
+  {
+    "event_id": "2026-22",
+    "issues": [
+      "Qualifying: no independent pre-cutoff entry list"
+    ],
+    "name": "Qatar Grand Prix"
+  },
+  {
+    "event_id": "2026-23",
+    "issues": [
+      "Qualifying: no independent pre-cutoff entry list"
+    ],
+    "name": "Abu Dhabi Grand Prix"
+  }
+]
