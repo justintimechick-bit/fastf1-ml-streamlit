@@ -44,7 +44,8 @@ access was not granted. Other repositories were not changed.
 .venv/bin/streamlit run streamlit_app.py
 ```
 
-Check Predict Past Races defaults to Mexico, all 18 earlier eligible events, three
+Check Predict Past Races defaults to the latest completed race (Las Vegas after the
+shipped refresh), all earlier eligible events, three
 model families and a baseline. Each qualifying/race forecast retains all 22
 drivers. Metrics label partial numeric targets, development findings remain
 separate, and status says exploratory historical replay. Inspect Three Models and

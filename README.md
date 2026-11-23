@@ -31,8 +31,8 @@ python -m pip install -r requirements.txt
 python -m streamlit run streamlit_app.py
 ```
 
-The **Predict Past Races** page supports **2024, 2025 and 2026** and defaults to Mexico
-2026. Select a season, a target event, and **Previous 6 races that year**,
+The **Predict Past Races** page supports **2024, 2025 and 2026** and defaults to the most
+recent completed 2026 race in the active (refreshed) data. Select a season, a target event, and **Previous 6 races that year**,
 **Previous 12 races that year**, or **All earlier races that year**, then press **Run historical
 test**. Existing verified runs are reused. Fitting occurs only on that explicit
 action, never during ordinary interface reruns. The

@@ -927,7 +927,8 @@ def historical_test(*, _slots=None):
             _sidebar_refresh(as_of=as_of)
         _render_context(ribbon, dataset=dataset, season=season, family=family, task=task)
         return
-    default = "2026-19" if "2026-19" in event_ids else event_ids[-1]
+    # Open on the most recent completed weekend in the active (refreshed) data.
+    default = event_ids[-1]
     if st.session_state.get("lab_target_event") not in event_ids:
         st.session_state["lab_target_event"] = default
     if st.session_state.get("lab_active_season") != season:
